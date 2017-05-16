@@ -1,0 +1,17 @@
+language: python
+
+python:
+    - "3.4"
+
+services:
+    - mongodb
+    - elasticsearch
+    - redis-server
+
+install: "pip install -r requirements.txt --use-mirrors"
+
+script:
+    - nosetests
+    - flake8
+
+sudo: false
