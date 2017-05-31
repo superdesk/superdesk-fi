@@ -35,11 +35,22 @@ module.exports = function(grunt) {
         langOverride: {
             'en': {
                 'ANPA Category': 'Category',
-                'ANPA CATEGORY': 'CATEGORY'
+                'ANPA CATEGORY': 'CATEGORY',
+                'Subject': 'Theme',
+                'SUBJECT': 'THEME',
+                'Genre': 'Content Style',
+                'GENRE': 'CONTENT STYLE',
+                'Place': 'Compliance Country',
+                'PLACE': 'COMPLIANCE COUNTRY',
+                'Footer': 'Footnote',
+                'FOOTER': 'FOOTNOTE'
             }
         },
 
         features: {
+            preview: 1,
+            previewFormats: 1,
+            legal_archive: 1,
             swimlane: {columnsLimit: 4},
             editor3: true
         },
