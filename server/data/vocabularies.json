@@ -1,0 +1,280 @@
+[
+    {
+        "_id": "categories",
+        "display_name": "Categories",
+        "type": "manageable",
+        "unique_field": "qcode",
+        "items": [
+            {"is_active": true, "name": "FIXME", "qcode": "f", "subject": ""}
+        ],
+        "schema": {
+            "name": {},
+            "qcode": {},
+            "subject": {}
+        }
+    },
+    {
+        "_id": "default_categories",
+        "display_name": "Default Categories",
+        "type": "manageable",
+        "unique_field": "qcode",
+        "items": [
+            {"is_active": true, "qcode": "a"},
+            {"is_active": true, "qcode": "e"},
+            {"is_active": true, "qcode": "f"},
+            {"is_active": true, "qcode": "i"},
+            {"is_active": true, "qcode": "s"},
+            {"is_active": true, "qcode": "t"},
+            {"is_active": true, "qcode": "v"}
+        ],
+        "schema": {
+            "qcode": {}
+        }
+    },
+    {
+        "_id": "genre",
+        "display_name": "Genre",
+        "type": "manageable",
+        "items": [
+            {"is_active": true, "name": "Article (news)", "qcode": "Article"},
+            {"is_active": true, "name": "Sidebar", "qcode": "Sidebar"},
+            {"is_active": true, "name": "Factbox", "qcode": "Factbox"},
+            {"is_active": true, "name": "Feature", "qcode": "Feature"},
+            {"is_active": true, "name": "Newsfeature", "qcode": "Newsfeature"},
+            {"is_active": true, "name": "Backgrounder", "qcode": "Backgrounder"},
+            {"is_active": true, "name": "Opinion", "qcode": "Opinion"},
+            {"is_active": true, "name": "View (incl parly sketch)", "qcode": "View"},
+            {"is_active": true, "name": "Modular", "qcode": "Modular"},
+            {"is_active": true, "name": "Broadcast Script", "qcode": "Broadcast Script"},
+            {"is_active": true, "name": "Briefs", "qcode": "Briefs"},
+            {"is_active": true, "name": "Colour piece", "qcode": "Colour piece"},
+            {"is_active": true, "name": "Obituary", "qcode": "Obituary"},
+            {"is_active": true, "name": "Analysis", "qcode": "Analysis"},
+            {"is_active": true, "name": "Timeline", "qcode": "Timeline"},
+            {"is_active": true, "name": "Chronology", "qcode": "Chronology"},
+            {"is_active": true, "name": "Interview", "qcode": "Interview"},
+            {"is_active": true, "name": "Results (sport)", "qcode": "Results (sport)"},
+            {"is_active": true, "name": "Market Open", "qcode": "Market Open"},
+            {"is_active": true, "name": "Market Close", "qcode": "Market Close"},
+            {"is_active": true, "name": "Market Report", "qcode": "Market Report"},
+            {"is_active": true, "name": "Review", "qcode": "Review"},
+            {"is_active": true, "name": "Preview", "qcode": "Preview"}
+        ],
+        "schema": {
+            "name": {},
+            "qcode": {}
+        }
+    },
+    {
+        "_id": "urgency",
+        "display_name": "Urgency",
+        "type": "manageable",
+        "unique_field": "qcode",
+        "items": [
+            {"is_active": true, "name": "1", "qcode": 1},
+            {"is_active": true, "name": "2", "qcode": 2},
+            {"is_active": true, "name": "3", "qcode": 3},
+            {"is_active": true, "name": "4", "qcode": 4},
+            {"is_active": true, "name": "5", "qcode": 5}
+        ],
+        "schema": {
+            "name": {},
+            "qcode": {},
+            "color": {"type": "color"},
+            "short": {"type": "short", "label": "List Name", "maxlength": 2}
+        }
+    },
+    {
+        "_id": "priority",
+        "display_name": "Priority",
+        "type": "manageable",
+        "items": [
+            {"is_active": true, "name": "1", "qcode": 1},
+            {"is_active": true, "name": "2", "qcode": 2},
+            {"is_active": true, "name": "3", "qcode": 3},
+            {"is_active": true, "name": "4", "qcode": 4},
+            {"is_active": true, "name": "5", "qcode": 5},
+            {"is_active": true, "name": "6", "qcode": 6},
+            {"is_active": false, "name": "7", "qcode": 7},
+            {"is_active": false, "name": "8", "qcode": 8},
+            {"is_active": false, "name": "9", "qcode": 9}
+        ],
+        "schema": {
+            "name": {},
+            "qcode": {},
+            "color": {"type": "color"},
+            "short": {"type": "short", "label": "List Name", "maxlength": 2}
+        }
+    },
+    {
+        "_id": "type",
+        "display_name": "Article Type",
+        "type": "unmanageable",
+        "items": [
+            {"is_active": true, "name": "text", "qcode": "text"},
+            {"is_active": true, "name": "preformatted", "qcode": "preformatted"},
+            {"is_active": true, "name": "audio", "qcode": "audio"},
+            {"is_active": true, "name": "video", "qcode": "video"},
+            {"is_active": true, "name": "picture", "qcode": "picture"},
+            {"is_active": true, "name": "graphic", "qcode": "graphic"},
+            {"is_active": true, "name": "composite", "qcode": "composite"}
+        ]
+    },
+    {
+        "_id": "signal",
+        "display_name": "Signal",
+        "type": "unmanageable",
+        "items": [
+            {"is_active": true, "name": "Correction", "qcode": "Correction"},
+            {"is_active": true, "name": "Update", "qcode": "Update"},
+            {"is_active": true, "name": "Add", "qcode": "Add"},
+            {"is_active": true, "name": "Repeat", "qcode": "Repeat"},
+            {"is_active": true, "name": "Content Warning", "qcode": "Content Warning"}
+        ]
+    },
+    {
+        "_id": "rightsinfo",
+        "display_name": "Copyrights",
+        "type": "manageable",
+        "items": [
+            {
+                "is_active": true,
+                "name": "default",
+                "copyrightHolder": "",
+                "copyrightNotice": "",
+                "usageTerms": ""
+            }
+        ],
+        "schema": {
+            "name": {},
+            "copyrightHolder": {"label": "Copyright Holder"},
+            "copyrightNotice": {"label": "Copyright Notice"},
+            "usageTerms": {"label": "Usage Terms"}
+        }
+    },
+    {
+        "_id": "subscriber_types",
+        "display_name": "Subscriber Types",
+        "type": "unmanageable",
+        "items": [
+            {"is_active": true, "name": "All", "qcode": "all",
+                "formats": [
+                    {"name": "NINJS", "qcode": "ninjs"},
+                    {"name": "NewsML G2", "qcode": "newsmlg2"},
+                    {"name": "Email", "qcode": "email"}
+                ]},
+            {"is_active": true, "name": "Digital/Internet", "qcode": "digital",
+                "formats": [
+                    {"name": "NINJS", "qcode": "ninjs"},
+                    {"name": "NewsML G2", "qcode": "newsmlg2"},
+                    {"name": "Email", "qcode": "email"}
+                ]},
+            {"is_active": true, "name": "Wire/Paper", "qcode": "wire",
+                "formats": [
+                    {"name": "NITF", "qcode": "nitf"},
+                    {"name": "Email", "qcode": "email"}
+                ]}
+        ]
+    },
+    {
+        "_id": "crop_sizes",
+        "display_name": "Image Crop Sizes",
+        "type": "manageable",
+        "unique_field": "name",
+        "items": [
+            {"is_active": true, "name": "FIXME", "width": 800, "height": 600}
+        ],
+        "schema": {
+            "name": {},
+            "width": {"type": "int"},
+            "height": {"type": "int"}
+        }
+    },
+    {
+        "_id": "desk_types",
+        "display_name": "Desk Types",
+        "type": "unmanageable",
+        "items": [
+            {"is_active": true, "name": "authoring", "qcode": "authoring"},
+            {"is_active": true, "name": "production", "qcode": "production"}
+        ]
+    },
+    {
+        "_id": "replace_words",
+        "display_name": "Replacement Words",
+        "type": "manageable",
+        "items": [
+            {"is_active": true, "existing": "FIXME", "replacement": ""}
+        ],
+        "schema": {
+            "existing": {},
+            "replacement": {}
+        }
+    },
+    {
+        "_id": "locators",
+        "display_name": "Locators",
+        "type": "manageable",
+        "items": [
+            {"is_active": true, "name": "NSW", "qcode": "NSW"}
+        ],
+        "schema": {
+            "name": {},
+            "qcode": {},
+            "state": {},
+            "country": {},
+            "world_region": {},
+            "group": {}
+        }
+    },
+    {
+        "_id": "product_types",
+        "display_name": "Product Types",
+        "type": "unmanageable",
+        "items": [
+            {"is_active": true, "name": "API", "qcode": "api"},
+            {"is_active": true, "name": "Direct", "qcode": "direct"},
+            {"is_active": true, "name": "Both", "qcode": "both"}
+        ]
+    },
+   {
+    "_id": "subject_custom",
+    "display_name": "Subject",
+    "type": "manageable",
+    "service": {"all": 1},
+    "schema_field": "subject",
+    "dependent": 0,
+    "items": [
+            {"is_active": true, "name": "Asset allocation", "qcode": "01000000", "parent": null},
+            {"is_active": true, "name": "Risk", "qcode": "02000000", "parent": null},
+            {"is_active": true, "name": "Market context", "qcode": "03000000", "parent": null},
+            {"is_active": true, "name": "Fidelity views", "qcode": "04000000", "parent": null},
+
+            {"is_active": true, "name": "Alpha/Beta separation", "qcode": "01001000", "parent": "01000000"},
+            {"is_active": true, "name": "Outcome orientated solutions", "qcode": "01002000", "parent": "01000000"},
+            {"is_active": true, "name": "Low cost beta", "qcode": "01004000", "parent": "01000000"},
+            {"is_active": true, "name": "Income", "qcode": "01005000", "parent": "01000000"},
+            {"is_active": true, "name": "Diversifying alpha sources", "qcode": "01007000", "parent": "01000000"},
+            {"is_active": true, "name": "Portfolio construction approaches", "qcode": "01008000", "parent": "01000000"},
+            {"is_active": true, "name": "Strategic asset allocation", "qcode": "01009000", "parent": "01000000"},
+            {"is_active": true, "name": "Tactical asset  allocation", "qcode": "01010000", "parent": "01000000"},
+            {"is_active": true, "name": "Asset liability matching", "qcode": "01011000", "parent": "01000000"},
+            {"is_active": true, "name": "LDI", "qcode": "01017000", "parent": "01000000"},
+            {"is_active": true, "name": "Active vs passive", "qcode": "01018000", "parent": "01000000"},
+
+            {"is_active": true, "name": "De-Risking", "qcode": "02001001", "parent": "02000000"},
+            {"is_active": true, "name": "Downside protection", "qcode": "02001002", "parent": "02000000"},
+            {"is_active": true, "name": "Liquidity", "qcode": "02001003", "parent": "02000000"},
+
+            {"is_active": true, "name": "Regulatory change", "qcode": "03001000", "parent": "03000000"},
+            {"is_active": true, "name": "Market return expectations", "qcode": "03002000", "parent": "03000000"},
+            {"is_active": true, "name": "Low interest rates", "qcode": "03003000", "parent": "03000000"},
+            {"is_active": true, "name": "Political uncertainty", "qcode": "03004000", "parent": "03000000"},
+
+            {"is_active": true, "name": "Behavioural finance", "qcode": "04001000", "parent": "04000000"},
+            {"is_active": true, "name": "Factor investing", "qcode": "04001002", "parent": "04000000"},
+            {"is_active": true, "name": "ESG", "qcode": "04003000", "parent": "04000000"},
+            {"is_active": true, "name": "Research", "qcode": "04004000", "parent": "04000000"}
+        ]
+   }
+]
