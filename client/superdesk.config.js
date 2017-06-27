@@ -42,8 +42,8 @@ module.exports = function(grunt) {
                 'GENRE': 'CONTENT STYLE',
                 'Place': 'Compliance Country',
                 'PLACE': 'COMPLIANCE COUNTRY',
-                'Footer': 'Footnote',
-                'FOOTER': 'FOOTNOTE'
+                'Footer': 'Foot Note',
+                'FOOTER': 'FOOT NOTE'
             }
         },
 
@@ -51,7 +51,10 @@ module.exports = function(grunt) {
             preview: 1,
             legal_archive: 1,
             swimlane: {columnsLimit: 4},
-            editor3: true
+            editor3: true,
+            hideCreatePackage: true,
+            noTakes: true,
+            noMissingLink: true
         },
         workspace: {
             analytics: true
