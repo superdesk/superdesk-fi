@@ -32,7 +32,8 @@ if init_data.exists():
     INIT_DATA_PATH = init_data
 
 INSTALLED_APPS.extend([
-    'analytics'
+    'analytics',
+    'apps.languages'
 ])
 
 RENDITIONS = {
@@ -60,3 +61,22 @@ BROKER_URL = env('CELERY_BROKER_URL', REDIS_URL)
 SECRET_KEY = env('SECRET_KEY', '')
 
 LEGAL_ARCHIVE = True
+
+DEFAULT_LANGUAGE = 'en-gb'
+
+LANGUAGES = [
+    {'language': 'en-gb', 'label': 'English', 'source': True, 'destination': True},
+    {'language': 'fr', 'label': 'French', 'source': True, 'destination': True},
+    {'language': 'de', 'label': 'German', 'source': True, 'destination': True},
+    {'language': 'es', 'label': 'Spanish', 'source': True, 'destination': True},
+    {'language': 'it', 'label': 'Italian', 'source': True, 'destination': True},
+    {'language': 'sv', 'label': 'Swedish', 'source': True, 'destination': True},
+    {'language': 'nb', 'label': 'Norwegian', 'source': True, 'destination': True},
+    {'language': 'pl', 'label': 'Polish', 'source': True, 'destination': True},
+    {'language': 'zh-cn', 'label': 'Mandarin', 'source': True, 'destination': True},
+    {'language': 'zh-hk', 'label': 'Cantonese', 'source': True, 'destination': True},
+    {'language': 'ja', 'label': 'Japanese', 'source': True, 'destination': True},
+    {'language': 'ko', 'label': 'Korean', 'source': True, 'destination': True},
+    {'language': 'zh-tw', 'label': 'Taiwanese', 'source': True, 'destination': True},
+    {'language': 'nl', 'label': 'Dutch', 'source': True, 'destination': True}
+]
