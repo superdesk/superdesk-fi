@@ -6,6 +6,8 @@
  */
 module.exports = function(grunt) {
     return {
+        isTestEnvironment: true,
+        environmentName: 'FIDELITY TESTING ENVIRONMENT',
         apps: ['superdesk-analytics'],
         defaultRoute: '/workspace/personal',
         validatorMediaMetadata: {
