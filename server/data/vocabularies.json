@@ -32,33 +32,20 @@
         }
     },
     {
-        "_id": "genre",
+        "_id": "genre_custom",
         "display_name": "Genre",
+	    "schema_field": "genre",
         "type": "manageable",
+        "service": {"all": 1},
+        "single_value": true,
         "items": [
-            {"is_active": true, "name": "Article (news)", "qcode": "Article"},
-            {"is_active": true, "name": "Sidebar", "qcode": "Sidebar"},
-            {"is_active": true, "name": "Factbox", "qcode": "Factbox"},
-            {"is_active": true, "name": "Feature", "qcode": "Feature"},
-            {"is_active": true, "name": "Newsfeature", "qcode": "Newsfeature"},
-            {"is_active": true, "name": "Backgrounder", "qcode": "Backgrounder"},
+            {"is_active": true, "name": "Blog", "qcode": "Blog"},
+            {"is_active": true, "name": "White Paper", "qcode": "White Paper"},
             {"is_active": true, "name": "Opinion", "qcode": "Opinion"},
-            {"is_active": true, "name": "View (incl parly sketch)", "qcode": "View"},
-            {"is_active": true, "name": "Modular", "qcode": "Modular"},
-            {"is_active": true, "name": "Broadcast Script", "qcode": "Broadcast Script"},
-            {"is_active": true, "name": "Briefs", "qcode": "Briefs"},
-            {"is_active": true, "name": "Colour piece", "qcode": "Colour piece"},
-            {"is_active": true, "name": "Obituary", "qcode": "Obituary"},
-            {"is_active": true, "name": "Analysis", "qcode": "Analysis"},
-            {"is_active": true, "name": "Timeline", "qcode": "Timeline"},
-            {"is_active": true, "name": "Chronology", "qcode": "Chronology"},
-            {"is_active": true, "name": "Interview", "qcode": "Interview"},
-            {"is_active": true, "name": "Results (sport)", "qcode": "Results (sport)"},
-            {"is_active": true, "name": "Market Open", "qcode": "Market Open"},
-            {"is_active": true, "name": "Market Close", "qcode": "Market Close"},
-            {"is_active": true, "name": "Market Report", "qcode": "Market Report"},
-            {"is_active": true, "name": "Review", "qcode": "Review"},
-            {"is_active": true, "name": "Preview", "qcode": "Preview"}
+            {"is_active": true, "name": "Education", "qcode": "Education"},
+            {"is_active": true, "name": "Podcast", "qcode": "Podcast"},
+            {"is_active": true, "name": "Webcast", "qcode": "Webcast"},
+            {"is_active": true, "name": "Sales Aid", "qcode": "Sales Aid"}
         ],
         "schema": {
             "name": {},
@@ -66,22 +53,19 @@
         }
     },
     {
-        "_id": "urgency",
+        "_id": "urgency_custom",
         "display_name": "Urgency",
         "type": "manageable",
+        "service": {"all": 1},
+        "single_value": true,
         "unique_field": "qcode",
         "items": [
-            {"is_active": true, "name": "1", "qcode": 1},
-            {"is_active": true, "name": "2", "qcode": 2},
-            {"is_active": true, "name": "3", "qcode": 3},
-            {"is_active": true, "name": "4", "qcode": 4},
-            {"is_active": true, "name": "5", "qcode": 5}
+            {"is_active": true, "name": "checked", "qcode": "checked"},
+            {"is_active": true, "name": "unchecked", "qcode": "unchecked"}
         ],
         "schema": {
             "name": {},
-            "qcode": {},
-            "color": {"type": "color"},
-            "short": {"type": "short", "label": "List Name", "maxlength": 2}
+            "qcode": {}
         }
     },
     {
@@ -300,8 +284,8 @@
             {"is_active": true, "name": "ESG", "qcode": "04003000", "parent": "04000000"},
             {"is_active": true, "name": "Research", "qcode": "04004000", "parent": "04000000"}
         ]
-   },
-     {
+    },
+    {
         "_id": "place_custom",
         "display_name": "Place",
         "type": "unmanageable",
@@ -358,5 +342,83 @@
             {"is_active": true, "name": "Singapore", "qcode": "Singapore", "parent": "All Asia Pacific"},
             {"is_active": true, "name": "Taiwan", "qcode": "Taiwan", "parent": "All Asia Pacific"}
         ]
+    },
+    {
+    "_id": "franchise",
+    "display_name": "Franchise",
+    "type": "manageable",
+    "service": {"all": 1},
+    "dependent": 0,
+    "items": [
+            {"is_active": true, "name": "No specific franchise", "qcode": "10000001", "parent": null},
+            {"is_active": true, "name": "Equity Asia Pacific ex Japan", "qcode": "10000002", "parent": null},
+            {"is_active": true, "name": "Equity Emerging Market", "qcode": "10000003", "parent": null},
+            {"is_active": true, "name": "Equity Europe", "qcode": "10000004", "parent": null},
+            {"is_active": true, "name": "Equity Global", "qcode": "10000005", "parent": null},
+            {"is_active": true, "name": "Equity Income", "qcode": "10000006", "parent": null},
+            {"is_active": true, "name": "Equity Japan", "qcode": "10000007", "parent": null},
+            {"is_active": true, "name": "Equity UK", "qcode": "10000008", "parent": null},
+            {"is_active": true, "name": "Equity US", "qcode": "10000009", "parent": null},
+            {"is_active": true, "name": "FI Asia", "qcode": "10000010", "parent": null},
+            {"is_active": true, "name": "FI Emerging Markets", "qcode": "10000011", "parent": null},
+            {"is_active": true, "name": "FI Euro Investment Grade", "qcode": "10000012", "parent": null},
+            {"is_active": true, "name": "FI Global & US", "qcode": "10000013", "parent": null},
+            {"is_active": true, "name": "FI High Yield & High Income", "qcode": "10000014", "parent": null},
+            {"is_active": true, "name": "FI Inflation", "qcode": "10000015", "parent": null},
+            {"is_active": true, "name": "FI Money Market", "qcode": "10000016", "parent": null},
+            {"is_active": true, "name": "FI Total Return", "qcode": "10000017", "parent": null},
+            {"is_active": true, "name": "FI UK Investment Grade", "qcode": "10000018", "parent": null},
+            {"is_active": true, "name": "MA Equity Multi Manager", "qcode": "10000019", "parent": null},
+            {"is_active": true, "name": "MA Income", "qcode": "10000020", "parent": null},
+            {"is_active": true, "name": "MA Open Architecture", "qcode": "10000021", "parent": null},
+            {"is_active": true, "name": "MA Risk Rated Multi Asset", "qcode": "10000022", "parent": null},
+            {"is_active": true, "name": "MA Strategic Benchmarked", "qcode": "10000023", "parent": null},
+            {"is_active": true, "name": "MA Tactical Total Return", "qcode": "10000024", "parent": null},
+            {"is_active": true, "name": "MA Target Date Rolldown", "qcode": "10000025", "parent": null},
+            {"is_active": true, "name": "MA Volatility Targeted", "qcode": "10000026", "parent": null},
+            {"is_active": true, "name": "Absolute Return", "qcode": "10000027", "parent": null},
+            {"is_active": true, "name": "ETFs Smart Beta", "qcode": "10000028", "parent": null},
+            {"is_active": true, "name": "Real Estate", "qcode": "10000029", "parent": null}
+    ]
+    },
+    {
+    "_id": "compliance_checked",
+    "display_name": "Compliance Checked",
+    "type": "manageable",
+    "single_value": true,
+    "service": {"all": 1},
+    "dependent": 0,
+    "items": [
+            {"is_active": true, "name": "Yes", "qcode": "yes", "parent": null},
+            {"is_active": true, "name": "No", "qcode": "no", "parent": null}
+    ]
+    },
+    {
+    "_id": "author",
+    "display_name": "Author",
+    "type": "manageable",
+    "service": {"all": 1},
+    "dependent": 0,
+    "items": [
+            {"is_active": true, "name": "Adnan Siddique", "qcode": "20000001", "parent": null},
+            {"is_active": true, "name": "Alex Wright", "qcode": "20000002", "parent": null},
+            {"is_active": true, "name": "Ayesha Akbar", "qcode": "20000003", "parent": null},
+            {"is_active": true, "name": "Becky Qin", "qcode": "20000004", "parent": null},
+            {"is_active": true, "name": "Cameron Ho", "qcode": "20000005", "parent": null},
+            {"is_active": true, "name": "Charles McKenzie", "qcode": "20000006", "parent": null},
+            {"is_active": true, "name": "David Buckle", "qcode": "20000007", "parent": null},
+            {"is_active": true, "name": "Eileen Rowsome", "qcode": "20000008", "parent": null},
+            {"is_active": true, "name": "Eugene Philalithis", "qcode": "20000009", "parent": null},
+            {"is_active": true, "name": "George Estathopoulos", "qcode": "20000010", "parent": null},
+            {"is_active": true, "name": "Gethe Schepers", "qcode": "20000011", "parent": null},
+            {"is_active": true, "name": "Ian Spreadbury", "qcode": "20000012", "parent": null},
+            {"is_active": true, "name": "James Bateman", "qcode": "20000013", "parent": null},
+            {"is_active": true, "name": "Michael Costa", "qcode": "20000014", "parent": null},
+            {"is_active": true, "name": "Nick Armet", "qcode": "20000015", "parent": null},
+            {"is_active": true, "name": "Paras Anand", "qcode": "20000016", "parent": null},
+            {"is_active": true, "name": "Shahzad Farooq", "qcode": "20000017", "parent": null},
+            {"is_active": true, "name": "Stuart Rumble", "qcode": "20000018", "parent": null},
+            {"is_active": true, "name": "Sudipta Gupta", "qcode": "20000019", "parent": null}
+    ]
     }
 ]

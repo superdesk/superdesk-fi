@@ -62,6 +62,9 @@ SECRET_KEY = env('SECRET_KEY', '')
 
 LEGAL_ARCHIVE = True
 
+#: Defines default value for genre to be set for manually created articles
+DEFAULT_GENRE_VALUE_FOR_MANUAL_ARTICLES = env('DEFAULT_GENRE_VALUE_FOR_MANUAL_ARTICLES', [])
+
 DEFAULT_LANGUAGE = 'en-gb'
 
 LANGUAGES = [
