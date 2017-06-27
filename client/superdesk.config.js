@@ -43,7 +43,9 @@ module.exports = function(grunt) {
                 'Place': 'Compliance Country',
                 'PLACE': 'COMPLIANCE COUNTRY',
                 'Footer': 'Foot Note',
-                'FOOTER': 'FOOT NOTE'
+                'FOOTER': 'FOOT NOTE',
+                'Urgency': 'Featured Content',
+                'URGENCY': 'FEATURED CONTENT'
             }
         },
 
