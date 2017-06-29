@@ -222,12 +222,11 @@
         ]
     },
     {
-        "_id": "languages",
-        "display_name": "Languages",
+        "_id": "language",
+        "display_name": "Language",
         "type": "unmanageable",
-        "service": {"all": 1},
+        "unique_field": "qcode",
         "single_value": true,
-        "dependent": 0,
         "items": [
             {"is_active": true, "name": "English", "qcode": "en-gb"},
             {"is_active": true, "name": "French", "qcode": "fr"},
