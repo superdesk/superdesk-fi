@@ -6,9 +6,7 @@
  */
 module.exports = function(grunt) {
     return {
-        isTestEnvironment: true,
-        environmentName: 'FIDELITY TESTING ENVIRONMENT',
-        apps: ['superdesk-analytics'],
+        apps: [],
         defaultRoute: '/workspace/personal',
         validatorMediaMetadata: {
             headline: {
@@ -59,11 +57,8 @@ module.exports = function(grunt) {
             swimlane: {columnsLimit: 4},
             editor3: true,
             hideCreatePackage: true,
-            noTakes: true,
             noMissingLink: true
         },
-        workspace: {
-            analytics: true
-        }
+        workspace: {}
     };
 };
