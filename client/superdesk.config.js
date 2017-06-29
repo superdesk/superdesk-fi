@@ -47,7 +47,9 @@ module.exports = function(grunt) {
                 'Footer': 'Foot Note',
                 'FOOTER': 'FOOT NOTE',
                 'Urgency': 'Featured Content',
-                'URGENCY': 'FEATURED CONTENT'
+                'URGENCY': 'FEATURED CONTENT',
+                'Usage Terms': 'Disclaimer',
+                'USAGE TERMS': 'DISCLAIMER'
             }
         },
 
