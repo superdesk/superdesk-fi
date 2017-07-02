@@ -47,8 +47,14 @@ module.exports = function(grunt) {
                 'Urgency': 'Featured Content',
                 'URGENCY': 'FEATURED CONTENT',
                 'Usage Terms': 'Disclaimer',
-                'USAGE TERMS': 'DISCLAIMER'
+                'USAGE TERMS': 'DISCLAIMER',
+                'Usageterms': 'Disclaimer',
+                'USAGETERMS': 'DISCLAIMER'
             }
+        },
+
+        infoRemovedFields: {
+            usageterms: true
         },
 
         features: {
