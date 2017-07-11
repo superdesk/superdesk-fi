@@ -64,6 +64,7 @@ LEGAL_ARCHIVE = True
 
 #: Defines default value for genre to be set for manually created articles
 DEFAULT_GENRE_VALUE_FOR_MANUAL_ARTICLES = env('DEFAULT_GENRE_VALUE_FOR_MANUAL_ARTICLES', [])
+DEFAULT_URGENCY_VALUE_FOR_MANUAL_ARTICLES = 1
 
 DEFAULT_LANGUAGE = 'en-gb'
 

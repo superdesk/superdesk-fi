@@ -18,12 +18,7 @@
         "display_name": "Default Categories",
         "type": "manageable",
         "unique_field": "qcode",
-        "items": [
-            {"is_active": true, "qcode": "Asset allocation"},
-            {"is_active": true, "qcode": "Risk"},
-            {"is_active": true, "qcode": "Market context"},
-            {"is_active": true, "qcode": "Fidelity views"}
-        ],
+        "items": [],
         "schema": {
             "qcode": {}
         }
