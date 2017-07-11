@@ -78,21 +78,13 @@
         }
     },
     {
-        "_id": "urgency_custom",
+        "_id": "urgency",
         "display_name": "Urgency",
         "type": "manageable",
-        "service": {"all": 1},
-        "single_value": true,
-        "unique_field": "qcode",
-        "schema_field": "urgency",
         "items": [
-            {"is_active": true, "name": "checked", "qcode": "Yes"},
-            {"is_active": true, "name": "unchecked", "qcode": "No"}
-        ],
-        "schema": {
-            "name": {},
-            "qcode": {}
-        }
+            {"is_active": true, "name": "Yes", "qcode": 1, "color" : "#008000"},
+            {"is_active": true, "name": "No", "qcode": 0, "color" : "#FF0000"}
+        ]
     },
     {
         "_id": "priority",
