@@ -1,9 +1,40 @@
 [
-    {
-        "_id": "categories",
-        "display_name": "Categories",
+       {
+            "_id": "categories",
+            "display_name": "Categories",
+            "type": "manageable",
+            "unique_field": "qcode",
+            "items": [
+                {"is_active": true, "name": "FIXME", "qcode": "f", "subject": ""}
+            ],
+            "schema": {
+                "name": {},
+                "qcode": {},
+                "subject": {}
+            }
+       },
+       {
+        "_id": "default_categories",
+        "display_name": "Default Categories",
         "type": "manageable",
         "unique_field": "qcode",
+        "items": [
+            {"is_active": true, "qcode": "Asset allocation"},
+            {"is_active": true, "qcode": "Risk"},
+            {"is_active": true, "qcode": "Market context"},
+            {"is_active": true, "qcode": "Fidelity views"}
+        ],
+        "schema": {
+            "qcode": {}
+        }
+    },
+     {
+        "_id": "category",
+        "display_name": "Category",
+        "type": "manageable",
+        "service": {"all": 1},
+        "single_value": true,
+        "dependent": 0,
         "items": [
             {"is_active": true, "name": "Asset allocation", "qcode": "Asset allocation",  "parent": null},
             {"is_active": true, "name": "Risk", "qcode": "Risk", "parent": null},
@@ -38,21 +69,6 @@
         ],
         "schema": {
             "name": {},
-            "qcode": {}
-        }
-    },
-    {
-        "_id": "default_categories",
-        "display_name": "Default Categories",
-        "type": "manageable",
-        "unique_field": "qcode",
-        "items": [
-            {"is_active": true, "qcode": "Asset allocation"},
-            {"is_active": true, "qcode": "Risk"},
-            {"is_active": true, "qcode": "Market context"},
-            {"is_active": true, "qcode": "Fidelity views"}
-        ],
-        "schema": {
             "qcode": {}
         }
     },
