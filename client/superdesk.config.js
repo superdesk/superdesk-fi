@@ -34,6 +34,8 @@ module.exports = function(grunt) {
 
         langOverride: {
             'en': {
+                'ANPA Category': 'Category',
+                'ANPA CATEGORY': 'CATEGORY',
                 'Subject': 'Theme',
                 'SUBJECT': 'THEME',
                 'Genre': 'Content Style',
