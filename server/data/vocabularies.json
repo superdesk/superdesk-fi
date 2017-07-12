@@ -1,19 +1,112 @@
 [
-       {
-            "_id": "categories",
-            "display_name": "ANPA Categories",
-            "type": "manageable",
-            "unique_field": "qcode",
-            "items": [
-                {"is_active": true, "name": "FIXME", "qcode": "f", "subject": ""}
-            ],
-            "schema": {
-                "name": {},
-                "qcode": {},
-                "subject": {}
-            }
-       },
-       {
+    {
+        "_id": "categories",
+        "display_name": "Categories",
+        "type": "manageable",
+        "unique_field": "qcode",
+        "single_value": true,
+        "items": [
+            {"is_active": true, "name": "Asset allocation", "qcode": "Asset allocation", "single_value": true},
+            {"is_active": true, "name": "Risk", "qcode": "Risk", "single_value": true},
+            {"is_active": true, "name": "Market context", "qcode": "Market context", "single_value": true},
+            {"is_active": true, "name": "Fidelity views", "qcode": "Fidelity views", "single_value": true},
+
+            {"is_active": true, "name": "Asset allocation: Alpha/Beta separation",
+            	"qcode": "Asset allocation: Alpha/Beta separation", "single_value": true},
+            {"is_active": true, "name": "Asset allocation: Outcome orientated solutions",
+            	"qcode": "Asset allocation: Outcome orientated solutions", "single_value": true},
+            {"is_active": true, "name": "Asset allocation: Low cost beta",
+            	"qcode": "Asset allocation: Low cost beta", "single_value": true},
+            {"is_active": true, "name": "Asset allocation: Income",
+            	"qcode": "Asset allocation: Income", "single_value": true},
+            {"is_active": true, "name": "Asset allocation: Diversifying alpha sources",
+            	"qcode": "Asset allocation: Diversifying alpha sources", "single_value": true},
+            {"is_active": true, "name": "Asset allocation: Portfolio construction approaches",
+            	"qcode": "Asset allocation: Portfolio construction approaches", "single_value": true},
+            {"is_active": true, "name": "Asset allocation: Strategic asset allocation",
+            	"qcode": "Asset allocation: Strategic asset allocation", "single_value": true},
+            {"is_active": true, "name": "Asset allocation: Tactical asset allocation",
+            	"qcode": "Asset allocation: Tactical asset allocation", "single_value": true},
+            {"is_active": true, "name": "Asset allocation: Asset liability matching",
+            	"qcode": "Asset allocation: Asset liability matching", "single_value": true},
+            {"is_active": true, "name": "Asset allocation: LDI",
+            	"qcode": "Asset allocation: LDI", "single_value": true},
+            {"is_active": true, "name": "Asset allocation: Active vs passive",
+            	"qcode": "Asset allocation: Active vs passive", "single_value": true},
+
+            {"is_active": true, "name": "Risk: De-Risking",
+            	"qcode": "Risk: De-Risking", "single_value": true},
+            {"is_active": true, "name": "Risk: Downside protection",
+            	"qcode": "Risk: Downside protection", "single_value": true},
+            {"is_active": true, "name": "Risk: Liquidity",
+            	"qcode": "Risk: Liquidity", "single_value": true},
+
+            {"is_active": true, "name": "Market context: Regulatory change",
+            	"qcode": "Market context: Regulatory change", "single_value": true},
+            {"is_active": true, "name": "Market context: Market return expectations",
+            	"qcode": "Market context: Market return expectations", "single_value": true},
+            {"is_active": true, "name": "Market context: Low interest rates",
+            	"qcode": "Market context: Low interest rates", "single_value": true},
+            {"is_active": true, "name": "Market context: Political uncertainty",
+            	"qcode": "Market context: Political uncertainty", "single_value": true},
+
+            {"is_active": true, "name": "Fidelity views: Behavioural finance",
+            	"qcode": "Fidelity views: Behavioural finance", "single_value": true},
+            {"is_active": true, "name": "Fidelity views: Factor investing",
+            	"qcode": "Fidelity views: Factor investing", "single_value": true},
+            {"is_active": true, "name": "Fidelity views: ESG",
+            	"qcode": "Fidelity views: ESG", "single_value": true},
+            {"is_active": true, "name": "Fidelity views: Research",
+            	"qcode": "Fidelity views: Research", "single_value": true}
+        ],
+        "schema": {
+            "name": {},
+            "qcode": {},
+            "subject": {}
+        }
+    },
+    {
+	    "_id": "subject_custom",
+	    "display_name": "Subject",
+	    "type": "unmanageable",
+	    "service": {"all": 1},
+	    "schema_field": "subject",
+	    "single_value": true,
+	    "dependent": 0,
+	    "items": [
+            {"is_active": true, "name": "Asset allocation", "qcode": "subject:01000000"},
+            {"is_active": true, "name": "Risk", "qcode": "subject:02000000"},
+            {"is_active": true, "name": "Market context", "qcode": "subject:03000000"},
+            {"is_active": true, "name": "Fidelity views", "qcode": "subject:04000000"},
+
+            {"is_active": true, "name": "Alpha/Beta separation", "qcode": "subject:01001000"},
+            {"is_active": true, "name": "Outcome orientated solutions", "qcode": "subject:01002000"},
+            {"is_active": true, "name": "Low cost beta", "qcode": "subject:01004000"},
+            {"is_active": true, "name": "Income", "qcode": "subject:01005000"},
+            {"is_active": true, "name": "Diversifying alpha sources", "qcode": "subject:01007000"},
+            {"is_active": true, "name": "Portfolio construction approaches", "qcode": "subject:01008000"},
+            {"is_active": true, "name": "Strategic asset allocation", "qcode": "subject:01009000"},
+            {"is_active": true, "name": "Tactical asset  allocation", "qcode": "subject:01010000"},
+            {"is_active": true, "name": "Asset liability matching", "qcode": "subject:01011000"},
+            {"is_active": true, "name": "LDI", "qcode": "subject:01017000"},
+            {"is_active": true, "name": "Active vs passive", "qcode": "subject:01018000"},
+
+            {"is_active": true, "name": "De-Risking", "qcode": "subject:02001001"},
+            {"is_active": true, "name": "Downside protection", "qcode": "subject:02001002"},
+            {"is_active": true, "name": "Liquidity", "qcode": "subject:02001003"},
+
+            {"is_active": true, "name": "Regulatory change", "qcode": "subject:03001000"},
+            {"is_active": true, "name": "Market return expectations", "qcode": "subject:03002000"},
+            {"is_active": true, "name": "Low interest rates", "qcode": "subject:03003000"},
+            {"is_active": true, "name": "Political uncertainty", "qcode": "subject:03004000"},
+
+            {"is_active": true, "name": "Behavioural finance", "qcode": "subject:04001000"},
+            {"is_active": true, "name": "Factor investing", "qcode": "subject:04001002"},
+            {"is_active": true, "name": "ESG", "qcode": "subject:04003000"},
+            {"is_active": true, "name": "Research", "qcode": "subject:04004000"}
+        ]
+    },
+    {
         "_id": "default_categories",
         "display_name": "Default Categories",
         "type": "manageable",
@@ -22,52 +115,8 @@
         "schema": {
             "qcode": {}
         }
-    },
+     },
      {
-        "_id": "category",
-        "display_name": "Category",
-        "type": "manageable",
-        "service": {"all": 1},
-        "single_value": true,
-        "dependent": 0,
-        "items": [
-            {"is_active": true, "name": "Asset allocation", "qcode": "Asset allocation",  "parent": null},
-            {"is_active": true, "name": "Risk", "qcode": "Risk", "parent": null},
-            {"is_active": true, "name": "Market context", "qcode": "Market context", "parent": null},
-            {"is_active": true, "name": "Fidelity views", "qcode": "Fidelity views", "parent": null},
-
-            {"is_active": true, "name": "Alpha/Beta separation", "qcode": "Alpha/Beta separation", "parent": "Asset allocation"},
-            {"is_active": true, "name": "Outcome orientated solutions", "qcode": "Outcome orientated solutions", "parent": "Asset allocation"},
-            {"is_active": true, "name": "Low cost beta", "qcode": "Low cost beta", "parent": "Asset allocation"},
-            {"is_active": true, "name": "Income", "qcode": "Income", "parent": "Asset allocation"},
-            {"is_active": true, "name": "Diversifying alpha sources", "qcode": "Diversifying alpha sources", "parent": "Asset allocation"},
-            {"is_active": true, "name": "Portfolio construction approaches", "qcode": "Portfolio construction approaches", "parent": "Asset allocation"},
-            {"is_active": true, "name": "Strategic asset allocation", "qcode": "Strategic asset allocation", "parent": "Asset allocation"},
-            {"is_active": true, "name": "Tactical asset allocation", "qcode": "Tactical asset allocation", "parent": "Asset allocation"},
-            {"is_active": true, "name": "Asset liability matching", "qcode": "Asset liability matching", "parent": "Asset allocation"},
-            {"is_active": true, "name": "LDI", "qcode": "LDI", "parent": "Asset allocation"},
-            {"is_active": true, "name": "Active vs passive", "qcode": "Active vs passive", "parent": "Asset allocation"},
-
-            {"is_active": true, "name": "De-Risking", "qcode": "De-Risking", "parent": "Risk"},
-            {"is_active": true, "name": "Downside protection", "qcode": "Downside protection", "parent": "Risk"},
-            {"is_active": true, "name": "Liquidity", "qcode": "Liquidity", "parent": "Risk"},
-
-            {"is_active": true, "name": "Regulatory change", "qcode": "Regulatory change", "parent": "Market context"},
-            {"is_active": true, "name": "Market return expectations", "qcode": "Market return expectations", "parent": "Market context"},
-            {"is_active": true, "name": "Low interest rates", "qcode": "Low interest rates", "parent": "Market context"},
-            {"is_active": true, "name": "Political uncertainty", "qcode": "Political uncertainty", "parent": "Market context"},
-
-            {"is_active": true, "name": "Behavioural finance", "qcode": "Behavioural finance", "parent": "Fidelity views"},
-            {"is_active": true, "name": "Factor investing", "qcode": "Factor investing", "parent": "Fidelity views"},
-            {"is_active": true, "name": "ESG", "qcode": "ESG", "parent": "Fidelity views"},
-            {"is_active": true, "name": "Research", "qcode": "Research", "parent": "Fidelity views"}
-        ],
-        "schema": {
-            "name": {},
-            "qcode": {}
-        }
-    },
-    {
         "_id": "genre_custom",
         "display_name": "Genre",
 	    "schema_field": "genre",
@@ -269,46 +318,6 @@
             {"is_active": true, "name": "Korean", "qcode": "ko"},
             {"is_active": true, "name": "Taiwanese", "qcode": "zh-tw"},
             {"is_active": true, "name": "Dutch", "qcode": "nl"}
-        ]
-   },
-   {
-    "_id": "subject_custom",
-    "display_name": "Subject",
-    "type": "unmanageable",
-    "service": {"all": 1},
-    "schema_field": "subject",
-    "dependent": 0,
-    "items": [
-            {"is_active": true, "name": "Asset allocation", "qcode": "subject:01000000", "parent": null},
-            {"is_active": true, "name": "Risk", "qcode": "subject:02000000", "parent": null},
-            {"is_active": true, "name": "Market context", "qcode": "subject:03000000", "parent": null},
-            {"is_active": true, "name": "Fidelity views", "qcode": "subject:04000000", "parent": null},
-
-            {"is_active": true, "name": "Alpha/Beta separation", "qcode": "subject:01001000", "parent": "subject:01000000"},
-            {"is_active": true, "name": "Outcome orientated solutions", "qcode": "subject:01002000", "parent": "subject:01000000"},
-            {"is_active": true, "name": "Low cost beta", "qcode": "subject:01004000", "parent": "subject:01000000"},
-            {"is_active": true, "name": "Income", "qcode": "subject:01005000", "parent": "subject:01000000"},
-            {"is_active": true, "name": "Diversifying alpha sources", "qcode": "subject:01007000", "parent": "subject:01000000"},
-            {"is_active": true, "name": "Portfolio construction approaches", "qcode": "subject:01008000", "parent": "subject:01000000"},
-            {"is_active": true, "name": "Strategic asset allocation", "qcode": "subject:01009000", "parent": "subject:01000000"},
-            {"is_active": true, "name": "Tactical asset  allocation", "qcode": "subject:01010000", "parent": "subject:01000000"},
-            {"is_active": true, "name": "Asset liability matching", "qcode": "subject:01011000", "parent": "subject:01000000"},
-            {"is_active": true, "name": "LDI", "qcode": "subject:01017000", "parent": "subject:01000000"},
-            {"is_active": true, "name": "Active vs passive", "qcode": "subject:01018000", "parent": "subject:01000000"},
-
-            {"is_active": true, "name": "De-Risking", "qcode": "subject:02001001", "parent": "subject:02000000"},
-            {"is_active": true, "name": "Downside protection", "qcode": "subject:02001002", "parent": "subject:02000000"},
-            {"is_active": true, "name": "Liquidity", "qcode": "subject:02001003", "parent": "subject:02000000"},
-
-            {"is_active": true, "name": "Regulatory change", "qcode": "subject:03001000", "parent": "subject:03000000"},
-            {"is_active": true, "name": "Market return expectations", "qcode": "subject:03002000", "parent": "subject:03000000"},
-            {"is_active": true, "name": "Low interest rates", "qcode": "subject:03003000", "parent": "subject:03000000"},
-            {"is_active": true, "name": "Political uncertainty", "qcode": "subject:03004000", "parent": "subject:03000000"},
-
-            {"is_active": true, "name": "Behavioural finance", "qcode": "subject:04001000", "parent": "subject:04000000"},
-            {"is_active": true, "name": "Factor investing", "qcode": "subject:04001002", "parent": "subject:04000000"},
-            {"is_active": true, "name": "ESG", "qcode": "subject:04003000", "parent": "subject:04000000"},
-            {"is_active": true, "name": "Research", "qcode": "subject:04004000", "parent": "subject:04000000"}
         ]
     },
     {
