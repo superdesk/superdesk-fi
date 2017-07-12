@@ -52,7 +52,8 @@ module.exports = function(grunt) {
         },
 
         infoRemovedFields: {
-            usageterms: true
+            usageterms: true,
+            language: true
         },
 
         features: {

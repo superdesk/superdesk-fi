@@ -1,7 +1,7 @@
 [
        {
             "_id": "categories",
-            "display_name": "Categories",
+            "display_name": "ANPA Categories",
             "type": "manageable",
             "unique_field": "qcode",
             "items": [
@@ -251,26 +251,24 @@
         ]
     },
     {
-        "_id": "language",
+        "_id": "languages",
         "display_name": "Language",
         "type": "unmanageable",
-        "unique_field": "qcode",
-        "single_value": true,
         "items": [
-            {"is_active": true, "name": "English", "qcode": "language:en-gb"},
-            {"is_active": true, "name": "French", "qcode": "language:fr"},
-            {"is_active": true, "name": "German", "qcode": "language:de"},
-            {"is_active": true, "name": "Spanish", "qcode": "language:es"},
-            {"is_active": true, "name": "Italian", "qcode": "language:it"},
-            {"is_active": true, "name": "Swedish", "qcode": "language:sv"},
-            {"is_active": true, "name": "Norwegian", "qcode": "language:nb"},
-            {"is_active": true, "name": "Polish", "qcode": "language:pl"},
-            {"is_active": true, "name": "Mandarin", "qcode": "language:zh-cn"},
-            {"is_active": true, "name": "Cantonese", "qcode": "language:zh-hk"},
-            {"is_active": true, "name": "Japanese", "qcode": "language:ja"},
-            {"is_active": true, "name": "Korean", "qcode": "language:ko"},
-            {"is_active": true, "name": "Taiwanese", "qcode": "language:zh-tw"},
-            {"is_active": true, "name": "Dutch", "qcode": "language:nl"}
+            {"is_active": true, "name": "English", "qcode": "en"},
+            {"is_active": true, "name": "French", "qcode": "fr"},
+            {"is_active": true, "name": "German", "qcode": "de"},
+            {"is_active": true, "name": "Spanish", "qcode": "es"},
+            {"is_active": true, "name": "Italian", "qcode": "it"},
+            {"is_active": true, "name": "Swedish", "qcode": "sv"},
+            {"is_active": true, "name": "Norwegian", "qcode": "nb"},
+            {"is_active": true, "name": "Polish", "qcode": "pl"},
+            {"is_active": true, "name": "Mandarin", "qcode": "zh-cn"},
+            {"is_active": true, "name": "Cantonese", "qcode": "zh-hk"},
+            {"is_active": true, "name": "Japanese", "qcode": "ja"},
+            {"is_active": true, "name": "Korean", "qcode": "ko"},
+            {"is_active": true, "name": "Taiwanese", "qcode": "zh-tw"},
+            {"is_active": true, "name": "Dutch", "qcode": "nl"}
         ]
    },
    {
