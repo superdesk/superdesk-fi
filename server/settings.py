@@ -66,10 +66,10 @@ LEGAL_ARCHIVE = True
 DEFAULT_GENRE_VALUE_FOR_MANUAL_ARTICLES = env('DEFAULT_GENRE_VALUE_FOR_MANUAL_ARTICLES', [])
 DEFAULT_URGENCY_VALUE_FOR_MANUAL_ARTICLES = 1
 
-DEFAULT_LANGUAGE = 'en-gb'
+DEFAULT_LANGUAGE = 'en'
 
 LANGUAGES = [
-    {'language': 'en-gb', 'label': 'English', 'source': True, 'destination': True},
+    {'language': 'en', 'label': 'English', 'source': True, 'destination': True},
     {'language': 'fr', 'label': 'French', 'source': True, 'destination': True},
     {'language': 'de', 'label': 'German', 'source': True, 'destination': True},
     {'language': 'es', 'label': 'Spanish', 'source': True, 'destination': True},
