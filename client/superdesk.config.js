@@ -58,6 +58,8 @@ module.exports = function(grunt) {
             language: true
         },
 
+        defaultRoute: '/workspace/monitoring',
+
         features: {
             preview: 1,
             legal_archive: 1,
