@@ -1,0 +1,18 @@
+Hello, {{user.display_name}}
+
+The Editorial Team has created a Superdesk user account for you. Superdesk is the
+new global Editorial System for content creation and distribution at Fidelity.
+
+Use the testing system https://fidelity-next.superdesk.pro to make yourself familiar
+with the system.
+
+Once you feel ready, the production system is accessible here:
+https://wp-fidelity-next.superdesk.pro
+
+You can access both systems by clicking the "Single Sign On" Button, no extra username
+or password is required.
+
+For any questions, please do not hesitate to contact the Superdesk Administrator
+Alistair Jackson.
+ 
+The Editorial Team
