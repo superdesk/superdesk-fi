@@ -1,10 +1,15 @@
 Hello, {{user.display_name}}
 
-The Editorial Team has created a Superdesk user account for you.
+The Editorial Team has created a Superdesk user account for you on the TESTING instance at Fidelity.
 
 Superdesk is the new global Editorial System for content creation and distribution at Fidelity.
-Access the Superdesk application here: https://fidelity.superdesk.pro
+Access the Superdesk TESTING instance here:https://fidelity-next.superdesk.pro
 
-For any questions, please do not hesitate to contact Katie Roberts at the Fidelity Editorial team.
+Please note that the TESTING instance is there to test new functionality, therefore the instance
+may be rebuilt from time to time, and existing content may be lost. Content produced on this
+instance cannot be used in production.
+
+For any questions, please do not hesitate to contact Katie Roberts or Rachel Cartmail at the
+Fidelity Editorial team.
 
 The Editorial Team
