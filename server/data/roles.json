@@ -1,64 +1,67 @@
 [
     {
-        "_id": "54e64cde1024542de2649be8",
-        "description": "Write articles",
-        "name": "Writer",
-        "is_default": true,
-        "privileges": {"archive": 1, "fetch": 1}
-    },
-    {
-        "_id": "54e64e671024542de640fee5",
-        "description": "An editor who checks content items after they have been subbed and then publishes it.",
-        "name": "Editor",
         "privileges": {
-            "archive": 1,
-            "correct": 1,
-            "embargo": 1,
-            "highlights": 1,
-            "hold": 1,
-            "fetch": 1,
-            "kill": 1,
-            "mark_for_highlights": 1,
-            "metadata_uniquename": 1,
             "planning": 1,
-            "publish": 1,
-            "restore": 1,
-            "saved_searches": 1,
-            "spike": 1,
+            "correct": 1,
+            "archive": 1,
             "tasks": 1,
-            "unlock": 1,
-            "unspike": 1
-        }
-    },
-    {
-        "_id": "54e650f31024542de2649bea",
-        "description": "Superdesk administrator",
-        "name": "Superdesk Admin",
-        "privileges": {
-            "archive": 1,
-            "correct": 1,
-            "desks": 1,
-            "embargo": 1,
-            "highlights": 1,
-            "hold": 1,
-            "ingest": 1,
-            "fetch": 1,
-            "ingest_providers": 1,
-            "kill": 1,
-            "mark_for_highlights": 1,
             "metadata_uniquename": 1,
-            "planning": 1,
+            "spike": 1,
+            "unlock": 1,
             "publish": 1,
-            "restore": 1,
+            "unspike": 1,
+            "desks": 1,
+            "ingest": 1,
+            "vocabularies": 1,
+            "saved_searches": 1,
+            "embargo": 1,
+            "kill": 1,
+            "highlights": 1,
+            "ingest_providers": 1,
+            "mark_for_highlights": 1,
+            "hold": 1,
             "roles": 1,
             "rule_sets": 1,
-            "saved_searches": 1,
-            "spike": 1,
-            "tasks": 1,
+            "restore": 1,
+            "fetch": 1,
+            "users": 1
+        },
+        "description": "Superdesk administrator",
+        "name": "Superdesk Admin",
+        "_id": "54e650f31024542de2649bea"
+    },
+    {
+        "privileges": {
+            "planning": 1,
+            "highlights": 1,
+            "mark_for_highlights": 1,
             "unlock": 1,
+            "hold": 1,
+            "metadata_uniquename": 1,
+            "tasks": 1,
+            "archive": 1,
+            "spike": 1,
+            "correct": 1,
+            "publish": 1,
             "unspike": 1,
-            "users": 1,
-            "vocabularies": 1
-        }
+            "restore": 1,
+            "saved_searches": 1,
+            "fetch": 1,
+            "embargo": 1,
+            "kill": 1
+        },
+        "description": "An editor who checks content items after they have been subbed and then publishes it.",
+        "name": "Editor",
+        "_id": "54e64e671024542de640fee5"
+    },
+    {
+        "is_default": true,
+        "privileges": {
+            "fetch": 1,
+            "archive": 1
+        },
+        "description": "Write articles",
+        "name": "Writer",
+        "_id": "54e64cde1024542de2649be8"
     }
 ]
