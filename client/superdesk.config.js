@@ -45,16 +45,11 @@ module.exports = function(grunt) {
                 'Footer': 'Foot Note',
                 'FOOTER': 'FOOT NOTE',
                 'Urgency': 'Featured Content',
-                'URGENCY': 'FEATURED CONTENT',
-                'Usage Terms': 'Disclaimer',
-                'USAGE TERMS': 'DISCLAIMER',
-                'Usageterms': 'Disclaimer',
-                'USAGETERMS': 'DISCLAIMER'
+                'URGENCY': 'FEATURED CONTENT'
             }
         },
 
         infoRemovedFields: {
-            usageterms: true,
             language: true
         },
 
