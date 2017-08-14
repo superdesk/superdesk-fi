@@ -68,6 +68,11 @@ module.exports = function(grunt) {
             hideCreatePackage: true,
             noMissingLink: true
         },
-        workspace: {}
+        workspace: {},
+        profile: {
+            jid: false,
+            place: false,
+            category: false
+        }
     };
 };

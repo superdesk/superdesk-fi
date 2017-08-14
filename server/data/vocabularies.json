@@ -1,5 +1,12 @@
 [
     {
+        "_id": "disclaimer",
+        "display_name": "Disclaimer",
+        "type": "manageable",
+        "field_type": "text",
+        "items": []
+    },
+    {
         "_id": "categories",
         "display_name": "ANPA Categories",
         "type": "manageable",
