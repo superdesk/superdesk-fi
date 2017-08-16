@@ -61,7 +61,8 @@ module.exports = function(grunt) {
             swimlane: {columnsLimit: 4},
             editor3: true,
             hideCreatePackage: true,
-            noMissingLink: true
+            noMissingLink: true,
+            qumu: true
         },
         workspace: {},
         profile: {
