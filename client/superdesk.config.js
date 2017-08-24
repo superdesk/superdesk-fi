@@ -60,7 +60,7 @@ module.exports = function(grunt) {
             legal_archive: 1,
             swimlane: {columnsLimit: 4},
             editor3: true,
-            hideCreatePackage: true,
+            hideCreatePackage: false,
             noMissingLink: true,
             qumu: true
         },
