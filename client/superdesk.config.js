@@ -38,8 +38,8 @@ module.exports = function(grunt) {
                 'ANPA CATEGORY': 'CATEGORY',
                 'Subject': 'Theme',
                 'SUBJECT': 'THEME',
-                'Genre': 'Content Style',
-                'GENRE': 'CONTENT STYLE',
+                'Genre': 'Content Type',
+                'GENRE': 'CONTENT TYPE',
                 'Place': 'Compliance Country',
                 'PLACE': 'COMPLIANCE COUNTRY',
                 'Footer': 'Foot Note',
@@ -70,6 +70,29 @@ module.exports = function(grunt) {
             jid: false,
             place: false,
             category: false
-        }
+        },
+
+        search_cvs: [
+            {id: 'genre', name:'Genre', field: 'genre', list: 'genre_custom'},
+            {id: 'place', name:'Place', field: 'place', list: 'place_custom'},
+            {id: 'subject', name:'Subject', field: 'subject', list: 'subject_custom'},
+            {id: 'franchise', name:'Franchise', field: 'subject', list: 'franchise'}
+        ],
+
+        search: {
+            'slugline': 1,
+            'headline': 1,
+            'unique_name': 0,
+            'story_text': 0,
+            'byline': 1,
+            'keywords': 0,
+            'creator': 1,
+            'from_desk': 1,
+            'to_desk': 1,
+            'spike': 1,
+            'ingest_provider': 0,
+            'marked_desks': 0,
+            'scheduled': 1
+        },
     };
 };
