@@ -3,6 +3,7 @@ import bson
 import flask
 import superdesk
 
+from eve.utils import ParsedRequest
 from superdesk.utc import utcnow
 from superdesk.auth import TEMPLATE, RESOURCE
 from superdesk.text_utils import get_text
@@ -26,6 +27,12 @@ def policy_compare(a, b):
     return normalize_policy(a) == normalize_policy(b)
 
 
+def get_session_user():
+    if not flask.session.get('samlNameId'):
+        return
+    return superdesk.get_resource_service('users').find_one(req=None, email=flask.session['samlNameId'])
+
+
 def init_app(app):
     app.add_template_global(get_accepted_policy)
     app.add_template_global(policy_compare)
@@ -34,17 +41,15 @@ def init_app(app):
         'policy_accepted_at': {'type': 'datetime'},
     })
 
-    @app.route('/api/privacy_policy', methods=['POST'])
-    def privacy_policy():
-        if not flask.session.get('samlNameId'):
-            return
-        user = superdesk.get_resource_service('users').find_one(req=None, email=flask.session['samlNameId'])
+    @app.route('/api/privacy_policy_accept', methods=['POST'])
+    def privacy_policy_accept():
+        user = get_session_user()
         if not user:
-            return
+            flask.abort()
         sess = superdesk.get_resource_service(RESOURCE).find_one(req=None,
                                                                  _id=bson.ObjectId(flask.request.form['session']))
         if not sess:
-            return
+            flask.abort()
         superdesk.get_resource_service('users').system_update(user['_id'], {
             'policy_accepted': flask.request.form['policy'],
             'policy_accepted_at': utcnow(),
@@ -55,3 +60,13 @@ def init_app(app):
             user=str(user['_id']),
             token=str(sess['token']),
         ))
+
+    @app.route('/api/privacy_policy_status')
+    def privacy_policy():
+        user = get_session_user()
+        if not user or user.get('user_type') != 'administrator':
+            flask.abort()
+        req = ParsedRequest()
+        req.max_results = 200
+        users = superdesk.get_resource_service('users').get(req, None)
+        return flask.render_template('privacy_policy_users.html', users=users)

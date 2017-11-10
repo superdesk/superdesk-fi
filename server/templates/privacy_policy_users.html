@@ -1,0 +1,28 @@
+{% extends "fidelity_layout.html" %}
+
+{% block content %}
+<h1>Privacy policy acceptance status</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Accepted</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+        <tr class="{% if user.get('policy_accepted_at') %}table-success{% endif %}">
+            <td>{{ user.first_name }}</td>
+            <td>{{ user.last_name }}</td>
+            {% if user.get('policy_accepted_at') %}
+            <td>{{ user.get('policy_accepted_at').strftime('%c') }}</td>
+            {% else %}
+            <td>Not accepted</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
