@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Authorized</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    </head>
+    <body>
+
+{% set privacy_policy %}{% include "privacy_policy.html" %}{% endset %}
+
+        {% if policy_compare(get_accepted_policy(data['user']), privacy_policy)  %}
+        <script>
+            opener.postMessage({type: 'oauth', data: {{ data|tojson }}}, '*');
+            opener.focus();
+            window.close();
+        </script>
+
+        {% else %}
+        <div class="container">
+            <h1>Welcome to Superdesk</h1>
+
+            {% if get_accepted_policy(data['user']) %}
+            <p>Policy was updated. Please read it and accept again.</p>
+            {% endif %}
+
+            {{ privacy_policy | safe }}
+
+            <form action="{{ url_for('privacy_policy') }}" method="POST">
+                <input type="hidden" name="session" value="{{ data['_id'] }}" />
+                <input type="hidden" name="policy" value='{{ privacy_policy | e }}' />
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Agree and Continue</button>
+                </div>
+            </form>
+        </div>
+        {% endif %}
+
+        </body>
+</html>
