@@ -34,6 +34,7 @@ if init_data.exists():
 INSTALLED_APPS.extend([
     'apps.languages',
     'superdesk.auth.saml',
+    'fidelity.privacy_policy',
 ])
 
 RENDITIONS = {
@@ -84,3 +85,5 @@ LANGUAGES = [
     {'language': 'zh-tw', 'label': 'Taiwanese', 'source': True, 'destination': True},
     {'language': 'nl', 'label': 'Dutch', 'source': True, 'destination': True}
 ]
+
+SAML_PATH = os.path.join(ABS_PATH, 'saml')
