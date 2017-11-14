@@ -5,11 +5,11 @@
 {% set privacy_policy %}{% include "privacy_policy.html" %}{% endset %}
 
 {% if policy_compare(get_accepted_policy(data['user']), privacy_policy)  %}
-<script>
-    opener.postMessage({type: 'oauth', data: {{ data|tojson }}}, '*');
-    opener.focus();
-    window.close();
-</script>
+    <script>
+        opener.postMessage({type: 'oauth', data: {{ data|tojson }}}, '*');
+        opener.focus();
+        window.close();
+    </script>
 
 {% else %}
     <h1>Welcome to Superdesk</h1>

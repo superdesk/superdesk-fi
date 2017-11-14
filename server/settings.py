@@ -86,4 +86,4 @@ LANGUAGES = [
     {'language': 'nl', 'label': 'Dutch', 'source': True, 'destination': True}
 ]
 
-SAML_PATH = '%s/saml' % ABS_PATH
+SAML_PATH = os.path.join(ABS_PATH, 'saml')
