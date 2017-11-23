@@ -86,7 +86,7 @@ LANGUAGES = [
     {'language': 'nl', 'label': 'Dutch', 'source': True, 'destination': True}
 ]
 
-SAML_PATH = os.path.join(ABS_PATH, 'saml')
+SAML_PATH = env('SAML_PATH', os.path.join(ABS_PATH, 'saml'))
 
 SCHEMA = {
     'composite': {
