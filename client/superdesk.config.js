@@ -22,7 +22,7 @@ module.exports = function(grunt) {
                 required: false
             },
             byline: {
-                required: false
+                required: true
             },
             usageterms: {
                 required: false

@@ -87,3 +87,18 @@ LANGUAGES = [
 ]
 
 SAML_PATH = os.path.join(ABS_PATH, 'saml')
+
+SCHEMA = {
+    'composite': {
+        'slugline': {'required': True},
+        'subject': {'type': 'list'},
+    },
+}
+
+EDITOR = {
+    'composite': {
+        'slugline': {'order': 1, 'sdWidth': 'half'},
+        'subject_custom': {'order': 2, 'sdWidth': 'half'},
+    },
+}
+
