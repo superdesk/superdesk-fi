@@ -7,71 +7,17 @@
         "items": []
     },
     {
-        "_id": "categories",
-        "display_name": "ANPA Categories",
-        "type": "manageable",
-        "items": [
-            {"is_active": true, "name": "Asset allocation", "qcode": "Asset allocation", "single_value": true},
-            {"is_active": true, "name": "Risk", "qcode": "Risk", "single_value": true},
-            {"is_active": true, "name": "Market context", "qcode": "Market context", "single_value": true},
-            {"is_active": true, "name": "Fidelity views", "qcode": "Fidelity views", "single_value": true},
-
-            {"is_active": true, "name": "Asset allocation: Alpha/Beta separation",
-            	"qcode": "Asset allocation: Alpha/Beta separation", "single_value": true},
-            {"is_active": true, "name": "Asset allocation: Outcome orientated solutions",
-            	"qcode": "Asset allocation: Outcome orientated solutions", "single_value": true},
-            {"is_active": true, "name": "Asset allocation: Low cost beta",
-            	"qcode": "Asset allocation: Low cost beta", "single_value": true},
-            {"is_active": true, "name": "Asset allocation: Income",
-            	"qcode": "Asset allocation: Income", "single_value": true},
-            {"is_active": true, "name": "Asset allocation: Diversifying alpha sources",
-            	"qcode": "Asset allocation: Diversifying alpha sources", "single_value": true},
-            {"is_active": true, "name": "Asset allocation: Portfolio construction approaches",
-            	"qcode": "Asset allocation: Portfolio construction approaches", "single_value": true},
-            {"is_active": true, "name": "Asset allocation: Strategic asset allocation",
-            	"qcode": "Asset allocation: Strategic asset allocation", "single_value": true},
-            {"is_active": true, "name": "Asset allocation: Tactical asset allocation",
-            	"qcode": "Asset allocation: Tactical asset allocation", "single_value": true},
-            {"is_active": true, "name": "Asset allocation: Asset liability matching",
-            	"qcode": "Asset allocation: Asset liability matching", "single_value": true},
-            {"is_active": true, "name": "Asset allocation: LDI",
-            	"qcode": "Asset allocation: LDI", "single_value": true},
-            {"is_active": true, "name": "Asset allocation: Active vs passive",
-            	"qcode": "Asset allocation: Active vs passive", "single_value": true},
-
-            {"is_active": true, "name": "Risk: De-Risking",
-            	"qcode": "Risk: De-Risking", "single_value": true},
-            {"is_active": true, "name": "Risk: Downside protection",
-            	"qcode": "Risk: Downside protection", "single_value": true},
-            {"is_active": true, "name": "Risk: Liquidity",
-            	"qcode": "Risk: Liquidity", "single_value": true},
-
-            {"is_active": true, "name": "Market context: Regulatory change",
-            	"qcode": "Market context: Regulatory change", "single_value": true},
-            {"is_active": true, "name": "Market context: Market return expectations",
-            	"qcode": "Market context: Market return expectations", "single_value": true},
-            {"is_active": true, "name": "Market context: Low interest rates",
-            	"qcode": "Market context: Low interest rates", "single_value": true},
-            {"is_active": true, "name": "Market context: Political uncertainty",
-            	"qcode": "Market context: Political uncertainty", "single_value": true},
-
-            {"is_active": true, "name": "Fidelity views: Behavioural finance",
-            	"qcode": "Fidelity views: Behavioural finance", "single_value": true},
-            {"is_active": true, "name": "Fidelity views: Factor investing",
-            	"qcode": "Fidelity views: Factor investing", "single_value": true},
-            {"is_active": true, "name": "Fidelity views: ESG",
-            	"qcode": "Fidelity views: ESG", "single_value": true},
-            {"is_active": true, "name": "Fidelity views: Research",
-            	"qcode": "Fidelity views: Research", "single_value": true}
-        ]
-   },
-   {
     "_id": "subject_custom",
     "display_name": "Subject",
-    "type": "unmanageable",
+    "type": "manageable",
     "service": {"all": 1},
     "schema_field": "subject",
     "dependent": 0,
+    "schema": {
+        "name": {},
+        "qcode": {},
+        "parent": {}
+    },
     "items": [
             {"is_active": true, "name": "Asset allocation", "qcode": "subject:01000000", "parent": null},
             {"is_active": true, "name": "Risk", "qcode": "subject:02000000", "parent": null},
@@ -425,35 +371,6 @@
     "items": [
             {"is_active": true, "name": "Yes", "qcode": "compliance:yes", "parent": null},
             {"is_active": true, "name": "No", "qcode": "compliance:no", "parent": null}
-    ]
-    },
-    {
-    "_id": "author",
-    "display_name": "Author",
-    "type": "manageable",
-    "single_value": true,
-    "service": {"all": 1},
-    "dependent": 0,
-    "items": [
-            {"is_active": true, "name": "Adnan Siddique", "qcode": "author:20000001", "parent": null},
-            {"is_active": true, "name": "Alex Wright", "qcode": "author:20000002", "parent": null},
-            {"is_active": true, "name": "Ayesha Akbar", "qcode": "author:20000003", "parent": null},
-            {"is_active": true, "name": "Becky Qin", "qcode": "author:20000004", "parent": null},
-            {"is_active": true, "name": "Cameron Ho", "qcode": "author:20000005", "parent": null},
-            {"is_active": true, "name": "Charles McKenzie", "qcode": "author:20000006", "parent": null},
-            {"is_active": true, "name": "David Buckle", "qcode": "author:20000007", "parent": null},
-            {"is_active": true, "name": "Eileen Rowsome", "qcode": "author:20000008", "parent": null},
-            {"is_active": true, "name": "Eugene Philalithis", "qcode": "author:20000009", "parent": null},
-            {"is_active": true, "name": "George Estathopoulos", "qcode": "author:20000010", "parent": null},
-            {"is_active": true, "name": "Gethe Schepers", "qcode": "author:20000011", "parent": null},
-            {"is_active": true, "name": "Ian Spreadbury", "qcode": "author:20000012", "parent": null},
-            {"is_active": true, "name": "James Bateman", "qcode": "author:20000013", "parent": null},
-            {"is_active": true, "name": "Michael Costa", "qcode": "author:20000014", "parent": null},
-            {"is_active": true, "name": "Nick Armet", "qcode": "author:20000015", "parent": null},
-            {"is_active": true, "name": "Paras Anand", "qcode": "author:20000016", "parent": null},
-            {"is_active": true, "name": "Shahzad Farooq", "qcode": "author:20000017", "parent": null},
-            {"is_active": true, "name": "Stuart Rumble", "qcode": "author:20000018", "parent": null},
-            {"is_active": true, "name": "Sudipta Gupta", "qcode": "author:20000019", "parent": null}
     ]
     }
 ]
