@@ -9,12 +9,8 @@ from superdesk.auth import TEMPLATE, RESOURCE
 from superdesk.text_utils import get_text
 
 
-def get_user(user_id):
-    return superdesk.get_resource_service('users').find_one(req=None, _id=bson.ObjectId(user_id))
-
-
-def get_accepted_policy(user_id):
-    user = get_user(user_id)
+def get_accepted_policy():
+    user = get_session_user()
     return user and user.get('policy_accepted')
 
 
@@ -24,6 +20,8 @@ def normalize_policy(policy):
 
 
 def policy_compare(a, b):
+    if not a or not b:
+        return False
     return normalize_policy(a) == normalize_policy(b)
 
 
@@ -45,11 +43,11 @@ def init_app(app):
     def privacy_policy_accept():
         user = get_session_user()
         if not user:
-            flask.abort()
+            flask.abort(403)
         sess = superdesk.get_resource_service(RESOURCE).find_one(req=None,
                                                                  _id=bson.ObjectId(flask.request.form['session']))
         if not sess:
-            flask.abort()
+            flask.abort(403)
         superdesk.get_resource_service('users').system_update(user['_id'], {
             'policy_accepted': flask.request.form['policy'],
             'policy_accepted_at': utcnow(),
@@ -65,7 +63,7 @@ def init_app(app):
     def privacy_policy():
         user = get_session_user()
         if not user or user.get('user_type') != 'administrator':
-            flask.abort()
+            flask.abort(403)
         req = ParsedRequest()
         req.max_results = 200
         users = superdesk.get_resource_service('users').get(req, None)

@@ -4,17 +4,17 @@
 
 {% set privacy_policy %}{% include "privacy_policy.html" %}{% endset %}
 
-{% if policy_compare(get_accepted_policy(data['user']), privacy_policy)  %}
+{% if policy_compare(get_accepted_policy(), privacy_policy)  %}
     <script>
         opener.postMessage({type: 'oauth', data: {{ data|tojson }}}, '*');
         opener.focus();
         window.close();
     </script>
 
-{% else %}
+{% elif data.get('user') %}
     <h1>Welcome to Superdesk</h1>
 
-    {% if get_accepted_policy(data['user']) %}
+    {% if get_accepted_policy() %}
     <p>Policy was updated. Please read it and accept again.</p>
     {% endif %}
 
@@ -28,6 +28,8 @@
             <button type="submit" class="btn btn-primary">Agree and Continue</button>
         </div>
     </form>
+{% else %}
+    <h1>User not found</h1>
 {% endif %}
 
 {% endblock %}
