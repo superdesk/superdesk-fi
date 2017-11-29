@@ -78,11 +78,11 @@ LANGUAGES = [
     {'language': 'sv', 'label': 'Swedish', 'source': True, 'destination': True},
     {'language': 'nb', 'label': 'Norwegian', 'source': True, 'destination': True},
     {'language': 'pl', 'label': 'Polish', 'source': True, 'destination': True},
-    {'language': 'zh-cn', 'label': 'Mandarin', 'source': True, 'destination': True},
-    {'language': 'zh-hk', 'label': 'Cantonese', 'source': True, 'destination': True},
+    {'language': 'zh-cn', 'label': 'Simplified Chinese', 'source': True, 'destination': True},
+    {'language': 'zh-hk', 'label': 'Traditional Chinese (HK)', 'source': True, 'destination': True},
     {'language': 'ja', 'label': 'Japanese', 'source': True, 'destination': True},
     {'language': 'ko', 'label': 'Korean', 'source': True, 'destination': True},
-    {'language': 'zh-tw', 'label': 'Taiwanese', 'source': True, 'destination': True},
+    {'language': 'zh-tw', 'label': 'Traditional Chinese (TW)', 'source': True, 'destination': True},
     {'language': 'nl', 'label': 'Dutch', 'source': True, 'destination': True}
 ]
 
@@ -91,6 +91,7 @@ SAML_PATH = env('SAML_PATH', os.path.join(ABS_PATH, 'saml'))
 SCHEMA = {
     'composite': {
         'slugline': {'required': True},
+        'language': {'required': True},
         'subject': {'type': 'list'},
     },
 }
@@ -98,7 +99,8 @@ SCHEMA = {
 EDITOR = {
     'composite': {
         'slugline': {'order': 1, 'sdWidth': 'half'},
-        'subject_custom': {'order': 2, 'sdWidth': 'half'},
+        'language': {'order': 2, 'sdWidth': 'half'},
+        'subject_custom': {'order': 3, 'sdWidth': 'half'},
     },
 }
 
