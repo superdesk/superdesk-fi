@@ -91,6 +91,7 @@ SAML_PATH = env('SAML_PATH', os.path.join(ABS_PATH, 'saml'))
 SCHEMA = {
     'composite': {
         'slugline': {'required': True},
+        'language': {'required': True},
         'subject': {'type': 'list'},
     },
 }
@@ -98,7 +99,8 @@ SCHEMA = {
 EDITOR = {
     'composite': {
         'slugline': {'order': 1, 'sdWidth': 'half'},
-        'subject_custom': {'order': 2, 'sdWidth': 'half'},
+        'language': {'order': 2, 'sdWidth': 'half'},
+        'subject_custom': {'order': 3, 'sdWidth': 'half'},
     },
 }
 
