@@ -257,11 +257,11 @@
             {"is_active": true, "name": "Swedish", "qcode": "sv"},
             {"is_active": true, "name": "Norwegian", "qcode": "nb"},
             {"is_active": true, "name": "Polish", "qcode": "pl"},
-            {"is_active": true, "name": "Mandarin", "qcode": "zh-cn"},
-            {"is_active": true, "name": "Cantonese", "qcode": "zh-hk"},
+            {"is_active": true, "name": "Simplified Chinese", "qcode": "zh-cn"},
+            {"is_active": true, "name": "Traditional Chinese (HK)", "qcode": "zh-hk"},
             {"is_active": true, "name": "Japanese", "qcode": "ja"},
             {"is_active": true, "name": "Korean", "qcode": "ko"},
-            {"is_active": true, "name": "Taiwanese", "qcode": "zh-tw"},
+            {"is_active": true, "name": "Traditional Chinese (TW)", "qcode": "zh-tw"},
             {"is_active": true, "name": "Dutch", "qcode": "nl"}
         ]
     },
