@@ -25,301 +25,301 @@
            "parent":null,
            "is_active":true,
            "qcode": "subject:01000000",
-           "translations": {"name": {"de": "Asset-Allokation", "it": "Asset allocation"}}
+           "translations": {"name": {"de": "Asset-Allokation", "it": "Asset allocation", "ja": "アセット・アロケーション"}}
         },
         {
            "name": "Risk",
            "parent":null,
            "is_active":true,
            "qcode": "subject:02000000",
-           "translations": {"name": {"de": "Risiko", "it": "Rischio"}}
+           "translations": {"name": {"de": "Risiko", "it": "Rischio", "ja": "リスク"}}
         },
         {
            "name": "Market context",
            "parent":null,
            "is_active":true,
            "qcode": "subject:03000000",
-           "translations": {"name": {"de": "Marktumfeld", "it": "Contesto di mercato"}}
+           "translations": {"name": {"de": "Marktumfeld", "it": "Contesto di mercato", "ja": "マーケット・コンテクスト"}}
         },
         {
            "name": "Fidelity views",
            "parent":null,
            "is_active":true,
            "qcode": "subject:04000000",
-           "translations": {"name": {"de": "Ansichten von Fidelity", "it": "Previsioni Fidelity"}}
+           "translations": {"name": {"de": "Ansichten von Fidelity", "it": "Previsioni Fidelity", "ja": "フィデリティの見解"}}
         },
         {
            "name": "Alpha/Beta separation",
            "parent": "subject:01000000",
            "is_active":true,
            "qcode": "subject:01000001",
-           "translations": {"name": {"de": "Trennung von Alpha und Beta", "it": "Separazione alfa-beta"}}
+           "translations": {"name": {"de": "Trennung von Alpha und Beta", "it": "Separazione alfa-beta", "ja": "アルファ・ベータ分離"}}
         },
         {
            "name": "Outcome orientated solutions",
            "parent": "subject:01000000",
            "is_active":true,
            "qcode": "subject:01000002",
-           "translations": {"name": {"de": "Ergebnisorientiert", "it": "Orientato ai risultati "}}
+           "translations": {"name": {"de": "Ergebnisorientiert", "it": "Orientato ai risultati ", "ja": "アウトカム・オリエンティッド"}}
         },
         {
            "name": "Low cost beta",
            "parent": "subject:01000000",
            "is_active":true,
            "qcode": "subject:01000003",
-           "translations": {"name": {"de": "Kostengünstiges Beta", "it": "Beta a basso costo"}}
+           "translations": {"name": {"de": "Kostengünstiges Beta", "it": "Beta a basso costo", "ja": "低コスト・ベータ"}}
         },
         {
            "name": "Income",
            "parent": "subject:01000000",
            "is_active":true,
            "qcode": "subject:01000004",
-           "translations": {"name": {"de": "Laufender Ertrag", "it": "Reddito"}}
+           "translations": {"name": {"de": "Laufender Ertrag", "it": "Reddito", "ja": "インカム"}}
         },
         {
            "name": "Diversification",
            "parent": "subject:01000000",
            "is_active":true,
            "qcode": "subject:01000005",
-           "translations": {"name": {"de": "Diversifikation", "it": "Diversificazione"}}
+           "translations": {"name": {"de": "Diversifikation", "it": "Diversificazione", "ja": "分散化"}}
         },
         {
            "name": "Portfolio construction",
            "parent": "subject:01000000",
            "is_active":true,
            "qcode": "subject:01000006",
-           "translations": {"name": {"de": "Portfoliokonstruktion ", "it": "Costruzione del portafoglio"}}
+           "translations": {"name": {"de": "Portfoliokonstruktion ", "it": "Costruzione del portafoglio", "ja": "ポートフォリオ構築"}}
         },
         {
            "name": "Strategic asset allocation",
            "parent": "subject:01000000",
            "is_active":true,
            "qcode": "subject:01000007",
-           "translations": {"name": {"de": "Strategische Asset-Allokation", "it": "Asset allocation strategica"}}
+           "translations": {"name": {"de": "Strategische Asset-Allokation", "it": "Asset allocation strategica", "ja": "戦略的アセット・アロケーション"}}
         },
         {
            "name": "Tactical asset  allocation",
            "parent": "subject:01000000",
            "is_active":true,
            "qcode": "subject:01000008",
-           "translations": {"name": {"de": "Taktische Asset-Allokation", "it": "Asset allocation tattica"}}
+           "translations": {"name": {"de": "Taktische Asset-Allokation", "it": "Asset allocation tattica", "ja": "戦術的アセット・アロケーション"}}
         },
         {
            "name": "Liability matching",
            "parent": "subject:01000000",
            "is_active":true,
            "qcode": "subject:01000009",
-           "translations": {"name": {"de": "Liability Matching", "it": "Liability matching"}}
+           "translations": {"name": {"de": "Liability Matching", "it": "Liability matching", "ja": "ライアビリティ・マッチング"}}
         },
         {
            "name": "LDI",
            "parent": "subject:01000000",
            "is_active":true,
            "qcode": "subject:01000010",
-           "translations": {"name": {"de": "Liability-Driven Investment", "it": "LDI"}}
+           "translations": {"name": {"de": "Liability-Driven Investment", "it": "LDI", "ja": "LDI"}}
         },
         {
            "name": "Alpha generation",
            "parent": "subject:01000000",
            "is_active":true,
            "qcode": "subject:01000011",
-           "translations": {"name": {"de": "Alpha-Erzielung", "it": "Generazione di alfa"}}
+           "translations": {"name": {"de": "Alpha-Erzielung", "it": "Generazione di alfa", "ja": "アルファ創出"}}
         },
         {
            "name": "Risk Management",
            "parent": "subject:02000000",
            "is_active":true,
            "qcode": "subject:02000001",
-           "translations": {"name": {"de": "Risikomanagement", "it": "Gestione del rischio"}}
+           "translations": {"name": {"de": "Risikomanagement", "it": "Gestione del rischio", "ja": "リスク管理"}}
         },
         {
            "name": "Monitoring Risk",
            "parent": "subject:02000000",
            "is_active":true,
            "qcode": "subject:02000002",
-           "translations": {"name": {"de": "Risikoüberwachung", "it": "Monitoraggio del rischio"}}
+           "translations": {"name": {"de": "Risikoüberwachung", "it": "Monitoraggio del rischio", "ja": "リスクモニタリング"}}
         },
         {
            "name": "Hedging",
            "parent": "subject:02000000",
            "is_active":true,
            "qcode": "subject:02000003",
-           "translations": {"name": {"de": "Absicherung", "it": "Copertura"}}
+           "translations": {"name": {"de": "Absicherung", "it": "Copertura", "ja": "ヘッジ"}}
         },
         {
            "name": "Regulation",
            "parent": "subject:03000000",
            "is_active":true,
            "qcode": "subject:03000001",
-           "translations": {"name": {"de": "Regulierung", "it": "Regolamentazione"}}
+           "translations": {"name": {"de": "Regulierung", "it": "Regolamentazione", "ja": "規制"}}
         },
         {
            "name": "Return expectations",
            "parent": "subject:03000000",
            "is_active":true,
            "qcode": "subject:03000002",
-           "translations": {"name": {"de": "Ertragserwartungen", "it": "Rendimenti attesi"}}
+           "translations": {"name": {"de": "Ertragserwartungen", "it": "Rendimenti attesi", "ja": "リターン予想"}}
         },
         {
            "name": "Interest rates",
            "parent": "subject:03000000",
            "is_active":true,
            "qcode": "subject:03000003",
-           "translations": {"name": {"de": "Zinsen", "it": "Tassi di interesse"}}
+           "translations": {"name": {"de": "Zinsen", "it": "Tassi di interesse", "ja": "金利"}}
         },
         {
            "name": "Political uncertainty",
            "parent": "subject:03000000",
            "is_active":true,
            "qcode": "subject:03000004",
-           "translations": {"name": {"de": "Politische Unsicherheit", "it": "Inertezza politica"}}
+           "translations": {"name": {"de": "Politische Unsicherheit", "it": "Inertezza politica", "ja": "政治的不透明性"}}
         },
         {
            "name": "Behavioural finance",
            "parent": "subject:04000000",
            "is_active":true,
            "qcode": "subject:04000001",
-           "translations": {"name": {"de": "Behavioural Finance", "it": "Finanza comportamentale"}}
+           "translations": {"name": {"de": "Behavioural Finance", "it": "Finanza comportamentale", "ja": "行動ファイナンス"}}
         },
         {
            "name": "ESG",
            "parent": "subject:04000000",
            "is_active":true,
            "qcode": "subject:04000002",
-           "translations": {"name": {"de": "ESG", "it": "ESG"}}
+           "translations": {"name": {"de": "ESG", "it": "ESG", "ja": "ESG"}}
         },
         {
            "name": "Research",
            "parent": "subject:04000000",
            "is_active":true,
            "qcode": "subject:04000003",
-           "translations": {"name": {"de": "Research", "it": "Research"}}
+           "translations": {"name": {"de": "Research", "it": "Research", "ja": "リサーチ"}}
         },
         {
            "name": "Active management",
            "parent": "subject:01000000",
            "is_active":true,
            "qcode": "subject:01000012",
-           "translations": {"name": {"de": "Aktives Management", "it": "Gestione attiva"}}
+           "translations": {"name": {"de": "Aktives Management", "it": "Gestione attiva", "ja": "アクティブ運用"}}
         },
         {
            "name": "Passive",
            "parent": "subject:01000000",
            "is_active":true,
            "qcode": "subject:01000013",
-           "translations": {"name": {"de": "Passive Anlagen", "it": "Gestione passiva "}}
+           "translations": {"name": {"de": "Passive Anlagen", "it": "Gestione passiva ", "ja": "パッシブ"}}
         },
         {
            "name": "Factor investing",
            "parent": "subject:01000000",
            "is_active":true,
            "qcode": "subject:01000014",
-           "translations": {"name": {"de": "Factor Investing", "it": "Investimento basato sui fattori di rischio"}}
+           "translations": {"name": {"de": "Factor Investing", "it": "Investimento basato sui fattori di rischio", "ja": "ファクター投資"}}
         },
         {
            "name": "Thematic investing",
            "parent": "subject:01000000",
            "is_active":true,
            "qcode": "subject:01000015",
-           "translations": {"name": {"de": "Thematische Anlagen", "it": "Investimento tematico"}}
+           "translations": {"name": {"de": "Thematische Anlagen", "it": "Investimento tematico", "ja": "テーマ投資"}}
         },
         {
            "name": "Absolute return",
            "parent": "subject:01000000",
            "is_active":true,
            "qcode": "subject:01000016",
-           "translations": {"name": {"de": "Absolute Return", "it": "Absolute return"}}
+           "translations": {"name": {"de": "Absolute Return", "it": "Absolute return", "ja": "絶対リターン"}}
         },
         {
            "name": "Total return",
            "parent": "subject:01000000",
            "is_active":true,
            "qcode": "subject:01000017",
-           "translations": {"name": {"de": "Total Return", "it": "Total return"}}
+           "translations": {"name": {"de": "Total Return", "it": "Total return", "ja": "トータルリターン"}}
         },
         {
            "name": "Currency",
            "parent": "subject:02000000",
            "is_active":true,
            "qcode": "subject:02000004",
-           "translations": {"name": {"de": "Währungen", "it": "Valuta"}}
+           "translations": {"name": {"de": "Währungen", "it": "Valuta", "ja": "通貨"}}
         },
         {
            "name": "Risk exposures",
            "parent": "subject:02000000",
            "is_active":true,
            "qcode": "subject:02000005",
-           "translations": {"name": {"de": "Risiko-Exposures", "it": "Esposizioni al rischio"}}
+           "translations": {"name": {"de": "Risiko-Exposures", "it": "Esposizioni al rischio", "ja": "リスク・エクスポージャー"}}
         },
         {
            "name": "De-Risking",
            "parent": "subject:02000000",
            "is_active":true,
            "qcode": "subject:02000006",
-           "translations": {"name": {"de": "Risikoreduzierung", "it": "Riduzione del rischio"}}
+           "translations": {"name": {"de": "Risikoreduzierung", "it": "Riduzione del rischio", "ja": "リスク回避"}}
         },
         {
            "name": "Downside protection",
            "parent": "subject:02000000",
            "is_active":true,
            "qcode": "subject:02000007",
-           "translations": {"name": {"de": "Schutz vor Abwärtsrisiken", "it": "Protezione dai ribassi"}}
+           "translations": {"name": {"de": "Schutz vor Abwärtsrisiken", "it": "Protezione dai ribassi", "ja": "ダウンサイド・プロテクション"}}
         },
         {
            "name": "Liquidity",
            "parent": "subject:02000000",
            "is_active":true,
            "qcode": "subject:02000008",
-           "translations": {"name": {"de": "Liquidität", "it": "Liquidità"}}
+           "translations": {"name": {"de": "Liquidität", "it": "Liquidità", "ja": "流動性"}}
         },
         {
            "name": "Biases",
            "parent": "subject:02000000",
            "is_active":true,
            "qcode": "subject:02000009",
-           "translations": {"name": {"de": "Bias", "it": "Pregiudizi"}}
+           "translations": {"name": {"de": "Bias", "it": "Pregiudizi", "ja": "バイアス"}}
         },
         {
            "name": "Duration",
            "parent": "subject:02000000",
            "is_active":true,
            "qcode": "subject:02000010",
-           "translations": {"name": {"de": "Duration", "it": "Duration"}}
+           "translations": {"name": {"de": "Duration", "it": "Duration", "ja": "デュレーション"}}
         },
         {
            "name": "Governance",
            "parent": "subject:03000000",
            "is_active":true,
            "qcode": "subject:03000005",
-           "translations": {"name": {"de": "Governance", "it": "Governance"}}
+           "translations": {"name": {"de": "Governance", "it": "Governance", "ja": "ガバナンス"}}
         },
         {
            "name": "Macroeconomics",
            "parent": "subject:03000000",
            "is_active":true,
            "qcode": "subject:03000006",
-           "translations": {"name": {"de": "Gesamtwirtschaftliche Aspekte", "it": "Macroeconomia"}}
+           "translations": {"name": {"de": "Gesamtwirtschaftliche Aspekte", "it": "Macroeconomia", "ja": "マクロ経済"}}
         },
         {
            "name": "Central banks",
            "parent": "subject:03000000",
            "is_active":true,
            "qcode": "subject:03000007",
-           "translations": {"name": {"de": "Notenbanken", "it": "Banche centrali"}}
+           "translations": {"name": {"de": "Notenbanken", "it": "Banche centrali", "ja": "中央銀行"}}
         },
         {
            "name": "Inflation",
            "parent": "subject:03000000",
            "is_active":true,
            "qcode": "subject:03000008",
-           "translations": {"name": {"de": "Inflation", "it": "Inflazione"}}
+           "translations": {"name": {"de": "Inflation", "it": "Inflazione", "ja": "インフレ"}}
         },
         {
            "name": "Retirement",
            "parent": "subject:03000000",
            "is_active":true,
            "qcode": "subject:03000009",
-           "translations": {"name": {"de": "Altersvorsorge", "it": "Pensione"}}
+           "translations": {"name": {"de": "Altersvorsorge", "it": "Pensione", "ja": "定年退職"}}
         }
      ]
     },
@@ -345,55 +345,55 @@
                "name": "Article",
                "qcode": "genre_custom:Article",
                "is_active":true,
-               "translations": {"name": {"de": "Artikel", "it": "Articolo"}}
+               "translations": {"name": {"de": "Artikel", "it": "Articolo", "ja": "レポート"}}
             },
             {
                "name": "Bibliography",
                "qcode": "genre_custom:Bibliography",
                "is_active":true,
-               "translations": {"name": {"de": "Quellen", "it": "Bibliografia"}}
+               "translations": {"name": {"de": "Quellen", "it": "Bibliografia", "ja": "論文"}}
             },
             {
                "name": "Blog",
                "qcode": "genre_custom:Blog",
                "is_active":true,
-               "translations": {"name": {"de": "Blog", "it": "Blog"}}
+               "translations": {"name": {"de": "Blog", "it": "Blog", "ja": "ブログ"}}
             },
             {
                "name": "Education",
                "qcode": "genre_custom:Education",
                "is_active":true,
-               "translations": {"name": {"de": "Weiterbildung", "it": "Educazione finanziaria"}}
+               "translations": {"name": {"de": "Weiterbildung", "it": "Educazione finanziaria", "ja": "トレーニング用教材"}}
             },
             {
                "name": "Infographic",
                "qcode": "genre_custom:Infographic",
                "is_active":true,
-               "translations": {"name": {"de": "Infografik", "it": "Infografica"}}
+               "translations": {"name": {"de": "Infografik", "it": "Infografica", "ja": "解説図"}}
             },
             {
                "name": "Opinion",
                "qcode": "genre_custom:Opinion",
                "is_active":true,
-               "translations": {"name": {"de": "Meinung", "it": "Opinione"}}
+               "translations": {"name": {"de": "Meinung", "it": "Opinione", "ja": "見解等"}}
             },
             {
                "name": "Podcast",
                "qcode": "genre_custom:Podcast",
                "is_active":true,
-               "translations": {"name": {"de": "Podcast", "it": "Podcast"}}
+               "translations": {"name": {"de": "Podcast", "it": "Podcast", "ja": "ポッドキャスト"}}
             },
             {
                "name": "Video",
                "qcode": "genre_custom:Video",
                "is_active":true,
-               "translations": {"name": {"de": "Video", "it": "Video"}}
+               "translations": {"name": {"de": "Video", "it": "Video", "ja": "ビデオ"}}
             },
             {
                "name": "White Paper",
                "qcode": "genre_custom:White Paper",
                "is_active":true,
-               "translations": {"name": {"de": "Whitepaper", "it": "Libro bianco"}}
+               "translations": {"name": {"de": "Whitepaper", "it": "Libro bianco", "ja": "白書"}}
             }
         ],
         "schema": {
@@ -653,144 +653,144 @@
         "dependent": 0,
         "items": [
             {"is_active": true, "name": "All Continental Europe", "qcode": "All Continental Europe", "parent": null,
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "All Asia Pacific", "qcode": "All Asia Pacific", "parent": null,
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Bahrain", "qcode": "Bahrain", "parent": null,
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Canada", "qcode": "Canada", "parent": null,
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Chile", "qcode": "Chile", "parent": null,
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Guernsey", "qcode": "Guernsey", "parent": null,
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Jersey", "qcode": "Jersey", "parent": null,
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Kuwait", "qcode": "Kuwait", "parent": null,
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Oman", "qcode": "Oman", "parent": null,
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Peru", "qcode": "Peru", "parent": null,
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Qatar", "qcode": "Qatar", "parent": null,
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Saudi Arabia", "qcode": "Saudi Arabia", "parent": null,
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "South Africa", "qcode": "South Africa", "parent": null,
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "UAE", "qcode": "UAE", "parent": null,
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Private Placement Only", "qcode": "Private Placement Only", "parent": null,
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
 
             {"is_active": true, "name": "Austria", "qcode": "Austria", "parent": "All Continental Europe",
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Belgium", "qcode": "Belgium", "parent": "All Continental Europe",
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Czech Republic", "qcode": "Czech Republic", "parent": "All Continental Europe",
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Denmark", "qcode": "Denmark", "parent": "All Continental Europe",
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Finland", "qcode": "Finland", "parent": "All Continental Europe",
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "France", "qcode": "France", "parent": "All Continental Europe",
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Germany", "qcode": "Germany", "parent": "All Continental Europe",
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Greece", "qcode": "Greece", "parent": "All Continental Europe",
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Hungary", "qcode": "Hungary", "parent": "All Continental Europe",
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Iceland", "qcode": "Iceland", "parent": "All Continental Europe",
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Ireland", "qcode": "Ireland", "parent": "All Continental Europe",
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Italy", "qcode": "Italy", "parent": "All Continental Europe",
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Luxembourg", "qcode": "Luxembourg", "parent": "All Continental Europe",
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Malta", "qcode": "Malta", "parent": "All Continental Europe",
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Netherlands", "qcode": "Netherlands", "parent": "All Continental Europe",
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Norway", "qcode": "Norway", "parent": "All Continental Europe",
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Poland", "qcode": "Poland", "parent": "All Continental Europe",
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Portugal", "qcode": "Portugal", "parent": "All Continental Europe",
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Slovakia", "qcode": "Slovakia", "parent": "All Continental Europe",
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Sweden", "qcode": "Sweden", "parent": "All Continental Europe",
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Switzerland", "qcode": "Switzerland", "parent": "All Continental Europe",
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Turkey", "qcode": "Turkey", "parent": "All Continental Europe",
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "United Kingdom", "qcode": "United Kingdom", "parent": "All Continental Europe",
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Global", "qcode": "Global", "parent": "All Continental Europe",
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
 
             {"is_active": true, "name": "Australia", "qcode": "Australia", "parent": "All Asia Pacific",
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Hong Kong", "qcode": "Hong Kong", "parent": "All Asia Pacific",
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Japan", "qcode": "Japan", "parent": "All Asia Pacific",
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Korea", "qcode": "Korea", "parent": "All Asia Pacific",
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Macau", "qcode": "Macau", "parent": "All Asia Pacific",
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Singapore", "qcode": "Singapore", "parent": "All Asia Pacific",
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             },
             {"is_active": true, "name": "Taiwan", "qcode": "Taiwan", "parent": "All Asia Pacific",
-                "translations": {"name": {"de": "", "it": ""}}
+                "translations": {"name": {"de": "", "it": "", "ja": ""}}
             }
         ]
     },
@@ -1297,49 +1297,49 @@
            "name": "Developed Markets",
            "qcode": "region_custom:Developed Markets",
            "is_active":true,
-           "translations": {"name": {"de": "Entwickelte Länder", "it": "Mercati sviluppati"}}
+           "translations": {"name": {"de": "Entwickelte Länder", "it": "Mercati sviluppati", "ja": "先進国市場"}}
         },
         {
            "name": "Emerging Markets",
            "qcode": "region_custom:Emerging Markets",
            "is_active":true,
-           "translations": {"name": {"de": "Schwellenländer", "it": "Mercati emergenti"}}
+           "translations": {"name": {"de": "Schwellenländer", "it": "Mercati emergenti", "ja": "新興国市場"}}
         },
         {
            "name": "Asia ex Japan",
            "qcode": "region_custom:Asia ex Japan",
            "is_active":true,
-           "translations": {"name": {"de": "Asien exkl. Japan", "it": "Asia escl. Giappone"}}
+           "translations": {"name": {"de": "Asien exkl. Japan", "it": "Asia escl. Giappone", "ja": "日本除くアジア"}}
         },
         {
            "name": "Latin America",
            "qcode": "region_custom:Latin America",
            "is_active":true,
-           "translations": {"name": {"de": "Lateinamerika", "it": "America Latina"}}
+           "translations": {"name": {"de": "Lateinamerika", "it": "America Latina", "ja": "南米"}}
         },
         {
            "name": "Europe",
            "qcode": "region_custom:Europe",
            "is_active":true,
-           "translations": {"name": {"de": "Europa", "it": "Europa"}}
+           "translations": {"name": {"de": "Europa", "it": "Europa", "ja": "欧州"}}
         },
         {
            "name": "North America",
            "qcode": "region_custom:North America",
            "is_active":true,
-           "translations": {"name": {"de": "Nordamerika", "it": "Nordamerika"}}
+           "translations": {"name": {"de": "Nordamerika", "it": "Nordamerika", "ja": "北米"}}
         },
         {
            "name": "EMEA",
            "qcode": "region_custom:EMEA",
            "is_active":true,
-           "translations": {"name": {"de": "EMEA", "it": "EMEA"}}
+           "translations": {"name": {"de": "EMEA", "it": "EMEA", "ja": "欧州・中東・アフリカ"}}
         },
         {
            "name": "Middle East",
            "qcode": "region_custom:Middle East",
            "is_active":true,
-           "translations": {"name": {"de": "Naher Osten", "it": "Medio Oriente"}}
+           "translations": {"name": {"de": "Naher Osten", "it": "Medio Oriente", "ja": "中東"}}
         }
      ],
      "schema": {
@@ -1367,259 +1367,259 @@
            "name": "Australia",
            "qcode": "country_custom:1001001",
            "is_active":true,
-           "translations": {"name": {"de": "Australien", "it": "Australia"}}
+           "translations": {"name": {"de": "Australien", "it": "Australia", "ja": "オーストラリア"}}
         },
         {
            "name": "Austria",
            "qcode": "country_custom:1001002",
            "is_active":true,
-           "translations": {"name": {"de": "Österreich", "it": "Austria"}}
+           "translations": {"name": {"de": "Österreich", "it": "Austria", "ja": "オーストリア"}}
         },
         {
            "name": "Belgium",
            "qcode": "country_custom:1001003",
            "is_active":true,
-           "translations": {"name": {"de": "Belgien", "it": "Belgio"}}
+           "translations": {"name": {"de": "Belgien", "it": "Belgio", "ja": "ベルギー"}}
         },
         {
            "name": "Brazil",
            "qcode": "country_custom:1001004",
            "is_active":true,
-           "translations": {"name": {"de": "Brasilien", "it": "Brasile"}}
+           "translations": {"name": {"de": "Brasilien", "it": "Brasile", "ja": "ブラジル"}}
         },
         {
            "name": "Bulgaria",
            "qcode": "country_custom:1001005",
            "is_active":true,
-           "translations": {"name": {"de": "Bulgarien", "it": "Bulgaria"}}
+           "translations": {"name": {"de": "Bulgarien", "it": "Bulgaria", "ja": "ブルガリア"}}
         },
         {
            "name": "Canada",
            "qcode": "country_custom:1001006",
            "is_active":true,
-           "translations": {"name": {"de": "Kanada", "it": "Canada"}}
+           "translations": {"name": {"de": "Kanada", "it": "Canada", "ja": "カナダ"}}
         },
         {
            "name": "Chile",
            "qcode": "country_custom:1001007",
            "is_active":true,
-           "translations": {"name": {"de": "Chile", "it": "Cile"}}
+           "translations": {"name": {"de": "Chile", "it": "Cile", "ja": "チリ"}}
         },
         {
            "name": "China",
            "qcode": "country_custom:1001008",
            "is_active":true,
-           "translations": {"name": {"de": "China", "it": "Cina"}}
+           "translations": {"name": {"de": "China", "it": "Cina", "ja": "中国"}}
         },
         {
            "name": "Denmark",
            "qcode": "country_custom:1001009",
            "is_active":true,
-           "translations": {"name": {"de": "Dänemark", "it": "Danimarca"}}
+           "translations": {"name": {"de": "Dänemark", "it": "Danimarca", "ja": "デンマーク"}}
         },
         {
            "name": "Finland",
            "qcode": "country_custom:1001010",
            "is_active":true,
-           "translations": {"name": {"de": "Finnland", "it": "Finlandia"}}
+           "translations": {"name": {"de": "Finnland", "it": "Finlandia", "ja": "フィンランド"}}
         },
         {
            "name": "France",
            "qcode": "country_custom:1001011",
            "is_active":true,
-           "translations": {"name": {"de": "Frankreich", "it": "Francia"}}
+           "translations": {"name": {"de": "Frankreich", "it": "Francia", "ja": "フランス"}}
         },
         {
            "name": "Germany",
            "qcode": "country_custom:1001012",
            "is_active":true,
-           "translations": {"name": {"de": "Deutschland", "it": "Germania"}}
+           "translations": {"name": {"de": "Deutschland", "it": "Germania", "ja": "ドイツ"}}
         },
         {
            "name": "Greece",
            "qcode": "country_custom:1001013",
            "is_active":true,
-           "translations": {"name": {"de": "Griechenland", "it": "Grecia"}}
+           "translations": {"name": {"de": "Griechenland", "it": "Grecia", "ja": "ギリシャ"}}
         },
         {
            "name": "Hong Kong",
            "qcode": "country_custom:1001014",
            "is_active":true,
-           "translations": {"name": {"de": "Hongkong", "it": "Hong Kong"}}
+           "translations": {"name": {"de": "Hongkong", "it": "Hong Kong", "ja": "香港"}}
         },
         {
            "name": "Hungary",
            "qcode": "country_custom:1001015",
            "is_active":true,
-           "translations": {"name": {"de": "Ungarn", "it": "Ungheria"}}
+           "translations": {"name": {"de": "Ungarn", "it": "Ungheria", "ja": "ハンガリー"}}
         },
         {
            "name": "India",
            "qcode": "country_custom:1001016",
            "is_active":true,
-           "translations": {"name": {"de": "Indien", "it": "India"}}
+           "translations": {"name": {"de": "Indien", "it": "India", "ja": "インド"}}
         },
         {
            "name": "Indonesia",
            "qcode": "country_custom:1001017",
            "is_active":true,
-           "translations": {"name": {"de": "Indonesien", "it": "Indonesia"}}
+           "translations": {"name": {"de": "Indonesien", "it": "Indonesia", "ja": "インドネシア"}}
         },
         {
            "name": "Ireland",
            "qcode": "country_custom:1001018",
            "is_active":true,
-           "translations": {"name": {"de": "Irland", "it": "Irlanda"}}
+           "translations": {"name": {"de": "Irland", "it": "Irlanda", "ja": "アイルランド"}}
         },
         {
            "name": "Israel",
            "qcode": "country_custom:1001019",
            "is_active":true,
-           "translations": {"name": {"de": "Israel", "it": "Israele"}}
+           "translations": {"name": {"de": "Israel", "it": "Israele", "ja": "イスラエル"}}
         },
         {
            "name": "Italy",
            "qcode": "country_custom:1001020",
            "is_active":true,
-           "translations": {"name": {"de": "Italien", "it": "Italia"}}
+           "translations": {"name": {"de": "Italien", "it": "Italia", "ja": "イタリア"}}
         },
         {
            "name": "Japan",
            "qcode": "country_custom:1001021",
            "is_active":true,
-           "translations": {"name": {"de": "Japan", "it": "Giappone"}}
+           "translations": {"name": {"de": "Japan", "it": "Giappone", "ja": "日本"}}
         },
         {
            "name": "Southern Korea",
            "qcode": "country_custom:1001022",
            "is_active":true,
-           "translations": {"name": {"de": "Südkorea", "it": "Corea del Sud"}}
+           "translations": {"name": {"de": "Südkorea", "it": "Corea del Sud", "ja": "韓国"}}
         },
         {
            "name": "Kuwait",
            "qcode": "country_custom:1001023",
            "is_active":true,
-           "translations": {"name": {"de": "Kuwait", "it": "Kuwait"}}
+           "translations": {"name": {"de": "Kuwait", "it": "Kuwait", "ja": "クウェート"}}
         },
         {
            "name": "Malaysia",
            "qcode": "country_custom:1001024",
            "is_active":true,
-           "translations": {"name": {"de": "Malaysia", "it": "Malesia"}}
+           "translations": {"name": {"de": "Malaysia", "it": "Malesia", "ja": "マレーシア"}}
         },
         {
            "name": "Mexico",
            "qcode": "country_custom:1001025",
            "is_active":true,
-           "translations": {"name": {"de": "Mexiko", "it": "Messico"}}
+           "translations": {"name": {"de": "Mexiko", "it": "Messico", "ja": "メキシコ"}}
         },
         {
            "name": "Netherlands",
            "qcode": "country_custom:1001026",
            "is_active":true,
-           "translations": {"name": {"de": "Niederlande", "it": "Paesi Bassi"}}
+           "translations": {"name": {"de": "Niederlande", "it": "Paesi Bassi", "ja": "オランダ"}}
         },
         {
            "name": "New Zealand",
            "qcode": "country_custom:1001027",
            "is_active":true,
-           "translations": {"name": {"de": "Neuseeland", "it": "Nuova Zelanda"}}
+           "translations": {"name": {"de": "Neuseeland", "it": "Nuova Zelanda", "ja": "ニュージーランド"}}
         },
         {
            "name": "Norway",
            "qcode": "country_custom:1001028",
            "is_active":true,
-           "translations": {"name": {"de": "Norwegen", "it": "Norvegia"}}
+           "translations": {"name": {"de": "Norwegen", "it": "Norvegia", "ja": "ノルウェー"}}
         },
         {
            "name": "Pakistan",
            "qcode": "country_custom:1001029",
            "is_active":true,
-           "translations": {"name": {"de": "Pakistan", "it": "Pakistan"}}
+           "translations": {"name": {"de": "Pakistan", "it": "Pakistan", "ja": "パキスタン"}}
         },
         {
            "name": "Philippines",
            "qcode": "country_custom:1001030",
            "is_active":true,
-           "translations": {"name": {"de": "Philippinen", "it": "Filippine"}}
+           "translations": {"name": {"de": "Philippinen", "it": "Filippine", "ja": "フィリピン"}}
         },
         {
            "name": "Poland",
            "qcode": "country_custom:1001031",
            "is_active":true,
-           "translations": {"name": {"de": "Polen", "it": "Polonia"}}
+           "translations": {"name": {"de": "Polen", "it": "Polonia", "ja": "ポーランド"}}
         },
         {
            "name": "Romania",
            "qcode": "country_custom:1001032",
            "is_active":true,
-           "translations": {"name": {"de": "Rumänien", "it": "Romania"}}
+           "translations": {"name": {"de": "Rumänien", "it": "Romania", "ja": "ルーマニア"}}
         },
         {
            "name": "Russia",
            "qcode": "country_custom:1001033",
            "is_active":true,
-           "translations": {"name": {"de": "Russland", "it": "Russia"}}
+           "translations": {"name": {"de": "Russland", "it": "Russia", "ja": "ロシア"}}
         },
         {
            "name": "Singapore",
            "qcode": "country_custom:1001034",
            "is_active":true,
-           "translations": {"name": {"de": "Singapur", "it": "Singapore"}}
+           "translations": {"name": {"de": "Singapur", "it": "Singapore", "ja": "シンガポール"}}
         },
         {
            "name": "South Africa",
            "qcode": "country_custom:1001035",
            "is_active":true,
-           "translations": {"name": {"de": "Südafrika", "it": "Sudafrica"}}
+           "translations": {"name": {"de": "Südafrika", "it": "Sudafrica", "ja": "南アフリカ"}}
         },
         {
            "name": "Spain",
            "qcode": "country_custom:1001036",
            "is_active":true,
-           "translations": {"name": {"de": "Spanien", "it": "Spagna"}}
+           "translations": {"name": {"de": "Spanien", "it": "Spagna", "ja": "スペイン"}}
         },
         {
            "name": "Sweden",
            "qcode": "country_custom:1001037",
            "is_active":true,
-           "translations": {"name": {"de": "Schweden", "it": "Svezia"}}
+           "translations": {"name": {"de": "Schweden", "it": "Svezia", "ja": "スウェーデン"}}
         },
         {
            "name": "Switzerland",
            "qcode": "country_custom:1001038",
            "is_active":true,
-           "translations": {"name": {"de": "Schweiz", "it": "Svizzera"}}
+           "translations": {"name": {"de": "Schweiz", "it": "Svizzera", "ja": "スイス"}}
         },
         {
            "name": "Taiwan",
            "qcode": "country_custom:1001039",
            "is_active":true,
-           "translations": {"name": {"de": "Taiwan", "it": "Taiwan"}}
+           "translations": {"name": {"de": "Taiwan", "it": "Taiwan", "ja": "台湾"}}
         },
         {
            "name": "Turkey",
            "qcode": "country_custom:1001040",
            "is_active":true,
-           "translations": {"name": {"de": "Türkei", "it": "Turchia"}}
+           "translations": {"name": {"de": "Türkei", "it": "Turchia", "ja": "トルコ"}}
         },
         {
            "name": "UAE",
            "qcode": "country_custom:1001041",
            "is_active":true,
-           "translations": {"name": {"de": "Vereinigte Arabische Emirate", "it": "EAU"}}
+           "translations": {"name": {"de": "Vereinigte Arabische Emirate", "it": "EAU", "ja": "アラブ首長国連邦"}}
         },
         {
            "name": "UK",
            "qcode": "country_custom:1001042",
            "is_active":true,
-           "translations": {"name": {"de": "Großbritannien", "it": "Regno Unito"}}
+           "translations": {"name": {"de": "Großbritannien", "it": "Regno Unito", "ja": "英国"}}
         },
         {
            "name": "US",
            "qcode": "country_custom:1001043",
            "is_active":true,
-           "translations": {"name": {"de": "USA", "it": "Stati Uniti"}}
+           "translations": {"name": {"de": "USA", "it": "Stati Uniti", "ja": "米国株"}}
         }
      ],
      "schema": {
@@ -1647,157 +1647,157 @@
            "name": "Real estate",
            "qcode": "assetclass:Real estate",
            "is_active":true,
-           "translations": {"name": {"de": "Immobilien", "it": "Immobiliare"}}
+           "translations": {"name": {"de": "Immobilien", "it": "Immobiliare", "ja": "不動産"}}
         },
         {
            "name": "EM Debt",
            "qcode": "assetclass:EM Debt",
            "is_active":true,
-           "translations": {"name": {"de": "Schwellenlandanleihen", "it": "Debito mercati emergenti"}}
+           "translations": {"name": {"de": "Schwellenlandanleihen", "it": "Debito mercati emergenti", "ja": "新興国市場デット"}}
         },
         {
            "name": "High Yield",
            "qcode": "assetclass:High Yield",
            "is_active":true,
-           "translations": {"name": {"de": "Hochzinsanleihen", "it": "High yield"}}
+           "translations": {"name": {"de": "Hochzinsanleihen", "it": "High yield", "ja": "ハイイールド"}}
         },
         {
            "name": "Multi asset",
            "qcode": "assetclass:Multi asset",
            "is_active":true,
-           "translations": {"name": {"de": "Multi-Asset", "it": "Multi-asset"}}
+           "translations": {"name": {"de": "Multi-Asset", "it": "Multi-asset", "ja": "マルチアセット"}}
         },
         {
            "name": "Global equity",
            "qcode": "assetclass:Global equity",
            "is_active":true,
-           "translations": {"name": {"de": "Aktien global", "it": "Azionario globale"}}
+           "translations": {"name": {"de": "Aktien global", "it": "Azionario globale", "ja": "グローバル株式"}}
         },
         {
            "name": "Equity",
            "qcode": "assetclass:Equity",
            "is_active":true,
-           "translations": {"name": {"de": "Aktien", "it": "Azionario"}}
+           "translations": {"name": {"de": "Aktien", "it": "Azionario", "ja": "株式"}}
         },
         {
            "name": "Fixed Income",
            "qcode": "assetclass:Fixed Income",
            "is_active":true,
-           "translations": {"name": {"de": "Anleihen", "it": "Obbligazionario"}}
+           "translations": {"name": {"de": "Anleihen", "it": "Obbligazionario", "ja": "債券"}}
         },
         {
            "name": "Alternatives",
            "qcode": "assetclass:Alternatives",
            "is_active":true,
-           "translations": {"name": {"de": "Alternative Anlagen", "it": "Investimenti alternativi"}}
+           "translations": {"name": {"de": "Alternative Anlagen", "it": "Investimenti alternativi", "ja": "オルタナティブ"}}
         },
         {
            "name": "Infrastructure",
            "qcode": "assetclass:Infrastructure",
            "is_active":true,
-           "translations": {"name": {"de": "Infrastruktur", "it": "Infrastrutture"}}
+           "translations": {"name": {"de": "Infrastruktur", "it": "Infrastrutture", "ja": "インフラ"}}
         },
         {
            "name": "Hedge funds",
            "qcode": "assetclass:Hedge funds",
            "is_active":true,
-           "translations": {"name": {"de": "Hedgefonds", "it": "Hedge fund"}}
+           "translations": {"name": {"de": "Hedgefonds", "it": "Hedge fund", "ja": "ヘッジファンド"}}
         },
         {
            "name": "US equity",
            "qcode": "assetclass:US equity",
            "is_active":true,
-           "translations": {"name": {"de": "US-Aktien", "it": "Azionario USA"}}
+           "translations": {"name": {"de": "US-Aktien", "it": "Azionario USA", "ja": "米国株"}}
         },
         {
            "name": "Japan equity",
            "qcode": "assetclass:Japan equity",
            "is_active":true,
-           "translations": {"name": {"de": "Japanische Aktien", "it": "Azionario giapponese"}}
+           "translations": {"name": {"de": "Japanische Aktien", "it": "Azionario giapponese", "ja": "日本株"}}
         },
         {
            "name": "Asia Pac equity",
            "qcode": "assetclass:Asia Pac equity",
            "is_active":true,
-           "translations": {"name": {"de": "Aktien Asien/Pazifik", "it": "Azionario Asia-Pacifico"}}
+           "translations": {"name": {"de": "Aktien Asien/Pazifik", "it": "Azionario Asia-Pacifico", "ja": "アジア太平洋株"}}
         },
         {
            "name": "EM equity",
            "qcode": "assetclass:EM equity",
            "is_active":true,
-           "translations": {"name": {"de": "Aktien Emerging Markets", "it": "Azionario mercati emergenti"}}
+           "translations": {"name": {"de": "Aktien Emerging Markets", "it": "Azionario mercati emergenti", "ja": "新興国市場株"}}
         },
         {
            "name": "Catastrophe Bonds",
            "qcode": "assetclass:Catastrophe Bonds",
            "is_active":true,
-           "translations": {"name": {"de": "Katastrophenanleihen", "it": "Obbligazioni catastrofe"}}
+           "translations": {"name": {"de": "Katastrophenanleihen", "it": "Obbligazioni catastrofe", "ja": "キャット・ボンド"}}
         },
         {
            "name": "Long/Short",
            "qcode": "assetclass:Long/Short",
            "is_active":true,
-           "translations": {"name": {"de": "Long/Short", "it": "Long/Short"}}
+           "translations": {"name": {"de": "Long/Short", "it": "Long/Short", "ja": "ロング／ショート"}}
         },
         {
            "name": "Uk equity",
            "qcode": "assetclass:Uk equity",
            "is_active":true,
-           "translations": {"name": {"de": "Aktien Großbritannien", "it": "Azionario britannico"}}
+           "translations": {"name": {"de": "Aktien Großbritannien", "it": "Azionario britannico", "ja": "英国株"}}
         },
         {
            "name": "Europe ex Uk equity",
            "qcode": "assetclass:Europe ex Uk equity",
            "is_active":true,
-           "translations": {"name": {"de": "Aktien Kontinentaleuropa", "it": "Azionario Europa escl. Regno Unito"}}
+           "translations": {"name": {"de": "Aktien Kontinentaleuropa", "it": "Azionario Europa escl. Regno Unito", "ja": "英国除く欧州株"}}
         },
         {
            "name": "European equity",
            "qcode": "assetclass:European equity",
            "is_active":true,
-           "translations": {"name": {"de": "Aktien Europa", "it": "Azionario europeo"}}
+           "translations": {"name": {"de": "Aktien Europa", "it": "Azionario europeo", "ja": "欧州大陸株"}}
         },
         {
            "name": "Government Bonds",
            "qcode": "assetclass:Government Bonds",
            "is_active":true,
-           "translations": {"name": {"de": "Staatsanleihen", "it": "Titoli di Stato"}}
+           "translations": {"name": {"de": "Staatsanleihen", "it": "Titoli di Stato", "ja": "政府債"}}
         },
         {
            "name": "Investment Grade",
            "qcode": "assetclass:Investment Grade",
            "is_active":true,
-           "translations": {"name": {"de": "Investmentgrade-Unternehmensanleihen", "it": "Investment grade"}}
+           "translations": {"name": {"de": "Investmentgrade-Unternehmensanleihen", "it": "Investment grade", "ja": "投資適格"}}
         },
         {
            "name": "Global Bonds",
            "qcode": "assetclass:Global Bonds",
            "is_active":true,
-           "translations": {"name": {"de": "Anleihen global", "it": "Obbligazionario globale"}}
+           "translations": {"name": {"de": "Anleihen global", "it": "Obbligazionario globale", "ja": "グローバル債券"}}
         },
         {
            "name": "Hybrids",
            "qcode": "assetclass:Hybrids",
            "is_active":true,
-           "translations": {"name": {"de": "Hybridanleihen", "it": "Titoli ibridi"}}
+           "translations": {"name": {"de": "Hybridanleihen", "it": "Titoli ibridi", "ja": "ハイブリッド"}}
         },
         {
            "name": "Leveraged Loans",
            "qcode": "assetclass:Leveraged Loans",
            "is_active":true,
-           "translations": {"name": {"de": "Leveraged Loans", "it": "Leveraged loan"}}
+           "translations": {"name": {"de": "Leveraged Loans", "it": "Leveraged loan", "ja": "レバレッジド・ローン"}}
         },
         {
            "name": "Inflation Linked",
            "qcode": "assetclass:Inflation Linked",
            "is_active":true,
-           "translations": {"name": {"de": "Inflationsindexierte Anleihen", "it": "Titoli indicizzati all'inflazione"}}
+           "translations": {"name": {"de": "Inflationsindexierte Anleihen", "it": "Titoli indicizzati all'inflazione", "ja": "インフレ連動"}}
         },
         {
            "name": "Cash",
            "qcode": "assetclass:Cash",
            "is_active":true,
-           "translations": {"name": {"de": "Geldmarkt", "it": "Liquidità"}}
+           "translations": {"name": {"de": "Geldmarkt", "it": "Liquidità", "ja": "キャッシュ"}}
         }
      ],
      "schema": {
@@ -1809,6 +1809,8 @@
         },
         "parent": {
 
+        },
+        "translations": {
         }
      }
     },
