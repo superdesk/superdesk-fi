@@ -32,6 +32,39 @@ module.exports = function(grunt) {
             }
         },
 
+        list: {
+            priority: [
+                'priority',
+                'urgency'
+            ],
+            firstLine: [
+                'wordcount',
+                'slugline',
+                'highlights',
+                'markedDesks',
+                'associations',
+                'publish_queue_errors',
+                'headline',
+                'versioncreated'
+            ],
+            secondLine: [
+                'language',
+                'profile',
+                'state',
+                'embargo',
+                'update',
+                'takekey',
+                'signal',
+                'broadcast',
+                'flags',
+                'updated',
+                'category',
+                'expiry',
+                'desk',
+                'fetchedDesk'
+            ]
+        },
+
         langOverride: {
             'en': {
                 'ANPA Category': 'Category',
