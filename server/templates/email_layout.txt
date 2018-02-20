@@ -1,0 +1,5 @@
+{% block content %}{% endblock %}
+
+The Editorial Team
+
+Superdesk works only in Chrome. Copy and paste the URL into a Chrome browser and the article you've been invited to view will load.
