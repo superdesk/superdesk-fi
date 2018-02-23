@@ -3,6 +3,6 @@
     "license": "GPL-3.0",
     "dependencies": {
         "angular-sanitize": "^1.6.7",
-        "superdesk-core": "superdesk/superdesk-client-core#6336817"
+        "superdesk-core": "superdesk/superdesk-client-core#225498a"
     }
 }
