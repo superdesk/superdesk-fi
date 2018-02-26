@@ -3,4 +3,4 @@ honcho==1.0.1
 newrelic>=2.66,<2.67
 python3-saml==1.2.6
 lxml==3.8.0
--e git+git://github.com/superdesk/superdesk-core.git@5cfee41#egg=Superdesk-Core
+-e git+git://github.com/superdesk/superdesk-core.git@48c5ab1#egg=Superdesk-Core
