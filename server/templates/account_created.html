@@ -2,12 +2,13 @@
 
 {% block content %}
 <p>Hello, {{user.display_name}}</p>
-<p>The Editorial Team has created a Superdesk user account for you on the TESTING instance at Fidelity.</p>
-<p>Superdesk is the new global Editorial System for content creation and distribution at Fidelity.
-Access the Superdesk TESTING instance here:https://fidelity-uat.superdesk.pro</p>
-<p>Please note that the TESTING instance is there to test new functionality, therefore the instance
-may be rebuilt from time to time, and existing content may be lost. Content produced on this
-instance cannot be used in production.</p>
-<p>For any questions, please do not hesitate to contact Katie Roberts or Rachel Cartmail at the
-Fidelity Editorial team.</p>
+<p>The Editorial Team has created a Superdesk user account for you in UAT. Please click the
+following link to complete your profile:</p>
+<p><a href="{{url}}">{{url}}</a></p>
+<p>This link expires after 48 hours.</p>
+<p>Please note, this is a testing environment and so content produced here cannot be used in
+production. Existing content may also be removed from time to time.</p>
+<p>For any questions, please do not hesitate to contact the Editorial Team at FIL - Editorial
+Superusers. Alternatively contact your local support team at FIL - London Application Support
+or FIL Asia IM System Support.</p>
 {% endblock %}
