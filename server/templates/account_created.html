@@ -1,16 +1,14 @@
 {% extends "email_layout.html" %}
 
 {% block content %}
-<p>Hello, {{user.display_name}}</p>
-<p>The Editorial Team has created a Superdesk user account for you. Superdesk is the Editorial
-content and workflow management system which we use to create and prepare content for publishing.</p>
-<p>You may have been set up in Superdesk as you have recently contributed to an article, video or a
-podcast which is about to be / has been published to the web. If this is the case, please feel free
-to ignore this message.</p>
-<p>If however, you are planning to create or review content before it is published in Superdesk,
-please click the following link to complete your Superdesk profile:</p>
-<p><a href="{{url}}">{{url}}</a></p>
-<p>This link expires after 48 hours.</p>
-<p>For any questions, please do not hesitate to contact the Editorial team at FIL - Editorial
-Superusers.</p>
+<p>Dear {{user.first_name}}</p>
+<p>A Superdesk user account has been created for you. Superdesk is the global system for
+Editorial content creation at Fidelity International.</p>
+<p>You can access the Superdesk application from the application in your start menu, or
+from the following link in Google Chrome (<a href="https://fidelity.superdesk.pro">https://fidelity.superdesk.pro</a>)
+Open it now to start creating, editing and translating content!</p>
+<p>For any questions, please contact Katie Roberts, Managing Editor or Stephen Gardner, Commissioning Editor.</p>
+<p>&nbsp;</p>
+<p>Thank you,</p>
+<p>The Editorial Team</p>
 {% endblock %}
