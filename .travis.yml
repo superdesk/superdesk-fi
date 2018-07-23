@@ -15,6 +15,7 @@ addons:
     - mongodb-3.0-precise
     packages:
     - mongodb-org-server
+    - libxmlsec1-dev
 
 cache:
   directories:
