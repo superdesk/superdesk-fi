@@ -81,6 +81,57 @@ module.exports = function(grunt) {
                 'URGENCY': 'FEATURED CONTENT',
                 'Authors': 'Contributors',
                 'AUTHORS': 'CONTRIBUTORS'
+            },
+
+            'en_GB': {
+                'ANPA Category': 'Category',
+                'ANPA CATEGORY': 'CATEGORY',
+                'Subject': 'Theme',
+                'SUBJECT': 'THEME',
+                'Genre': 'Content Type',
+                'GENRE': 'CONTENT TYPE',
+                'Place': 'Compliance Country',
+                'PLACE': 'COMPLIANCE COUNTRY',
+                'Footer': 'Foot Note',
+                'FOOTER': 'FOOT NOTE',
+                'Urgency': 'Featured Content',
+                'URGENCY': 'FEATURED CONTENT',
+                'Authors': 'Contributors',
+                'AUTHORS': 'CONTRIBUTORS'
+            },
+
+            'en_US': {
+                'ANPA Category': 'Category',
+                'ANPA CATEGORY': 'CATEGORY',
+                'Subject': 'Theme',
+                'SUBJECT': 'THEME',
+                'Genre': 'Content Type',
+                'GENRE': 'CONTENT TYPE',
+                'Place': 'Compliance Country',
+                'PLACE': 'COMPLIANCE COUNTRY',
+                'Footer': 'Foot Note',
+                'FOOTER': 'FOOT NOTE',
+                'Urgency': 'Featured Content',
+                'URGENCY': 'FEATURED CONTENT',
+                'Authors': 'Contributors',
+                'AUTHORS': 'CONTRIBUTORS'
+            },
+
+            'en_AU': {
+                'ANPA Category': 'Category',
+                'ANPA CATEGORY': 'CATEGORY',
+                'Subject': 'Theme',
+                'SUBJECT': 'THEME',
+                'Genre': 'Content Type',
+                'GENRE': 'CONTENT TYPE',
+                'Place': 'Compliance Country',
+                'PLACE': 'COMPLIANCE COUNTRY',
+                'Footer': 'Foot Note',
+                'FOOTER': 'FOOT NOTE',
+                'Urgency': 'Featured Content',
+                'URGENCY': 'FEATURED CONTENT',
+                'Authors': 'Contributors',
+                'AUTHORS': 'CONTRIBUTORS'
             }
         },
 
