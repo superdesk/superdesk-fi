@@ -1,0 +1,19 @@
+<div class="subnav subnav--absolute">
+    <header class="search-page-header">
+        <div style="display:flex;align-items:center;">
+            <span class="subnav__page-title">Due to review a </span>
+            <span>
+                    <button
+                    ng-click="search.setDeadline('month')"
+                    ng-class="{btn: true, 'btn--primary': search.isActive('month')}">month</button>
+                    <button
+                        ng-click="search.setDeadline('week')"
+                        ng-class="{btn: true, 'btn--primary': search.isActive('week')}">week</button>
+            </span>
+            <span class="subnav__page-title">from now</span>
+        </div>
+    </header>
+</div>
+<section sd-search-container class="search main-section search-page-container" ng-class="{'sidebar-open': false}">
+    <div sd-search-results data-showtags="false" class="archive-content"></div>
+</section>
