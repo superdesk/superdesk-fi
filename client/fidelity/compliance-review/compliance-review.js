@@ -45,6 +45,10 @@ export function ComplianceReviewCtrl($location, config, moment) {
 
         const dateTo = new Date(now.getFullYear() - 1, now.getMonth() + 1, now.getDate());
 
+        // for displaying in the view
+        this.dateFrom = moment(dateFrom).format(VIEW_DATE_FORMAT);
+        this.dateTo = moment(dateTo).format(VIEW_DATE_FORMAT);
+
         return {
             firstpublishedfrom: moment(dateFrom).format(VIEW_DATE_FORMAT),
             firstpublishedto: moment(dateTo).format(VIEW_DATE_FORMAT),

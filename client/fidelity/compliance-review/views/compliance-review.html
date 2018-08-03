@@ -1,7 +1,7 @@
 <div class="subnav subnav--absolute">
     <header class="search-page-header">
-        <div style="display:flex;align-items:center;">
-            <span class="subnav__page-title">Due to review a </span>
+        <div style="display:flex;align-items:center;width:100%;margin-right:20px;">
+            <span class="subnav__page-title">Published between <strong>{{search.dateFrom}}</strong> and <strong>{{search.dateTo}}</strong></span>
             <span>
                     <button
                     ng-click="search.setDeadline('month')"
@@ -10,7 +10,6 @@
                         ng-click="search.setDeadline('week')"
                         ng-class="{btn: true, 'btn--primary': search.isActive('week')}">week</button>
             </span>
-            <span class="subnav__page-title">from now</span>
         </div>
     </header>
 </div>
