@@ -36,14 +36,15 @@ export function ComplianceReviewCtrl($location, config, moment) {
 
         const now = new Date();
 
-        let dateFrom;
-        if(deadline === 'week') {
-            dateFrom = new Date(now.getFullYear() - 1, now.getMonth(), now.getDate() - 14);
-        } else if(deadline === 'month') {
-            dateFrom = new Date(now.getFullYear() - 1, now.getMonth(), now.getDate());
-        }
+        const dateFrom = new Date(now.getFullYear() - 1, now.getMonth(), now.getDate());
 
-        const dateTo = new Date(now.getFullYear() - 1, now.getMonth() + 1, now.getDate());
+        let dateTo;
+
+        if(deadline === 'week') {
+            dateTo = new Date(now.getFullYear() - 1, now.getMonth(), now.getDate() + 7);
+        } else if(deadline === 'month') {
+            dateTo = new Date(now.getFullYear() - 1, now.getMonth() + 1, now.getDate());
+        }
 
         // for displaying in the view
         this.dateFrom = moment(dateFrom).format(VIEW_DATE_FORMAT);
