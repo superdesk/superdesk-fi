@@ -6,7 +6,8 @@
  */
 module.exports = function(grunt) {
     return {
-        apps: [],
+        apps: ['fidelity.superdesk'],
+        importApps: ['../fidelity'],
         defaultRoute: '/workspace/personal',
         validatorMediaMetadata: {
             headline: {
