@@ -36,6 +36,12 @@ export function ComplianceReviewCtrl($location, config, moment) {
 
         const now = new Date();
 
+        // fake date for testing
+        now.setFullYear(2019);
+        now.setMonth(2);
+        now.setDate(19);
+        // fake date for testing
+
         const dateFrom = new Date(now.getFullYear() - 1, now.getMonth(), now.getDate());
 
         let dateTo;
