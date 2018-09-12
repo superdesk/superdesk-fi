@@ -1,22 +1,30 @@
+import CompliantLifetimeComponent from './components/CompliantLifetime'
+import VersionCreatedComponent from './components/VersionCreated'
+
 ComplianceReviewCtrl.$inject = ['$location', 'config', 'moment'];
 export function ComplianceReviewCtrl($location, config, moment) {
     var VIEW_DATE_FORMAT = config.view.dateformat;
 
     const SUPERDESK = 'local';
+    const deadlinePeriod = 'months';
+    const deadlineOptions = [1, 3];
+    const sortString = 'extra.compliantlifetime:asc';
 
     let deadline = $location.search()['deadline'];
 
-    if(deadline !== 'month' && deadline !== 'week') {
-        $location.search('deadline', 'month');
+    if(!deadlineOptions.includes(deadline)) {
+        $location.search('deadline', deadlineOptions[0]);
+        $location.search('sort', sortString);
         deadline = $location.search()['deadline'];
     }
 
     // methods for view
 
-    this.isActive = (deadline) => $location.search()['deadline'] === deadline;
+    this.isActive = (deadline) => parseInt($location.search()['deadline']) === deadline
 
     this.setDeadline = (deadline) => {
         $location.search('deadline', deadline);
+        $location.search('sort', sortString);
     };
 
     // methods for parent directive
@@ -27,40 +35,34 @@ export function ComplianceReviewCtrl($location, config, moment) {
     };
 
     this.getSearch = () => {
-        let deadline = $location.search()['deadline'];
+        let deadline = parseInt($location.search()['deadline']);
 
-        if(deadline !== 'month' && deadline !== 'week') {
-            // in case page is changed, but it didn't finish removing old references yet
-            return {};
+        if (isNaN(deadline)) {
+            this.setDeadline(deadlineOptions[0]);
+            deadline = parseInt($location.search()['deadline']);
         }
 
-        const now = new Date();
-
-        // fake date for testing
-        now.setFullYear(2019);
-        now.setMonth(2);
-        now.setDate(19);
-        // fake date for testing
-
-        const dateFrom = new Date(now.getFullYear() - 1, now.getMonth(), now.getDate());
-
-        let dateTo;
-
-        if(deadline === 'week') {
-            dateTo = new Date(now.getFullYear() - 1, now.getMonth(), now.getDate() + 7);
-        } else if(deadline === 'month') {
-            dateTo = new Date(now.getFullYear() - 1, now.getMonth() + 1, now.getDate());
-        }
-
-        // for displaying in the view
-        this.dateFrom = moment(dateFrom).format(VIEW_DATE_FORMAT);
-        this.dateTo = moment(dateTo).format(VIEW_DATE_FORMAT);
+        this.dateTo = moment().add(deadline, deadlinePeriod).format(VIEW_DATE_FORMAT);
 
         return {
-            firstpublishedfrom: moment(dateFrom).format(VIEW_DATE_FORMAT),
-            firstpublishedto: moment(dateTo).format(VIEW_DATE_FORMAT),
+            'extra.compliantlifetimeto': this.dateTo,
         }
     };
+
+    this.customRender = {
+        fields: {
+            'compliantlifetime': CompliantLifetimeComponent,
+            'versioncreated': VersionCreatedComponent,
+        },
+        getItemClass: ({ archive_item }) => {
+            const compliantDate = moment(archive_item.extra.compliantlifetime);
+            const now = moment()
+            const daysLeft = compliantDate.diff(now, 'days');
+            const overdue = daysLeft < 0;
+
+            return overdue ? 'overdue': '';
+        }
+    }
 }
 
 export default angular.module('fidelity.compliance-review', ['superdesk.apps.authoring.widgets'])
