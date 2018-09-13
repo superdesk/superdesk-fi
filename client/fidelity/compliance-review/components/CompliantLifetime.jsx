@@ -12,8 +12,8 @@ export default ({ item }) => {
     let daysLeft = compliantDate.diff(now, 'days');
     const overdue = daysLeft < 0;
     daysLeft = overdue ? -daysLeft : daysLeft;
-    const leftWord = overdue ? 'overdue' : 'left';
-    const leftString = `${daysLeft} days ${leftWord}`;
+    const leftWords = overdue ? gettext('days overdue') : gettext('days left');
+    const leftString = `${daysLeft} ${leftWords}`;
 
     return (
         <div>
