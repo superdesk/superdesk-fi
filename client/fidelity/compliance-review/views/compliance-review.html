@@ -1,7 +1,7 @@
 <div class="subnav subnav--absolute">
     <header class="search-page-header">
         <div style="display:flex;align-items:center;width:100%;margin-right:20px;">
-            <span class="subnav__page-title">Need review before {{search.dateFrom}} <strong>{{search.dateTo}}</strong></span>
+            <span class="subnav__page-title">{{ :: "Need review before" | translate }} <strong>{{search.dateTo}}</strong></span>
             <span>
                 <button
                     ng-click="search.setDeadline(1)"
