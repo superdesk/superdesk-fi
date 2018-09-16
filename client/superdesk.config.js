@@ -46,7 +46,8 @@ module.exports = function(grunt) {
                 'associations',
                 'publish_queue_errors',
                 'headline',
-                'versioncreated'
+                'versioncreated',
+                'compliantlifetime'
             ],
             secondLine: [
                 'language',
