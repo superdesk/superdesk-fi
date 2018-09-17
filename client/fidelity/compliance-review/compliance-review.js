@@ -55,11 +55,12 @@ export function ComplianceReviewCtrl($location, config, moment) {
             'compliantlifetime': CompliantLifetimeComponent,
             'versioncreated': VersionCreatedComponent,
         },
-        getItemClass: ({ archive_item }) => {
-            if (!archive_item || !get(archive_item, 'extra.compliantlifetime')) {
+        getItemClass: (item) => {
+            if (!item || !get(item, 'archive_item.extra.comliantlifetime')) {
                 return '';
             }
-            const compliantDate = moment(archive_item.extra.compliantlifetime);
+
+            const compliantDate = moment(item.archive_item.extra.compliantlifetime);
             const now = moment()
             const daysLeft = compliantDate.diff(now, 'days');
             const overdue = daysLeft < 0;
