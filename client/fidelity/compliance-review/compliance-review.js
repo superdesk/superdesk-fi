@@ -46,6 +46,7 @@ export function ComplianceReviewCtrl($location, config, moment) {
         this.dateTo = moment().add(deadline, deadlinePeriod).format(VIEW_DATE_FORMAT);
 
         return {
+            repo: 'published',
             'extra.compliantlifetimeto': this.dateTo,
         }
     };
@@ -56,7 +57,7 @@ export function ComplianceReviewCtrl($location, config, moment) {
             'versioncreated': VersionCreatedComponent,
         },
         getItemClass: (item) => {
-            if (!item || !get(item, 'archive_item.extra.comliantlifetime')) {
+            if (!get(item, 'archive_item.extra.comliantlifetime')) {
                 return '';
             }
 
