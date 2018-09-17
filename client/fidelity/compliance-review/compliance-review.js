@@ -57,7 +57,7 @@ export function ComplianceReviewCtrl($location, config, moment) {
             'versioncreated': VersionCreatedComponent,
         },
         getItemClass: (item) => {
-            if (!get(item, 'archive_item.extra.comliantlifetime')) {
+            if (!get(item, 'archive_item.extra.compliantlifetime')) {
                 return '';
             }
 
