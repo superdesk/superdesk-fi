@@ -1,5 +1,6 @@
 import CompliantLifetimeComponent from './components/CompliantLifetime'
 import VersionCreatedComponent from './components/VersionCreated'
+import {get} from 'lodash'
 
 ComplianceReviewCtrl.$inject = ['$location', 'config', 'moment'];
 export function ComplianceReviewCtrl($location, config, moment) {
@@ -55,6 +56,9 @@ export function ComplianceReviewCtrl($location, config, moment) {
             'versioncreated': VersionCreatedComponent,
         },
         getItemClass: ({ archive_item }) => {
+            if (!archive_item || !get(archive_item, 'extra.compliantlifetime')) {
+                return '';
+            }
             const compliantDate = moment(archive_item.extra.compliantlifetime);
             const now = moment()
             const daysLeft = compliantDate.diff(now, 'days');
