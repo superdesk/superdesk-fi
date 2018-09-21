@@ -72,21 +72,23 @@ export function ComplianceReviewCtrl($location, config, moment) {
 }
 
 export default angular.module('fidelity.compliance-review', ['superdesk.apps.authoring.widgets'])
-    .config(['superdeskProvider', 'workspaceMenuProvider', function(superdesk, workspaceMenuProvider) {
-        superdesk.activity('/compliance-review', {
-            description: gettext('Review published content'),
-            label: gettext('Compliance review'),
-            templateUrl: 'compliance-review.html',
-            sideTemplateUrl: 'scripts/apps/workspace/views/workspace-sidenav.html',
-            controller: ComplianceReviewCtrl,
-            controllerAs: 'search',
-        });
+    .config(['superdeskProvider', 'workspaceMenuProvider', 'config', function(superdesk, workspaceMenuProvider, config) {
+        if (get(config, 'features.complianceReview', false)) {
+            superdesk.activity('/compliance-review', {
+                description: gettext('Review published content'),
+                label: gettext('Compliance review'),
+                templateUrl: 'compliance-review.html',
+                sideTemplateUrl: 'scripts/apps/workspace/views/workspace-sidenav.html',
+                controller: ComplianceReviewCtrl,
+                controllerAs: 'search',
+            });
 
-        workspaceMenuProvider.item({
-            icon: 'archive',
-            href: '/compliance-review',
-            label: gettext('Compliance review'),
-        });
+            workspaceMenuProvider.item({
+                icon: 'archive',
+                href: '/compliance-review',
+                label: gettext('Compliance review'),
+            });
+        }
     }])
 
     .controller('ComplianceReviewCtrl', ComplianceReviewCtrl)

@@ -152,7 +152,8 @@ module.exports = function(grunt) {
             hideCreatePackage: false,
             noMissingLink: true,
             qumu: true,
-            noPublishOnAuthoringDesk: true
+            noPublishOnAuthoringDesk: true,
+            complianceReview: false,
         },
         workspace: {},
         profile: {
