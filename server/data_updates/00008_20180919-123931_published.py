@@ -11,6 +11,8 @@ from superdesk.commands.data_updates import DataUpdate
 from superdesk import get_resource_service
 from datetime import date
 from bson import ObjectId
+from eve.utils import ParsedRequest
+from superdesk.errors import SuperdeskApiError
 
 
 def add_years(d, years):
@@ -29,21 +31,30 @@ class DataUpdate(DataUpdate):
         archive_service = get_resource_service('archive')
         published_service = get_resource_service(self.resource)
 
-        for item in published_service.get(req=None, lookup=None):
-            published_date = item.get('firstpublished')
+        req = ParsedRequest()
+        req.max_results = 50
+        for page in range(1, 200):  # 10k limit
+            req.page = page
+            items = list(published_service.get(req=req, lookup=None))
+            if not items:
+                break
+            for item in items:
+                published_date = item.get('firstpublished')
 
-            if published_date is not None:
-                compliant_lifetime = add_years(published_date, 1)
+                if published_date is not None:
+                    compliant_lifetime = add_years(published_date, 1)
 
-                extra = item.get('extra', {})
-                extra['compliantlifetime'] = compliant_lifetime
+                    extra = item.get('extra', {})
+                    extra['compliantlifetime'] = compliant_lifetime
 
-                published_service.system_update(ObjectId(item['_id']), {'extra': extra}, item)
+                    try:
+                        published_service.system_update(ObjectId(item['_id']), {'extra': extra}, item)
+                    except SuperdeskApiError:
+                        continue
 
-                archive_item = archive_service.find_one(req=None, _id=item['item_id'])
-                if archive_item:
-                    archive_service.system_update(archive_item['_id'], {'extra': extra}, archive_item)
+                    archive_item = archive_service.find_one(req=None, _id=item['item_id'])
+                    if archive_item:
+                        archive_service.system_update(archive_item['_id'], {'extra': extra}, archive_item)
 
     def backwards(self, mongodb_collection, mongodb_database):
         pass
-
