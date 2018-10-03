@@ -26,6 +26,7 @@ class DataUpdate(DataUpdate):
     resource = 'published'
 
     def forwards(self, mongodb_collection, mongodb_database):
+        archive_service = get_resource_service('archive')
         published_service = get_resource_service(self.resource)
 
         for item in published_service.get(req=None, lookup=None):
@@ -38,6 +39,10 @@ class DataUpdate(DataUpdate):
                 extra['compliantlifetime'] = compliant_lifetime
 
                 published_service.system_update(ObjectId(item['_id']), {'extra': extra}, item)
+
+                archive_item = archive_service.find_one(req=None, _id=item['item_id'])
+                if archive_item:
+                    archive_service.system_update(archive_item['_id'], {'extra': extra}, archive_item)
 
     def backwards(self, mongodb_collection, mongodb_database):
         pass
