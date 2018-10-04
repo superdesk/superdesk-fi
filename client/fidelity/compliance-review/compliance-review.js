@@ -44,11 +44,11 @@ export function ComplianceReviewCtrl($location, config, moment) {
 
         this.labelTo = `${compliantFilter.labelTo} ${this.filters[this.activeFilter].label}`;
 
-        const untilDate = this.filters[this.activeFilter].elasticSearchDateRange.lte;
+        const untilDate = this.filters[this.activeFilter].key;
 
         return {
             repo: 'published',
-            'extra.compliantlifetimeto': untilDate,
+            'extra.compliantlifetime': untilDate,
         }
     };
 
