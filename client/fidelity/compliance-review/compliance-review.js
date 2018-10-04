@@ -19,12 +19,13 @@ export function ComplianceReviewCtrl($location, config, moment) {
     // methods for view
 
     this.setFilter = (index) => {
-        if (index < 0 || index >= compliantFilter.predefinedFilters.length) {
+        if (index < 0 || index >= this.filters.length) {
             console.warn('Filter does not exist. Index out of bounds.');
             return;
         }
 
         this.activeFilter = index;
+        $location.search('deadline', this.filters[index].key);
     }
 
     // methods for parent directive
@@ -35,20 +36,20 @@ export function ComplianceReviewCtrl($location, config, moment) {
     };
 
     this.getSearch = () => {
-        let deadline = parseInt($location.search()['deadline']);
+        let deadline = $location.search()['deadline'];
+        const filterExists = this.filters.some((f) => f.key === deadline);
 
-        if (!deadline) {
-            deadline = this.filters[0].key;
+        if (!filterExists) {
+            deadline = this.filters[0].key; // first as default
             $location.search('deadline', deadline);
         }
 
-        this.labelTo = `${compliantFilter.labelTo} ${this.filters[this.activeFilter].label}`;
 
-        const untilDate = this.filters[this.activeFilter].key;
+        this.labelTo = `${compliantFilter.labelTo} ${this.filters[this.activeFilter].label}`;
 
         return {
             repo: 'published',
-            'extra.compliantlifetime': untilDate,
+            'extra.compliantlifetime': deadline,
         }
     };
 
