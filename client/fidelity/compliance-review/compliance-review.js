@@ -16,6 +16,13 @@ export function ComplianceReviewCtrl($location, config, moment) {
 
     $location.search('sort', sortString);
 
+    // helper fns
+
+    const filterExists = (key) => this.filters.some((f) => f.key === key);
+    const setFilterInUrl = (filter) => $location.search('deadline', filter);
+    const getFilterFromUrl = () => $location.search()['deadline'];
+    const setDefaultFilter = () => setFilterInUrl(this.filters[0].key);
+
     // methods for view
 
     this.setFilter = (index) => {
@@ -25,7 +32,7 @@ export function ComplianceReviewCtrl($location, config, moment) {
         }
 
         this.activeFilter = index;
-        $location.search('deadline', this.filters[index].key);
+        setFilterInUrl(this.filters[index].key);
     }
 
     // methods for parent directive
@@ -36,14 +43,12 @@ export function ComplianceReviewCtrl($location, config, moment) {
     };
 
     this.getSearch = () => {
-        let deadline = $location.search()['deadline'];
-        const filterExists = this.filters.some((f) => f.key === deadline);
+        let deadline = getFilterFromUrl();
 
-        if (!filterExists) {
-            deadline = this.filters[0].key; // first as default
-            $location.search('deadline', deadline);
+        if (!deadline || !filterExists(deadline)) {
+            setDefaultFilter();
+            deadline = getFilterFromUrl();
         }
-
 
         this.labelTo = `${compliantFilter.labelTo} ${this.filters[this.activeFilter].label}`;
 
