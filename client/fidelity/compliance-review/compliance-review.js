@@ -1,32 +1,31 @@
+import {get} from 'lodash'
+import {getDateFilters} from 'apps/search/directives/DateFilters'
 import CompliantLifetimeComponent from './components/CompliantLifetime'
 import VersionCreatedComponent from './components/VersionCreated'
-import {get} from 'lodash'
 
 ComplianceReviewCtrl.$inject = ['$location', 'config', 'moment'];
 export function ComplianceReviewCtrl($location, config, moment) {
-    var VIEW_DATE_FORMAT = config.view.dateformat;
-
+    const VIEW_DATE_FORMAT = config.view.dateformat;
     const SUPERDESK = 'local';
-    const deadlinePeriod = 'months';
-    const deadlineOptions = [1, 3];
+
+    const compliantFilter = getDateFilters(gettext)
+        .find(f => f.fieldname === 'extra.compliantlifetime');
+    this.filters = compliantFilter.predefinedFilters;
+    this.activeFilter = 0;
     const sortString = 'extra.compliantlifetime:asc';
 
-    let deadline = $location.search()['deadline'];
-
-    if(!deadlineOptions.includes(deadline)) {
-        $location.search('deadline', deadlineOptions[0]);
-        $location.search('sort', sortString);
-        deadline = $location.search()['deadline'];
-    }
+    $location.search('sort', sortString);
 
     // methods for view
 
-    this.isActive = (deadline) => parseInt($location.search()['deadline']) === deadline
+    this.setFilter = (index) => {
+        if (index < 0 || index >= compliantFilter.predefinedFilters.length) {
+            console.warn('Filter does not exist. Index out of bounds.');
+            return;
+        }
 
-    this.setDeadline = (deadline) => {
-        $location.search('deadline', deadline);
-        $location.search('sort', sortString);
-    };
+        this.activeFilter = index;
+    }
 
     // methods for parent directive
 
@@ -38,16 +37,18 @@ export function ComplianceReviewCtrl($location, config, moment) {
     this.getSearch = () => {
         let deadline = parseInt($location.search()['deadline']);
 
-        if (isNaN(deadline)) {
-            this.setDeadline(deadlineOptions[0]);
-            deadline = parseInt($location.search()['deadline']);
+        if (!deadline) {
+            deadline = this.filters[0].key;
+            $location.search('deadline', deadline);
         }
 
-        this.dateTo = moment().add(deadline, deadlinePeriod).format(VIEW_DATE_FORMAT);
+        this.labelTo = `${compliantFilter.labelTo} ${this.filters[this.activeFilter].label}`;
+
+        const untilDate = this.filters[this.activeFilter].elasticSearchDateRange.lte;
 
         return {
             repo: 'published',
-            'extra.compliantlifetimeto': this.dateTo,
+            'extra.compliantlifetimeto': untilDate,
         }
     };
 
