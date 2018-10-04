@@ -2,8 +2,9 @@
     <header class="search-page-header">
         <div style="display:flex;align-items:center;width:100%;margin-right:20px;">
             <span class="subnav__page-title">{{ search.labelTo }}</span>
-            <span ng-repeat="filter in search.filters">
+            <span>
                 <button
+                    ng-repeat="filter in search.filters"
                     ng-click="search.setFilter($index)"
                     ng-class="{btn: true, 'btn--primary': search.activeFilter === $index}">{{ filter.label }}</button>
             </span>
