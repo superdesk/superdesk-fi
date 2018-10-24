@@ -1,14 +1,12 @@
 <div class="subnav subnav--absolute">
     <header class="search-page-header">
         <div style="display:flex;align-items:center;width:100%;margin-right:20px;">
-            <span class="subnav__page-title">{{ :: "Need review before" | translate }} <strong>{{search.dateTo}}</strong></span>
+            <span class="subnav__page-title">{{ search.labelTo }}</span>
             <span>
                 <button
-                    ng-click="search.setDeadline(1)"
-                    ng-class="{btn: true, 'btn--primary': search.isActive(1)}">month</button>
-                <button
-                    ng-click="search.setDeadline(3)"
-                    ng-class="{btn: true, 'btn--primary': search.isActive(3)}">3 months</button>
+                    ng-repeat="filter in search.filters"
+                    ng-click="search.setFilter($index)"
+                    ng-class="{btn: true, 'btn--primary': search.activeFilter === $index}">{{ filter.label }}</button>
             </span>
         </div>
     </header>

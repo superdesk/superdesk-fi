@@ -1,32 +1,39 @@
+import {get} from 'lodash'
+import {getDateFilters} from 'apps/search/directives/DateFilters'
 import CompliantLifetimeComponent from './components/CompliantLifetime'
 import VersionCreatedComponent from './components/VersionCreated'
-import {get} from 'lodash'
 
 ComplianceReviewCtrl.$inject = ['$location', 'config', 'moment'];
 export function ComplianceReviewCtrl($location, config, moment) {
-    var VIEW_DATE_FORMAT = config.view.dateformat;
-
+    const VIEW_DATE_FORMAT = config.view.dateformat;
     const SUPERDESK = 'local';
-    const deadlinePeriod = 'months';
-    const deadlineOptions = [1, 3];
+
+    const compliantFilter = getDateFilters(gettext)
+        .find(f => f.fieldname === 'extra.compliantlifetime');
+    this.filters = compliantFilter.predefinedFilters;
+    this.activeFilter = 0;
     const sortString = 'extra.compliantlifetime:asc';
 
-    let deadline = $location.search()['deadline'];
+    $location.search('sort', sortString);
 
-    if(!deadlineOptions.includes(deadline)) {
-        $location.search('deadline', deadlineOptions[0]);
-        $location.search('sort', sortString);
-        deadline = $location.search()['deadline'];
-    }
+    // helper fns
+
+    const filterExists = (key) => this.filters.some((f) => f.key === key);
+    const setFilterInUrl = (filter) => $location.search('deadline', filter);
+    const getFilterFromUrl = () => $location.search()['deadline'];
+    const setDefaultFilter = () => setFilterInUrl(this.filters[0].key);
 
     // methods for view
 
-    this.isActive = (deadline) => parseInt($location.search()['deadline']) === deadline
+    this.setFilter = (index) => {
+        if (index < 0 || index >= this.filters.length) {
+            console.warn('Filter does not exist. Index out of bounds.');
+            return;
+        }
 
-    this.setDeadline = (deadline) => {
-        $location.search('deadline', deadline);
-        $location.search('sort', sortString);
-    };
+        this.activeFilter = index;
+        setFilterInUrl(this.filters[index].key);
+    }
 
     // methods for parent directive
 
@@ -36,18 +43,18 @@ export function ComplianceReviewCtrl($location, config, moment) {
     };
 
     this.getSearch = () => {
-        let deadline = parseInt($location.search()['deadline']);
+        let deadline = getFilterFromUrl();
 
-        if (isNaN(deadline)) {
-            this.setDeadline(deadlineOptions[0]);
-            deadline = parseInt($location.search()['deadline']);
+        if (!deadline || !filterExists(deadline)) {
+            setDefaultFilter();
+            deadline = getFilterFromUrl();
         }
 
-        this.dateTo = moment().add(deadline, deadlinePeriod).format(VIEW_DATE_FORMAT);
+        this.labelTo = `${compliantFilter.labelTo} ${this.filters[this.activeFilter].label}`;
 
         return {
             repo: 'published',
-            'extra.compliantlifetimeto': this.dateTo,
+            'extra.compliantlifetime': deadline,
         }
     };
 
