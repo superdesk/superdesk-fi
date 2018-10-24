@@ -1,0 +1,16 @@
+<div class="subnav subnav--absolute">
+    <header class="search-page-header">
+        <div style="display:flex;align-items:center;width:100%;margin-right:20px;">
+            <span class="subnav__page-title">{{ search.labelTo }}</span>
+            <span>
+                <button
+                    ng-repeat="filter in search.filters"
+                    ng-click="search.setFilter($index)"
+                    ng-class="{btn: true, 'btn--primary': search.activeFilter === $index}">{{ filter.label }}</button>
+            </span>
+        </div>
+    </header>
+</div>
+<section sd-search-container class="search main-section search-page-container" ng-class="{'sidebar-open': false}">
+    <div sd-search-results data-showtags="false" class="archive-content"></div>
+</section>

@@ -6,7 +6,8 @@
  */
 module.exports = function(grunt) {
     return {
-        apps: [],
+        apps: ['fidelity.superdesk'],
+        importApps: ['../fidelity'],
         defaultRoute: '/workspace/personal',
         validatorMediaMetadata: {
             headline: {
@@ -45,7 +46,8 @@ module.exports = function(grunt) {
                 'associations',
                 'publish_queue_errors',
                 'headline',
-                'versioncreated'
+                'versioncreated',
+                'compliantlifetime'
             ],
             secondLine: [
                 'language',
@@ -150,7 +152,8 @@ module.exports = function(grunt) {
             hideCreatePackage: false,
             noMissingLink: true,
             qumu: true,
-            noPublishOnAuthoringDesk: true
+            noPublishOnAuthoringDesk: true,
+            complianceReview: false,
         },
         workspace: {},
         profile: {
