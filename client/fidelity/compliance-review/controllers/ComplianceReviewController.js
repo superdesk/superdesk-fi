@@ -1,5 +1,5 @@
 import {get} from 'lodash'
-import {getDateFilters} from 'apps/search/directives/DateFilters'
+import {getDateFilters} from 'superdesk-core/scripts/apps/search/directives/DateFilters'
 import CompliantLifetimeComponent from '../components/CompliantLifetime'
 import VersionCreatedComponent from '../components/VersionCreated'
 import {getStatus} from '../compliance-status'
