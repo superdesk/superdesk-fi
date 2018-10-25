@@ -19,9 +19,14 @@ export function ComplianceReviewCtrl($location, config, moment) {
     // helper fns
 
     const filterExists = (key) => this.filters.some((f) => f.key === key);
+    const getFilterIndex = (key) => this.filters.findIndex((f) => f.key === key)
     const setFilterInUrl = (filter) => $location.search('deadline', filter);
     const getFilterFromUrl = () => $location.search()['deadline'];
     const setDefaultFilter = () => setFilterInUrl(this.filters[0].key);
+
+    if (filterExists(getFilterFromUrl())) {
+        this.activeFilter = getFilterIndex(getFilterFromUrl())
+    }
 
     // methods for view
 
@@ -71,9 +76,14 @@ export function ComplianceReviewCtrl($location, config, moment) {
             const compliantDate = moment(item.archive_item.extra.compliantlifetime);
             const now = moment()
             const daysLeft = compliantDate.diff(now, 'days');
-            const overdue = daysLeft < 0;
 
-            return overdue ? 'overdue': '';
+            if (daysLeft < 0) {
+                return 'overdue';
+            } else if (daysLeft < 31) {
+                return 'soon';
+            }
+
+            return '';
         }
     }
 }
