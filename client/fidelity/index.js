@@ -1,5 +1,4 @@
-import complianceReview from './compliance-review/compliance-review';
-
-import './compliance-review/compliance-review.scss';
+import complianceReview from './compliance-review/controllers/ComplianceReviewController';
+import './compliance-review/styles/compliance-review.scss';
 
 export default angular.module('fidelity.superdesk', [complianceReview.name]);
