@@ -1,7 +1,8 @@
 import {get} from 'lodash'
-import {getDateFilters} from 'superdesk-core/scripts/apps/search/directives/DateFilters'
-import CompliantLifetimeComponent from './components/CompliantLifetime'
-import VersionCreatedComponent from './components/VersionCreated'
+import {getDateFilters} from 'apps/search/directives/DateFilters'
+import CompliantLifetimeComponent from '../components/CompliantLifetime'
+import VersionCreatedComponent from '../components/VersionCreated'
+import {getStatus} from '../compliance-status'
 
 ComplianceReviewCtrl.$inject = ['$location', 'config', 'moment'];
 export function ComplianceReviewCtrl($location, config, moment) {
@@ -68,23 +69,7 @@ export function ComplianceReviewCtrl($location, config, moment) {
             'compliantlifetime': CompliantLifetimeComponent,
             'versioncreated': VersionCreatedComponent,
         },
-        getItemClass: (item) => {
-            if (!get(item, 'archive_item.extra.compliantlifetime')) {
-                return '';
-            }
-
-            const compliantDate = moment(item.archive_item.extra.compliantlifetime);
-            const now = moment()
-            const daysLeft = compliantDate.diff(now, 'days');
-
-            if (daysLeft < 0) {
-                return 'overdue';
-            } else if (daysLeft < 31) {
-                return 'soon';
-            }
-
-            return '';
-        }
+        getItemClass: getStatus
     }
 }
 
@@ -111,6 +96,6 @@ export default angular.module('fidelity.compliance-review', ['superdesk.apps.aut
     .controller('ComplianceReviewCtrl', ComplianceReviewCtrl)
 
     .run(['$templateCache', ($templateCache) => {
-        $templateCache.put('compliance-review.html', require('./views/compliance-review.html'));
+        $templateCache.put('compliance-review.html', require('../views/compliance-review.html'));
     }])
 ;
