@@ -20,9 +20,9 @@ export default ({ item }) => {
     const leftString = `${daysLeft} ${leftWords}`;
 
     return (
-        <div>
-            <time>{compliantDateFormatted}</time>
-            <time> ({leftString})</time>
-        </div>
+        <span className="state-label compliance-date">
+            <span>{compliantDateFormatted}</span>
+            <span> ({leftString})</span>
+        </span>
     );
 }
