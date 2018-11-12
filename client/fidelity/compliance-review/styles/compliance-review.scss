@@ -1,0 +1,15 @@
+.compact-view {
+    .media-box .item-info .state-label.compliance-date {
+        color: #5e8d32;
+        border-color: #5e8d32;
+    }
+    .overdue.media-box .item-info .state-label.compliance-date {
+        color: #be1600;
+        border-color: #be1600;
+        background-color: #ffeae7;
+    }
+    .soon.media-box .item-info .state-label.compliance-date {
+        color: #da7200;
+        border-color: #da7200;
+    }
+}

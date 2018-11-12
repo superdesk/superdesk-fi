@@ -477,7 +477,8 @@
             "copyrightHolder": {"label": "Copyright Holder"},
             "copyrightNotice": {"label": "Copyright Notice"},
             "usageTerms": {"label": "Usage Terms"}
-        }
+        },
+        "unique_field": "name"
     },
     {
         "_id": "subscriber_types",
@@ -595,7 +596,8 @@
         "schema": {
             "existing": {},
             "replacement": {}
-        }
+        },
+        "unique_field": "existing"
     },
     {
         "_id": "locators",
