@@ -19,4 +19,4 @@ export const getStatus = (item) => {
     }
 
     return '';
-}
+};
