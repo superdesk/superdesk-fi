@@ -102,6 +102,7 @@ export function ComplianceReviewCtrl($location, moment, gettext, $scope) {
     };
 
     $scope.$watch('items', watchItems);
+    $scope.$watch('view', () => $scope.view = 'compact') // force compact view
 }
 
 export default angular.module('fidelity.compliance-review', ['superdesk.apps.authoring.widgets'])
