@@ -28,9 +28,11 @@ export function ComplianceReviewCtrl($location, moment, gettext, $scope) {
         });
     };
 
-    function watchItems(items) {
+
+    const watchItems = (items) => {
         if (items) {
             filterOldVersions(items._items);
+            $scope.numberOfItems = items._items.length;
         }
     }
 
@@ -39,6 +41,7 @@ export function ComplianceReviewCtrl($location, moment, gettext, $scope) {
     );
     this.filters = compliantFilter.predefinedFilters;
     this.activeFilter = 0;
+    $scope.numberOfItems = 0;
     const sortString = 'extra.compliantlifetime:asc';
 
     $location.search('sort', sortString);
