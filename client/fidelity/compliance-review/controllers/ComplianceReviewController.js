@@ -37,10 +37,13 @@ export function ComplianceReviewCtrl($location, moment, gettext, $scope) {
 
     const watchItems = (items) => {
         if (items) {
-            $scope.items._items = filterWrongLifetime(items._items, getFilterFromUrl());
-            $scope.items._items = filterUnwatedStates(items._items);
-            $scope.items._items = filterUnwatedTypes(items._items);
-            $scope.numberOfItems = items._items.length;
+            let {_items} = items
+            _items = filterWrongLifetime(_items, getFilterFromUrl());
+            _items = filterUnwatedStates(_items);
+            _items = filterUnwatedTypes(_items);
+
+            $scope.numberOfItems = _items.length;
+            $scope.items._items = _items;
         }
     }
 
