@@ -13,25 +13,33 @@ const filterToDaysDiff = (filter) => {
     }
 };
 
+// old versions of corrected items can
+// have a date that doesn't match the filter
+const filterWrongLifetime = (items, filter) => {
+    const range = filterToDaysDiff(filter);
+    const now = moment();
+    return items.filter(({ archive_item }) => {
+        const lifetime = moment(archive_item.extra.compliantlifetime);
+        return lifetime.diff(now, 'days') < range;
+    });
+};
+
+const unwantedStates = [ 'killed' ];
+const filterUnwatedStates = (items) =>
+    items.filter(item => !unwantedStates.includes(item.state));
+const wantedItemTypes = [ 'text' ];
+const filterUnwatedTypes = (items) =>
+    items.filter(item => wantedItemTypes.includes(item.type));
+
 ComplianceReviewCtrl.$inject = ['$location', 'moment', 'gettext', '$scope'];
 export function ComplianceReviewCtrl($location, moment, gettext, $scope) {
     const SUPERDESK = 'local';
 
-    // old versions of corrected items can
-    // have a date that doesn't match the filter
-    const filterOldVersions = (items) => {
-        const range = filterToDaysDiff(getFilterFromUrl());
-        const now = moment();
-        $scope.items._items = items.filter(({ archive_item }) => {
-            const lifetime = moment(archive_item.extra.compliantlifetime);
-            return lifetime.diff(now, 'days') < range;
-        });
-    };
-
-
     const watchItems = (items) => {
         if (items) {
-            filterOldVersions(items._items);
+            $scope.items._items = filterWrongLifetime(items._items, getFilterFromUrl());
+            $scope.items._items = filterUnwatedStates(items._items);
+            $scope.items._items = filterUnwatedTypes(items._items);
             $scope.numberOfItems = items._items.length;
         }
     }
