@@ -42,12 +42,10 @@ export function ComplianceReviewCtrl($location, moment, gettext, $scope) {
         });
     };
 
-    const unwantedStates = [ 'killed' ];
     const filterUnwatedStates = (items) =>
-        items.filter(item => !unwantedStates.includes(item.state));
-    const wantedItemTypes = [ 'text' ];
+        items.filter(item => ![ 'killed' ].includes(item.state));
     const filterUnwatedTypes = (items) =>
-        items.filter(item => wantedItemTypes.includes(item.type));
+        items.filter(item => [ 'text' ].includes(item.type));
 
     // methods for view
 
