@@ -41,7 +41,19 @@ export function ComplianceReviewCtrl($location, moment, gettext, $scope) {
             return lifetime.diff(now, 'days') < range;
         });
     };
+    const checkNewerVersion = (items, item) =>
+        items.some(currentItem => {
+            const selfCheck = currentItem.item_id === item.item_id
+            if (selfCheck) { return false; }
 
+            const sameFamily = currentItem.archive_item.family_id === item.archive_item.family_id
+            const thereIsNewVersion =
+                item.correction_sequence == undefined ||
+                currentItem.correction_sequence > item.correction_sequence
+            return sameFamily && thereIsNewVersion
+        })
+    const filterUniqueVersions = (items) =>
+        items.filter(item => !checkNewerVersion(items, item))
     const filterUnwatedStates = (items) =>
         items.filter(item => ![ 'killed' ].includes(item.state));
     const filterUnwatedTypes = (items) =>
@@ -99,6 +111,7 @@ export function ComplianceReviewCtrl($location, moment, gettext, $scope) {
             _items = filterWrongLifetime(_items, getFilterFromUrl());
             _items = filterUnwatedStates(_items);
             _items = filterUnwatedTypes(_items);
+            _items = filterUniqueVersions(_items);
 
             $scope.numberOfItems = _items.length;
             $scope.items._items = _items;
