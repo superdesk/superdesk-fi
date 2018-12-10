@@ -9,7 +9,6 @@ ComplianceReviewCtrl.$inject = ['$location', 'moment', 'gettext', '$scope'];
 export function ComplianceReviewCtrl($location, moment, gettext, $scope) {
     const SUPERDESK = 'local';
 
-    $scope.numberOfItems = 0;
     const sortString = 'extra.compliantlifetime:asc';
 
     $location.search('sort', sortString);
@@ -64,6 +63,7 @@ export function ComplianceReviewCtrl($location, moment, gettext, $scope) {
 
     this.setFilter = (filter) => {
         if (filterExists(filter)) {
+            delete $scope.items._meta.total
             this.activeFilter = filter;
             setFilterInUrl(filter);
         }
@@ -95,6 +95,9 @@ export function ComplianceReviewCtrl($location, moment, gettext, $scope) {
         return {
             repo: 'published',
             'extra.compliantlifetime': deadline,
+            ignoreKilled: true,
+            onlyLastPublished: true,
+            type: '["text"]',
         };
     };
 
@@ -106,18 +109,6 @@ export function ComplianceReviewCtrl($location, moment, gettext, $scope) {
         getItemClass: getStatus,
     };
 
-    $scope.$watch('items', (items) => {
-        if (items) {
-            let {_items} = items
-            _items = filterWrongLifetime(_items, getFilterFromUrl());
-            _items = filterUnwatedStates(_items);
-            _items = filterUnwatedTypes(_items);
-            _items = filterUniqueVersions(_items);
-
-            $scope.numberOfItems = _items.length;
-            $scope.items._items = _items;
-        }
-    });
     $scope.$watch('view', () => $scope.view = 'compact') // force compact view
 }
 
