@@ -1,5 +1,4 @@
 import { get } from 'lodash';
-import moment from 'moment';
 import CompliantLifetimeComponent from '../components/CompliantLifetime';
 import VersionCreatedComponent from '../components/VersionCreated';
 import { getStatus } from '../compliance-status';
@@ -30,33 +29,6 @@ export function ComplianceReviewCtrl($location, moment, gettext, $scope) {
     const setFilterInUrl = (filter) => $location.search('deadline', filter);
     const getFilterFromUrl = () => $location.search().deadline;
     const defaultFilter = () => Object.keys(this.complianceFilters)[0];
-    // old versions of corrected items can
-    // have a date that doesn't match the filter
-    const filterWrongLifetime = (items, filter) => {
-        const range = this.complianceFilters[filter].days;
-        const now = moment();
-        return items.filter(({ archive_item }) => {
-            const lifetime = moment(archive_item.extra.compliantlifetime);
-            return lifetime.diff(now, 'days') < range;
-        });
-    };
-    const checkNewerVersion = (items, item) =>
-        items.some(currentItem => {
-            const selfCheck = currentItem.item_id === item.item_id
-            if (selfCheck) { return false; }
-
-            const sameFamily = currentItem.archive_item.family_id === item.archive_item.family_id
-            const thereIsNewVersion =
-                item.correction_sequence == undefined ||
-                currentItem.correction_sequence > item.correction_sequence
-            return sameFamily && thereIsNewVersion
-        })
-    const filterUniqueVersions = (items) =>
-        items.filter(item => !checkNewerVersion(items, item))
-    const filterUnwatedStates = (items) =>
-        items.filter(item => ![ 'killed' ].includes(item.state));
-    const filterUnwatedTypes = (items) =>
-        items.filter(item => [ 'text' ].includes(item.type));
 
     // methods for view
 
