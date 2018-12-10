@@ -3,9 +3,9 @@
         <div style="display:flex;align-items:center;width:100%;margin-right:20px;">
             <span class="subnav__page-title">
                 {{ search.labelTo }}
-                <span ng-if="numberOfItems">
-                    (<span>{{ numberOfItems }}</span> <span>{{
-                            (numberOfItems === 1 ? 'item' : 'items') | translate
+                <span ng-if="items._meta.total">
+                    (<span>{{ items._meta.total }}</span> <span>{{
+                            (items._meta.total === 1 ? 'item' : 'items') | translate
                     }}</span>)
                 </span>
             </span>
