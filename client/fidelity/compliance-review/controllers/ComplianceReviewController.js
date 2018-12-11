@@ -34,7 +34,9 @@ export function ComplianceReviewCtrl($location, gettext, $scope) {
 
     this.setFilter = (filter) => {
         if (filterExists(filter)) {
-            delete $scope.items._meta.total
+            if ($scope.items && $scope.items._meta && $scope.items._meta.total) {
+                delete $scope.items._meta.total
+            }
             this.activeFilter = filter;
             setFilterInUrl(filter);
         }
