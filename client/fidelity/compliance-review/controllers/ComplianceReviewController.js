@@ -4,8 +4,8 @@ import VersionCreatedComponent from '../components/VersionCreated';
 import { getStatus } from '../compliance-status';
 
 
-ComplianceReviewCtrl.$inject = ['$location', 'moment', 'gettext', '$scope'];
-export function ComplianceReviewCtrl($location, moment, gettext, $scope) {
+ComplianceReviewCtrl.$inject = ['$location', 'gettext', '$scope'];
+export function ComplianceReviewCtrl($location, gettext, $scope) {
     const SUPERDESK = 'local';
 
     const sortString = 'extra.compliantlifetime:asc';
