@@ -1,3 +1,5 @@
+import {hideSideMenu, unhideSideMenu} from 'core/helpers/for-extensions';
+
 const subjectMatterExpertReviewDeskId = "5c0f7018149f1171135c77ec";
 
 function closeAuthoring() {
@@ -64,11 +66,23 @@ export function subjectMatterExpertReviewCtrl(
         delete authoringWorkspace.authoringTopBarButtonsToHide['article-edit--topbar--minimize'];
         delete authoringWorkspace.authoringTopBarButtonsToHide['article-edit--topbar--actions'];
         delete authoringWorkspace.authoringTopBarButtonsToHide['article-edit--topbar--sendto-publish'];
+
+        
+    }
+
+    function onInitialize() {
+        hideSideMenu();
+        addCustomAuthoringButtons();
+    }
+
+    function onDestroy() {
+        unhideSideMenu();
+        removeCustomAuthoringButtons();
     }
     
-
-    addCustomAuthoringButtons();
-    $scope.$on('$destroy', removeCustomAuthoringButtons);
+    onInitialize();
+    
+    $scope.$on('$destroy', onDestroy);
 
     $scope.customDataSource = {
         getItems: (from, pageSize) => {
