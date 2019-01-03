@@ -1,4 +1,4 @@
-import {hideSideMenu, unhideSideMenu} from 'core/helpers/for-extensions';
+import {hideSideMenu, unhideSideMenu, hideTopMenu, unhideTopMenu} from 'core/helpers/for-extensions';
 
 const subjectMatterExpertReviewDeskId = "5c0f7018149f1171135c77ec";
 
@@ -72,11 +72,13 @@ export function subjectMatterExpertReviewCtrl(
 
     function onInitialize() {
         hideSideMenu();
+        hideTopMenu();
         addCustomAuthoringButtons();
     }
 
     function onDestroy() {
         unhideSideMenu();
+        unhideTopMenu();
         removeCustomAuthoringButtons();
     }
     
