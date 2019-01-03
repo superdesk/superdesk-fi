@@ -95,12 +95,14 @@ export default angular.module('fidelity.compliance-review', ['superdesk.apps.aut
                     sideTemplateUrl: 'scripts/apps/workspace/views/workspace-sidenav.html',
                     controller: ComplianceReviewCtrl,
                     controllerAs: 'search',
+                    privileges: {fi_compliance_review: 1},
                 });
 
                 workspaceMenuProvider.item({
                     icon: 'archive',
                     href: '/compliance-review',
                     label: gettext('Compliance review'),
+                    if: 'privileges.fi_compliance_review'
                 });
             }
         },
