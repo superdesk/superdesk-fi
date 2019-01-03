@@ -18,6 +18,9 @@ subjectMatterExpertReviewCtrl.$inject = [
     'notify',
     'modal',
 ];
+
+let previousWorkspaceFlagValue;
+
 export function subjectMatterExpertReviewCtrl(
     $scope,
     search,
@@ -66,20 +69,27 @@ export function subjectMatterExpertReviewCtrl(
         delete authoringWorkspace.authoringTopBarButtonsToHide['article-edit--topbar--minimize'];
         delete authoringWorkspace.authoringTopBarButtonsToHide['article-edit--topbar--actions'];
         delete authoringWorkspace.authoringTopBarButtonsToHide['article-edit--topbar--sendto-publish'];
-
-        
     }
 
     function onInitialize() {
         hideSideMenu();
         hideTopMenu();
         addCustomAuthoringButtons();
+        previousWorkspaceFlagValue = superdeskFlags.flags.workqueue;
+
+        $scope.$applyAsync(() => {
+            superdeskFlags.flags.workqueue = false;
+        });
     }
 
     function onDestroy() {
         unhideSideMenu();
         unhideTopMenu();
         removeCustomAuthoringButtons();
+
+        $scope.$applyAsync(() => {
+            superdeskFlags.flags.workqueue = previousWorkspaceFlagValue;
+        });
     }
     
     onInitialize();
