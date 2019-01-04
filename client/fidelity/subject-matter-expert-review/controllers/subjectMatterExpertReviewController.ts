@@ -6,6 +6,12 @@ function closeAuthoring() {
     return angular.element(document.querySelector('[sd-authoring]')).scope().close();
 }
 
+function isWidgetVisible(widget) {
+    const disallowedWidgetIds = [];
+
+    return Promise.resolve(disallowedWidgetIds.includes(widget._id) === false);
+}
+
 subjectMatterExpertReviewCtrl.$inject = [
     '$scope',
     'search',
@@ -75,6 +81,9 @@ export function subjectMatterExpertReviewCtrl(
         hideSideMenu();
         hideTopMenu();
         addCustomAuthoringButtons();
+        authoringWorkspace.addWidgetVisibilityCheckerFunction(isWidgetVisible);
+
+
         previousWorkspaceFlagValue = superdeskFlags.flags.workqueue;
 
         $scope.$applyAsync(() => {
@@ -86,6 +95,8 @@ export function subjectMatterExpertReviewCtrl(
         unhideSideMenu();
         unhideTopMenu();
         removeCustomAuthoringButtons();
+        authoringWorkspace.removeWidgetVisibilityCheckerFunction(isWidgetVisible);
+
 
         $scope.$applyAsync(() => {
             superdeskFlags.flags.workqueue = previousWorkspaceFlagValue;
