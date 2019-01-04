@@ -23,6 +23,7 @@ subjectMatterExpertReviewCtrl.$inject = [
     'desks',
     'notify',
     'modal',
+    '$location',
 ];
 
 let previousWorkspaceFlagValue;
@@ -38,6 +39,7 @@ export function subjectMatterExpertReviewCtrl(
     desks,
     notify,
     modal,
+    $location,
 ) {
 
     function addCustomAuthoringButtons() {
@@ -78,6 +80,12 @@ export function subjectMatterExpertReviewCtrl(
     }
 
     function onInitialize() {
+        const queryParams = $location.search();
+
+        if (queryParams['item'] != null && queryParams['action'] === 'edit') {
+            superdeskFlags.flags.hideMonitoring = true;
+        }
+
         hideSideMenu();
         hideTopMenu();
         addCustomAuthoringButtons();
