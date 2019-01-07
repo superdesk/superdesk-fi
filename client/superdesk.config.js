@@ -153,7 +153,7 @@ module.exports = function(grunt) {
             noMissingLink: true,
             qumu: true,
             noPublishOnAuthoringDesk: true,
-            complianceReview: false,
+            complianceReview: true,
         },
         workspace: {},
         profile: {
@@ -184,5 +184,6 @@ module.exports = function(grunt) {
             'marked_desks': 0,
             'scheduled': 1
         },
+        shortDateFormat: 'DD/MM/YYYY',
     };
 };
