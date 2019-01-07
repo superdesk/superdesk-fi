@@ -150,6 +150,7 @@ export default angular.module('fidelity.subject-matter-expert-review', ['superde
                 template: require('../views/subject-matter-expert-review.html'),
                 sideTemplateUrl: 'scripts/apps/workspace/views/workspace-sidenav.html',
                 controller: subjectMatterExpertReviewCtrl,
+                privileges: {fi_subject_matter_expert_review: 1},
             });
         },
     ]);
