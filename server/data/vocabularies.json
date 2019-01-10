@@ -1776,5 +1776,21 @@
 
         }
      }
-    }  
+    },  
+    {
+        "_id": "local_domains",
+        "display_name": "Local Domains",
+        "type": "manageable",
+        "unique_field": "domain",
+        "selection_type": "do not show",
+        "items": [
+            {
+                "is_active": true,
+                "domain": "test.superdesk.org"
+            }
+        ],
+        "schema": {
+            "domain": {}
+        }
+    }
 ]
