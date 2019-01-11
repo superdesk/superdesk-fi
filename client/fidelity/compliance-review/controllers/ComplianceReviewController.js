@@ -66,8 +66,10 @@ export function ComplianceReviewCtrl($location, gettext, $scope) {
         this.labelTo = `${gettext('Need review before')} ${this.complianceFilters[this.activeFilter].label}`;
 
         return {
+            customFields: {
+                'extra.compliantlifetime': deadline,
+            },
             repo: 'published',
-            'extra.compliantlifetime': deadline,
             ignoreKilled: true,
             onlyLastPublished: true,
             type: '["text"]',
