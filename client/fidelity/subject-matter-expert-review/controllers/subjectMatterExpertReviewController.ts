@@ -1,6 +1,6 @@
 import {hideSideMenu, unhideSideMenu, hideTopMenu, unhideTopMenu} from 'core/helpers/for-extensions';
 
-const subjectMatterExpertReviewDeskId = "5c37520a99bbdf00e12fb81e";
+const subjectMatterExpertReviewDeskId = "5c385cf7ca1f8200f554d2cd";
 
 function closeAuthoring() {
     return angular.element(document.querySelector('[sd-authoring]')).scope().close();
