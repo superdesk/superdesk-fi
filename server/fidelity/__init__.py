@@ -9,5 +9,5 @@ def init_app(app):
     privilege(name='fi_compliance_review', label='Compliance review',
               description='User can access compliance review.')
 
-    privilege(name='fi_subject_matter_expert_review', label='Subject matter expert review page',
+    privilege(name='fi_subject_matter_expert_review', label='Fidelity SME Review ',
               description='User can access subject matter expert review page.')
