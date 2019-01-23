@@ -8,9 +8,9 @@ function closeAuthoring() {
 }
 
 function isWidgetVisible(widget) {
-    const disallowedWidgetIds = [];
+    const allowedWidgetIds = ['find-replace', 'comments', 'inline-comments'];
 
-    return Promise.resolve(disallowedWidgetIds.includes(widget._id) === false);
+    return Promise.resolve(allowedWidgetIds.includes(widget._id));
 }
 
 subjectMatterExpertReviewCtrl.$inject = [
