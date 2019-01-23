@@ -1,3 +1,9 @@
-#workspace-container {
-    transition: none !important;
+.fi_subject-matter-expert-review-page {
+    #workspace-container {
+        transition: none !important;
+    }
+    
+    #main-container, #workspace-container {
+        background-color: #ebebeb;
+    }
 }

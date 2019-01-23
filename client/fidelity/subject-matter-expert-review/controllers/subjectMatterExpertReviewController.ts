@@ -1,6 +1,7 @@
 import {hideSideMenu, unhideSideMenu, hideTopMenu, unhideTopMenu} from 'core/helpers/for-extensions';
 
 const subjectMatterExpertReviewDeskId = "5c0f7018149f1171135c77ec";
+const cssClassNameForView = 'fi_subject-matter-expert-review-page';
 
 function closeAuthoring() {
     return angular.element(document.querySelector('[sd-authoring]')).scope().close();
@@ -86,6 +87,8 @@ export function subjectMatterExpertReviewCtrl(
             superdeskFlags.flags.hideMonitoring = true;
         }
 
+        document.body.classList.add(cssClassNameForView);
+
         hideSideMenu();
         hideTopMenu();
         addCustomAuthoringButtons();
@@ -104,6 +107,8 @@ export function subjectMatterExpertReviewCtrl(
         unhideTopMenu();
         removeCustomAuthoringButtons();
         authoringWorkspace.removeWidgetVisibilityCheckerFunction(isWidgetVisible);
+
+        document.body.classList.remove(cssClassNameForView);
 
 
         $scope.$applyAsync(() => {
