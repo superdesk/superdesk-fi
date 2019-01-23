@@ -66,8 +66,10 @@ export function ComplianceReviewCtrl($location, gettext, $scope) {
         this.labelTo = `${gettext('Need review before')} ${this.complianceFilters[this.activeFilter].label}`;
 
         return {
+            customFields: {
+                'extra.compliantlifetime': deadline,
+            },
             repo: 'published',
-            'extra.compliantlifetime': deadline,
             ignoreKilled: true,
             onlyLastPublished: true,
             type: '["text"]',
@@ -95,12 +97,14 @@ export default angular.module('fidelity.compliance-review', ['superdesk.apps.aut
                     sideTemplateUrl: 'scripts/apps/workspace/views/workspace-sidenav.html',
                     controller: ComplianceReviewCtrl,
                     controllerAs: 'search',
+                    privileges: {fi_compliance_review: 1},
                 });
 
                 workspaceMenuProvider.item({
                     icon: 'archive',
                     href: '/compliance-review',
                     label: gettext('Compliance review'),
+                    if: 'privileges.fi_compliance_review'
                 });
             }
         },
