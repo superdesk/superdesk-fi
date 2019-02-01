@@ -146,7 +146,7 @@ module.exports = function(grunt) {
         features: {
             preview: 1,
             legal_archive: 1,
-            swimlane: {columnsLimit: 4},
+            swimlane: {defaultNumberOfColumns: 4},
             editor3: true,
             editorHighlights: true,
             hideCreatePackage: false,
