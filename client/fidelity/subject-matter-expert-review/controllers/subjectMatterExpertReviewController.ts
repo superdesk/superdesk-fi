@@ -1,6 +1,6 @@
 import {hideSideMenu, unhideSideMenu, hideTopMenu, unhideTopMenu} from 'core/helpers/for-extensions';
 
-const subjectMatterExpertReviewDeskId = "5c0f7018149f1171135c77ec";
+const subjectMatterExpertReviewDeskId = "5c544231a1783400ebd90430";
 const cssClassNameForView = 'fi_subject-matter-expert-review-page';
 
 function closeAuthoring() {
