@@ -4,9 +4,7 @@
             <span class="subnav__page-title">
                 {{ search.labelTo }}
                 <span ng-if="items._meta.total">
-                    (<span>{{ items._meta.total }}</span> <span>{{
-                        (items._meta.total === 1 ? 'item' : 'items') | translate
-                        }}</span>)
+                    (<span translate translate-n="items._meta.total" translate-plural="{{$count}} items">1 item</span>)
                 </span>
             </span>
             <span class="subnav__stretch-bar subnav__stretch-bar--right">
