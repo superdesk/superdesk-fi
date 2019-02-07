@@ -181,7 +181,7 @@ module.exports = function(grunt) {
             'to_desk': 1,
             'spike': 1,
             'ingest_provider': 0,
-            'marked_desks': 0,
+            'marked_desks': 1,
             'scheduled': 1
         },
         shortDateFormat: 'DD/MM/YYYY',
