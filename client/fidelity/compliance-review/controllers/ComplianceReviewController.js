@@ -10,6 +10,8 @@ export function ComplianceReviewCtrl($location, gettext, $scope) {
 
     const sortString = 'extra.compliantlifetime:asc';
 
+    this.showEnglishOnly = true;
+
     $location.search('sort', sortString);
 
     this.complianceFilters = {
@@ -73,6 +75,7 @@ export function ComplianceReviewCtrl($location, gettext, $scope) {
             ignoreKilled: true,
             onlyLastPublished: true,
             type: '["text"]',
+            language: this.showEnglishOnly ? '["en"]' : '',
         };
     };
 
