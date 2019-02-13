@@ -22,12 +22,9 @@ class DataUpdate(DataUpdate):
         published_service = get_resource_service(self.resource)
         templates_service = get_resource_service('content_templates')
 
-        templates = list(templates_service.get(req=None, lookup={
-            'template_name': 'article'
-        }))
-        if len(templates) != 1:
+        template = templates_service.find_one(req=None, template_name='article')
+        if not template:
             return
-        article_template_id = templates[0].get('_id')
 
         req = ParsedRequest()
         req.max_results = 50
@@ -37,7 +34,7 @@ class DataUpdate(DataUpdate):
             if not items:
                 break
             for item in items:
-                if ObjectId(item.get('template')) != article_template_id:
+                if ObjectId(item.get('template')) != template.get('_id'):
                     extra = item.get('extra')
                     if extra is not None:
                         extra.pop('compliantlifetime', None)
