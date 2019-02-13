@@ -22,9 +22,7 @@ class DataUpdate(DataUpdate):
         published_service = get_resource_service(self.resource)
         templates_service = get_resource_service('content_templates')
 
-        req = ParsedRequest()
-        req.max_results = 50
-        templates = list(templates_service.get(req=req, lookup={
+        templates = list(templates_service.get(req=None, lookup={
             'template_name': 'article'
         }))
         if len(templates) != 1:
