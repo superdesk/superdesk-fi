@@ -94,6 +94,7 @@ export function subjectMatterExpertReviewCtrl(
         hideSideMenu();
         hideTopMenu();
         addCustomAuthoringButtons();
+        authoringWorkspace.displayAuthoringHeaderCollapedByDefault = true;
         authoringWorkspace.addWidgetVisibilityCheckerFunction(isWidgetVisible);
 
 
@@ -108,6 +109,7 @@ export function subjectMatterExpertReviewCtrl(
         unhideSideMenu();
         unhideTopMenu();
         removeCustomAuthoringButtons();
+        authoringWorkspace.displayAuthoringHeaderCollapedByDefault = null;
         authoringWorkspace.removeWidgetVisibilityCheckerFunction(isWidgetVisible);
 
         document.body.classList.remove(cssClassNameForView);
