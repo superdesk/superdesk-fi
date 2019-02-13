@@ -47,8 +47,6 @@ class DataUpdate(DataUpdate):
 
                         archive_item = archive_service.find_one(req=None, _id=item.get('item_id'))
                         if archive_item:
-                            print('existe')
-                            print(item.get('item_id'))
                             archive_service.system_update(archive_item.get('_id'), {'extra': extra}, archive_item)
 
     def backwards(self, mongodb_collection, mongodb_database):
