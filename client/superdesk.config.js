@@ -63,7 +63,8 @@ module.exports = function(grunt) {
                 'category',
                 'expiry',
                 'desk',
-                'fetchedDesk'
+                'fetchedDesk',
+                'nestedlink',
             ]
         },
 
