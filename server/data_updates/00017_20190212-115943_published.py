@@ -28,7 +28,7 @@ class DataUpdate(DataUpdate):
 
         req = ParsedRequest()
         req.max_results = 50
-        for page in range(1, 200): # 10k limit
+        for page in range(1, 200):
             req.page = page
             items = list(published_service.get(req=req, lookup=None))
             if not items:
