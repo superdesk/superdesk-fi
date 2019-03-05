@@ -1,6 +1,7 @@
 import React from "react";
 import {IKnowledgeBaseItem} from "superdesk-core/scripts/apps/knowledge-base/knowledge-base-page";
 import {Item, Column, Row} from "superdesk-core/scripts/core/ui/components/List";
+import {UserHtmlSingleLine} from "superdesk-core/scripts/core/helpers/UserHtmlSingleLine";
 
 interface IProps {
     onSelect(item: IKnowledgeBaseItem): void;
@@ -20,7 +21,7 @@ export class AnnotationSelectList extends React.Component<IProps> {
                                 <Row><strong>{item.name}</strong></Row>
                                 <Row>
                                     <span className="sd-overflow-ellipsis sd-list-item--element-grow">
-                                        <div dangerouslySetInnerHTML={{__html: item.annotation_value.html}} />
+                                        <UserHtmlSingleLine html={item.annotation_value.html} />
                                     </span>
                                 </Row>
                             </Column>
