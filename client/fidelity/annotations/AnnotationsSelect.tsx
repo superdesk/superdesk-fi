@@ -4,14 +4,13 @@ import {IKnowledgeBaseItem} from "superdesk-core/scripts/apps/knowledge-base/kno
 import {ICrudManager} from "superdesk-core/scripts/core/helpers/CrudManager";
 import {AnnotationSelectList} from "./AnnotationSelectList";
 import {AnnotationSelectSingleItem} from "./AnnotationSelectSingleItem";
-import {RawDraftContentState} from "draft-js";
 
 interface IProps {
     annotationText: string;
     conceptItems: ICrudManager<IKnowledgeBaseItem>;
     annotationTypeSelect: JSX.Element;
     onCancel(): void;
-    onApplyAnnotation(rawDraftContentState: RawDraftContentState): void;
+    onApplyAnnotation(html: string): void;
 }
 
 interface IState {
