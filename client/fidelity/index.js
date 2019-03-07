@@ -6,8 +6,10 @@ import {AnnotationInputWithKnowledgeBase} from './annotations/AnnotationInputWit
 import './compliance-review/styles/compliance-review.scss';
 import './subject-matter-expert-review/styles/subject-matter-expert-review.scss';
 
+import annotationsLibrary from './annotations-library';
+
 export default angular
-    .module('fidelity.superdesk', [complianceReview.name, subjectMatterExpertReview.name])
+    .module('fidelity.superdesk', [complianceReview.name, subjectMatterExpertReview.name, annotationsLibrary.name])
     .run(['$templateCache', 'extensionPoints', ($templateCache, extensionPoints) => {
         $templateCache.put(
             'scripts/core/auth/login-modal.html',
