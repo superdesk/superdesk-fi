@@ -11,4 +11,3 @@ def init_app(app):
 
     privilege(name='fi_subject_matter_expert_review', label='Subject matter expert review page',
               description='User can access subject matter expert review page.')
-
