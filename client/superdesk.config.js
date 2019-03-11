@@ -146,7 +146,7 @@ module.exports = function(grunt) {
         features: {
             preview: 1,
             legal_archive: 1,
-            swimlane: {columnsLimit: 4},
+            swimlane: {defaultNumberOfColumns: 4},
             editor3: true,
             editorHighlights: true,
             hideCreatePackage: false,
@@ -181,7 +181,7 @@ module.exports = function(grunt) {
             'to_desk': 1,
             'spike': 1,
             'ingest_provider': 0,
-            'marked_desks': 0,
+            'marked_desks': 1,
             'scheduled': 1
         },
         shortDateFormat: 'DD/MM/YYYY',

@@ -4,18 +4,34 @@
             <span class="subnav__page-title">
                 {{ search.labelTo }}
                 <span ng-if="items._meta.total">
-                    (<span>{{ items._meta.total }}</span> <span>{{
-                            (items._meta.total === 1 ? 'item' : 'items') | translate
-                    }}</span>)
+                    (<span translate translate-n="items._meta.total" translate-plural="{{$count}} items">1 item</span>)
                 </span>
             </span>
-            <span>
-                <button
-                    ng-repeat="(filter, filter_data) in search.complianceFilters"
-                    ng-click="search.setFilter(filter)"
-                    ng-class="{btn: true, 'btn--primary': search.activeFilter === filter}">
-                    {{ filter_data.label }}
-                </button>
+            <span class="subnav__stretch-bar subnav__stretch-bar--right">
+                <div class="subnav__button-stack subnav__button-stack--padded">
+                    <div class="button-list">
+                        <a
+                            ng-class="{ 'toggle-button': true, 'toggle-button--active': search.showEnglishOnly }"
+                            ng-click="search.showEnglishOnly = true">
+                            <span translate>English only</span>
+                        </a>
+                        <a
+                            ng-class="{ 'toggle-button': true, 'toggle-button--active': !search.showEnglishOnly }"
+                            ng-click="search.showEnglishOnly = false">
+                            <span translate>All languages</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="subnav__button-stack subnav__button-stack--padded">
+                    <div class="button-list">
+                        <a
+                            ng-repeat="(filter, filter_data) in search.complianceFilters"
+                            ng-click="search.setFilter(filter)"
+                            ng-class="{'toggle-button': true, 'toggle-button--active': search.activeFilter === filter}">
+                            {{ filter_data.label }}
+                        </a>
+                    </div>
+                </div>
             </span>
         </div>
     </header>
