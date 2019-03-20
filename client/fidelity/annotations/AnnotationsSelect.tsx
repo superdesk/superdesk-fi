@@ -1,9 +1,9 @@
 import React from "react";
 import {gettext} from 'superdesk-core/scripts/core/utils';
-import {IKnowledgeBaseItem} from "superdesk-core/scripts/apps/knowledge-base/knowledge-base-page";
 import {ICrudManager} from "superdesk-core/scripts/core/helpers/CrudManager";
 import {AnnotationSelectList} from "./AnnotationSelectList";
 import {AnnotationSelectSingleItem} from "./AnnotationSelectSingleItem";
+import {IKnowledgeBaseItem} from "superdesk-core/scripts/superdesk-interfaces/KnowledgeBaseItem";
 
 interface IProps {
     annotationText: string;

@@ -1,7 +1,7 @@
 import React from "react";
-import {IKnowledgeBaseItem} from "superdesk-core/scripts/apps/knowledge-base/knowledge-base-page";
 import {Item, Column, Row} from "superdesk-core/scripts/core/ui/components/List";
 import {UserHtmlSingleLine} from "superdesk-core/scripts/core/helpers/UserHtmlSingleLine";
+import {IKnowledgeBaseItem} from "superdesk-core/scripts/superdesk-interfaces/KnowledgeBaseItem";
 
 interface IProps {
     onSelect(item: IKnowledgeBaseItem): void;

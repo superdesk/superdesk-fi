@@ -1,6 +1,6 @@
 import React from "react";
-import {IKnowledgeBaseItem} from 'superdesk-core/scripts/apps/knowledge-base/knowledge-base-page';
 import {gettext} from 'superdesk-core/scripts/core/utils';
+import {IKnowledgeBaseItem} from "superdesk-core/scripts/superdesk-interfaces/KnowledgeBaseItem";
 
 interface IProps {
     item: IKnowledgeBaseItem;

@@ -1,11 +1,11 @@
 import React from 'react';
 import {NavTabs} from 'superdesk-core/scripts/core/ui/components';
-import {IKnowledgeBaseItem} from 'superdesk-core/scripts/apps/knowledge-base/knowledge-base-page';
 import {connectCrudManager, ICrudManager} from 'superdesk-core/scripts/core/helpers/CrudManager';
 import {gettext} from 'superdesk-core/scripts/core/utils';
 import {IPropsAnnotationInputComponent} from 'superdesk-core/scripts/core/editor3/components/annotations/AnnotationInput';
 
 import {AnnotationsSelect} from './AnnotationsSelect';
+import {IKnowledgeBaseItem} from 'superdesk-core/scripts/superdesk-interfaces/KnowledgeBaseItem';
 
 interface IProps extends IPropsAnnotationInputComponent {
     // connected

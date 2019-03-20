@@ -1,9 +1,15 @@
 import React from 'react';
-import {KnowledgeBasePage, IKnowledgeBaseItem} from 'superdesk-core/scripts/apps/knowledge-base/knowledge-base-page';
-import {IFormField, IFormGroup} from 'superdesk-core/scripts/apps/knowledge-base/generic-form/interfaces/form';
+import {getGenericListPageComponent} from 'superdesk-core/scripts/core/ui/components/ListPage/generic-list-page';
+import {IFormField, IFormGroup} from 'superdesk-core/scripts/core/ui/components/generic-form/interfaces/form';
 import {ListItemColumn} from 'superdesk-core/scripts/core/components/ListItem';
 import {gettext} from 'superdesk-core/scripts/core/utils';
-import {getFormFieldPreviewComponent} from 'superdesk-core/scripts/apps/knowledge-base/generic-form/form-field';
+import {getFormFieldPreviewComponent} from 'superdesk-core/scripts/core/ui/components/generic-form/form-field';
+import {IKnowledgeBaseItem} from 'superdesk-core/scripts/superdesk-interfaces/KnowledgeBaseItem';
+import {Positioner} from 'superdesk-ui-framework';
+import {ListItemActionsMenu} from 'superdesk-core/scripts/core/components/ListItem';
+import {ICrudManager} from 'superdesk-core/scripts/core/helpers/CrudManager';
+
+const AnnotationsLibraryPageComponent = getGenericListPageComponent<IKnowledgeBaseItem>('concept_items');
 
 const nameField: IFormField = {
     label : gettext('Name'),
@@ -34,7 +40,7 @@ const formConfig: IFormGroup = {
     ],
 };
 
-const renderConceptItemRow = (item: IKnowledgeBaseItem) => {
+const renderRow = (item: IKnowledgeBaseItem, items: ICrudManager<IKnowledgeBaseItem>) => {
     return (
         <React.Fragment>
             <ListItemColumn>
@@ -46,6 +52,39 @@ const renderConceptItemRow = (item: IKnowledgeBaseItem) => {
             <ListItemColumn ellipsisAndGrow noBorder>
                 {getFormFieldPreviewComponent(item, definitionField)}
             </ListItemColumn>
+            <ListItemActionsMenu>
+                <button id={'knowledgebaseitem' + item._id}>
+                    <i className="icon-dots-vertical" />
+                </button>
+                <Positioner
+                    triggerSelector={'#knowledgebaseitem' + item._id}
+                    placement="left-start"
+                    className="dropdown2"
+                >
+                    <ul
+                        className="dropdown__menu"
+                        style={{display: 'block', position: 'static'}}
+                    >
+                        <li>
+                            <div className="dropdown__menu-label">{gettext('Actions')}</div>
+                        </li>
+                        <li className="dropdown__menu-divider" />
+                        <li>
+                            <button
+                                onClick={() => items.delete(item) }
+                                title="Edit"
+                            >
+                                <i className="icon-pencil" />
+                                <span
+                                    style={{display: 'inline'}}
+                                >
+                                    {gettext('Remove')}
+                                </span>
+                            </button>
+                        </li>
+                    </ul>
+                </Positioner>
+            </ListItemActionsMenu>
         </React.Fragment>
     );
 };
@@ -53,9 +92,10 @@ const renderConceptItemRow = (item: IKnowledgeBaseItem) => {
 export class AnnotationsLibraryPage extends React.Component {
     render() {
         return (
-            <KnowledgeBasePage
+            <AnnotationsLibraryPageComponent
                 formConfig={formConfig}
-                renderConceptItemRow={renderConceptItemRow}
+                renderRow={renderRow}
+                newItemTemplate={{cpnat_type: 'cpnat:abstract'}}
             />
         );
     }
