@@ -67,15 +67,21 @@ export function ComplianceReviewCtrl($location, gettext, $scope) {
 
         this.labelTo = `${gettext('Need review before')} ${this.complianceFilters[this.activeFilter].label}`;
 
+        const languageQuery = this.showEnglishOnly
+            ? { term: { language: 'en' } }
+            : { not: { terms: { language: ['en'] } } };
+
         return {
             customFields: {
                 'extra.compliantlifetime': deadline,
             },
+            customQueries: [
+                languageQuery
+            ],
             repo: 'published',
             ignoreKilled: true,
             onlyLastPublished: true,
             type: '["text"]',
-            language: this.showEnglishOnly ? '["en"]' : '',
         };
     };
 
