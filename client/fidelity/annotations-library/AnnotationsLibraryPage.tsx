@@ -1,13 +1,12 @@
 import React from 'react';
-import {getGenericListPageComponent} from 'superdesk-core/scripts/core/ui/components/ListPage/generic-list-page';
+import {getGenericListPageComponent, GenericListPageComponent} from 'superdesk-core/scripts/core/ui/components/ListPage/generic-list-page';
 import {IFormField, IFormGroup} from 'superdesk-core/scripts/core/ui/components/generic-form/interfaces/form';
-import {ListItemColumn} from 'superdesk-core/scripts/core/components/ListItem';
+import {ListItemColumn, ListItem} from 'superdesk-core/scripts/core/components/ListItem';
 import {gettext} from 'superdesk-core/scripts/core/utils';
 import {getFormFieldPreviewComponent} from 'superdesk-core/scripts/core/ui/components/generic-form/form-field';
 import {IKnowledgeBaseItem} from 'superdesk-core/scripts/superdesk-interfaces/KnowledgeBaseItem';
 import {Positioner} from 'superdesk-ui-framework';
 import {ListItemActionsMenu} from 'superdesk-core/scripts/core/components/ListItem';
-import {ICrudManager} from 'superdesk-core/scripts/core/helpers/CrudManager';
 
 const AnnotationsLibraryPageComponent = getGenericListPageComponent<IKnowledgeBaseItem>('concept_items');
 
@@ -40,9 +39,9 @@ const formConfig: IFormGroup = {
     ],
 };
 
-const renderRow = (item: IKnowledgeBaseItem, items: ICrudManager<IKnowledgeBaseItem>) => {
+const renderRow = (key: string, item: IKnowledgeBaseItem, page: GenericListPageComponent<IKnowledgeBaseItem>) => {
     return (
-        <React.Fragment>
+        <ListItem key={key} onClick={() => page.openPreview(item._id)}>
             <ListItemColumn>
                 {getFormFieldPreviewComponent(item, nameField)}
             </ListItemColumn>
@@ -71,7 +70,7 @@ const renderRow = (item: IKnowledgeBaseItem, items: ICrudManager<IKnowledgeBaseI
                         <li className="dropdown__menu-divider" />
                         <li>
                             <button
-                                onClick={() => items.delete(item) }
+                                onClick={() => page.deleteItem(item) }
                                 title="Edit"
                             >
                                 <i className="icon-pencil" />
@@ -85,7 +84,7 @@ const renderRow = (item: IKnowledgeBaseItem, items: ICrudManager<IKnowledgeBaseI
                     </ul>
                 </Positioner>
             </ListItemActionsMenu>
-        </React.Fragment>
+        </ListItem>
     );
 };
 
