@@ -63,7 +63,8 @@ module.exports = function(grunt) {
                 'category',
                 'expiry',
                 'desk',
-                'fetchedDesk'
+                'fetchedDesk',
+                'nestedlink',
             ]
         },
 
@@ -154,6 +155,7 @@ module.exports = function(grunt) {
             qumu: true,
             noPublishOnAuthoringDesk: true,
             complianceReview: true,
+            nestedItemsInOutputStage: true,
         },
         workspace: {},
         profile: {
