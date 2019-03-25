@@ -1,6 +1,6 @@
 import React from 'react';
 import {getGenericListPageComponent, GenericListPageComponent} from 'superdesk-core/scripts/core/ui/components/ListPage/generic-list-page';
-import {IFormField, IFormGroup} from 'superdesk-core/scripts/core/ui/components/generic-form/interfaces/form';
+import {IFormField, IFormGroup, FormFieldType} from 'superdesk-core/scripts/core/ui/components/generic-form/interfaces/form';
 import {ListItemColumn, ListItem} from 'superdesk-core/scripts/core/components/ListItem';
 import {gettext} from 'superdesk-core/scripts/core/utils';
 import {getFormFieldPreviewComponent} from 'superdesk-core/scripts/core/ui/components/generic-form/form-field';
@@ -12,12 +12,12 @@ const AnnotationsLibraryPageComponent = getGenericListPageComponent<IKnowledgeBa
 
 const nameField: IFormField = {
     label : gettext('Name'),
-    type: 'text_single_line',
+    type: FormFieldType.textSingleLine,
     field: 'name',
 };
 const languageField: IFormField = {
     label : gettext('Language'),
-    type: 'vocabulary_single_value',
+    type: FormFieldType.vocabularySingleValue,
     field: 'language',
     component_parameters: {
         vocabulary_id: 'languages',
@@ -25,7 +25,7 @@ const languageField: IFormField = {
 };
 const definitionField: IFormField = {
     label : gettext('Definition'),
-    type: 'text_single_line',
+    type: FormFieldType.textSingleLine,
     field: 'definition',
 };
 
