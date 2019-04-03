@@ -6,6 +6,8 @@ import {IPropsAnnotationInputComponent} from 'superdesk-core/scripts/core/editor
 
 import {AnnotationsSelect} from './AnnotationsSelect';
 import {IKnowledgeBaseItem} from 'superdesk-core/scripts/superdesk-interfaces/KnowledgeBaseItem';
+import {generateFilterForServer} from 'superdesk-core/scripts/core/ui/components/generic-form/generate-filter-for-server';
+import {nameField} from '../annotations-library/AnnotationsLibraryPage';
 
 interface IProps extends IPropsAnnotationInputComponent {
     // connected
@@ -16,7 +18,7 @@ class AnnotationInputWithKnowledgeBaseComponent extends React.Component<IProps> 
     private tabsRef: NavTabs;
 
     componentDidMount() {
-        this.props.conceptItems.read(1, null, {'name': this.props.annotationText})
+        this.props.conceptItems.read(1, null, {name: generateFilterForServer(nameField.type, this.props.annotationText)})
             .then(() => {
                 if (this.props.conceptItems._meta.total < 1) {
                     // go to new annotation tab if there aren't existing ones to select from
