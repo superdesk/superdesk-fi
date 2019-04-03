@@ -10,10 +10,11 @@ import {ListItemActionsMenu} from 'superdesk-core/scripts/core/components/ListIt
 
 const AnnotationsLibraryPageComponent = getGenericListPageComponent<IKnowledgeBaseItem>('concept_items');
 
-const nameField: IFormField = {
+export const nameField: IFormField = {
     label : gettext('Name'),
     type: FormFieldType.textSingleLine,
     field: 'name',
+    required: true,
 };
 const languageField: IFormField = {
     label : gettext('Language'),
@@ -22,11 +23,13 @@ const languageField: IFormField = {
     component_parameters: {
         vocabulary_id: 'languages',
     },
+    required: true,
 };
 const definitionField: IFormField = {
     label : gettext('Definition'),
-    type: FormFieldType.textSingleLine,
-    field: 'definition',
+    type: FormFieldType.textEditor3,
+    field: 'definition_html',
+    required: true,
 };
 
 const formConfig: IFormGroup = {

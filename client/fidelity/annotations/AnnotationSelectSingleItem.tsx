@@ -19,7 +19,7 @@ export class AnnotationSelectSingleItem extends React.Component<IProps> {
                 <h3 style={{marginTop: 15}}>{this.props.item.name}</h3>
                 <div
                     style={{maxHeight: '15rem', overflow: 'auto', marginTop: 15}}
-                    dangerouslySetInnerHTML={{__html: this.props.item.definition}}
+                    dangerouslySetInnerHTML={{__html: this.props.item.definition_html}}
                 />
                 <div className="space-between" style={{marginTop: 15}}>
                     <button className="btn btn--primary" onClick={this.props.onBack}>
@@ -27,7 +27,7 @@ export class AnnotationSelectSingleItem extends React.Component<IProps> {
                     </button>
                     <button
                         className="btn btn--primary"
-                        onClick={() => this.props.onApplyAnnotation(this.props.item.definition)}
+                        onClick={() => this.props.onApplyAnnotation(this.props.item.definition_html)}
                     >
                         {gettext('Use this')}
                     </button>

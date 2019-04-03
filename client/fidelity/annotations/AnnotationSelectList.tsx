@@ -21,7 +21,7 @@ export class AnnotationSelectList extends React.Component<IProps> {
                                 <Row><strong>{item.name}</strong></Row>
                                 <Row>
                                     <span className="sd-overflow-ellipsis sd-list-item--element-grow">
-                                        <UserHtmlSingleLine html={item.definition} />
+                                        <UserHtmlSingleLine html={item.definition_html} />
                                     </span>
                                 </Row>
                             </Column>
