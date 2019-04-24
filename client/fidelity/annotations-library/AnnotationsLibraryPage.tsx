@@ -5,7 +5,6 @@ import {ListItemColumn, ListItem} from 'superdesk-core/scripts/core/components/L
 import {gettext} from 'superdesk-core/scripts/core/utils';
 import {getFormFieldPreviewComponent} from 'superdesk-core/scripts/core/ui/components/generic-form/form-field';
 import {IKnowledgeBaseItem} from 'superdesk-core/scripts/superdesk-interfaces/KnowledgeBaseItem';
-import {Positioner} from 'superdesk-ui-framework';
 import {ListItemActionsMenu} from 'superdesk-core/scripts/core/components/ListItem';
 
 const AnnotationsLibraryPageComponent = getGenericListPageComponent<IKnowledgeBaseItem>('concept_items');
@@ -55,37 +54,27 @@ const renderRow = (key: string, item: IKnowledgeBaseItem, page: GenericListPageC
                 {getFormFieldPreviewComponent(item, definitionField)}
             </ListItemColumn>
             <ListItemActionsMenu>
-                <button id={'knowledgebaseitem' + item._id}>
-                    <i className="icon-dots-vertical" />
-                </button>
-                <Positioner
-                    triggerSelector={'#knowledgebaseitem' + item._id}
-                    placement="left-start"
-                    className="dropdown2"
-                >
-                    <ul
-                        className="dropdown__menu"
-                        style={{display: 'block', position: 'static'}}
+                <div>
+                    <button
+                        onClick={(e) =>  {
+                            e.stopPropagation();
+                            page.startEditing(item._id);
+                        }}
+                        title={gettext('Edit')}
                     >
-                        <li>
-                            <div className="dropdown__menu-label">{gettext('Actions')}</div>
-                        </li>
-                        <li className="dropdown__menu-divider" />
-                        <li>
-                            <button
-                                onClick={() => page.deleteItem(item) }
-                                title="Edit"
-                            >
-                                <i className="icon-pencil" />
-                                <span
-                                    style={{display: 'inline'}}
-                                >
-                                    {gettext('Remove')}
-                                </span>
-                            </button>
-                        </li>
-                    </ul>
-                </Positioner>
+                        <i className="icon-pencil" />
+                    </button>
+
+                    <button
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            page.deleteItem(item);
+                        }}
+                        title={gettext('Remove')}
+                    >
+                        <i className="icon-trash" />
+                    </button>
+                </div>
             </ListItemActionsMenu>
         </ListItem>
     );
