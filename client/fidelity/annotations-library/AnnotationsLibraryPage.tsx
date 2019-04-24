@@ -54,7 +54,7 @@ const renderRow = (key: string, item: IKnowledgeBaseItem, page: GenericListPageC
                 {getFormFieldPreviewComponent(item, definitionField)}
             </ListItemColumn>
             <ListItemActionsMenu>
-                <div>
+                <div style={{display: 'flex'}}>
                     <button
                         onClick={(e) =>  {
                             e.stopPropagation();
