@@ -10,26 +10,26 @@
             <span class="subnav__stretch-bar subnav__stretch-bar--right">
                 <div class="subnav__button-stack subnav__button-stack--padded">
                     <div class="button-list">
-                        <a
+                        <button
                             ng-class="{ 'toggle-button': true, 'toggle-button--active': search.showEnglishOnly }"
                             ng-click="search.showEnglishOnly = true">
                             <span translate>English only</span>
-                        </a>
-                        <a
+                        </button>
+                        <button
                             ng-class="{ 'toggle-button': true, 'toggle-button--active': !search.showEnglishOnly }"
                             ng-click="search.showEnglishOnly = false">
-                            <span translate>All languages</span>
-                        </a>
+                            <span translate>Other Languages</span>
+                        </button>
                     </div>
                 </div>
                 <div class="subnav__button-stack subnav__button-stack--padded">
                     <div class="button-list">
-                        <a
+                        <button
                             ng-repeat="(filter, filter_data) in search.complianceFilters"
                             ng-click="search.setFilter(filter)"
                             ng-class="{'toggle-button': true, 'toggle-button--active': search.activeFilter === filter}">
                             {{ filter_data.label }}
-                        </a>
+                        </button>
                     </div>
                 </div>
             </span>
