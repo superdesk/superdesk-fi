@@ -87,6 +87,7 @@ LANGUAGES = [
 ]
 
 SAML_PATH = env('SAML_PATH', os.path.join(ABS_PATH, 'saml'))
+SAML_LABEL = env('SAML_LABEL', 'Sign In')
 
 SCHEMA = {
     'composite': {

@@ -3,4 +3,4 @@ honcho==1.0.1
 newrelic>=2.66,<2.67
 python3-saml==1.2.6
 lxml==3.8.0
-Superdesk-Core==1.28.2
+Superdesk-Core==1.29.0
