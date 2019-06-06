@@ -185,5 +185,9 @@ module.exports = function(grunt) {
             'scheduled': 1
         },
         shortDateFormat: 'DD/MM/YYYY',
+        enabledExtensions: {
+            annotationsLibrary: 1,
+            // extensionFolderName: 1,
+        },
     };
 };
