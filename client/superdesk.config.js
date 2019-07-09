@@ -6,7 +6,10 @@
  */
 module.exports = function(grunt) {
     return {
-        apps: ['fidelity.superdesk'],
+        apps: [
+	    'fidelity.superdesk',
+	    'superdesk-planning',
+        ],
         importApps: ['../fidelity'],
         defaultRoute: '/workspace/personal',
         validatorMediaMetadata: {
@@ -157,7 +160,10 @@ module.exports = function(grunt) {
             complianceReview: true,
             nestedItemsInOutputStage: true,
         },
-        workspace: {},
+        workspace: {
+            planning: true,
+            assignments: true,
+        },
         profile: {
             jid: false,
             place: false,
