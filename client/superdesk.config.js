@@ -155,7 +155,7 @@ module.exports = function(grunt) {
             qumu: true,
             noPublishOnAuthoringDesk: true,
             complianceReview: true,
-            nestedItemsInOutputStage: false,
+            nestedItemsInOutputStage: true,
         },
         workspace: {},
         profile: {
