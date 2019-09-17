@@ -8,7 +8,7 @@ module.exports = function(grunt) {
     return {
         apps: ['fidelity.superdesk'],
         importApps: ['../fidelity'],
-        defaultRoute: '/workspace/personal',
+        defaultRoute: '/workspace/monitoring',
         validatorMediaMetadata: {
             headline: {
                 required: true
@@ -141,8 +141,6 @@ module.exports = function(grunt) {
         infoRemovedFields: {
             language: true
         },
-
-        defaultRoute: '/workspace/monitoring',
 
         features: {
             preview: 1,
