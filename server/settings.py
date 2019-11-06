@@ -11,7 +11,8 @@
 
 import os
 from pathlib import Path
-from superdesk.default_settings import INSTALLED_APPS
+from superdesk.default_settings import CELERY_BEAT_SCHEDULE, INSTALLED_APPS
+from celery.schedules import crontab
 
 
 def env(variable, fallback_value=None):
@@ -31,10 +32,18 @@ init_data = Path(ABS_PATH) / 'data'
 if init_data.exists():
     INIT_DATA_PATH = init_data
 
+CELERY_BEAT_SCHEDULE.update({
+    'compliance:lifetime_check': {
+        'task': 'fidelity.compliance.eol_check',
+        'schedule': crontab(hour=0, minute=0),
+    },
+
+})
 INSTALLED_APPS.extend([
     'apps.languages',
     'superdesk.auth.saml',
     'fidelity',
+    'fidelity.compliance',
 ])
 
 RENDITIONS = {
