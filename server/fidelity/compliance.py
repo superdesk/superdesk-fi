@@ -44,6 +44,7 @@ class ComplianceEOLCheck(superdesk.Command):
         })
         eol_text = app.config.get('COMPLIANCE_EOL_TEXT', DEFAULT_EOL_TEXT)
         nb_corrected = 0
+        nb_failed = 0
         for item in cursor:
             updates = {}
             item_id = item[config.ID_FIELD]
@@ -55,12 +56,25 @@ class ComplianceEOLCheck(superdesk.Command):
                 updates['body_html'] = '<p class="compliance-notice">{eol_text}</p>\n{body_html}'.format(
                     eol_text=escape(eol_text),
                     body_html=item['body_html'])
-            correct_service.patch(item_id, updates)
+            try:
+                correct_service.patch(item_id, updates)
+            except Exception as e:
+                logger.warning(
+                    "the item {item_id} reached compliance end-of-life, but it cannot "
+                    "be corrected: {e}".format(item_id=item_id, e=e))
+                nb_failed += 1
+                continue
+
+            # archive_service.update(item_id, updates, item)
             logger.info("item {item_id} reached compliance end-of-life, it has been corrected".format(item_id=item_id))
             nb_corrected += 1
 
         logger.info("{nb_corrected} article(s) have been corrected due to compliance eol reached".format(
             nb_corrected=nb_corrected))
+        if nb_failed > 0:
+            logger.warning(
+                "{nb_failed} article(s) could *NOT* be corrected despite reaching "
+                "compliance end of life".format(nb_failed=nb_failed))
 
 
 @celery.task(soft_time_limit=300)
