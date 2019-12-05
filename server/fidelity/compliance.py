@@ -16,6 +16,7 @@ from eve.utils import config
 import superdesk
 from superdesk.celery_app import celery
 from apps.archive.common import insert_into_versions
+from superdesk.editor_utils import EditorContent
 
 logger = logging.getLogger(__name__)
 DEFAULT_EOL_TEXT = "This content is no longer updated by Fidelity International"
@@ -54,9 +55,13 @@ class ComplianceEOLCheck(superdesk.Command):
                     eol_text=eol_text,
                     body_text=item['body_text'])
             if 'body_html' in item:
-                updates['body_html'] = '<p class="compliance-notice">{eol_text}</p>\n{body_html}'.format(
+                html = '<p class="compliance-notice">{eol_text}</p>'.format(
                     eol_text=escape(eol_text),
-                    body_html=item['body_html'])
+                )
+                body_editor = EditorContent.create(item, 'body_html')
+                body_editor.prepend('embed', html)
+                body_editor.update_item()
+                updates['body_html'] = item['body_html']
             try:
                 correct_service.patch(item_id, updates)
             except Exception as e:
