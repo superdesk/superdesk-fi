@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 from superdesk.default_settings import CELERY_BEAT_SCHEDULE, INSTALLED_APPS
 from celery.schedules import crontab
+from content_api.app.settings import CONTENTAPI_INSTALLED_APPS
 
 
 def env(variable, fallback_value=None):
@@ -115,3 +116,7 @@ EDITOR = {
 }
 
 OVERRIDE_EDNOTE_FOR_CORRECTIONS = False
+
+CONTENTAPI_INSTALLED_APPS += (
+    'fidelity.content_api_rss',
+)
