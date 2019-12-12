@@ -45,6 +45,7 @@ INSTALLED_APPS.extend([
     'superdesk.auth.saml',
     'fidelity',
     'fidelity.compliance',
+    'fidelity.identifier_generator',
 ])
 
 RENDITIONS = {
@@ -120,3 +121,17 @@ OVERRIDE_EDNOTE_FOR_CORRECTIONS = False
 CONTENTAPI_INSTALLED_APPS += (
     'fidelity.content_api_rss',
 )
+
+# Fidelity Internal ID
+
+# keys used in template:
+# year_short: last 2 digits of year
+# year_sequence: incremental id, reset every year
+INTERNAL_ID_TPL = "ED{year_short} - {year_sequence:04}"
+
+# internal id will be set in following field, if it exists in content profile
+INTERNAL_ID_SET_CUSTOM_FIELD_ID = "internal_id"
+
+# internal id will be appended to following fields (after a line feed),
+# if they exist in content profile
+INTERNAL_ID_APPEND_CUSTOM_FIELDS_IDS = ['disclaimer']
