@@ -1,7 +1,9 @@
 -r requirements.txt
 
+behave
 flake8
-nose
 pep8
+pytest
 httmock
+responses
 wooper
