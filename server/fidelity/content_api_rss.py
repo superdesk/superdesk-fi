@@ -3,9 +3,11 @@ import superdesk
 
 from lxml import etree
 from feedgen import feed
-from flask import current_app as app, request
+from flask import request
 from eve.utils import ParsedRequest
-
+from content_api.search import SearchResource, SearchService
+from fidelity.utils import slugify
+from urllib.parse import urljoin
 
 blueprint = flask.Blueprint("rss", __name__)
 parser = etree.HTMLParser(recover=True)
@@ -14,11 +16,22 @@ AUTHOR_ROLE = "Primary Author"
 FEATUREMEDIA = "featuremedia"
 WEB_RENDITION = "baseImage"
 CATEGORIES = ("subject_custom",)
+PERMALINK = "Perma_URL"
+BASE_URL = "https://www.fidelityinstitutional.com/"
 
 
 def get_permalink(item):
-    return "{}/{}".format(
-        flask.url_for("rss.index", _external=True).rstrip("/"), item["_id"]
+    code = item["_id"][-6:]
+    try:
+        title = item["extra"][PERMALINK] or ""
+        slug = slugify(title)
+    except (KeyError, AttributeError):
+        slug = ""
+    return urljoin(
+        BASE_URL,
+        "/{lang}/{code}/".format(
+            lang=item.get("language", "en"), code="-".join(filter(bool, [slug, code])),
+        ),
     )
 
 
@@ -80,16 +93,23 @@ def generate_feed(items):
 
 @blueprint.route("/rss")
 def index():
-    auth = app.auth
-    if not auth.authorized([], "items", request.method):
-        return auth.authenticate()
-    items_service = superdesk.get_resource_service("items")
+    items_service = superdesk.get_resource_service("rss_items")
     req = ParsedRequest()
     req.args = request.args
+    req.max_results = 200
     items = list(items_service.get(req, {}))
     content = generate_feed(items)
     return flask.Response(content, mimetype="application/rss+xml")
 
 
+class RSSResource(SearchResource):
+    datasource = {
+        key: val
+        for key, val in SearchResource.datasource.items()
+        if key != "aggregations"
+    }
+
+
 def init_app(_app):
     _app.register_blueprint(blueprint, url_prefix="/contentapi")
+    superdesk.register_resource("rss_items", RSSResource, SearchService, _app=_app)
