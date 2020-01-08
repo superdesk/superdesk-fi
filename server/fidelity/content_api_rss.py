@@ -26,7 +26,6 @@ def get_permalink(item):
         title = item["extra"][PERMALINK] or ""
         slug = slugify(title)
     except (KeyError, AttributeError):
-        title = ""
         slug = ""
     return urljoin(
         BASE_URL,
