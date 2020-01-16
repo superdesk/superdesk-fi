@@ -17,7 +17,13 @@ logger = logging.getLogger(__name__)
 
 def generate_id(sender, item, **kwargs):
     content_types_service = get_resource_service('content_types')
-    profile = content_types_service.find_one(None, _id=item['profile'])
+    try:
+        profile = content_types_service.find_one(None, _id=item['profile'])
+    except KeyError:
+        return
+    if profile is None:
+        logger.warning("Can't find profile {profile}".format(profile=item['profile']))
+        return
     set_field_id = app.config['INTERNAL_ID_SET_CUSTOM_FIELD_ID']
     if set_field_id not in profile['schema']:
         return
