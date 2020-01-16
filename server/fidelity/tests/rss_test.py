@@ -22,3 +22,13 @@ def test_get_permalink():
         )
         == "https://www.fidelityinstitutional.com/ja/61c89a/"
     )
+
+    assert (
+        get_permalink(
+            {
+                "_id": "guid:foo-bar-baz-5b4111",
+                "extra": {PERMALINK: "<p>I can't avoid risk. How do I take it wisely?</p>"},
+            }
+        )
+        == "https://www.fidelityinstitutional.com/en/i-cant-avoid-risk-how-do-i-take-it-wisely-5b4111/"
+    )
