@@ -38,3 +38,6 @@ class ComplianceCorrectionTestCase(TestCase):
         self.assertTrue(item['body_text'].startswith(DEFAULT_EOL_TEXT))
         self.assertTrue(item['body_html'].startswith(
             '<p class="compliance-notice">{DEFAULT_EOL_TEXT}</p>'.format(DEFAULT_EOL_TEXT=DEFAULT_EOL_TEXT)))
+        archive_versions_service = get_resource_service('archive_versions')
+        version_item = archive_versions_service.find_one(None, guid='123', _current_version=2)
+        self.assertIsNotNone(version_item)
