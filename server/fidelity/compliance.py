@@ -15,6 +15,7 @@ from flask import current_app as app
 from eve.utils import config
 import superdesk
 from superdesk.celery_app import celery
+from apps.archive.common import insert_into_versions
 
 logger = logging.getLogger(__name__)
 DEFAULT_EOL_TEXT = "This content is no longer updated by Fidelity International"
@@ -64,6 +65,13 @@ class ComplianceEOLCheck(superdesk.Command):
                     "be corrected: {e}".format(item_id=item_id, e=e))
                 nb_failed += 1
                 continue
+            else:
+                try:
+                    insert_into_versions(item_id)
+                except Exception as e:
+                    logger.error(
+                        "the item {item_id} could not be inserted into versions: {e}"
+                        .format(item_id=item_id, e=e))
 
             # archive_service.update(item_id, updates, item)
             logger.info("item {item_id} reached compliance end-of-life, it has been corrected".format(item_id=item_id))
