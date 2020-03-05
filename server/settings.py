@@ -46,6 +46,7 @@ INSTALLED_APPS.extend([
     'fidelity',
     'fidelity.compliance',
     'fidelity.identifier_generator',
+    'fidelity.macros',
 ])
 
 RENDITIONS = {
