@@ -6,3 +6,5 @@ lxml==3.8.0
 feedgen==0.8.0
 
 -e git+git://github.com/superdesk/superdesk-core.git@develop#egg=Superdesk-Core
+-e git+git://github.com/superdesk/superdesk-analytics.git@master#egg=superdesk-analytics
+-e git+git://github.com/superdesk/superdesk-planning.git@master#egg=superdesk-planning
