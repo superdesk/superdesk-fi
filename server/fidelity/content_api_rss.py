@@ -37,7 +37,7 @@ def get_permalink(item):
 
 
 def get_content(item):
-    html = item.get("body_html", "<p></p>").replace("<figcatpion>", "<figcaption>")
+    html = (item.get("description_html") or "<p></p>").replace("<figcatpion>", "<figcaption>")
     return html
 
 
@@ -58,7 +58,6 @@ def generate_feed(items):
         entry.published(item.get("firstpublished"))
         entry.updated(item["versioncreated"])
         entry.content(get_content(item), type="CDATA")
-        entry.description(item.get("description_text") or "")
 
         if item.get("source"):
             entry.source(title=item["source"])
