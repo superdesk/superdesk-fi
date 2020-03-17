@@ -1,5 +1,7 @@
 -r requirements.txt
 
+-e git+git://github.com/superdesk/superdesk-planning.git@master#egg=superdesk-planning
+
 behave
 flake8
 pep8
