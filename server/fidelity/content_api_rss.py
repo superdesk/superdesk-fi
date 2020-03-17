@@ -37,8 +37,11 @@ def get_permalink(item):
 
 
 def get_content(item):
-    html = (item.get("description_html") or "<p></p>").replace("<figcatpion>", "<figcaption>")
-    return html
+    try:
+        return item['extra']['Summary'] or ''
+    except (KeyError, TypeError):
+        pass
+    return item.get('description_html') or ''
 
 
 def generate_feed(items):
