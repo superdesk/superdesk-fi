@@ -14,6 +14,7 @@ from pathlib import Path
 from superdesk.default_settings import CELERY_BEAT_SCHEDULE, INSTALLED_APPS
 from celery.schedules import crontab
 from content_api.app.settings import CONTENTAPI_INSTALLED_APPS
+from fidelity.qumu import qumu_embed_pre_process
 
 
 def env(variable, fallback_value=None):
@@ -136,3 +137,7 @@ INTERNAL_ID_SET_CUSTOM_FIELD_ID = "internal_id"
 # internal id will be appended to following fields (after a line feed),
 # if they exist in content profile
 INTERNAL_ID_APPEND_CUSTOM_FIELDS_IDS = ['disclaimer']
+
+# HTML rendering
+
+EMBED_PRE_PROCESS = [qumu_embed_pre_process]
