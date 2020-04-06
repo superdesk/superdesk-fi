@@ -4,4 +4,4 @@ newrelic>=2.66,<2.67
 python3-saml==1.2.6
 lxml==3.8.0
 feedgen==0.9.0
-Superdesk-Core==1.32.5
+-e git+git://github.com/superdesk/superdesk-core.git@v1.33rc3#egg=Superdesk-Core
