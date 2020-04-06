@@ -141,3 +141,5 @@ INTERNAL_ID_APPEND_CUSTOM_FIELDS_IDS = ['disclaimer']
 # HTML rendering
 
 EMBED_PRE_PROCESS = [qumu_embed_pre_process]
+
+KEYWORDS_ADD_MISSING_ON_PUBLISH = True
