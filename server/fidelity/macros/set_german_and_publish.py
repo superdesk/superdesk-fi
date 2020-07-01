@@ -34,7 +34,7 @@ def set_german_and_publish(item, **kwargs):
             'language': 'de',
         }
 
-        new_id = archive_service.duplicate_content(item, state='routed')
+        new_id = archive_service.duplicate_item(item, state='routed')
         updates[ITEM_STATE] = item.get(ITEM_STATE)
         updates[PROCESSED_FROM] = item[config.ID_FIELD]
 
