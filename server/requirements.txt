@@ -4,4 +4,4 @@ newrelic>=2.66,<2.67
 python3-saml==1.2.6
 lxml==3.8.0
 feedgen==0.9.0
-Superdesk-Core==1.33.3
+Superdesk-Core==1.33.4
