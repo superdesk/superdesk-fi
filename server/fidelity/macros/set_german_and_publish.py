@@ -8,9 +8,10 @@
 import logging
 from superdesk import get_resource_service
 from superdesk.errors import StopDuplication
+from superdesk.metadata.packages import RESIDREF
 from eve.utils import config
 from superdesk.metadata.item import (
-    ITEM_STATE, PUBLISH_SCHEDULE, SCHEDULE_SETTINGS, PROCESSED_FROM, CONTENT_STATE
+    ITEM_STATE, ITEM_TYPE, PUBLISH_SCHEDULE, SCHEDULE_SETTINGS, PROCESSED_FROM, CONTENT_STATE, CONTENT_TYPE,
 )
 
 
@@ -37,6 +38,26 @@ def set_german_and_publish(item, **kwargs):
         new_id = archive_service.duplicate_item(item, state='routed')
         updates[ITEM_STATE] = item.get(ITEM_STATE)
         updates[PROCESSED_FROM] = item[config.ID_FIELD]
+
+        if item[ITEM_TYPE] == CONTENT_TYPE.COMPOSITE:
+            # we need to replace original items by duplicated one with german language
+            # package item is processed after its content items have been duplicated
+            # so we can retrieve them from group refs
+            groups = item.get('groups', [])
+            for group in groups:
+                if group.get('id') != 'root':
+                    refs = group.get('refs', [])
+                    for ref in refs:
+                        if ref.get(RESIDREF):
+                            __, ref_item_id, __ = archive_service.packageService.get_associated_item(ref)
+                            new_item = archive_service.find_one(req=None, original_id=ref_item_id)
+                            if new_item is None:
+                                logger.warning(
+                                    "no duplicated item found for {ref_item_id}".format(ref_item_id=ref_item_id))
+                                continue
+                            ref[RESIDREF] = ref['guid'] = new_item['guid']
+                            ref["_current_version"] = new_item["version"]
+            updates["groups"] = groups
 
         get_resource_service('archive_publish').patch(id=new_id, updates=updates)
     elif item.get(ITEM_STATE) == CONTENT_STATE.CORRECTED:
