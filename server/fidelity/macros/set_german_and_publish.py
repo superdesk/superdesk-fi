@@ -6,18 +6,37 @@
 # AUTHORS and LICENSE files distributed with this source code, or
 # at https://www.sourcefabric.org/superdesk/license
 import logging
+from copy import deepcopy
+from eve.utils import config
+from typing import Tuple
+from apps.tasks import send_to
+from apps.archive.common import insert_into_versions
+from apps.packages.package_service import get_item_ref
 from superdesk import get_resource_service
 from superdesk.errors import StopDuplication
 from superdesk.metadata.packages import LINKED_IN_PACKAGES, PACKAGE, RESIDREF
 from superdesk.publish.publish_queue import PUBLISHED_IN_PACKAGE
-from apps.archive.common import insert_into_versions
-from eve.utils import config
+from superdesk.services import BaseService
 from superdesk.metadata.item import (
     ITEM_STATE, ITEM_TYPE, PUBLISH_SCHEDULE, SCHEDULE_SETTINGS, PROCESSED_FROM, CONTENT_STATE, CONTENT_TYPE,
 )
 
 
 logger = logging.getLogger(__name__)
+
+
+def create_de_item(archive_service: BaseService, item: dict) -> Tuple[str, dict]:
+    """Duplicate item and return new id and updates to use for German item"""
+    updates = {
+        PUBLISH_SCHEDULE: item[PUBLISH_SCHEDULE],
+        SCHEDULE_SETTINGS: item[SCHEDULE_SETTINGS],
+        'language': 'de',
+    }
+
+    new_id = archive_service.duplicate_item(item, state='routed')
+    updates[ITEM_STATE] = item.get(ITEM_STATE)
+    updates[PROCESSED_FROM] = item[config.ID_FIELD]
+    return new_id, updates
 
 
 def set_german_and_publish(item, **kwargs):
@@ -28,19 +47,20 @@ def set_german_and_publish(item, **kwargs):
     if item.get('language') != 'en':
         raise StopDuplication
 
+    try:
+        dest_desk_id = kwargs["dest_desk_id"]
+        dest_stage_id = kwargs["dest_stage_id"]
+    except KeyError:
+        logger.warning(
+            'missing "dest_desk_id" or "dest_stage_id", is this macro ({name}) used in Internal Destination?'
+            .format(name=name))
+        raise StopDuplication
+
     archive_service = get_resource_service('archive')
     archive_publish_service = get_resource_service('archive_publish')
 
     if item.get(ITEM_STATE) == CONTENT_STATE.PUBLISHED:
-        updates = {
-            PUBLISH_SCHEDULE: item[PUBLISH_SCHEDULE],
-            SCHEDULE_SETTINGS: item[SCHEDULE_SETTINGS],
-            'language': 'de',
-        }
-
-        new_id = archive_service.duplicate_item(item, state='routed')
-        updates[ITEM_STATE] = item.get(ITEM_STATE)
-        updates[PROCESSED_FROM] = item[config.ID_FIELD]
+        new_id, updates = create_de_item(archive_service, item)
 
         if item[ITEM_TYPE] == CONTENT_TYPE.COMPOSITE:
             # we need to replace original items by duplicated one with german language.
@@ -49,7 +69,7 @@ def set_german_and_publish(item, **kwargs):
             groups = item.get('groups', [])
             for group in groups:
                 if group.get('id') != 'root':
-                    refs = group.get('refs', [])
+                    refs = group.setdefault('refs', [])
                     for ref in refs:
                         if ref.get(RESIDREF):
                             __, ref_item_id, __ = archive_service.packageService.get_associated_item(ref)
@@ -58,6 +78,7 @@ def set_german_and_publish(item, **kwargs):
                                 logger.warning(
                                     "no duplicated item found for {ref_item_id}".format(ref_item_id=ref_item_id))
                                 continue
+
                             ref[RESIDREF] = ref['guid'] = new_item['guid']
                             ref["_current_version"] = new_item["_current_version"]
                             new_item_updates = {
@@ -79,18 +100,17 @@ def set_german_and_publish(item, **kwargs):
             archive_publish_service.patch(id=new_id, updates=updates)
             insert_into_versions(id_=new_id)
     elif item.get(ITEM_STATE) == CONTENT_STATE.CORRECTED:
-        de_item = archive_service.find_one(req=None, processed_from=item[config.ID_FIELD])
+        de_item_id = item[config.ID_FIELD]
+        de_item = archive_service.find_one(req=None, processed_from=de_item_id)
 
         if not de_item:
             raise StopDuplication
 
-        # "groups" and "deleted_groups" are not included here as it is tricky to replicate the correction
-        # because references in the "German" (duplicated) item are not the same as the one in the "English"
-        # (original) one.
+        # "groups" is handled below
         fields_to_correct = (
             'abstract', 'annotations', 'anpa_category', 'anpa_take_key', 'archive_description', 'associations',
             'attachments', 'authors', 'body_footer', 'body_html', 'body_text', 'byline', 'company_codes', 'creditline',
-            'dateline', 'description_text', 'ednote', 'expiry', 'extra', 'fields_meta', 'genre',
+            'dateline', 'description_text', 'deleted_groups', 'ednote', 'expiry', 'extra', 'fields_meta', 'genre',
             'headline', 'keywords', 'more_coming', 'place', 'profile', 'sign_off', 'signal', 'slugline',
             'sms_message', 'source', 'subject', 'urgency', 'word_count', 'priority'
         )
@@ -98,6 +118,79 @@ def set_german_and_publish(item, **kwargs):
         for field in fields_to_correct:
             if item.get(field):
                 de_item[field] = item[field]
+
+        if item[ITEM_TYPE] == CONTENT_TYPE.COMPOSITE:
+            # for a package, we need to synchronise references, in case of items have been added or removed from it
+            ori_refs = set()
+            for group in item.get('groups', []):
+                if group.get('id') != 'root':
+                    refs = group.get('refs', [])
+                    for ref in refs:
+                        if ref.get(RESIDREF):
+                            __, ref_item_id, __ = archive_service.packageService.get_associated_item(ref)
+                            ori_refs.add(ref_item_id)
+
+            # we link item in English and their duplicated version in German, so we can compare them below
+            en_de_map = {}
+            for group in de_item.get('groups', []):
+                if group.get('id') != 'root':
+                    refs = group.get('refs', [])
+                    for ref in refs:
+                        if ref.get(RESIDREF):
+                            item, ref_item_id, __ = archive_service.packageService.get_associated_item(ref)
+                            try:
+                                en_de_map[item['processed_from']] = ref_item_id
+                            except KeyError:
+                                logger.warning(
+                                    'missing "processed_from" key in referenced item {ref_item_id} from package '
+                                    '{item_id}'.format(
+                                        ref_item_id=ref_item_id,
+                                        item_id=item[config.ID_FIELD]))
+                                continue
+
+            # we synchronise new items
+            new_refs = ori_refs - en_de_map.keys()
+            for new_ref in new_refs:
+                # we check if we have already a duplicate version of this item
+                dup_ref_item = archive_service.find_one(req=None, original_id=new_ref, language="de")
+                if dup_ref_item is None:
+                    # we have to duplicate the item, basically reproducing what would happen
+                    # with publish workflow
+                    logger.info("creating German item for {item_id}".format(item_id=new_ref))
+                    ori_ref_item = archive_service.find_one(req=None, guid=new_ref)
+                    # we imitate internal destination
+                    ori_ref_item_cpy = deepcopy(ori_ref_item)
+                    send_to(ori_ref_item_cpy, desk_id=dest_desk_id, stage_id=dest_stage_id)
+                    new_id, updates = create_de_item(archive_service, ori_ref_item_cpy)
+                    dup_ref_item = archive_service.find_one(req=None, guid=new_id)
+                    updates[LINKED_IN_PACKAGES] = dup_ref_item.setdefault(LINKED_IN_PACKAGES, [])
+                    dup_ref_item[PUBLISHED_IN_PACKAGE] = updates[PUBLISHED_IN_PACKAGE] = de_item_id
+                    updates[LINKED_IN_PACKAGES].append({PACKAGE: de_item_id})
+
+                    archive_publish_service.patch(id=new_id, updates=updates)
+                    insert_into_versions(id_=new_id)
+
+                # we have the German item, now we create the ref to update German package
+                new_ref = get_item_ref(dup_ref_item)
+                new_ref['guid'] = new_ref[RESIDREF]
+                groups = de_item["groups"]
+                dest_group = next(g for g in groups if g.get('id') != 'root')
+                dest_group['refs'].append(new_ref)
+
+            # now we remove items removed from English version
+            deleted_refs = en_de_map.keys() - ori_refs
+            for deleted_ref in deleted_refs:
+                de_deleted_ref = en_de_map[deleted_ref]
+                for group in de_item.get('groups', []):
+                    if group.get('id') != 'root':
+                        refs = group.get('refs', [])
+                        to_delete = []
+                        for ref in refs:
+                            if ref.get('guid') == de_deleted_ref:
+                                to_delete.append(ref)
+                                break
+                        for ref in to_delete:
+                            refs.remove(ref)
 
         get_resource_service('archive_correct').patch(de_item[config.ID_FIELD], de_item)
         insert_into_versions(id_=de_item[config.ID_FIELD])
