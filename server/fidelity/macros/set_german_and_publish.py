@@ -100,11 +100,12 @@ def set_german_and_publish(item, **kwargs):
             archive_publish_service.patch(id=new_id, updates=updates)
             insert_into_versions(id_=new_id)
     elif item.get(ITEM_STATE) == CONTENT_STATE.CORRECTED:
-        de_item_id = item[config.ID_FIELD]
-        de_item = archive_service.find_one(req=None, processed_from=de_item_id)
+        de_item = archive_service.find_one(req=None, processed_from=item[config.ID_FIELD])
 
         if not de_item:
             raise StopDuplication
+
+        de_item_id = de_item[config.ID_FIELD]
 
         # "groups" is handled below
         fields_to_correct = (
@@ -209,6 +210,14 @@ def set_german_and_publish(item, **kwargs):
 
                         archive_publish_service.patch(id=new_id, updates=updates)
                         insert_into_versions(id_=new_id)
+                    else:
+                        # the item already exists, let's update it
+                        updates = {
+                            LINKED_IN_PACKAGES: dup_ref_item.setdefault(LINKED_IN_PACKAGES, []),
+                            PUBLISHED_IN_PACKAGE: de_item_id,
+                        }
+                        updates[LINKED_IN_PACKAGES].append({PACKAGE: de_item_id})
+                        archive_service.system_update(id=dup_ref_item["guid"], updates=updates, original=dup_ref_item)
 
                     # we have the German item, now we create the ref to update German package
                     new_ref = get_item_ref(dup_ref_item)
