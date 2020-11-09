@@ -58,6 +58,7 @@ def set_german_and_publish(item, **kwargs):
 
     archive_service = get_resource_service('archive')
     archive_publish_service = get_resource_service('archive_publish')
+    groups = item.get('groups', [])
 
     if item.get(ITEM_STATE) == CONTENT_STATE.PUBLISHED:
         new_id, updates = create_de_item(archive_service, item)
@@ -66,7 +67,6 @@ def set_german_and_publish(item, **kwargs):
             # we need to replace original items by duplicated one with german language.
             # Package item is processed after its content items have been duplicated
             # so we can retrieve them from group refs
-            groups = item.get('groups', [])
             for group in groups:
                 if group.get('id') != 'root':
                     refs = group.setdefault('refs', [])
@@ -126,7 +126,7 @@ def set_german_and_publish(item, **kwargs):
 
             # groups id to set of items id map for original items (root is skipped)
             ori_group_refs = {}
-            for group in item.get('groups', []):
+            for group in groups:
                 if group.get('id') != 'root':
                     ori_refs = ori_group_refs[group['id']] = set()
                     refs = group.get('refs', [])
@@ -230,8 +230,8 @@ def set_german_and_publish(item, **kwargs):
                     de_deleted_ref = en_de_map[deleted_ref]
                     for ref in de_group['refs']:
                         if ref.get('guid') == de_deleted_ref:
+                            de_group['refs'].remove(ref)
                             break
-                    de_group['refs'].remove(ref)
 
         get_resource_service('archive_correct').patch(de_item[config.ID_FIELD], de_item)
         insert_into_versions(id_=de_item[config.ID_FIELD])
