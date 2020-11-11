@@ -811,7 +811,7 @@
                 "is_active": true,
                 "translations": {
                     "name": {
-                        "de": "Monthly Insight",
+                        "de": "Portfoliobericht",
                         "it": "Monthly Insight",
                         "ja": "月次インサイト"
                     }
@@ -823,7 +823,7 @@
                 "is_active": true,
                 "translations": {
                     "name": {
-                        "de": "Quarterly Insight",
+                        "de": "Quartalsbericht",
                         "it": "Quarterly Insight",
                         "ja": "四半期インサイト"
                     }
