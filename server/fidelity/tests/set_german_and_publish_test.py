@@ -29,7 +29,7 @@ class SetGermanAndPublishTest(TestCase):
                     PUBLISH_SCHEDULE: {},
                     SCHEDULE_SETTINGS: {},
                 }
-                set_german_and_publish(item)
+                set_german_and_publish(item, dest_desk_id=None, dest_stage_id=None)
             archive_service = get_resource_service('archive')
             new_item = archive_service.find_one(req=None, original_id='test_123')
             self.assertEqual(new_item['language'], 'de')
@@ -51,7 +51,7 @@ class SetGermanAndPublishTest(TestCase):
                     PUBLISH_SCHEDULE: {},
                     SCHEDULE_SETTINGS: {},
                 }
-                set_german_and_publish(item)
+                set_german_and_publish(item, dest_desk_id=None, dest_stage_id=None)
             archive_service = get_resource_service('archive')
             new_item = archive_service.find_one(req=None, original_id='test_123')
             self.assertEqual(new_item['language'], 'de')
@@ -70,7 +70,7 @@ class SetGermanAndPublishTest(TestCase):
                     PUBLISH_SCHEDULE: {},
                     SCHEDULE_SETTINGS: {},
                 }
-                set_german_and_publish(item)
+                set_german_and_publish(item, dest_desk_id=None, dest_stage_id=None)
             archive_service = get_resource_service('archive')
             new_item = archive_service.find_one(req=None, original_id='test_123')
             self.assertIsNone(new_item)
@@ -87,7 +87,7 @@ class SetGermanAndPublishTest(TestCase):
                     PUBLISH_SCHEDULE: {},
                     SCHEDULE_SETTINGS: {},
                 }
-                set_german_and_publish(item)
+                set_german_and_publish(item, dest_desk_id=None, dest_stage_id=None)
             archive_service = get_resource_service('archive')
             new_item = archive_service.find_one(req=None, original_id='test_123')
             self.assertIsNone(new_item)
