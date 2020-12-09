@@ -8,322 +8,568 @@
         "items": []
     },
     {
-    "_id": "subject_custom",
-    "display_name": "Subject",
-    "type": "manageable",
-    "service": {"all": 1},
-    "schema_field": "subject",
-    "selection_type": "multi selection",
-    "dependent": 0,
-    "schema": {
-        "name": {},
-        "qcode": {},
-        "parent": {},
-        "translations": {}
-    },
-    "items":[
-        {
-           "name": "Asset allocation",
-           "parent":null,
-           "is_active":true,
-           "qcode": "subject:01000000",
-           "translations": {"name": {"de": "Asset-Allokation", "it": "Asset allocation", "ja": "アセット・アロケーション"}}
+        "_id": "subject_custom",
+        "display_name": "Subject",
+        "type": "manageable",
+        "service": { "all": 1 },
+        "schema_field": "subject",
+        "selection_type": "multi selection",
+        "dependent": 0,
+        "schema": {
+            "name": {},
+            "qcode": {},
+            "parent": {},
+            "translations": {}
         },
-        {
-           "name": "Risk",
-           "parent":null,
-           "is_active":true,
-           "qcode": "subject:02000000",
-           "translations": {"name": {"de": "Risiko", "it": "Rischio", "ja": "リスク"}}
-        },
-        {
-           "name": "Market context",
-           "parent":null,
-           "is_active":true,
-           "qcode": "subject:03000000",
-           "translations": {"name": {"de": "Marktumfeld", "it": "Contesto di mercato", "ja": "マーケット・コンテクスト"}}
-        },
-        {
-           "name": "Fidelity views",
-           "parent":null,
-           "is_active":true,
-           "qcode": "subject:04000000",
-           "translations": {"name": {"de": "Ansichten von Fidelity", "it": "Previsioni Fidelity", "ja": "フィデリティの見解"}}
-        },
-        {
-           "name": "Alpha/Beta separation",
-           "parent": "subject:01000000",
-           "is_active":true,
-           "qcode": "subject:01000001",
-           "translations": {"name": {"de": "Trennung von Alpha und Beta", "it": "Separazione alfa-beta", "ja": "アルファ・ベータ分離"}}
-        },
-        {
-           "name": "Outcome orientated solutions",
-           "parent": "subject:01000000",
-           "is_active":true,
-           "qcode": "subject:01000002",
-           "translations": {"name": {"de": "Ergebnisorientiert", "it": "Orientato ai risultati ", "ja": "アウトカム・オリエンティッド"}}
-        },
-        {
-           "name": "Low cost beta",
-           "parent": "subject:01000000",
-           "is_active":true,
-           "qcode": "subject:01000003",
-           "translations": {"name": {"de": "Kostengünstiges Beta", "it": "Beta a basso costo", "ja": "低コスト・ベータ"}}
-        },
-        {
-           "name": "Income",
-           "parent": "subject:01000000",
-           "is_active":true,
-           "qcode": "subject:01000004",
-           "translations": {"name": {"de": "Laufender Ertrag", "it": "Reddito", "ja": "インカム"}}
-        },
-        {
-           "name": "Diversification",
-           "parent": "subject:01000000",
-           "is_active":true,
-           "qcode": "subject:01000005",
-           "translations": {"name": {"de": "Diversifikation", "it": "Diversificazione", "ja": "分散化"}}
-        },
-        {
-           "name": "Portfolio construction",
-           "parent": "subject:01000000",
-           "is_active":true,
-           "qcode": "subject:01000006",
-           "translations": {"name": {"de": "Portfoliokonstruktion ", "it": "Costruzione del portafoglio", "ja": "ポートフォリオ構築"}}
-        },
-        {
-           "name": "Strategic asset allocation",
-           "parent": "subject:01000000",
-           "is_active":true,
-           "qcode": "subject:01000007",
-           "translations": {"name": {"de": "Strategische Asset-Allokation", "it": "Asset allocation strategica", "ja": "戦略的アセット・アロケーション"}}
-        },
-        {
-           "name": "Tactical asset  allocation",
-           "parent": "subject:01000000",
-           "is_active":true,
-           "qcode": "subject:01000008",
-           "translations": {"name": {"de": "Taktische Asset-Allokation", "it": "Asset allocation tattica", "ja": "戦術的アセット・アロケーション"}}
-        },
-        {
-           "name": "Liability matching",
-           "parent": "subject:01000000",
-           "is_active":true,
-           "qcode": "subject:01000009",
-           "translations": {"name": {"de": "Liability Matching", "it": "Liability matching", "ja": "ライアビリティ・マッチング"}}
-        },
-        {
-           "name": "LDI",
-           "parent": "subject:01000000",
-           "is_active":true,
-           "qcode": "subject:01000010",
-           "translations": {"name": {"de": "Liability-Driven Investment", "it": "LDI", "ja": "LDI"}}
-        },
-        {
-           "name": "Alpha generation",
-           "parent": "subject:01000000",
-           "is_active":true,
-           "qcode": "subject:01000011",
-           "translations": {"name": {"de": "Alpha-Erzielung", "it": "Generazione di alfa", "ja": "アルファ創出"}}
-        },
-        {
-           "name": "Risk Management",
-           "parent": "subject:02000000",
-           "is_active":true,
-           "qcode": "subject:02000001",
-           "translations": {"name": {"de": "Risikomanagement", "it": "Gestione del rischio", "ja": "リスク管理"}}
-        },
-        {
-           "name": "Monitoring Risk",
-           "parent": "subject:02000000",
-           "is_active":true,
-           "qcode": "subject:02000002",
-           "translations": {"name": {"de": "Risikoüberwachung", "it": "Monitoraggio del rischio", "ja": "リスクモニタリング"}}
-        },
-        {
-           "name": "Hedging",
-           "parent": "subject:02000000",
-           "is_active":true,
-           "qcode": "subject:02000003",
-           "translations": {"name": {"de": "Absicherung", "it": "Copertura", "ja": "ヘッジ"}}
-        },
-        {
-           "name": "Regulation",
-           "parent": "subject:03000000",
-           "is_active":true,
-           "qcode": "subject:03000001",
-           "translations": {"name": {"de": "Regulierung", "it": "Regolamentazione", "ja": "規制"}}
-        },
-        {
-           "name": "Return expectations",
-           "parent": "subject:03000000",
-           "is_active":true,
-           "qcode": "subject:03000002",
-           "translations": {"name": {"de": "Ertragserwartungen", "it": "Rendimenti attesi", "ja": "リターン予想"}}
-        },
-        {
-           "name": "Interest rates",
-           "parent": "subject:03000000",
-           "is_active":true,
-           "qcode": "subject:03000003",
-           "translations": {"name": {"de": "Zinsen", "it": "Tassi di interesse", "ja": "金利"}}
-        },
-        {
-           "name": "Political uncertainty",
-           "parent": "subject:03000000",
-           "is_active":true,
-           "qcode": "subject:03000004",
-           "translations": {"name": {"de": "Politische Unsicherheit", "it": "Inertezza politica", "ja": "政治的不透明性"}}
-        },
-        {
-           "name": "Behavioural finance",
-           "parent": "subject:04000000",
-           "is_active":true,
-           "qcode": "subject:04000001",
-           "translations": {"name": {"de": "Behavioural Finance", "it": "Finanza comportamentale", "ja": "行動ファイナンス"}}
-        },
-        {
-           "name": "ESG",
-           "parent": "subject:04000000",
-           "is_active":true,
-           "qcode": "subject:04000002",
-           "translations": {"name": {"de": "ESG", "it": "ESG", "ja": "ESG"}}
-        },
-        {
-           "name": "Research",
-           "parent": "subject:04000000",
-           "is_active":true,
-           "qcode": "subject:04000003",
-           "translations": {"name": {"de": "Research", "it": "Research", "ja": "リサーチ"}}
-        },
-        {
-           "name": "Active management",
-           "parent": "subject:01000000",
-           "is_active":true,
-           "qcode": "subject:01000012",
-           "translations": {"name": {"de": "Aktives Management", "it": "Gestione attiva", "ja": "アクティブ運用"}}
-        },
-        {
-           "name": "Passive",
-           "parent": "subject:01000000",
-           "is_active":true,
-           "qcode": "subject:01000013",
-           "translations": {"name": {"de": "Passive Anlagen", "it": "Gestione passiva ", "ja": "パッシブ"}}
-        },
-        {
-           "name": "Factor investing",
-           "parent": "subject:01000000",
-           "is_active":true,
-           "qcode": "subject:01000014",
-           "translations": {"name": {"de": "Factor Investing", "it": "Investimento basato sui fattori di rischio", "ja": "ファクター投資"}}
-        },
-        {
-           "name": "Thematic investing",
-           "parent": "subject:01000000",
-           "is_active":true,
-           "qcode": "subject:01000015",
-           "translations": {"name": {"de": "Thematische Anlagen", "it": "Investimento tematico", "ja": "テーマ投資"}}
-        },
-        {
-           "name": "Absolute return",
-           "parent": "subject:01000000",
-           "is_active":true,
-           "qcode": "subject:01000016",
-           "translations": {"name": {"de": "Absolute Return", "it": "Absolute return", "ja": "絶対リターン"}}
-        },
-        {
-           "name": "Total return",
-           "parent": "subject:01000000",
-           "is_active":true,
-           "qcode": "subject:01000017",
-           "translations": {"name": {"de": "Total Return", "it": "Total return", "ja": "トータルリターン"}}
-        },
-        {
-           "name": "Currency",
-           "parent": "subject:02000000",
-           "is_active":true,
-           "qcode": "subject:02000004",
-           "translations": {"name": {"de": "Währungen", "it": "Valuta", "ja": "通貨"}}
-        },
-        {
-           "name": "Risk exposures",
-           "parent": "subject:02000000",
-           "is_active":true,
-           "qcode": "subject:02000005",
-           "translations": {"name": {"de": "Risiko-Exposures", "it": "Esposizioni al rischio", "ja": "リスク・エクスポージャー"}}
-        },
-        {
-           "name": "De-Risking",
-           "parent": "subject:02000000",
-           "is_active":true,
-           "qcode": "subject:02000006",
-           "translations": {"name": {"de": "Risikoreduzierung", "it": "Riduzione del rischio", "ja": "リスク回避"}}
-        },
-        {
-           "name": "Downside protection",
-           "parent": "subject:02000000",
-           "is_active":true,
-           "qcode": "subject:02000007",
-           "translations": {"name": {"de": "Schutz vor Abwärtsrisiken", "it": "Protezione dai ribassi", "ja": "ダウンサイド・プロテクション"}}
-        },
-        {
-           "name": "Liquidity",
-           "parent": "subject:02000000",
-           "is_active":true,
-           "qcode": "subject:02000008",
-           "translations": {"name": {"de": "Liquidität", "it": "Liquidità", "ja": "流動性"}}
-        },
-        {
-           "name": "Biases",
-           "parent": "subject:02000000",
-           "is_active":true,
-           "qcode": "subject:02000009",
-           "translations": {"name": {"de": "Bias", "it": "Pregiudizi", "ja": "バイアス"}}
-        },
-        {
-           "name": "Duration",
-           "parent": "subject:02000000",
-           "is_active":true,
-           "qcode": "subject:02000010",
-           "translations": {"name": {"de": "Duration", "it": "Duration", "ja": "デュレーション"}}
-        },
-        {
-           "name": "Governance",
-           "parent": "subject:03000000",
-           "is_active":true,
-           "qcode": "subject:03000005",
-           "translations": {"name": {"de": "Governance", "it": "Governance", "ja": "ガバナンス"}}
-        },
-        {
-           "name": "Macroeconomics",
-           "parent": "subject:03000000",
-           "is_active":true,
-           "qcode": "subject:03000006",
-           "translations": {"name": {"de": "Gesamtwirtschaftliche Aspekte", "it": "Macroeconomia", "ja": "マクロ経済"}}
-        },
-        {
-           "name": "Central banks",
-           "parent": "subject:03000000",
-           "is_active":true,
-           "qcode": "subject:03000007",
-           "translations": {"name": {"de": "Notenbanken", "it": "Banche centrali", "ja": "中央銀行"}}
-        },
-        {
-           "name": "Inflation",
-           "parent": "subject:03000000",
-           "is_active":true,
-           "qcode": "subject:03000008",
-           "translations": {"name": {"de": "Inflation", "it": "Inflazione", "ja": "インフレ"}}
-        },
-        {
-           "name": "Retirement",
-           "parent": "subject:03000000",
-           "is_active":true,
-           "qcode": "subject:03000009",
-           "translations": {"name": {"de": "Altersvorsorge", "it": "Pensione", "ja": "定年退職"}}
-        }
-     ]
+        "items": [
+            {
+                "name": "Asset allocation",
+                "parent": null,
+                "is_active": true,
+                "qcode": "subject:01000000",
+                "translations": {
+                    "name": {
+                        "de": "Asset-Allokation",
+                        "it": "Asset allocation",
+                        "ja": "アセット・アロケーション"
+                    }
+                }
+            },
+            {
+                "name": "Risk",
+                "parent": null,
+                "is_active": true,
+                "qcode": "subject:02000000",
+                "translations": {
+                    "name": { "de": "Risiko", "it": "Rischio", "ja": "リスク" }
+                }
+            },
+            {
+                "name": "Market context",
+                "parent": null,
+                "is_active": true,
+                "qcode": "subject:03000000",
+                "translations": {
+                    "name": {
+                        "de": "Marktumfeld",
+                        "it": "Contesto di mercato",
+                        "ja": "マーケット・コンテクスト"
+                    }
+                }
+            },
+            {
+                "name": "Fidelity views",
+                "parent": null,
+                "is_active": true,
+                "qcode": "subject:04000000",
+                "translations": {
+                    "name": {
+                        "de": "Ansichten von Fidelity",
+                        "it": "Previsioni Fidelity",
+                        "ja": "フィデリティの見解"
+                    }
+                }
+            },
+            {
+                "name": "Alpha/Beta separation",
+                "parent": "subject:01000000",
+                "is_active": true,
+                "qcode": "subject:01000001",
+                "translations": {
+                    "name": {
+                        "de": "Trennung von Alpha und Beta",
+                        "it": "Separazione alfa-beta",
+                        "ja": "アルファ・ベータ分離"
+                    }
+                }
+            },
+            {
+                "name": "Outcome orientated solutions",
+                "parent": "subject:01000000",
+                "is_active": true,
+                "qcode": "subject:01000002",
+                "translations": {
+                    "name": {
+                        "de": "Ergebnisorientiert",
+                        "it": "Orientato ai risultati ",
+                        "ja": "アウトカム・オリエンティッド"
+                    }
+                }
+            },
+            {
+                "name": "Low cost beta",
+                "parent": "subject:01000000",
+                "is_active": true,
+                "qcode": "subject:01000003",
+                "translations": {
+                    "name": {
+                        "de": "Kostengünstiges Beta",
+                        "it": "Beta a basso costo",
+                        "ja": "低コスト・ベータ"
+                    }
+                }
+            },
+            {
+                "name": "Income",
+                "parent": "subject:01000000",
+                "is_active": true,
+                "qcode": "subject:01000004",
+                "translations": {
+                    "name": {
+                        "de": "Laufender Ertrag",
+                        "it": "Reddito",
+                        "ja": "インカム"
+                    }
+                }
+            },
+            {
+                "name": "Diversification",
+                "parent": "subject:01000000",
+                "is_active": true,
+                "qcode": "subject:01000005",
+                "translations": {
+                    "name": {
+                        "de": "Diversifikation",
+                        "it": "Diversificazione",
+                        "ja": "分散化"
+                    }
+                }
+            },
+            {
+                "name": "Portfolio construction",
+                "parent": "subject:01000000",
+                "is_active": true,
+                "qcode": "subject:01000006",
+                "translations": {
+                    "name": {
+                        "de": "Portfoliokonstruktion ",
+                        "it": "Costruzione del portafoglio",
+                        "ja": "ポートフォリオ構築"
+                    }
+                }
+            },
+            {
+                "name": "Strategic asset allocation",
+                "parent": "subject:01000000",
+                "is_active": true,
+                "qcode": "subject:01000007",
+                "translations": {
+                    "name": {
+                        "de": "Strategische Asset-Allokation",
+                        "it": "Asset allocation strategica",
+                        "ja": "戦略的アセット・アロケーション"
+                    }
+                }
+            },
+            {
+                "name": "Tactical asset  allocation",
+                "parent": "subject:01000000",
+                "is_active": true,
+                "qcode": "subject:01000008",
+                "translations": {
+                    "name": {
+                        "de": "Taktische Asset-Allokation",
+                        "it": "Asset allocation tattica",
+                        "ja": "戦術的アセット・アロケーション"
+                    }
+                }
+            },
+            {
+                "name": "Liability matching",
+                "parent": "subject:01000000",
+                "is_active": true,
+                "qcode": "subject:01000009",
+                "translations": {
+                    "name": {
+                        "de": "Liability Matching",
+                        "it": "Liability matching",
+                        "ja": "ライアビリティ・マッチング"
+                    }
+                }
+            },
+            {
+                "name": "LDI",
+                "parent": "subject:01000000",
+                "is_active": true,
+                "qcode": "subject:01000010",
+                "translations": {
+                    "name": {
+                        "de": "Liability-Driven Investment",
+                        "it": "LDI",
+                        "ja": "LDI"
+                    }
+                }
+            },
+            {
+                "name": "Alpha generation",
+                "parent": "subject:01000000",
+                "is_active": true,
+                "qcode": "subject:01000011",
+                "translations": {
+                    "name": {
+                        "de": "Alpha-Erzielung",
+                        "it": "Generazione di alfa",
+                        "ja": "アルファ創出"
+                    }
+                }
+            },
+            {
+                "name": "Risk Management",
+                "parent": "subject:02000000",
+                "is_active": true,
+                "qcode": "subject:02000001",
+                "translations": {
+                    "name": {
+                        "de": "Risikomanagement",
+                        "it": "Gestione del rischio",
+                        "ja": "リスク管理"
+                    }
+                }
+            },
+            {
+                "name": "Monitoring Risk",
+                "parent": "subject:02000000",
+                "is_active": true,
+                "qcode": "subject:02000002",
+                "translations": {
+                    "name": {
+                        "de": "Risikoüberwachung",
+                        "it": "Monitoraggio del rischio",
+                        "ja": "リスクモニタリング"
+                    }
+                }
+            },
+            {
+                "name": "Hedging",
+                "parent": "subject:02000000",
+                "is_active": true,
+                "qcode": "subject:02000003",
+                "translations": {
+                    "name": {
+                        "de": "Absicherung",
+                        "it": "Copertura",
+                        "ja": "ヘッジ"
+                    }
+                }
+            },
+            {
+                "name": "Regulation",
+                "parent": "subject:03000000",
+                "is_active": true,
+                "qcode": "subject:03000001",
+                "translations": {
+                    "name": {
+                        "de": "Regulierung",
+                        "it": "Regolamentazione",
+                        "ja": "規制"
+                    }
+                }
+            },
+            {
+                "name": "Return expectations",
+                "parent": "subject:03000000",
+                "is_active": true,
+                "qcode": "subject:03000002",
+                "translations": {
+                    "name": {
+                        "de": "Ertragserwartungen",
+                        "it": "Rendimenti attesi",
+                        "ja": "リターン予想"
+                    }
+                }
+            },
+            {
+                "name": "Interest rates",
+                "parent": "subject:03000000",
+                "is_active": true,
+                "qcode": "subject:03000003",
+                "translations": {
+                    "name": {
+                        "de": "Zinsen",
+                        "it": "Tassi di interesse",
+                        "ja": "金利"
+                    }
+                }
+            },
+            {
+                "name": "Political uncertainty",
+                "parent": "subject:03000000",
+                "is_active": true,
+                "qcode": "subject:03000004",
+                "translations": {
+                    "name": {
+                        "de": "Politische Unsicherheit",
+                        "it": "Inertezza politica",
+                        "ja": "政治的不透明性"
+                    }
+                }
+            },
+            {
+                "name": "Behavioural finance",
+                "parent": "subject:04000000",
+                "is_active": true,
+                "qcode": "subject:04000001",
+                "translations": {
+                    "name": {
+                        "de": "Behavioural Finance",
+                        "it": "Finanza comportamentale",
+                        "ja": "行動ファイナンス"
+                    }
+                }
+            },
+            {
+                "name": "ESG",
+                "parent": "subject:04000000",
+                "is_active": true,
+                "qcode": "subject:04000002",
+                "translations": {
+                    "name": { "de": "ESG", "it": "ESG", "ja": "ESG" }
+                }
+            },
+            {
+                "name": "Research",
+                "parent": "subject:04000000",
+                "is_active": true,
+                "qcode": "subject:04000003",
+                "translations": {
+                    "name": {
+                        "de": "Research",
+                        "it": "Research",
+                        "ja": "リサーチ"
+                    }
+                }
+            },
+            {
+                "name": "Active management",
+                "parent": "subject:01000000",
+                "is_active": true,
+                "qcode": "subject:01000012",
+                "translations": {
+                    "name": {
+                        "de": "Aktives Management",
+                        "it": "Gestione attiva",
+                        "ja": "アクティブ運用"
+                    }
+                }
+            },
+            {
+                "name": "Passive",
+                "parent": "subject:01000000",
+                "is_active": true,
+                "qcode": "subject:01000013",
+                "translations": {
+                    "name": {
+                        "de": "Passive Anlagen",
+                        "it": "Gestione passiva ",
+                        "ja": "パッシブ"
+                    }
+                }
+            },
+            {
+                "name": "Factor investing",
+                "parent": "subject:01000000",
+                "is_active": true,
+                "qcode": "subject:01000014",
+                "translations": {
+                    "name": {
+                        "de": "Factor Investing",
+                        "it": "Investimento basato sui fattori di rischio",
+                        "ja": "ファクター投資"
+                    }
+                }
+            },
+            {
+                "name": "Thematic investing",
+                "parent": "subject:01000000",
+                "is_active": true,
+                "qcode": "subject:01000015",
+                "translations": {
+                    "name": {
+                        "de": "Thematische Anlagen",
+                        "it": "Investimento tematico",
+                        "ja": "テーマ投資"
+                    }
+                }
+            },
+            {
+                "name": "Absolute return",
+                "parent": "subject:01000000",
+                "is_active": true,
+                "qcode": "subject:01000016",
+                "translations": {
+                    "name": {
+                        "de": "Absolute Return",
+                        "it": "Absolute return",
+                        "ja": "絶対リターン"
+                    }
+                }
+            },
+            {
+                "name": "Total return",
+                "parent": "subject:01000000",
+                "is_active": true,
+                "qcode": "subject:01000017",
+                "translations": {
+                    "name": {
+                        "de": "Total Return",
+                        "it": "Total return",
+                        "ja": "トータルリターン"
+                    }
+                }
+            },
+            {
+                "name": "Currency",
+                "parent": "subject:02000000",
+                "is_active": true,
+                "qcode": "subject:02000004",
+                "translations": {
+                    "name": { "de": "Währungen", "it": "Valuta", "ja": "通貨" }
+                }
+            },
+            {
+                "name": "Risk exposures",
+                "parent": "subject:02000000",
+                "is_active": true,
+                "qcode": "subject:02000005",
+                "translations": {
+                    "name": {
+                        "de": "Risiko-Exposures",
+                        "it": "Esposizioni al rischio",
+                        "ja": "リスク・エクスポージャー"
+                    }
+                }
+            },
+            {
+                "name": "De-Risking",
+                "parent": "subject:02000000",
+                "is_active": true,
+                "qcode": "subject:02000006",
+                "translations": {
+                    "name": {
+                        "de": "Risikoreduzierung",
+                        "it": "Riduzione del rischio",
+                        "ja": "リスク回避"
+                    }
+                }
+            },
+            {
+                "name": "Downside protection",
+                "parent": "subject:02000000",
+                "is_active": true,
+                "qcode": "subject:02000007",
+                "translations": {
+                    "name": {
+                        "de": "Schutz vor Abwärtsrisiken",
+                        "it": "Protezione dai ribassi",
+                        "ja": "ダウンサイド・プロテクション"
+                    }
+                }
+            },
+            {
+                "name": "Liquidity",
+                "parent": "subject:02000000",
+                "is_active": true,
+                "qcode": "subject:02000008",
+                "translations": {
+                    "name": {
+                        "de": "Liquidität",
+                        "it": "Liquidità",
+                        "ja": "流動性"
+                    }
+                }
+            },
+            {
+                "name": "Biases",
+                "parent": "subject:02000000",
+                "is_active": true,
+                "qcode": "subject:02000009",
+                "translations": {
+                    "name": {
+                        "de": "Bias",
+                        "it": "Pregiudizi",
+                        "ja": "バイアス"
+                    }
+                }
+            },
+            {
+                "name": "Duration",
+                "parent": "subject:02000000",
+                "is_active": true,
+                "qcode": "subject:02000010",
+                "translations": {
+                    "name": {
+                        "de": "Duration",
+                        "it": "Duration",
+                        "ja": "デュレーション"
+                    }
+                }
+            },
+            {
+                "name": "Governance",
+                "parent": "subject:03000000",
+                "is_active": true,
+                "qcode": "subject:03000005",
+                "translations": {
+                    "name": {
+                        "de": "Governance",
+                        "it": "Governance",
+                        "ja": "ガバナンス"
+                    }
+                }
+            },
+            {
+                "name": "Macroeconomics",
+                "parent": "subject:03000000",
+                "is_active": true,
+                "qcode": "subject:03000006",
+                "translations": {
+                    "name": {
+                        "de": "Gesamtwirtschaftliche Aspekte",
+                        "it": "Macroeconomia",
+                        "ja": "マクロ経済"
+                    }
+                }
+            },
+            {
+                "name": "Central banks",
+                "parent": "subject:03000000",
+                "is_active": true,
+                "qcode": "subject:03000007",
+                "translations": {
+                    "name": {
+                        "de": "Notenbanken",
+                        "it": "Banche centrali",
+                        "ja": "中央銀行"
+                    }
+                }
+            },
+            {
+                "name": "Inflation",
+                "parent": "subject:03000000",
+                "is_active": true,
+                "qcode": "subject:03000008",
+                "translations": {
+                    "name": {
+                        "de": "Inflation",
+                        "it": "Inflazione",
+                        "ja": "インフレ"
+                    }
+                }
+            },
+            {
+                "name": "Retirement",
+                "parent": "subject:03000000",
+                "is_active": true,
+                "qcode": "subject:03000009",
+                "translations": {
+                    "name": {
+                        "de": "Altersvorsorge",
+                        "it": "Pensione",
+                        "ja": "定年退職"
+                    }
+                }
+            }
+        ]
     },
     {
         "_id": "default_categories",
@@ -335,68 +581,253 @@
         "schema": {
             "qcode": {}
         }
-     },
-     {
+    },
+    {
         "_id": "genre_custom",
         "display_name": "Genre",
-	    "schema_field": "genre",
+        "schema_field": "genre",
         "type": "manageable",
-        "service": {"all": 1},
+        "service": { "all": 1 },
         "selection_type": "single selection",
-        "items":[
+        "items": [
             {
-               "name": "Article",
-               "qcode": "genre_custom:Article",
-               "is_active":true,
-               "translations": {"name": {"de": "Artikel", "it": "Articolo", "ja": "レポート"}}
+                "name": "Article",
+                "qcode": "genre_custom:Article",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Artikel",
+                        "it": "Articolo",
+                        "ja": "レポート"
+                    }
+                }
             },
             {
-               "name": "Bibliography",
-               "qcode": "genre_custom:Bibliography",
-               "is_active":true,
-               "translations": {"name": {"de": "Quellen", "it": "Bibliografia", "ja": "論文"}}
+                "name": "Bibliography",
+                "qcode": "genre_custom:Bibliography",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Quellen",
+                        "it": "Bibliografia",
+                        "ja": "論文"
+                    }
+                }
             },
             {
-               "name": "Blog",
-               "qcode": "genre_custom:Blog",
-               "is_active":true,
-               "translations": {"name": {"de": "Blog", "it": "Blog", "ja": "ブログ"}}
+                "name": "Blog",
+                "qcode": "genre_custom:Blog",
+                "is_active": true,
+                "translations": {
+                    "name": { "de": "Blog", "it": "Blog", "ja": "ブログ" }
+                }
             },
             {
-               "name": "Education",
-               "qcode": "genre_custom:Education",
-               "is_active":true,
-               "translations": {"name": {"de": "Weiterbildung", "it": "Educazione finanziaria", "ja": "トレーニング用教材"}}
+                "name": "Education",
+                "qcode": "genre_custom:Education",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Weiterbildung",
+                        "it": "Educazione finanziaria",
+                        "ja": "トレーニング用教材"
+                    }
+                }
             },
             {
-               "name": "Infographic",
-               "qcode": "genre_custom:Infographic",
-               "is_active":true,
-               "translations": {"name": {"de": "Infografik", "it": "Infografica", "ja": "解説図"}}
+                "name": "Infographic",
+                "qcode": "genre_custom:Infographic",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Infografik",
+                        "it": "Infografica",
+                        "ja": "解説図"
+                    }
+                }
             },
             {
-               "name": "Opinion",
-               "qcode": "genre_custom:Opinion",
-               "is_active":true,
-               "translations": {"name": {"de": "Meinung", "it": "Opinione", "ja": "見解等"}}
+                "name": "Opinion",
+                "qcode": "genre_custom:Opinion",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Meinung",
+                        "it": "Opinione",
+                        "ja": "見解等"
+                    }
+                }
             },
             {
-               "name": "Podcast",
-               "qcode": "genre_custom:Podcast",
-               "is_active":true,
-               "translations": {"name": {"de": "Podcast", "it": "Podcast", "ja": "ポッドキャスト"}}
+                "name": "Podcast",
+                "qcode": "genre_custom:Podcast",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Podcast",
+                        "it": "Podcast",
+                        "ja": "ポッドキャスト"
+                    }
+                }
             },
             {
-               "name": "Video",
-               "qcode": "genre_custom:Video",
-               "is_active":true,
-               "translations": {"name": {"de": "Video", "it": "Video", "ja": "ビデオ"}}
+                "name": "Video",
+                "qcode": "genre_custom:Video",
+                "is_active": true,
+                "translations": {
+                    "name": { "de": "Video", "it": "Video", "ja": "ビデオ" }
+                }
             },
             {
-               "name": "White Paper",
-               "qcode": "genre_custom:White Paper",
-               "is_active":true,
-               "translations": {"name": {"de": "Whitepaper", "it": "Libro bianco", "ja": "白書"}}
+                "name": "White Paper",
+                "qcode": "genre_custom:White Paper",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Whitepaper",
+                        "it": "Libro bianco",
+                        "ja": "白書"
+                    }
+                }
+            }
+        ],
+        "schema": {
+            "name": {},
+            "qcode": {},
+            "translations": {}
+        }
+    },
+    {
+        "_id": "gdw-contenttype",
+        "init_version": 1,
+        "display_name": "GDW Content Type",
+        "type": "manageable",
+        "service": { "all": 1 },
+        "selection_type": "single selection",
+        "items": [
+            {
+                "name": "Article",
+                "qcode": "gdw-contenttype:article",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Artikel",
+                        "it": "Articolo",
+                        "ja": "レポート"
+                    }
+                }
+            },
+            {
+                "name": "Bibliography",
+                "qcode": "gdw-contenttype:bibliography",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Quellen",
+                        "it": "Bibliografia",
+                        "ja": "論文"
+                    }
+                }
+            },
+            {
+                "name": "Blog",
+                "qcode": "gdw-contenttype:blog",
+                "is_active": true,
+                "translations": {
+                    "name": { "de": "Blog", "it": "Blog", "ja": "ブログ" }
+                }
+            },
+            {
+                "name": "Education",
+                "qcode": "gdw-contenttype:education",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Weiterbildung",
+                        "it": "Educazione finanziaria",
+                        "ja": "トレーニング用教材"
+                    }
+                }
+            },
+            {
+                "name": "Infographic",
+                "qcode": "gdw-contenttype:infographic",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Infografik",
+                        "it": "Infografica",
+                        "ja": "解説図"
+                    }
+                }
+            },
+            {
+                "name": "Opinion",
+                "qcode": "gdw-contenttype:opinion",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Meinung",
+                        "it": "Opinione",
+                        "ja": "見解等"
+                    }
+                }
+            },
+            {
+                "name": "Podcast",
+                "qcode": "gdw-contenttype:podcast",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Podcast",
+                        "it": "Podcast",
+                        "ja": "ポッドキャスト"
+                    }
+                }
+            },
+            {
+                "name": "Video",
+                "qcode": "gdw-contenttype:video",
+                "is_active": true,
+                "translations": {
+                    "name": { "de": "Video", "it": "Video", "ja": "ビデオ" }
+                }
+            },
+            {
+                "name": "White Paper",
+                "qcode": "gdw-contenttype-whitepaper",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Whitepaper",
+                        "it": "Libro bianco",
+                        "ja": "白書"
+                    }
+                }
+            },
+            {
+                "name": "Monthly Insight",
+                "qcode": "gdw-contenttype-monthlyinsight",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Portfoliobericht",
+                        "it": "Monthly Insight",
+                        "ja": "月次インサイト"
+                    }
+                }
+            },
+            {
+                "name": "Quarterly Insight",
+                "qcode": "gdw-contenttype:quarterlyinsight",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Quartalsbericht",
+                        "it": "Quarterly Insight",
+                        "ja": "四半期インサイト"
+                    }
+                }
             }
         ],
         "schema": {
@@ -411,8 +842,13 @@
         "type": "manageable",
         "selection_type": "multi selection",
         "items": [
-            {"is_active": true, "name": "Yes", "qcode": 1, "color" : "#008000"},
-            {"is_active": true, "name": "No", "qcode": 0, "color" : "#FF0000"}
+            {
+                "is_active": true,
+                "name": "Yes",
+                "qcode": 1,
+                "color": "#008000"
+            },
+            { "is_active": true, "name": "No", "qcode": 0, "color": "#FF0000" }
         ]
     },
     {
@@ -421,21 +857,21 @@
         "type": "manageable",
         "selection_type": "multi selection",
         "items": [
-            {"is_active": true, "name": "1", "qcode": 1},
-            {"is_active": true, "name": "2", "qcode": 2},
-            {"is_active": true, "name": "3", "qcode": 3},
-            {"is_active": true, "name": "4", "qcode": 4},
-            {"is_active": true, "name": "5", "qcode": 5},
-            {"is_active": true, "name": "6", "qcode": 6},
-            {"is_active": false, "name": "7", "qcode": 7},
-            {"is_active": false, "name": "8", "qcode": 8},
-            {"is_active": false, "name": "9", "qcode": 9}
+            { "is_active": true, "name": "1", "qcode": 1 },
+            { "is_active": true, "name": "2", "qcode": 2 },
+            { "is_active": true, "name": "3", "qcode": 3 },
+            { "is_active": true, "name": "4", "qcode": 4 },
+            { "is_active": true, "name": "5", "qcode": 5 },
+            { "is_active": true, "name": "6", "qcode": 6 },
+            { "is_active": false, "name": "7", "qcode": 7 },
+            { "is_active": false, "name": "8", "qcode": 8 },
+            { "is_active": false, "name": "9", "qcode": 9 }
         ],
         "schema": {
             "name": {},
             "qcode": {},
-            "color": {"type": "color"},
-            "short": {"type": "short", "label": "List Name", "maxlength": 2}
+            "color": { "type": "color" },
+            "short": { "type": "short", "label": "List Name", "maxlength": 2 }
         }
     },
     {
@@ -444,13 +880,17 @@
         "type": "unmanageable",
         "selection_type": "multi selection",
         "items": [
-            {"is_active": true, "name": "text", "qcode": "text"},
-            {"is_active": true, "name": "preformatted", "qcode": "preformatted"},
-            {"is_active": true, "name": "audio", "qcode": "audio"},
-            {"is_active": true, "name": "video", "qcode": "video"},
-            {"is_active": true, "name": "picture", "qcode": "picture"},
-            {"is_active": true, "name": "graphic", "qcode": "graphic"},
-            {"is_active": true, "name": "composite", "qcode": "composite"}
+            { "is_active": true, "name": "text", "qcode": "text" },
+            {
+                "is_active": true,
+                "name": "preformatted",
+                "qcode": "preformatted"
+            },
+            { "is_active": true, "name": "audio", "qcode": "audio" },
+            { "is_active": true, "name": "video", "qcode": "video" },
+            { "is_active": true, "name": "picture", "qcode": "picture" },
+            { "is_active": true, "name": "graphic", "qcode": "graphic" },
+            { "is_active": true, "name": "composite", "qcode": "composite" }
         ]
     },
     {
@@ -459,11 +899,15 @@
         "type": "unmanageable",
         "selection_type": "multi selection",
         "items": [
-            {"is_active": true, "name": "Correction", "qcode": "Correction"},
-            {"is_active": true, "name": "Update", "qcode": "Update"},
-            {"is_active": true, "name": "Add", "qcode": "Add"},
-            {"is_active": true, "name": "Repeat", "qcode": "Repeat"},
-            {"is_active": true, "name": "Content Warning", "qcode": "Content Warning"}
+            { "is_active": true, "name": "Correction", "qcode": "Correction" },
+            { "is_active": true, "name": "Update", "qcode": "Update" },
+            { "is_active": true, "name": "Add", "qcode": "Add" },
+            { "is_active": true, "name": "Repeat", "qcode": "Repeat" },
+            {
+                "is_active": true,
+                "name": "Content Warning",
+                "qcode": "Content Warning"
+            }
         ]
     },
     {
@@ -482,9 +926,9 @@
         ],
         "schema": {
             "name": {},
-            "copyrightHolder": {"label": "Copyright Holder"},
-            "copyrightNotice": {"label": "Copyright Notice"},
-            "usageTerms": {"label": "Usage Terms"}
+            "copyrightHolder": { "label": "Copyright Holder" },
+            "copyrightNotice": { "label": "Copyright Notice" },
+            "usageTerms": { "label": "Usage Terms" }
         },
         "unique_field": "name"
     },
@@ -494,23 +938,35 @@
         "type": "unmanageable",
         "selection_type": "do not show",
         "items": [
-            {"is_active": true, "name": "All", "qcode": "all",
+            {
+                "is_active": true,
+                "name": "All",
+                "qcode": "all",
                 "formats": [
-                    {"name": "NINJS", "qcode": "ninjs"},
-                    {"name": "NewsML G2", "qcode": "newsmlg2"},
-                    {"name": "Email", "qcode": "email"}
-                ]},
-            {"is_active": true, "name": "Digital/Internet", "qcode": "digital",
+                    { "name": "NINJS", "qcode": "ninjs" },
+                    { "name": "NewsML G2", "qcode": "newsmlg2" },
+                    { "name": "Email", "qcode": "email" }
+                ]
+            },
+            {
+                "is_active": true,
+                "name": "Digital/Internet",
+                "qcode": "digital",
                 "formats": [
-                    {"name": "NINJS", "qcode": "ninjs"},
-                    {"name": "NewsML G2", "qcode": "newsmlg2"},
-                    {"name": "Email", "qcode": "email"}
-                ]},
-            {"is_active": true, "name": "Wire/Paper", "qcode": "wire",
+                    { "name": "NINJS", "qcode": "ninjs" },
+                    { "name": "NewsML G2", "qcode": "newsmlg2" },
+                    { "name": "Email", "qcode": "email" }
+                ]
+            },
+            {
+                "is_active": true,
+                "name": "Wire/Paper",
+                "qcode": "wire",
                 "formats": [
-                    {"name": "NITF", "qcode": "nitf"},
-                    {"name": "Email", "qcode": "email"}
-                ]}
+                    { "name": "NITF", "qcode": "nitf" },
+                    { "name": "Email", "qcode": "email" }
+                ]
+            }
         ]
     },
     {
@@ -519,72 +975,72 @@
         "type": "manageable",
         "selection_type": "do not show",
         "unique_field": "name",
-        "items":[
+        "items": [
             {
-               "width": "2600",
-               "name": "Hero - L",
-               "is_active":true,
-               "height": "1084"
+                "width": "2600",
+                "name": "Hero - L",
+                "is_active": true,
+                "height": "1084"
             },
             {
-               "width": "1872",
-               "name": "Hero - M",
-               "is_active":true,
-               "height": "780"
+                "width": "1872",
+                "name": "Hero - M",
+                "is_active": true,
+                "height": "780"
             },
             {
-               "width": "832",
-               "name": "Hero - S",
-               "is_active":true,
-               "height": "500"
+                "width": "832",
+                "name": "Hero - S",
+                "is_active": true,
+                "height": "500"
             },
             {
-               "width": "351",
-               "name": "Hero - Thumbnail",
-               "is_active":true,
-               "height": "208"
+                "width": "351",
+                "name": "Hero - Thumbnail",
+                "is_active": true,
+                "height": "208"
             },
             {
-               "width": "1440",
-               "name": "Hero - M2",
-               "is_active":true,
-               "height": "600"
+                "width": "1440",
+                "name": "Hero - M2",
+                "is_active": true,
+                "height": "600"
             },
             {
-               "width": "700",
-               "name": "Hero - XS",
-               "is_active":true,
-               "height": "292"
+                "width": "700",
+                "name": "Hero - XS",
+                "is_active": true,
+                "height": "292"
             },
             {
-               "width": "1200",
-               "name": "Facebook OG-L",
-               "is_active":true,
-               "height": "630"
+                "width": "1200",
+                "name": "Facebook OG-L",
+                "is_active": true,
+                "height": "630"
             },
             {
-               "width": "600",
-               "name": "Facebook OG-S",
-               "is_active":true,
-               "height": "315"
+                "width": "600",
+                "name": "Facebook OG-S",
+                "is_active": true,
+                "height": "315"
             },
             {
-               "width": "1024",
-               "name": "Twitter OG-L",
-               "is_active":true,
-               "height": "512"
+                "width": "1024",
+                "name": "Twitter OG-L",
+                "is_active": true,
+                "height": "512"
             },
             {
-               "width": "506",
-               "name": "Twitter OG-S",
-               "is_active":true,
-               "height": "253"
+                "width": "506",
+                "name": "Twitter OG-S",
+                "is_active": true,
+                "height": "253"
             }
-         ],
+        ],
         "schema": {
             "name": {},
-            "width": {"type": "int"},
-            "height": {"type": "int"}
+            "width": { "type": "int" },
+            "height": { "type": "int" }
         }
     },
     {
@@ -593,8 +1049,8 @@
         "selection_type": "do not show",
         "type": "unmanageable",
         "items": [
-            {"is_active": true, "name": "authoring", "qcode": "authoring"},
-            {"is_active": true, "name": "production", "qcode": "production"}
+            { "is_active": true, "name": "authoring", "qcode": "authoring" },
+            { "is_active": true, "name": "production", "qcode": "production" }
         ]
     },
     {
@@ -603,7 +1059,7 @@
         "type": "manageable",
         "selection_type": "do not show",
         "items": [
-            {"is_active": true, "existing": "FIXME", "replacement": ""}
+            { "is_active": true, "existing": "FIXME", "replacement": "" }
         ],
         "schema": {
             "existing": {},
@@ -616,9 +1072,7 @@
         "display_name": "Locators",
         "type": "manageable",
         "selection_type": "multi selection",
-        "items": [
-            {"is_active": true, "name": "NSW", "qcode": "NSW"}
-        ],
+        "items": [{ "is_active": true, "name": "NSW", "qcode": "NSW" }],
         "schema": {
             "name": {},
             "qcode": {},
@@ -634,9 +1088,9 @@
         "type": "unmanageable",
         "selection_type": "do not show",
         "items": [
-            {"is_active": true, "name": "API", "qcode": "api"},
-            {"is_active": true, "name": "Direct", "qcode": "direct"},
-            {"is_active": true, "name": "Both", "qcode": "both"}
+            { "is_active": true, "name": "API", "qcode": "api" },
+            { "is_active": true, "name": "Direct", "qcode": "direct" },
+            { "is_active": true, "name": "Both", "qcode": "both" }
         ]
     },
     {
@@ -645,20 +1099,32 @@
         "type": "unmanageable",
         "selection_type": "multi selection",
         "items": [
-            {"is_active": true, "name": "English", "qcode": "en"},
-            {"is_active": true, "name": "French", "qcode": "fr"},
-            {"is_active": true, "name": "German", "qcode": "de"},
-            {"is_active": true, "name": "Spanish", "qcode": "es"},
-            {"is_active": true, "name": "Italian", "qcode": "it"},
-            {"is_active": true, "name": "Swedish", "qcode": "sv"},
-            {"is_active": true, "name": "Norwegian", "qcode": "nb"},
-            {"is_active": true, "name": "Polish", "qcode": "pl"},
-            {"is_active": true, "name": "Simplified Chinese", "qcode": "zh-cn"},
-            {"is_active": true, "name": "Traditional Chinese (HK)", "qcode": "zh-hk"},
-            {"is_active": true, "name": "Japanese", "qcode": "ja"},
-            {"is_active": true, "name": "Korean", "qcode": "ko"},
-            {"is_active": true, "name": "Traditional Chinese (TW)", "qcode": "zh-tw"},
-            {"is_active": true, "name": "Dutch", "qcode": "nl"}
+            { "is_active": true, "name": "English", "qcode": "en" },
+            { "is_active": true, "name": "French", "qcode": "fr" },
+            { "is_active": true, "name": "German", "qcode": "de" },
+            { "is_active": true, "name": "Spanish", "qcode": "es" },
+            { "is_active": true, "name": "Italian", "qcode": "it" },
+            { "is_active": true, "name": "Swedish", "qcode": "sv" },
+            { "is_active": true, "name": "Norwegian", "qcode": "nb" },
+            { "is_active": true, "name": "Polish", "qcode": "pl" },
+            {
+                "is_active": true,
+                "name": "Simplified Chinese",
+                "qcode": "zh-cn"
+            },
+            {
+                "is_active": true,
+                "name": "Traditional Chinese (HK)",
+                "qcode": "zh-hk"
+            },
+            { "is_active": true, "name": "Japanese", "qcode": "ja" },
+            { "is_active": true, "name": "Korean", "qcode": "ko" },
+            {
+                "is_active": true,
+                "name": "Traditional Chinese (TW)",
+                "qcode": "zh-tw"
+            },
+            { "is_active": true, "name": "Dutch", "qcode": "nl" }
         ]
     },
     {
@@ -666,58 +1132,288 @@
         "display_name": "Place",
         "type": "unmanageable",
         "selection_type": "multi selection",
-        "service": {"all": 1},
+        "service": { "all": 1 },
         "schema_field": "place",
         "dependent": 0,
         "items": [
-            {"is_active": true, "name": "All Continental Europe", "qcode": "All Continental Europe", "parent": null},
-            {"is_active": true, "name": "All Asia Pacific", "qcode": "All Asia Pacific", "parent": null},
-            {"is_active": true, "name": "Bahrain", "qcode": "Bahrain", "parent": null},
-            {"is_active": true, "name": "Canada", "qcode": "Canada", "parent": null},
-            {"is_active": true, "name": "Chile", "qcode": "Chile", "parent": null},
-            {"is_active": true, "name": "Guernsey", "qcode": "Guernsey", "parent": null},
-            {"is_active": true, "name": "Jersey", "qcode": "Jersey", "parent": null},
-            {"is_active": true, "name": "Kuwait", "qcode": "Kuwait", "parent": null},
-            {"is_active": true, "name": "Oman", "qcode": "Oman", "parent": null},
-            {"is_active": true, "name": "Peru", "qcode": "Peru", "parent": null},
-            {"is_active": true, "name": "Qatar", "qcode": "Qatar", "parent": null},
-            {"is_active": true, "name": "Saudi Arabia", "qcode": "Saudi Arabia", "parent": null},
-            {"is_active": true, "name": "South Africa", "qcode": "South Africa", "parent": null},
-            {"is_active": true, "name": "UAE", "qcode": "UAE", "parent": null},
-            {"is_active": true, "name": "Private Placement Only", "qcode": "Private Placement Only", "parent": null},
+            {
+                "is_active": true,
+                "name": "All Continental Europe",
+                "qcode": "All Continental Europe",
+                "parent": null
+            },
+            {
+                "is_active": true,
+                "name": "All Asia Pacific",
+                "qcode": "All Asia Pacific",
+                "parent": null
+            },
+            {
+                "is_active": true,
+                "name": "Bahrain",
+                "qcode": "Bahrain",
+                "parent": null
+            },
+            {
+                "is_active": true,
+                "name": "Canada",
+                "qcode": "Canada",
+                "parent": null
+            },
+            {
+                "is_active": true,
+                "name": "Chile",
+                "qcode": "Chile",
+                "parent": null
+            },
+            {
+                "is_active": true,
+                "name": "Guernsey",
+                "qcode": "Guernsey",
+                "parent": null
+            },
+            {
+                "is_active": true,
+                "name": "Jersey",
+                "qcode": "Jersey",
+                "parent": null
+            },
+            {
+                "is_active": true,
+                "name": "Kuwait",
+                "qcode": "Kuwait",
+                "parent": null
+            },
+            {
+                "is_active": true,
+                "name": "Oman",
+                "qcode": "Oman",
+                "parent": null
+            },
+            {
+                "is_active": true,
+                "name": "Peru",
+                "qcode": "Peru",
+                "parent": null
+            },
+            {
+                "is_active": true,
+                "name": "Qatar",
+                "qcode": "Qatar",
+                "parent": null
+            },
+            {
+                "is_active": true,
+                "name": "Saudi Arabia",
+                "qcode": "Saudi Arabia",
+                "parent": null
+            },
+            {
+                "is_active": true,
+                "name": "South Africa",
+                "qcode": "South Africa",
+                "parent": null
+            },
+            {
+                "is_active": true,
+                "name": "UAE",
+                "qcode": "UAE",
+                "parent": null
+            },
+            {
+                "is_active": true,
+                "name": "Private Placement Only",
+                "qcode": "Private Placement Only",
+                "parent": null
+            },
 
-            {"is_active": true, "name": "Austria", "qcode": "Austria", "parent": "All Continental Europe"},
-            {"is_active": true, "name": "Belgium", "qcode": "Belgium", "parent": "All Continental Europe"},
-            {"is_active": true, "name": "Czech Republic", "qcode": "Czech Republic", "parent": "All Continental Europe"},
-            {"is_active": true, "name": "Denmark", "qcode": "Denmark", "parent": "All Continental Europe"},
-            {"is_active": true, "name": "Finland", "qcode": "Finland", "parent": "All Continental Europe"},
-            {"is_active": true, "name": "France", "qcode": "France", "parent": "All Continental Europe"},
-            {"is_active": true, "name": "Germany", "qcode": "Germany", "parent": "All Continental Europe"},
-            {"is_active": true, "name": "Greece", "qcode": "Greece", "parent": "All Continental Europe"},
-            {"is_active": true, "name": "Hungary", "qcode": "Hungary", "parent": "All Continental Europe"},
-            {"is_active": true, "name": "Iceland", "qcode": "Iceland", "parent": "All Continental Europe"},
-            {"is_active": true, "name": "Ireland", "qcode": "Ireland", "parent": "All Continental Europe"},
-            {"is_active": true, "name": "Italy", "qcode": "Italy", "parent": "All Continental Europe"},
-            {"is_active": true, "name": "Luxembourg", "qcode": "Luxembourg", "parent": "All Continental Europe"},
-            {"is_active": true, "name": "Malta", "qcode": "Malta", "parent": "All Continental Europe"},
-            {"is_active": true, "name": "Netherlands", "qcode": "Netherlands", "parent": "All Continental Europe"},
-            {"is_active": true, "name": "Norway", "qcode": "Norway", "parent": "All Continental Europe"},
-            {"is_active": true, "name": "Poland", "qcode": "Poland", "parent": "All Continental Europe"},
-            {"is_active": true, "name": "Portugal", "qcode": "Portugal", "parent": "All Continental Europe"},
-            {"is_active": true, "name": "Slovakia", "qcode": "Slovakia", "parent": "All Continental Europe"},
-            {"is_active": true, "name": "Sweden", "qcode": "Sweden", "parent": "All Continental Europe"},
-            {"is_active": true, "name": "Switzerland", "qcode": "Switzerland", "parent": "All Continental Europe"},
-            {"is_active": true, "name": "Turkey", "qcode": "Turkey", "parent": "All Continental Europe"},
-            {"is_active": true, "name": "United Kingdom", "qcode": "United Kingdom", "parent": "All Continental Europe"},
-            {"is_active": true, "name": "Global", "qcode": "Global", "parent": "All Continental Europe"},
+            {
+                "is_active": true,
+                "name": "Austria",
+                "qcode": "Austria",
+                "parent": "All Continental Europe"
+            },
+            {
+                "is_active": true,
+                "name": "Belgium",
+                "qcode": "Belgium",
+                "parent": "All Continental Europe"
+            },
+            {
+                "is_active": true,
+                "name": "Czech Republic",
+                "qcode": "Czech Republic",
+                "parent": "All Continental Europe"
+            },
+            {
+                "is_active": true,
+                "name": "Denmark",
+                "qcode": "Denmark",
+                "parent": "All Continental Europe"
+            },
+            {
+                "is_active": true,
+                "name": "Finland",
+                "qcode": "Finland",
+                "parent": "All Continental Europe"
+            },
+            {
+                "is_active": true,
+                "name": "France",
+                "qcode": "France",
+                "parent": "All Continental Europe"
+            },
+            {
+                "is_active": true,
+                "name": "Germany",
+                "qcode": "Germany",
+                "parent": "All Continental Europe"
+            },
+            {
+                "is_active": true,
+                "name": "Greece",
+                "qcode": "Greece",
+                "parent": "All Continental Europe"
+            },
+            {
+                "is_active": true,
+                "name": "Hungary",
+                "qcode": "Hungary",
+                "parent": "All Continental Europe"
+            },
+            {
+                "is_active": true,
+                "name": "Iceland",
+                "qcode": "Iceland",
+                "parent": "All Continental Europe"
+            },
+            {
+                "is_active": true,
+                "name": "Ireland",
+                "qcode": "Ireland",
+                "parent": "All Continental Europe"
+            },
+            {
+                "is_active": true,
+                "name": "Italy",
+                "qcode": "Italy",
+                "parent": "All Continental Europe"
+            },
+            {
+                "is_active": true,
+                "name": "Luxembourg",
+                "qcode": "Luxembourg",
+                "parent": "All Continental Europe"
+            },
+            {
+                "is_active": true,
+                "name": "Malta",
+                "qcode": "Malta",
+                "parent": "All Continental Europe"
+            },
+            {
+                "is_active": true,
+                "name": "Netherlands",
+                "qcode": "Netherlands",
+                "parent": "All Continental Europe"
+            },
+            {
+                "is_active": true,
+                "name": "Norway",
+                "qcode": "Norway",
+                "parent": "All Continental Europe"
+            },
+            {
+                "is_active": true,
+                "name": "Poland",
+                "qcode": "Poland",
+                "parent": "All Continental Europe"
+            },
+            {
+                "is_active": true,
+                "name": "Portugal",
+                "qcode": "Portugal",
+                "parent": "All Continental Europe"
+            },
+            {
+                "is_active": true,
+                "name": "Slovakia",
+                "qcode": "Slovakia",
+                "parent": "All Continental Europe"
+            },
+            {
+                "is_active": true,
+                "name": "Sweden",
+                "qcode": "Sweden",
+                "parent": "All Continental Europe"
+            },
+            {
+                "is_active": true,
+                "name": "Switzerland",
+                "qcode": "Switzerland",
+                "parent": "All Continental Europe"
+            },
+            {
+                "is_active": true,
+                "name": "Turkey",
+                "qcode": "Turkey",
+                "parent": "All Continental Europe"
+            },
+            {
+                "is_active": true,
+                "name": "United Kingdom",
+                "qcode": "United Kingdom",
+                "parent": "All Continental Europe"
+            },
+            {
+                "is_active": true,
+                "name": "Global",
+                "qcode": "Global",
+                "parent": "All Continental Europe"
+            },
 
-            {"is_active": true, "name": "Australia", "qcode": "Australia", "parent": "All Asia Pacific"},
-            {"is_active": true, "name": "Hong Kong", "qcode": "Hong Kong", "parent": "All Asia Pacific"},
-            {"is_active": true, "name": "Japan", "qcode": "Japan", "parent": "All Asia Pacific"},
-            {"is_active": true, "name": "Korea", "qcode": "Korea", "parent": "All Asia Pacific"},
-            {"is_active": true, "name": "Macau", "qcode": "Macau", "parent": "All Asia Pacific"},
-            {"is_active": true, "name": "Singapore", "qcode": "Singapore", "parent": "All Asia Pacific"},
-            {"is_active": true, "name": "Taiwan", "qcode": "Taiwan", "parent": "All Asia Pacific"}
+            {
+                "is_active": true,
+                "name": "Australia",
+                "qcode": "Australia",
+                "parent": "All Asia Pacific"
+            },
+            {
+                "is_active": true,
+                "name": "Hong Kong",
+                "qcode": "Hong Kong",
+                "parent": "All Asia Pacific"
+            },
+            {
+                "is_active": true,
+                "name": "Japan",
+                "qcode": "Japan",
+                "parent": "All Asia Pacific"
+            },
+            {
+                "is_active": true,
+                "name": "Korea",
+                "qcode": "Korea",
+                "parent": "All Asia Pacific"
+            },
+            {
+                "is_active": true,
+                "name": "Macau",
+                "qcode": "Macau",
+                "parent": "All Asia Pacific"
+            },
+            {
+                "is_active": true,
+                "name": "Singapore",
+                "qcode": "Singapore",
+                "parent": "All Asia Pacific"
+            },
+            {
+                "is_active": true,
+                "name": "Taiwan",
+                "qcode": "Taiwan",
+                "parent": "All Asia Pacific"
+            }
         ]
     },
     {
@@ -725,1058 +1421,1425 @@
         "display_name": "Franchise",
         "type": "manageable",
         "selection_type": "multi selection",
-        "service": {"all": 1},
+        "service": { "all": 1 },
         "dependent": 0,
-        "items":[
+        "items": [
             {
-               "name": "No specific franchise",
-               "qcode": "franchise:10000001",
-               "is_active":true,
-               "parent":null
+                "name": "No specific franchise",
+                "qcode": "franchise:10000001",
+                "is_active": true,
+                "parent": null
             },
             {
-               "name": "Equity Asia Pacific ex Japan",
-               "qcode": "franchise:10000002",
-               "is_active":true,
-               "parent":null
+                "name": "Equity Asia Pacific ex Japan",
+                "qcode": "franchise:10000002",
+                "is_active": true,
+                "parent": null
             },
             {
-               "name": "Equity Emerging Market",
-               "qcode": "franchise:10000003",
-               "is_active":true,
-               "parent":null
+                "name": "Equity Emerging Market",
+                "qcode": "franchise:10000003",
+                "is_active": true,
+                "parent": null
             },
             {
-               "name": "Equity Europe",
-               "qcode": "franchise:10000004",
-               "is_active":true,
-               "parent":null
+                "name": "Equity Europe",
+                "qcode": "franchise:10000004",
+                "is_active": true,
+                "parent": null
             },
             {
-               "name": "Equity Global",
-               "qcode": "franchise:10000005",
-               "is_active":true,
-               "parent":null
+                "name": "Equity Global",
+                "qcode": "franchise:10000005",
+                "is_active": true,
+                "parent": null
             },
             {
-               "name": "Equity Income",
-               "qcode": "franchise:10000006",
-               "is_active":true,
-               "parent":null
+                "name": "Equity Income",
+                "qcode": "franchise:10000006",
+                "is_active": true,
+                "parent": null
             },
             {
-               "name": "Equity Japan",
-               "qcode": "franchise:10000007",
-               "is_active":true,
-               "parent":null
+                "name": "Equity Japan",
+                "qcode": "franchise:10000007",
+                "is_active": true,
+                "parent": null
             },
             {
-               "name": "Equity UK",
-               "qcode": "franchise:10000008",
-               "is_active":true,
-               "parent":null
+                "name": "Equity UK",
+                "qcode": "franchise:10000008",
+                "is_active": true,
+                "parent": null
             },
             {
-               "name": "Equity US",
-               "qcode": "franchise:10000009",
-               "is_active":true,
-               "parent":null
+                "name": "Equity US",
+                "qcode": "franchise:10000009",
+                "is_active": true,
+                "parent": null
             },
             {
-               "name": "FI Asia",
-               "qcode": "franchise:10000010",
-               "is_active":true,
-               "parent":null
+                "name": "FI Asia",
+                "qcode": "franchise:10000010",
+                "is_active": true,
+                "parent": null
             },
             {
-               "name": "FI Emerging Markets",
-               "qcode": "franchise:10000011",
-               "is_active":true,
-               "parent":null
+                "name": "FI Emerging Markets",
+                "qcode": "franchise:10000011",
+                "is_active": true,
+                "parent": null
             },
             {
-               "name": "FI Euro Investment Grade",
-               "qcode": "franchise:10000012",
-               "is_active":true,
-               "parent":null
+                "name": "FI Euro Investment Grade",
+                "qcode": "franchise:10000012",
+                "is_active": true,
+                "parent": null
             },
             {
-               "name": "FI Global & US",
-               "qcode": "franchise:10000013",
-               "is_active":true,
-               "parent":null
+                "name": "FI Global & US",
+                "qcode": "franchise:10000013",
+                "is_active": true,
+                "parent": null
             },
             {
-               "name": "FI High Yield & High Income",
-               "qcode": "franchise:10000014",
-               "is_active":true,
-               "parent":null
+                "name": "FI High Yield & High Income",
+                "qcode": "franchise:10000014",
+                "is_active": true,
+                "parent": null
             },
             {
-               "name": "FI Inflation",
-               "qcode": "franchise:10000015",
-               "is_active":true,
-               "parent":null
+                "name": "FI Inflation",
+                "qcode": "franchise:10000015",
+                "is_active": true,
+                "parent": null
             },
             {
-               "name": "FI Money Market",
-               "qcode": "franchise:10000016",
-               "is_active":true,
-               "parent":null
+                "name": "FI Money Market",
+                "qcode": "franchise:10000016",
+                "is_active": true,
+                "parent": null
             },
             {
-               "name": "FI Total Return",
-               "qcode": "franchise:10000017",
-               "is_active":true,
-               "parent":null
+                "name": "FI Total Return",
+                "qcode": "franchise:10000017",
+                "is_active": true,
+                "parent": null
             },
             {
-               "name": "FI UK Investment Grade",
-               "qcode": "franchise:10000018",
-               "is_active":true,
-               "parent":null
+                "name": "FI UK Investment Grade",
+                "qcode": "franchise:10000018",
+                "is_active": true,
+                "parent": null
             },
             {
-               "name": "MA Equity Multi Manager",
-               "qcode": "franchise:10000019",
-               "is_active":true,
-               "parent":null
+                "name": "MA Equity Multi Manager",
+                "qcode": "franchise:10000019",
+                "is_active": true,
+                "parent": null
             },
             {
-               "name": "MA Income",
-               "qcode": "franchise:10000020",
-               "is_active":true,
-               "parent":null
+                "name": "MA Income",
+                "qcode": "franchise:10000020",
+                "is_active": true,
+                "parent": null
             },
             {
-               "name": "MA Open Architecture",
-               "qcode": "franchise:10000021",
-               "is_active":true,
-               "parent":null
+                "name": "MA Open Architecture",
+                "qcode": "franchise:10000021",
+                "is_active": true,
+                "parent": null
             },
             {
-               "name": "MA Risk Rated Multi Asset",
-               "qcode": "franchise:10000022",
-               "is_active":true,
-               "parent":null
+                "name": "MA Risk Rated Multi Asset",
+                "qcode": "franchise:10000022",
+                "is_active": true,
+                "parent": null
             },
             {
-               "name": "MA Strategic Benchmarked",
-               "qcode": "franchise:10000023",
-               "is_active":true,
-               "parent":null
+                "name": "MA Strategic Benchmarked",
+                "qcode": "franchise:10000023",
+                "is_active": true,
+                "parent": null
             },
             {
-               "name": "MA Tactical Total Return",
-               "qcode": "franchise:10000024",
-               "is_active":true,
-               "parent":null
+                "name": "MA Tactical Total Return",
+                "qcode": "franchise:10000024",
+                "is_active": true,
+                "parent": null
             },
             {
-               "name": "MA Target Date Rolldown",
-               "qcode": "franchise:10000025",
-               "is_active":true,
-               "parent":null
+                "name": "MA Target Date Rolldown",
+                "qcode": "franchise:10000025",
+                "is_active": true,
+                "parent": null
             },
             {
-               "name": "MA Volatility Targeted",
-               "qcode": "franchise:10000026",
-               "is_active":true,
-               "parent":null
+                "name": "MA Volatility Targeted",
+                "qcode": "franchise:10000026",
+                "is_active": true,
+                "parent": null
             },
             {
-               "name": "Absolute Return",
-               "qcode": "franchise:10000027",
-               "is_active":true,
-               "parent":null
+                "name": "Absolute Return",
+                "qcode": "franchise:10000027",
+                "is_active": true,
+                "parent": null
             },
             {
-               "name": "ETFs Smart Beta",
-               "qcode": "franchise:10000028",
-               "is_active":true,
-               "parent":null
+                "name": "ETFs Smart Beta",
+                "qcode": "franchise:10000028",
+                "is_active": true,
+                "parent": null
             },
             {
-               "name": "Real Estate",
-               "qcode": "franchise:10000029",
-               "is_active":true,
-               "parent":null
+                "name": "Real Estate",
+                "qcode": "franchise:10000029",
+                "is_active": true,
+                "parent": null
             }
-         ]
+        ]
     },
     {
-    "_id": "compliance_checked",
-    "display_name": "Compliance Checked",
-    "type": "manageable",
-    "selection_type": "single selection",
-    "service": {"all": 1},
-    "dependent": 0,
-    "items": [
-            {"is_active": true, "name": "Yes", "qcode": "compliance:yes", "parent": null},
-            {"is_active": true, "name": "No", "qcode": "compliance:no", "parent": null}
-    ]
+        "_id": "compliance_checked",
+        "display_name": "Compliance Checked",
+        "type": "manageable",
+        "selection_type": "single selection",
+        "service": { "all": 1 },
+        "dependent": 0,
+        "items": [
+            {
+                "is_active": true,
+                "name": "Yes",
+                "qcode": "compliance:yes",
+                "parent": null
+            },
+            {
+                "is_active": true,
+                "name": "No",
+                "qcode": "compliance:no",
+                "parent": null
+            }
+        ]
     },
     {
-    "_id": "audience",
-    "display_name": "Target Audience",
-    "type": "manageable",
-    "selection_type": "single selection",
-    "service": {"all": 1},
-    "dependent": 0,
-    "items":[
-        {
-           "name": "Institutional",
-           "qcode": "Institutional",
-           "is_active":true
-        },
-        {
-           "name": "Wholsale",
-           "qcode": "Wholesale",
-           "is_active":true
+        "_id": "audience",
+        "display_name": "Target Audience",
+        "type": "manageable",
+        "selection_type": "single selection",
+        "service": { "all": 1 },
+        "dependent": 0,
+        "items": [
+            {
+                "name": "Institutional",
+                "qcode": "Institutional",
+                "is_active": true
+            },
+            {
+                "name": "Wholsale",
+                "qcode": "Wholesale",
+                "is_active": true
+            }
+        ],
+        "schema": {
+            "name": {},
+            "qcode": {},
+            "parent": {}
         }
-     ],
-    "schema": {
-        "name": {
-
-        },
-        "qcode": {
-
-        },
-        "parent": {
-
-        }
-     }
     },
     {
-    "_id": "author_roles",
-    "display_name": "Author Roles",
-    "type": "manageable",
-    "selection_type": "single selection",
-    "service": {"all": 1},
-    "dependent": 0,
-    "items":[
-        {
-           "name": "Primary Author",
-           "qcode": "Primary Author",
-           "is_active":true
-        },
-        {
-           "name": "Editorial Reviewer",
-           "qcode": "Editorial Reviewer",
-           "is_active":true
-        },
-        {
-           "name": "Compliance",
-           "qcode": "Compliance",
-           "is_active":true
-        },
-        {
-           "name": "Secondary Author",
-           "qcode": "Secondary Author",
-           "is_active":true
-        },
-        {
-           "name": "SME Reviewer",
-           "qcode": "SME Reviewer",
-           "is_active":true
+        "_id": "author_roles",
+        "display_name": "Author Roles",
+        "type": "manageable",
+        "selection_type": "single selection",
+        "service": { "all": 1 },
+        "dependent": 0,
+        "items": [
+            {
+                "name": "Primary Author",
+                "qcode": "Primary Author",
+                "is_active": true
+            },
+            {
+                "name": "Editorial Reviewer",
+                "qcode": "Editorial Reviewer",
+                "is_active": true
+            },
+            {
+                "name": "Compliance",
+                "qcode": "Compliance",
+                "is_active": true
+            },
+            {
+                "name": "Secondary Author",
+                "qcode": "Secondary Author",
+                "is_active": true
+            },
+            {
+                "name": "SME Reviewer",
+                "qcode": "SME Reviewer",
+                "is_active": true
+            }
+        ],
+        "schema": {
+            "name": {},
+            "qcode": {},
+            "parent": {}
         }
-     ],
-     "schema": {
-        "name": {
-
-        },
-        "qcode": {
-
-        },
-        "parent": {
-
-        }
-     }
     },
     {
-    "_id": "edition_number",
-    "display_name": "IGNORE Edition Number",
-    "type": "manageable",
-    "selection_type": "single selection",
-    "service": {"all": 1},
-    "dependent": 0,
-    "items":[
-        {
-           "name": "Edition 1",
-           "qcode": "edition_number:1001000",
-           "is_active":true
-        },
-        {
-           "name": "Edition 2",
-           "qcode": "edition_number:1001001",
-           "is_active":true
-        },
-        {
-           "name": "Edition 3",
-           "qcode": "edition_number:1001002",
-           "is_active":true
-        },
-        {
-           "name": "Edition 4",
-           "qcode": "edition_number:1001003",
-           "is_active":true
-        },
-        {
-           "name": "Edition 5",
-           "qcode": "edition_number:10001003",
-           "is_active":true
+        "_id": "edition_number",
+        "display_name": "IGNORE Edition Number",
+        "type": "manageable",
+        "selection_type": "single selection",
+        "service": { "all": 1 },
+        "dependent": 0,
+        "items": [
+            {
+                "name": "Edition 1",
+                "qcode": "edition_number:1001000",
+                "is_active": true
+            },
+            {
+                "name": "Edition 2",
+                "qcode": "edition_number:1001001",
+                "is_active": true
+            },
+            {
+                "name": "Edition 3",
+                "qcode": "edition_number:1001002",
+                "is_active": true
+            },
+            {
+                "name": "Edition 4",
+                "qcode": "edition_number:1001003",
+                "is_active": true
+            },
+            {
+                "name": "Edition 5",
+                "qcode": "edition_number:10001003",
+                "is_active": true
+            }
+        ],
+        "schema": {
+            "name": {},
+            "qcode": {},
+            "parent": {}
         }
-     ],
-     "schema": {
-        "name": {
-
-        },
-        "qcode": {
-
-        },
-        "parent": {
-
-        }
-     }
     },
     {
-    "_id": "instprtlsection",
-    "display_name": "Edition/ Latest?",
-    "type": "manageable",
-    "selection_type": "single selection",
-    "service": {"all": 1},
-    "dependent": 0,
-     "items":[
-        {
-           "name": "Latest",
-           "qcode": "instprtlsection:100100",
-           "is_active":true
-        },
-        {
-           "name": "Edition 1",
-           "qcode": "instprtlsection:100201",
-           "is_active":true
-        },
-        {
-           "name": "Edition 2",
-           "qcode": "instprtlsection:100202",
-           "is_active":true
-        },
-        {
-           "name": "Edition 3",
-           "qcode": "instprtlsection:100203",
-           "is_active":true
-        },
-        {
-           "name": "Edition 0",
-           "qcode": "instprtlsection:100200",
-           "is_active":true
-        },
-        {
-           "name": "Edition -1",
-           "qcode": "instprtlsection:100199",
-           "is_active":true
+        "_id": "instprtlsection",
+        "display_name": "Edition/ Latest?",
+        "type": "manageable",
+        "selection_type": "single selection",
+        "service": { "all": 1 },
+        "dependent": 0,
+        "items": [
+            {
+                "name": "Latest",
+                "qcode": "instprtlsection:100100",
+                "is_active": true
+            },
+            {
+                "name": "Edition 1",
+                "qcode": "instprtlsection:100201",
+                "is_active": true
+            },
+            {
+                "name": "Edition 2",
+                "qcode": "instprtlsection:100202",
+                "is_active": true
+            },
+            {
+                "name": "Edition 3",
+                "qcode": "instprtlsection:100203",
+                "is_active": true
+            },
+            {
+                "name": "Edition 0",
+                "qcode": "instprtlsection:100200",
+                "is_active": true
+            },
+            {
+                "name": "Edition -1",
+                "qcode": "instprtlsection:100199",
+                "is_active": true
+            }
+        ],
+        "schema": {
+            "name": {},
+            "qcode": {},
+            "parent": {}
         }
-     ],
-     "schema": {
-        "name": {
-
-        },
-        "qcode": {
-
-        },
-        "parent": {
-
-        }
-     }
     },
     {
-    "_id": "articleorder",
-    "display_name": "Article Order",
-    "type": "manageable",
-    "selection_type": "single selection",
-    "service": {"all": 1},
-    "dependent": 0,
-    "items":[
-        {
-           "name": "1",
-           "qcode": "articleorder: 100101",
-           "is_active":true
-        },
-        {
-           "name": "2",
-           "qcode": "articleorder: 100102",
-           "is_active":true
-        },
-        {
-           "name": "3",
-           "qcode": "articleorder: 100103",
-           "is_active":true
-        },
-        {
-           "name": "4",
-           "qcode": "articleorder: 100104",
-           "is_active":true
+        "_id": "articleorder",
+        "display_name": "Article Order",
+        "type": "manageable",
+        "selection_type": "single selection",
+        "service": { "all": 1 },
+        "dependent": 0,
+        "items": [
+            {
+                "name": "1",
+                "qcode": "articleorder: 100101",
+                "is_active": true
+            },
+            {
+                "name": "2",
+                "qcode": "articleorder: 100102",
+                "is_active": true
+            },
+            {
+                "name": "3",
+                "qcode": "articleorder: 100103",
+                "is_active": true
+            },
+            {
+                "name": "4",
+                "qcode": "articleorder: 100104",
+                "is_active": true
+            }
+        ],
+        "schema": {
+            "name": {},
+            "qcode": {},
+            "parent": {}
         }
-     ],
-     "schema": {
-        "name": {
-
-        },
-        "qcode": {
-
-        },
-        "parent": {
-
-        }
-     }
     },
     {
-    "_id": "audience_custom",
-    "display_name": "Audience",
-    "type": "manageable",
-    "selection_type": "single selection",
-    "service": {"all": 1},
-    "dependent": 0,
-    "items":[
-        {
-           "name": "All",
-           "qcode": "audience_custom:All",
-           "is_active":true
-        },
-        {
-           "name": "All Wholesale",
-           "qcode": "audience_custom:All Wholesale",
-           "is_active":true
-        },
-        {
-           "name": "Direct",
-           "qcode": "audience_custom:Direct",
-           "is_active":true
-        },
-        {
-           "name": "All Institutional",
-           "qcode": "audience_custom:All Institutional",
-           "is_active":true
-        },
-        {
-           "name": "Pension schemes",
-           "qcode": "audience_custom:Pension schemes",
-           "is_active":true
-        },
-        {
-           "name": "Charities",
-           "qcode": "audience_custom:Charities",
-           "is_active":true
-        },
-        {
-           "name": "SWFs",
-           "qcode": "audience_custom:SWFs",
-           "is_active":true
-        },
-        {
-           "name": "Consultants",
-           "qcode": "audience_custom:Consultants",
-           "is_active":true
-        },
-        {
-           "name": "Insurance",
-           "qcode": "audience_custom:Insurance",
-           "is_active":true
-        },
-        {
-           "name": "Fund buyers",
-           "qcode": "audience_custom:Fund buyers",
-           "is_active":true
-        },
-        {
-           "name": "Fund sellers",
-           "qcode": "audience_custom:Fund sellers",
-           "is_active":true
-        },
-        {
-           "name": "Family office",
-           "qcode": "audience_custom:Family office",
-           "is_active":true
+        "_id": "audience_custom",
+        "display_name": "Audience",
+        "type": "manageable",
+        "selection_type": "single selection",
+        "service": { "all": 1 },
+        "dependent": 0,
+        "items": [
+            {
+                "name": "All",
+                "qcode": "audience_custom:All",
+                "is_active": true
+            },
+            {
+                "name": "All Wholesale",
+                "qcode": "audience_custom:All Wholesale",
+                "is_active": true
+            },
+            {
+                "name": "Direct",
+                "qcode": "audience_custom:Direct",
+                "is_active": true
+            },
+            {
+                "name": "All Institutional",
+                "qcode": "audience_custom:All Institutional",
+                "is_active": true
+            },
+            {
+                "name": "Pension schemes",
+                "qcode": "audience_custom:Pension schemes",
+                "is_active": true
+            },
+            {
+                "name": "Charities",
+                "qcode": "audience_custom:Charities",
+                "is_active": true
+            },
+            {
+                "name": "SWFs",
+                "qcode": "audience_custom:SWFs",
+                "is_active": true
+            },
+            {
+                "name": "Consultants",
+                "qcode": "audience_custom:Consultants",
+                "is_active": true
+            },
+            {
+                "name": "Insurance",
+                "qcode": "audience_custom:Insurance",
+                "is_active": true
+            },
+            {
+                "name": "Fund buyers",
+                "qcode": "audience_custom:Fund buyers",
+                "is_active": true
+            },
+            {
+                "name": "Fund sellers",
+                "qcode": "audience_custom:Fund sellers",
+                "is_active": true
+            },
+            {
+                "name": "Family office",
+                "qcode": "audience_custom:Family office",
+                "is_active": true
+            }
+        ],
+        "schema": {
+            "name": {},
+            "qcode": {},
+            "parent": {}
         }
-     ],
-     "schema": {
-        "name": {
-
-        },
-        "qcode": {
-
-        },
-        "parent": {
-
-        }
-     }
     },
     {
-    "_id": "region_custom",
-    "display_name": "Region",
-    "type": "manageable",
-    "selection_type": "single selection",
-    "service": {"all": 1},
-    "dependent": 0,
-    "items":[
-        {
-           "name": "Developed Markets",
-           "qcode": "region_custom:Developed Markets",
-           "is_active":true,
-           "translations": {"name": {"de": "Entwickelte Länder", "it": "Mercati sviluppati", "ja": "先進国市場"}}
-        },
-        {
-           "name": "Emerging Markets",
-           "qcode": "region_custom:Emerging Markets",
-           "is_active":true,
-           "translations": {"name": {"de": "Schwellenländer", "it": "Mercati emergenti", "ja": "新興国市場"}}
-        },
-        {
-           "name": "Asia ex Japan",
-           "qcode": "region_custom:Asia ex Japan",
-           "is_active":true,
-           "translations": {"name": {"de": "Asien exkl. Japan", "it": "Asia escl. Giappone", "ja": "日本除くアジア"}}
-        },
-        {
-           "name": "Latin America",
-           "qcode": "region_custom:Latin America",
-           "is_active":true,
-           "translations": {"name": {"de": "Lateinamerika", "it": "America Latina", "ja": "南米"}}
-        },
-        {
-           "name": "Europe",
-           "qcode": "region_custom:Europe",
-           "is_active":true,
-           "translations": {"name": {"de": "Europa", "it": "Europa", "ja": "欧州"}}
-        },
-        {
-           "name": "North America",
-           "qcode": "region_custom:North America",
-           "is_active":true,
-           "translations": {"name": {"de": "Nordamerika", "it": "Nordamerika", "ja": "北米"}}
-        },
-        {
-           "name": "EMEA",
-           "qcode": "region_custom:EMEA",
-           "is_active":true,
-           "translations": {"name": {"de": "EMEA", "it": "EMEA", "ja": "欧州・中東・アフリカ"}}
-        },
-        {
-           "name": "Middle East",
-           "qcode": "region_custom:Middle East",
-           "is_active":true,
-           "translations": {"name": {"de": "Naher Osten", "it": "Medio Oriente", "ja": "中東"}}
+        "_id": "region_custom",
+        "display_name": "Region",
+        "type": "manageable",
+        "selection_type": "single selection",
+        "service": { "all": 1 },
+        "dependent": 0,
+        "items": [
+            {
+                "name": "Developed Markets",
+                "qcode": "region_custom:Developed Markets",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Entwickelte Länder",
+                        "it": "Mercati sviluppati",
+                        "ja": "先進国市場"
+                    }
+                }
+            },
+            {
+                "name": "Emerging Markets",
+                "qcode": "region_custom:Emerging Markets",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Schwellenländer",
+                        "it": "Mercati emergenti",
+                        "ja": "新興国市場"
+                    }
+                }
+            },
+            {
+                "name": "Asia ex Japan",
+                "qcode": "region_custom:Asia ex Japan",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Asien exkl. Japan",
+                        "it": "Asia escl. Giappone",
+                        "ja": "日本除くアジア"
+                    }
+                }
+            },
+            {
+                "name": "Latin America",
+                "qcode": "region_custom:Latin America",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Lateinamerika",
+                        "it": "America Latina",
+                        "ja": "南米"
+                    }
+                }
+            },
+            {
+                "name": "Europe",
+                "qcode": "region_custom:Europe",
+                "is_active": true,
+                "translations": {
+                    "name": { "de": "Europa", "it": "Europa", "ja": "欧州" }
+                }
+            },
+            {
+                "name": "North America",
+                "qcode": "region_custom:North America",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Nordamerika",
+                        "it": "Nordamerika",
+                        "ja": "北米"
+                    }
+                }
+            },
+            {
+                "name": "EMEA",
+                "qcode": "region_custom:EMEA",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "EMEA",
+                        "it": "EMEA",
+                        "ja": "欧州・中東・アフリカ"
+                    }
+                }
+            },
+            {
+                "name": "Middle East",
+                "qcode": "region_custom:Middle East",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Naher Osten",
+                        "it": "Medio Oriente",
+                        "ja": "中東"
+                    }
+                }
+            }
+        ],
+        "schema": {
+            "name": {},
+            "qcode": {},
+            "parent": {},
+            "translations": {}
         }
-     ],
-     "schema": {
-        "name": {
-
-        },
-        "qcode": {
-
-        },
-        "parent": {
-
-        },
-        "translations" : {}
-     }
     },
     {
-    "_id": "country_custom",
-    "display_name": "Country",
-    "type": "manageable",
-    "selection_type": "single selection",
-    "service": {"all": 1},
-    "dependent": 0,
-    "items":[
-        {
-           "name": "Australia",
-           "qcode": "country_custom:1001001",
-           "is_active":true,
-           "translations": {"name": {"de": "Australien", "it": "Australia", "ja": "オーストラリア"}}
-        },
-        {
-           "name": "Austria",
-           "qcode": "country_custom:1001002",
-           "is_active":true,
-           "translations": {"name": {"de": "Österreich", "it": "Austria", "ja": "オーストリア"}}
-        },
-        {
-           "name": "Belgium",
-           "qcode": "country_custom:1001003",
-           "is_active":true,
-           "translations": {"name": {"de": "Belgien", "it": "Belgio", "ja": "ベルギー"}}
-        },
-        {
-           "name": "Brazil",
-           "qcode": "country_custom:1001004",
-           "is_active":true,
-           "translations": {"name": {"de": "Brasilien", "it": "Brasile", "ja": "ブラジル"}}
-        },
-        {
-           "name": "Bulgaria",
-           "qcode": "country_custom:1001005",
-           "is_active":true,
-           "translations": {"name": {"de": "Bulgarien", "it": "Bulgaria", "ja": "ブルガリア"}}
-        },
-        {
-           "name": "Canada",
-           "qcode": "country_custom:1001006",
-           "is_active":true,
-           "translations": {"name": {"de": "Kanada", "it": "Canada", "ja": "カナダ"}}
-        },
-        {
-           "name": "Chile",
-           "qcode": "country_custom:1001007",
-           "is_active":true,
-           "translations": {"name": {"de": "Chile", "it": "Cile", "ja": "チリ"}}
-        },
-        {
-           "name": "China",
-           "qcode": "country_custom:1001008",
-           "is_active":true,
-           "translations": {"name": {"de": "China", "it": "Cina", "ja": "中国"}}
-        },
-        {
-           "name": "Denmark",
-           "qcode": "country_custom:1001009",
-           "is_active":true,
-           "translations": {"name": {"de": "Dänemark", "it": "Danimarca", "ja": "デンマーク"}}
-        },
-        {
-           "name": "Finland",
-           "qcode": "country_custom:1001010",
-           "is_active":true,
-           "translations": {"name": {"de": "Finnland", "it": "Finlandia", "ja": "フィンランド"}}
-        },
-        {
-           "name": "France",
-           "qcode": "country_custom:1001011",
-           "is_active":true,
-           "translations": {"name": {"de": "Frankreich", "it": "Francia", "ja": "フランス"}}
-        },
-        {
-           "name": "Germany",
-           "qcode": "country_custom:1001012",
-           "is_active":true,
-           "translations": {"name": {"de": "Deutschland", "it": "Germania", "ja": "ドイツ"}}
-        },
-        {
-           "name": "Greece",
-           "qcode": "country_custom:1001013",
-           "is_active":true,
-           "translations": {"name": {"de": "Griechenland", "it": "Grecia", "ja": "ギリシャ"}}
-        },
-        {
-           "name": "Hong Kong",
-           "qcode": "country_custom:1001014",
-           "is_active":true,
-           "translations": {"name": {"de": "Hongkong", "it": "Hong Kong", "ja": "香港"}}
-        },
-        {
-           "name": "Hungary",
-           "qcode": "country_custom:1001015",
-           "is_active":true,
-           "translations": {"name": {"de": "Ungarn", "it": "Ungheria", "ja": "ハンガリー"}}
-        },
-        {
-           "name": "India",
-           "qcode": "country_custom:1001016",
-           "is_active":true,
-           "translations": {"name": {"de": "Indien", "it": "India", "ja": "インド"}}
-        },
-        {
-           "name": "Indonesia",
-           "qcode": "country_custom:1001017",
-           "is_active":true,
-           "translations": {"name": {"de": "Indonesien", "it": "Indonesia", "ja": "インドネシア"}}
-        },
-        {
-           "name": "Ireland",
-           "qcode": "country_custom:1001018",
-           "is_active":true,
-           "translations": {"name": {"de": "Irland", "it": "Irlanda", "ja": "アイルランド"}}
-        },
-        {
-           "name": "Israel",
-           "qcode": "country_custom:1001019",
-           "is_active":true,
-           "translations": {"name": {"de": "Israel", "it": "Israele", "ja": "イスラエル"}}
-        },
-        {
-           "name": "Italy",
-           "qcode": "country_custom:1001020",
-           "is_active":true,
-           "translations": {"name": {"de": "Italien", "it": "Italia", "ja": "イタリア"}}
-        },
-        {
-           "name": "Japan",
-           "qcode": "country_custom:1001021",
-           "is_active":true,
-           "translations": {"name": {"de": "Japan", "it": "Giappone", "ja": "日本"}}
-        },
-        {
-           "name": "Southern Korea",
-           "qcode": "country_custom:1001022",
-           "is_active":true,
-           "translations": {"name": {"de": "Südkorea", "it": "Corea del Sud", "ja": "韓国"}}
-        },
-        {
-           "name": "Kuwait",
-           "qcode": "country_custom:1001023",
-           "is_active":true,
-           "translations": {"name": {"de": "Kuwait", "it": "Kuwait", "ja": "クウェート"}}
-        },
-        {
-           "name": "Malaysia",
-           "qcode": "country_custom:1001024",
-           "is_active":true,
-           "translations": {"name": {"de": "Malaysia", "it": "Malesia", "ja": "マレーシア"}}
-        },
-        {
-           "name": "Mexico",
-           "qcode": "country_custom:1001025",
-           "is_active":true,
-           "translations": {"name": {"de": "Mexiko", "it": "Messico", "ja": "メキシコ"}}
-        },
-        {
-           "name": "Netherlands",
-           "qcode": "country_custom:1001026",
-           "is_active":true,
-           "translations": {"name": {"de": "Niederlande", "it": "Paesi Bassi", "ja": "オランダ"}}
-        },
-        {
-           "name": "New Zealand",
-           "qcode": "country_custom:1001027",
-           "is_active":true,
-           "translations": {"name": {"de": "Neuseeland", "it": "Nuova Zelanda", "ja": "ニュージーランド"}}
-        },
-        {
-           "name": "Norway",
-           "qcode": "country_custom:1001028",
-           "is_active":true,
-           "translations": {"name": {"de": "Norwegen", "it": "Norvegia", "ja": "ノルウェー"}}
-        },
-        {
-           "name": "Pakistan",
-           "qcode": "country_custom:1001029",
-           "is_active":true,
-           "translations": {"name": {"de": "Pakistan", "it": "Pakistan", "ja": "パキスタン"}}
-        },
-        {
-           "name": "Philippines",
-           "qcode": "country_custom:1001030",
-           "is_active":true,
-           "translations": {"name": {"de": "Philippinen", "it": "Filippine", "ja": "フィリピン"}}
-        },
-        {
-           "name": "Poland",
-           "qcode": "country_custom:1001031",
-           "is_active":true,
-           "translations": {"name": {"de": "Polen", "it": "Polonia", "ja": "ポーランド"}}
-        },
-        {
-           "name": "Romania",
-           "qcode": "country_custom:1001032",
-           "is_active":true,
-           "translations": {"name": {"de": "Rumänien", "it": "Romania", "ja": "ルーマニア"}}
-        },
-        {
-           "name": "Russia",
-           "qcode": "country_custom:1001033",
-           "is_active":true,
-           "translations": {"name": {"de": "Russland", "it": "Russia", "ja": "ロシア"}}
-        },
-        {
-           "name": "Singapore",
-           "qcode": "country_custom:1001034",
-           "is_active":true,
-           "translations": {"name": {"de": "Singapur", "it": "Singapore", "ja": "シンガポール"}}
-        },
-        {
-           "name": "South Africa",
-           "qcode": "country_custom:1001035",
-           "is_active":true,
-           "translations": {"name": {"de": "Südafrika", "it": "Sudafrica", "ja": "南アフリカ"}}
-        },
-        {
-           "name": "Spain",
-           "qcode": "country_custom:1001036",
-           "is_active":true,
-           "translations": {"name": {"de": "Spanien", "it": "Spagna", "ja": "スペイン"}}
-        },
-        {
-           "name": "Sweden",
-           "qcode": "country_custom:1001037",
-           "is_active":true,
-           "translations": {"name": {"de": "Schweden", "it": "Svezia", "ja": "スウェーデン"}}
-        },
-        {
-           "name": "Switzerland",
-           "qcode": "country_custom:1001038",
-           "is_active":true,
-           "translations": {"name": {"de": "Schweiz", "it": "Svizzera", "ja": "スイス"}}
-        },
-        {
-           "name": "Taiwan",
-           "qcode": "country_custom:1001039",
-           "is_active":true,
-           "translations": {"name": {"de": "Taiwan", "it": "Taiwan", "ja": "台湾"}}
-        },
-        {
-           "name": "Turkey",
-           "qcode": "country_custom:1001040",
-           "is_active":true,
-           "translations": {"name": {"de": "Türkei", "it": "Turchia", "ja": "トルコ"}}
-        },
-        {
-           "name": "UAE",
-           "qcode": "country_custom:1001041",
-           "is_active":true,
-           "translations": {"name": {"de": "Vereinigte Arabische Emirate", "it": "EAU", "ja": "アラブ首長国連邦"}}
-        },
-        {
-           "name": "UK",
-           "qcode": "country_custom:1001042",
-           "is_active":true,
-           "translations": {"name": {"de": "Großbritannien", "it": "Regno Unito", "ja": "英国"}}
-        },
-        {
-           "name": "US",
-           "qcode": "country_custom:1001043",
-           "is_active":true,
-           "translations": {"name": {"de": "USA", "it": "Stati Uniti", "ja": "米国株"}}
+        "_id": "country_custom",
+        "display_name": "Country",
+        "type": "manageable",
+        "selection_type": "single selection",
+        "service": { "all": 1 },
+        "dependent": 0,
+        "items": [
+            {
+                "name": "Australia",
+                "qcode": "country_custom:1001001",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Australien",
+                        "it": "Australia",
+                        "ja": "オーストラリア"
+                    }
+                }
+            },
+            {
+                "name": "Austria",
+                "qcode": "country_custom:1001002",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Österreich",
+                        "it": "Austria",
+                        "ja": "オーストリア"
+                    }
+                }
+            },
+            {
+                "name": "Belgium",
+                "qcode": "country_custom:1001003",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Belgien",
+                        "it": "Belgio",
+                        "ja": "ベルギー"
+                    }
+                }
+            },
+            {
+                "name": "Brazil",
+                "qcode": "country_custom:1001004",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Brasilien",
+                        "it": "Brasile",
+                        "ja": "ブラジル"
+                    }
+                }
+            },
+            {
+                "name": "Bulgaria",
+                "qcode": "country_custom:1001005",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Bulgarien",
+                        "it": "Bulgaria",
+                        "ja": "ブルガリア"
+                    }
+                }
+            },
+            {
+                "name": "Canada",
+                "qcode": "country_custom:1001006",
+                "is_active": true,
+                "translations": {
+                    "name": { "de": "Kanada", "it": "Canada", "ja": "カナダ" }
+                }
+            },
+            {
+                "name": "Chile",
+                "qcode": "country_custom:1001007",
+                "is_active": true,
+                "translations": {
+                    "name": { "de": "Chile", "it": "Cile", "ja": "チリ" }
+                }
+            },
+            {
+                "name": "China",
+                "qcode": "country_custom:1001008",
+                "is_active": true,
+                "translations": {
+                    "name": { "de": "China", "it": "Cina", "ja": "中国" }
+                }
+            },
+            {
+                "name": "Denmark",
+                "qcode": "country_custom:1001009",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Dänemark",
+                        "it": "Danimarca",
+                        "ja": "デンマーク"
+                    }
+                }
+            },
+            {
+                "name": "Finland",
+                "qcode": "country_custom:1001010",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Finnland",
+                        "it": "Finlandia",
+                        "ja": "フィンランド"
+                    }
+                }
+            },
+            {
+                "name": "France",
+                "qcode": "country_custom:1001011",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Frankreich",
+                        "it": "Francia",
+                        "ja": "フランス"
+                    }
+                }
+            },
+            {
+                "name": "Germany",
+                "qcode": "country_custom:1001012",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Deutschland",
+                        "it": "Germania",
+                        "ja": "ドイツ"
+                    }
+                }
+            },
+            {
+                "name": "Greece",
+                "qcode": "country_custom:1001013",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Griechenland",
+                        "it": "Grecia",
+                        "ja": "ギリシャ"
+                    }
+                }
+            },
+            {
+                "name": "Hong Kong",
+                "qcode": "country_custom:1001014",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Hongkong",
+                        "it": "Hong Kong",
+                        "ja": "香港"
+                    }
+                }
+            },
+            {
+                "name": "Hungary",
+                "qcode": "country_custom:1001015",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Ungarn",
+                        "it": "Ungheria",
+                        "ja": "ハンガリー"
+                    }
+                }
+            },
+            {
+                "name": "India",
+                "qcode": "country_custom:1001016",
+                "is_active": true,
+                "translations": {
+                    "name": { "de": "Indien", "it": "India", "ja": "インド" }
+                }
+            },
+            {
+                "name": "Indonesia",
+                "qcode": "country_custom:1001017",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Indonesien",
+                        "it": "Indonesia",
+                        "ja": "インドネシア"
+                    }
+                }
+            },
+            {
+                "name": "Ireland",
+                "qcode": "country_custom:1001018",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Irland",
+                        "it": "Irlanda",
+                        "ja": "アイルランド"
+                    }
+                }
+            },
+            {
+                "name": "Israel",
+                "qcode": "country_custom:1001019",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Israel",
+                        "it": "Israele",
+                        "ja": "イスラエル"
+                    }
+                }
+            },
+            {
+                "name": "Italy",
+                "qcode": "country_custom:1001020",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Italien",
+                        "it": "Italia",
+                        "ja": "イタリア"
+                    }
+                }
+            },
+            {
+                "name": "Japan",
+                "qcode": "country_custom:1001021",
+                "is_active": true,
+                "translations": {
+                    "name": { "de": "Japan", "it": "Giappone", "ja": "日本" }
+                }
+            },
+            {
+                "name": "Southern Korea",
+                "qcode": "country_custom:1001022",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Südkorea",
+                        "it": "Corea del Sud",
+                        "ja": "韓国"
+                    }
+                }
+            },
+            {
+                "name": "Kuwait",
+                "qcode": "country_custom:1001023",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Kuwait",
+                        "it": "Kuwait",
+                        "ja": "クウェート"
+                    }
+                }
+            },
+            {
+                "name": "Malaysia",
+                "qcode": "country_custom:1001024",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Malaysia",
+                        "it": "Malesia",
+                        "ja": "マレーシア"
+                    }
+                }
+            },
+            {
+                "name": "Mexico",
+                "qcode": "country_custom:1001025",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Mexiko",
+                        "it": "Messico",
+                        "ja": "メキシコ"
+                    }
+                }
+            },
+            {
+                "name": "Netherlands",
+                "qcode": "country_custom:1001026",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Niederlande",
+                        "it": "Paesi Bassi",
+                        "ja": "オランダ"
+                    }
+                }
+            },
+            {
+                "name": "New Zealand",
+                "qcode": "country_custom:1001027",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Neuseeland",
+                        "it": "Nuova Zelanda",
+                        "ja": "ニュージーランド"
+                    }
+                }
+            },
+            {
+                "name": "Norway",
+                "qcode": "country_custom:1001028",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Norwegen",
+                        "it": "Norvegia",
+                        "ja": "ノルウェー"
+                    }
+                }
+            },
+            {
+                "name": "Pakistan",
+                "qcode": "country_custom:1001029",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Pakistan",
+                        "it": "Pakistan",
+                        "ja": "パキスタン"
+                    }
+                }
+            },
+            {
+                "name": "Philippines",
+                "qcode": "country_custom:1001030",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Philippinen",
+                        "it": "Filippine",
+                        "ja": "フィリピン"
+                    }
+                }
+            },
+            {
+                "name": "Poland",
+                "qcode": "country_custom:1001031",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Polen",
+                        "it": "Polonia",
+                        "ja": "ポーランド"
+                    }
+                }
+            },
+            {
+                "name": "Romania",
+                "qcode": "country_custom:1001032",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Rumänien",
+                        "it": "Romania",
+                        "ja": "ルーマニア"
+                    }
+                }
+            },
+            {
+                "name": "Russia",
+                "qcode": "country_custom:1001033",
+                "is_active": true,
+                "translations": {
+                    "name": { "de": "Russland", "it": "Russia", "ja": "ロシア" }
+                }
+            },
+            {
+                "name": "Singapore",
+                "qcode": "country_custom:1001034",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Singapur",
+                        "it": "Singapore",
+                        "ja": "シンガポール"
+                    }
+                }
+            },
+            {
+                "name": "South Africa",
+                "qcode": "country_custom:1001035",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Südafrika",
+                        "it": "Sudafrica",
+                        "ja": "南アフリカ"
+                    }
+                }
+            },
+            {
+                "name": "Spain",
+                "qcode": "country_custom:1001036",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Spanien",
+                        "it": "Spagna",
+                        "ja": "スペイン"
+                    }
+                }
+            },
+            {
+                "name": "Sweden",
+                "qcode": "country_custom:1001037",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Schweden",
+                        "it": "Svezia",
+                        "ja": "スウェーデン"
+                    }
+                }
+            },
+            {
+                "name": "Switzerland",
+                "qcode": "country_custom:1001038",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Schweiz",
+                        "it": "Svizzera",
+                        "ja": "スイス"
+                    }
+                }
+            },
+            {
+                "name": "Taiwan",
+                "qcode": "country_custom:1001039",
+                "is_active": true,
+                "translations": {
+                    "name": { "de": "Taiwan", "it": "Taiwan", "ja": "台湾" }
+                }
+            },
+            {
+                "name": "Turkey",
+                "qcode": "country_custom:1001040",
+                "is_active": true,
+                "translations": {
+                    "name": { "de": "Türkei", "it": "Turchia", "ja": "トルコ" }
+                }
+            },
+            {
+                "name": "UAE",
+                "qcode": "country_custom:1001041",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Vereinigte Arabische Emirate",
+                        "it": "EAU",
+                        "ja": "アラブ首長国連邦"
+                    }
+                }
+            },
+            {
+                "name": "UK",
+                "qcode": "country_custom:1001042",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Großbritannien",
+                        "it": "Regno Unito",
+                        "ja": "英国"
+                    }
+                }
+            },
+            {
+                "name": "US",
+                "qcode": "country_custom:1001043",
+                "is_active": true,
+                "translations": {
+                    "name": { "de": "USA", "it": "Stati Uniti", "ja": "米国株" }
+                }
+            }
+        ],
+        "schema": {
+            "name": {},
+            "qcode": {},
+            "parent": {},
+            "translations": {}
         }
-     ],
-     "schema": {
-        "name": {
-
-        },
-        "qcode": {
-
-        },
-        "parent": {
-
-        },
-        "translations": {}
-     }
     },
     {
-    "_id": "assetclass",
-    "display_name": "Asset class",
-    "type": "manageable",
-    "selection_type": "single selection",
-    "service": {"all": 1},
-    "dependent": 0,
-    "items":[
-        {
-           "name": "Real estate",
-           "qcode": "assetclass:Real estate",
-           "is_active":true,
-           "translations": {"name": {"de": "Immobilien", "it": "Immobiliare", "ja": "不動産"}}
-        },
-        {
-           "name": "EM Debt",
-           "qcode": "assetclass:EM Debt",
-           "is_active":true,
-           "translations": {"name": {"de": "Schwellenlandanleihen", "it": "Debito mercati emergenti", "ja": "新興国市場デット"}}
-        },
-        {
-           "name": "High Yield",
-           "qcode": "assetclass:High Yield",
-           "is_active":true,
-           "translations": {"name": {"de": "Hochzinsanleihen", "it": "High yield", "ja": "ハイイールド"}}
-        },
-        {
-           "name": "Multi asset",
-           "qcode": "assetclass:Multi asset",
-           "is_active":true,
-           "translations": {"name": {"de": "Multi-Asset", "it": "Multi-asset", "ja": "マルチアセット"}}
-        },
-        {
-           "name": "Global equity",
-           "qcode": "assetclass:Global equity",
-           "is_active":true,
-           "translations": {"name": {"de": "Aktien global", "it": "Azionario globale", "ja": "グローバル株式"}}
-        },
-        {
-           "name": "Equity",
-           "qcode": "assetclass:Equity",
-           "is_active":true,
-           "translations": {"name": {"de": "Aktien", "it": "Azionario", "ja": "株式"}}
-        },
-        {
-           "name": "Fixed Income",
-           "qcode": "assetclass:Fixed Income",
-           "is_active":true,
-           "translations": {"name": {"de": "Anleihen", "it": "Obbligazionario", "ja": "債券"}}
-        },
-        {
-           "name": "Alternatives",
-           "qcode": "assetclass:Alternatives",
-           "is_active":true,
-           "translations": {"name": {"de": "Alternative Anlagen", "it": "Investimenti alternativi", "ja": "オルタナティブ"}}
-        },
-        {
-           "name": "Infrastructure",
-           "qcode": "assetclass:Infrastructure",
-           "is_active":true,
-           "translations": {"name": {"de": "Infrastruktur", "it": "Infrastrutture", "ja": "インフラ"}}
-        },
-        {
-           "name": "Hedge funds",
-           "qcode": "assetclass:Hedge funds",
-           "is_active":true,
-           "translations": {"name": {"de": "Hedgefonds", "it": "Hedge fund", "ja": "ヘッジファンド"}}
-        },
-        {
-           "name": "US equity",
-           "qcode": "assetclass:US equity",
-           "is_active":true,
-           "translations": {"name": {"de": "US-Aktien", "it": "Azionario USA", "ja": "米国株"}}
-        },
-        {
-           "name": "Japan equity",
-           "qcode": "assetclass:Japan equity",
-           "is_active":true,
-           "translations": {"name": {"de": "Japanische Aktien", "it": "Azionario giapponese", "ja": "日本株"}}
-        },
-        {
-           "name": "Asia Pac equity",
-           "qcode": "assetclass:Asia Pac equity",
-           "is_active":true,
-           "translations": {"name": {"de": "Aktien Asien/Pazifik", "it": "Azionario Asia-Pacifico", "ja": "アジア太平洋株"}}
-        },
-        {
-           "name": "EM equity",
-           "qcode": "assetclass:EM equity",
-           "is_active":true,
-           "translations": {"name": {"de": "Aktien Emerging Markets", "it": "Azionario mercati emergenti", "ja": "新興国市場株"}}
-        },
-        {
-           "name": "Catastrophe Bonds",
-           "qcode": "assetclass:Catastrophe Bonds",
-           "is_active":true,
-           "translations": {"name": {"de": "Katastrophenanleihen", "it": "Obbligazioni catastrofe", "ja": "キャット・ボンド"}}
-        },
-        {
-           "name": "Long/Short",
-           "qcode": "assetclass:Long/Short",
-           "is_active":true,
-           "translations": {"name": {"de": "Long/Short", "it": "Long/Short", "ja": "ロング／ショート"}}
-        },
-        {
-           "name": "Uk equity",
-           "qcode": "assetclass:Uk equity",
-           "is_active":true,
-           "translations": {"name": {"de": "Aktien Großbritannien", "it": "Azionario britannico", "ja": "英国株"}}
-        },
-        {
-           "name": "Europe ex Uk equity",
-           "qcode": "assetclass:Europe ex Uk equity",
-           "is_active":true,
-           "translations": {"name": {"de": "Aktien Kontinentaleuropa", "it": "Azionario Europa escl. Regno Unito", "ja": "英国除く欧州株"}}
-        },
-        {
-           "name": "European equity",
-           "qcode": "assetclass:European equity",
-           "is_active":true,
-           "translations": {"name": {"de": "Aktien Europa", "it": "Azionario europeo", "ja": "欧州大陸株"}}
-        },
-        {
-           "name": "Government Bonds",
-           "qcode": "assetclass:Government Bonds",
-           "is_active":true,
-           "translations": {"name": {"de": "Staatsanleihen", "it": "Titoli di Stato", "ja": "政府債"}}
-        },
-        {
-           "name": "Investment Grade",
-           "qcode": "assetclass:Investment Grade",
-           "is_active":true,
-           "translations": {"name": {"de": "Investmentgrade-Unternehmensanleihen", "it": "Investment grade", "ja": "投資適格"}}
-        },
-        {
-           "name": "Global Bonds",
-           "qcode": "assetclass:Global Bonds",
-           "is_active":true,
-           "translations": {"name": {"de": "Anleihen global", "it": "Obbligazionario globale", "ja": "グローバル債券"}}
-        },
-        {
-           "name": "Hybrids",
-           "qcode": "assetclass:Hybrids",
-           "is_active":true,
-           "translations": {"name": {"de": "Hybridanleihen", "it": "Titoli ibridi", "ja": "ハイブリッド"}}
-        },
-        {
-           "name": "Leveraged Loans",
-           "qcode": "assetclass:Leveraged Loans",
-           "is_active":true,
-           "translations": {"name": {"de": "Leveraged Loans", "it": "Leveraged loan", "ja": "レバレッジド・ローン"}}
-        },
-        {
-           "name": "Inflation Linked",
-           "qcode": "assetclass:Inflation Linked",
-           "is_active":true,
-           "translations": {"name": {"de": "Inflationsindexierte Anleihen", "it": "Titoli indicizzati all'inflazione", "ja": "インフレ連動"}}
-        },
-        {
-           "name": "Cash",
-           "qcode": "assetclass:Cash",
-           "is_active":true,
-           "translations": {"name": {"de": "Geldmarkt", "it": "Liquidità", "ja": "キャッシュ"}}
+        "_id": "assetclass",
+        "display_name": "Asset class",
+        "type": "manageable",
+        "selection_type": "single selection",
+        "service": { "all": 1 },
+        "dependent": 0,
+        "items": [
+            {
+                "name": "Real estate",
+                "qcode": "assetclass:Real estate",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Immobilien",
+                        "it": "Immobiliare",
+                        "ja": "不動産"
+                    }
+                }
+            },
+            {
+                "name": "EM Debt",
+                "qcode": "assetclass:EM Debt",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Schwellenlandanleihen",
+                        "it": "Debito mercati emergenti",
+                        "ja": "新興国市場デット"
+                    }
+                }
+            },
+            {
+                "name": "High Yield",
+                "qcode": "assetclass:High Yield",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Hochzinsanleihen",
+                        "it": "High yield",
+                        "ja": "ハイイールド"
+                    }
+                }
+            },
+            {
+                "name": "Multi asset",
+                "qcode": "assetclass:Multi asset",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Multi-Asset",
+                        "it": "Multi-asset",
+                        "ja": "マルチアセット"
+                    }
+                }
+            },
+            {
+                "name": "Global equity",
+                "qcode": "assetclass:Global equity",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Aktien global",
+                        "it": "Azionario globale",
+                        "ja": "グローバル株式"
+                    }
+                }
+            },
+            {
+                "name": "Equity",
+                "qcode": "assetclass:Equity",
+                "is_active": true,
+                "translations": {
+                    "name": { "de": "Aktien", "it": "Azionario", "ja": "株式" }
+                }
+            },
+            {
+                "name": "Fixed Income",
+                "qcode": "assetclass:Fixed Income",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Anleihen",
+                        "it": "Obbligazionario",
+                        "ja": "債券"
+                    }
+                }
+            },
+            {
+                "name": "Alternatives",
+                "qcode": "assetclass:Alternatives",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Alternative Anlagen",
+                        "it": "Investimenti alternativi",
+                        "ja": "オルタナティブ"
+                    }
+                }
+            },
+            {
+                "name": "Infrastructure",
+                "qcode": "assetclass:Infrastructure",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Infrastruktur",
+                        "it": "Infrastrutture",
+                        "ja": "インフラ"
+                    }
+                }
+            },
+            {
+                "name": "Hedge funds",
+                "qcode": "assetclass:Hedge funds",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Hedgefonds",
+                        "it": "Hedge fund",
+                        "ja": "ヘッジファンド"
+                    }
+                }
+            },
+            {
+                "name": "US equity",
+                "qcode": "assetclass:US equity",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "US-Aktien",
+                        "it": "Azionario USA",
+                        "ja": "米国株"
+                    }
+                }
+            },
+            {
+                "name": "Japan equity",
+                "qcode": "assetclass:Japan equity",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Japanische Aktien",
+                        "it": "Azionario giapponese",
+                        "ja": "日本株"
+                    }
+                }
+            },
+            {
+                "name": "Asia Pac equity",
+                "qcode": "assetclass:Asia Pac equity",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Aktien Asien/Pazifik",
+                        "it": "Azionario Asia-Pacifico",
+                        "ja": "アジア太平洋株"
+                    }
+                }
+            },
+            {
+                "name": "EM equity",
+                "qcode": "assetclass:EM equity",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Aktien Emerging Markets",
+                        "it": "Azionario mercati emergenti",
+                        "ja": "新興国市場株"
+                    }
+                }
+            },
+            {
+                "name": "Catastrophe Bonds",
+                "qcode": "assetclass:Catastrophe Bonds",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Katastrophenanleihen",
+                        "it": "Obbligazioni catastrofe",
+                        "ja": "キャット・ボンド"
+                    }
+                }
+            },
+            {
+                "name": "Long/Short",
+                "qcode": "assetclass:Long/Short",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Long/Short",
+                        "it": "Long/Short",
+                        "ja": "ロング／ショート"
+                    }
+                }
+            },
+            {
+                "name": "Uk equity",
+                "qcode": "assetclass:Uk equity",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Aktien Großbritannien",
+                        "it": "Azionario britannico",
+                        "ja": "英国株"
+                    }
+                }
+            },
+            {
+                "name": "Europe ex Uk equity",
+                "qcode": "assetclass:Europe ex Uk equity",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Aktien Kontinentaleuropa",
+                        "it": "Azionario Europa escl. Regno Unito",
+                        "ja": "英国除く欧州株"
+                    }
+                }
+            },
+            {
+                "name": "European equity",
+                "qcode": "assetclass:European equity",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Aktien Europa",
+                        "it": "Azionario europeo",
+                        "ja": "欧州大陸株"
+                    }
+                }
+            },
+            {
+                "name": "Government Bonds",
+                "qcode": "assetclass:Government Bonds",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Staatsanleihen",
+                        "it": "Titoli di Stato",
+                        "ja": "政府債"
+                    }
+                }
+            },
+            {
+                "name": "Investment Grade",
+                "qcode": "assetclass:Investment Grade",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Investmentgrade-Unternehmensanleihen",
+                        "it": "Investment grade",
+                        "ja": "投資適格"
+                    }
+                }
+            },
+            {
+                "name": "Global Bonds",
+                "qcode": "assetclass:Global Bonds",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Anleihen global",
+                        "it": "Obbligazionario globale",
+                        "ja": "グローバル債券"
+                    }
+                }
+            },
+            {
+                "name": "Hybrids",
+                "qcode": "assetclass:Hybrids",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Hybridanleihen",
+                        "it": "Titoli ibridi",
+                        "ja": "ハイブリッド"
+                    }
+                }
+            },
+            {
+                "name": "Leveraged Loans",
+                "qcode": "assetclass:Leveraged Loans",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Leveraged Loans",
+                        "it": "Leveraged loan",
+                        "ja": "レバレッジド・ローン"
+                    }
+                }
+            },
+            {
+                "name": "Inflation Linked",
+                "qcode": "assetclass:Inflation Linked",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Inflationsindexierte Anleihen",
+                        "it": "Titoli indicizzati all'inflazione",
+                        "ja": "インフレ連動"
+                    }
+                }
+            },
+            {
+                "name": "Cash",
+                "qcode": "assetclass:Cash",
+                "is_active": true,
+                "translations": {
+                    "name": {
+                        "de": "Geldmarkt",
+                        "it": "Liquidità",
+                        "ja": "キャッシュ"
+                    }
+                }
+            }
+        ],
+        "schema": {
+            "name": {},
+            "qcode": {},
+            "parent": {},
+            "translations": {}
         }
-     ],
-     "schema": {
-        "name": {
-
-        },
-        "qcode": {
-
-        },
-        "parent": {
-
-        },
-        "translations": {
-        }
-     }
     },
     {
-    "_id": "annotation_types",
-    "display_name": "Annotation types",
-    "type": "manageable",
-    "selection_type": "single selection",
-    "service": {"all": 1},
-    "dependent": 0,
-     "items":[
-        {
-           "name": "Jargon Buster",
-           "qcode": "annotation:1001001",
-           "is_active":true
-        },
-        {
-           "name": "Notes on the margin",
-           "qcode": "annotation:1001002",
-           "is_active":true
-        },
-        {
-           "name": "Footnote",
-           "qcode": "annotation:1001003",
-           "is_active":true
+        "_id": "annotation_types",
+        "display_name": "Annotation types",
+        "type": "manageable",
+        "selection_type": "single selection",
+        "service": { "all": 1 },
+        "dependent": 0,
+        "items": [
+            {
+                "name": "Jargon Buster",
+                "qcode": "annotation:1001001",
+                "is_active": true
+            },
+            {
+                "name": "Notes on the margin",
+                "qcode": "annotation:1001002",
+                "is_active": true
+            },
+            {
+                "name": "Footnote",
+                "qcode": "annotation:1001003",
+                "is_active": true
+            }
+        ],
+        "schema": {
+            "name": {},
+            "qcode": {},
+            "parent": {}
         }
-     ],
-     "schema": {
-        "name": {
-
-        },
-        "qcode": {
-
-        },
-        "parent": {
-
-        }
-     }
-    },  
+    },
     {
         "_id": "local_domains",
         "display_name": "Local Domains",
