@@ -1,14 +1,18 @@
 import complianceReview from './compliance-review/controllers/ComplianceReviewController';
 import subjectMatterExpertReview from './subject-matter-expert-review/controllers/subjectMatterExpertReviewController';
 import {startApp} from 'superdesk-core/scripts/index';
-import annotationsLibraryExtension from 'superdesk-core/scripts/extensions/annotationsLibrary/dist/src/extension';
 
 import './compliance-review/styles/compliance-review.scss';
 import './subject-matter-expert-review/styles/subject-matter-expert-review.scss';
 
 setTimeout(() => {
     startApp(
-        [annotationsLibraryExtension],
+        [
+            {
+                id: 'annotationsLibrary',
+                load: () => import('superdesk-core/scripts/extensions/annotationsLibrary/dist/src/extension').then((res) => res.default),
+            },
+        ],
         {},
     );
 });
