@@ -1,6 +1,6 @@
 -r requirements.txt
 
--e git+git://github.com/superdesk/superdesk-planning.git@v1.33.1#egg=superdesk-planning
+-e git+git://github.com/superdesk/superdesk-planning.git@v2.1.1#egg=superdesk-planning
 
 nose
 behave
