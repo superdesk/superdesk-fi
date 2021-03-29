@@ -8,7 +8,6 @@ from eve.utils import ParsedRequest
 from content_api.search import SearchResource, SearchService
 from fidelity.utils import slugify
 from urllib.parse import urljoin
-from superdesk.text_utils import get_text
 
 blueprint = flask.Blueprint("rss", __name__)
 parser = etree.HTMLParser(recover=True)
@@ -18,20 +17,15 @@ FEATUREMEDIA = "featuremedia"
 WEB_RENDITION = "baseImage"
 CATEGORIES = ("subject_custom",)
 PERMALINK = "Perma_URL"
-BASE_URL = "https://www.fidelityinstitutional.com/"
+BASE_URL = "https://www.fidelityinternational.com/"
 
 
 def get_permalink(item):
-    code = item["_id"][-6:]
-    try:
-        title = item["extra"][PERMALINK] or ""
-        slug = slugify(get_text(title, 'html'))
-    except (KeyError, AttributeError):
-        slug = ""
     return urljoin(
         BASE_URL,
-        "/{lang}/{code}/".format(
-            lang=item.get("language", "en"), code="-".join(filter(bool, [slug, code])),
+        "/editorial/{profile}/{title}-en5/".format(
+            profile=item['profile'],
+            title=slugify(item.get('headline') or item['name']),
         ),
     )
 
