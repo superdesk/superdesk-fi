@@ -24,8 +24,8 @@ def get_permalink(item):
     return urljoin(
         BASE_URL,
         "/editorial/{profile}/{title}-en5/".format(
-            profile = item['profile'],
-            title = slugify(item.get('headline') or item['name']),
+            profile=item['profile'],
+            title=slugify(item.get('headline') or item['name']),
         ),
     )
 
