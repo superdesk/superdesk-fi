@@ -11,7 +11,7 @@ def test_get_permalink():
                 "extra": {PERMALINK: "I can't avoid risk. How do I take it wisely?"},
             }
         )
-        == "https://www.fidelityinternational.com/editorial/123/i-cant-avoid-risk-how-do-i-take-it-wisely-en5/"
+        == "https://www.fidelityinternational.com/editorial/123/i-cant-avoid-risk-how-do-i-take-it-wisely-5b4111-en5/"
     )
 
     assert (
@@ -24,5 +24,5 @@ def test_get_permalink():
                 "extra": {PERMALINK: None},
             }
         )
-        == "https://www.fidelityinternational.com/editorial/123/some-name-en5/"
+        == "https://www.fidelityinternational.com/editorial/123/some-name-61c89a-en5/"
     )
