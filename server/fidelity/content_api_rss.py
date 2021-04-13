@@ -23,9 +23,10 @@ BASE_URL = "https://www.fidelityinternational.com/"
 def get_permalink(item):
     return urljoin(
         BASE_URL,
-        "/editorial/{profile}/{title}-en5/".format(
+        "/editorial/{profile}/{title}-{guid_end}-en5/".format(
             profile=item['profile'],
             title=slugify(item.get('headline') or item['name']),
+            guid_end=(item.get('guid') or item['_id'])[-6:],
         ),
     )
 
