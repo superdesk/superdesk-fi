@@ -699,7 +699,7 @@
     },
     {
         "_id": "gdw-contenttype",
-        "init_version": 3,
+        "init_version": 4,
         "display_name": "GDW Content Type",
         "type": "manageable",
         "service": { "all": 1 },
@@ -813,7 +813,7 @@
                     "name": {
                         "de": "Portfoliobericht",
                         "it": "Monthly Insight",
-                        "ja": "月次インサイト"
+                        "ja": "月次運用レポート"
                     }
                 }
             },
@@ -825,7 +825,7 @@
                     "name": {
                         "de": "Quartalsbericht",
                         "it": "Quarterly Insight",
-                        "ja": "四半期インサイト"
+                        "ja": "四半期運用レポート"
                     }
                 }
             }
