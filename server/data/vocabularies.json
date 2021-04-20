@@ -703,7 +703,7 @@
         "display_name": "GDW Content Type",
         "type": "manageable",
         "service": { "all": 1 },
-        "selection_type": "single selection",
+        "selection_type": "multi selection",
         "items": [
             {
                 "name": "Article",
