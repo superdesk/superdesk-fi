@@ -813,7 +813,7 @@
                     "name": {
                         "de": "Portfoliobericht",
                         "it": "Monthly Insight",
-                        "ja": "月次運用レポート"
+                        "ja": "月次運用コメント"
                     }
                 }
             },
@@ -825,7 +825,7 @@
                     "name": {
                         "de": "Quartalsbericht",
                         "it": "Quarterly Insight",
-                        "ja": "四半期運用レポート"
+                        "ja": "四半期運用コメント"
                     }
                 }
             }
