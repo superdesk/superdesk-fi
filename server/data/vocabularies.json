@@ -699,7 +699,7 @@
     },
     {
         "_id": "gdw-contenttype",
-        "init_version": 4,
+        "init_version": 5,
         "display_name": "GDW Content Type",
         "type": "manageable",
         "service": { "all": 1 },
