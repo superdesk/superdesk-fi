@@ -21,22 +21,38 @@ BASE_URL = "https://www.fidelityinternational.com/"
 
 
 def get_permalink(item):
+    try:
+        content_type = next(
+            g["qcode"][13:].lower().strip() for g in item.get("genre", [])
+            if g.get("qcode", "").startswith("genre_custom:")
+        )
+    except StopIteration:
+        content_type = ""
+
+    try:
+        title = item["extra"][PERMALINK]
+    except KeyError:
+        title = None
+
+    if not title:
+        title = item.get("headline") or item["name"]
+
     return urljoin(
         BASE_URL,
-        "/editorial/{profile}/{title}-{guid_end}-en5/".format(
-            profile=item['profile'],
-            title=slugify(item.get('headline') or item['name']),
-            guid_end=(item.get('guid') or item['_id'])[-6:],
+        "/editorial/{content_type}/{title}-{guid_end}-en5/".format(
+            content_type=content_type,
+            title=slugify(title),
+            guid_end=(item.get("guid") or item["_id"])[-6:],
         ),
     )
 
 
 def get_content(item):
     try:
-        return item['extra']['Summary'] or ''
+        return item["extra"]["Summary"] or ""
     except (KeyError, TypeError):
         pass
-    return item.get('description_html') or ''
+    return item.get("description_html") or ""
 
 
 def generate_feed(items):
