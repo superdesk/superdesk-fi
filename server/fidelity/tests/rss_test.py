@@ -11,13 +11,13 @@ def test_get_permalink():
                 "extra": {PERMALINK: "I can't avoid risk. How do I take it wisely?"},
                 "genre": [
                     {
-                        "name": "Article",
-                        "qcode": "genre_custom:Article",
+                        "name": "Blog",
+                        "qcode": "genre_custom:Blog",
                         "translations": {
                             "name": {
-                                "it": "Articolo",
-                                "ja": "レポート",
-                                "de": "Artikel"
+                                "it": "Blog",
+                                "ja": "ブログ",
+                                "de": "Blog"
                             }
                         },
                         "scheme": "genre_custom"
@@ -26,11 +26,13 @@ def test_get_permalink():
             }
         )
         == (
-            "https://www.fidelityinternational.com/editorial/article/"
+            "https://www.fidelityinternational.com/editorial/blog/"
             "i-cant-avoid-risk-how-do-i-take-it-wisely-5b4111-en5/"
         )
     )
 
+
+def test_permalink_several_genres():
     assert (
         get_permalink(
             {
@@ -65,6 +67,37 @@ def test_get_permalink():
                         "scheme": "genre_custom"
                     }
                 ],
+            }
+        )
+        == "https://www.fidelityinternational.com/editorial/article/some-name-61c89a-en5/"
+    )
+
+
+def test_permalink_empty_genre():
+    assert (
+        get_permalink(
+            {
+                "_id": "guid:foo-bar-baz-61c89a",
+                "profile": "123",
+                "name": "some name",
+                "language": "ja",
+                "extra": {PERMALINK: None},
+                "genre": [],
+            }
+        )
+        == "https://www.fidelityinternational.com/editorial/article/some-name-61c89a-en5/"
+    )
+
+
+def test_permalink_no_genre():
+    assert (
+        get_permalink(
+            {
+                "_id": "guid:foo-bar-baz-61c89a",
+                "profile": "123",
+                "name": "some name",
+                "language": "ja",
+                "extra": {PERMALINK: None},
             }
         )
         == "https://www.fidelityinternational.com/editorial/article/some-name-61c89a-en5/"

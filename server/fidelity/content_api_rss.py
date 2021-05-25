@@ -27,7 +27,7 @@ def get_permalink(item):
             if g.get("qcode", "").startswith("genre_custom:")
         )
     except StopIteration:
-        content_type = ""
+        content_type = "article"
 
     try:
         title = item["extra"][PERMALINK]
