@@ -5,4 +5,4 @@ python3-saml==1.2.6
 lxml==4.1.1
 feedgen==0.9.0
 urllib3<1.26
-Superdesk-Core==2.1.2
+Superdesk-Core==2.2.0

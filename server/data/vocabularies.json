@@ -699,11 +699,11 @@
     },
     {
         "_id": "gdw-contenttype",
-        "init_version": 3,
+        "init_version": 5,
         "display_name": "GDW Content Type",
         "type": "manageable",
         "service": { "all": 1 },
-        "selection_type": "single selection",
+        "selection_type": "multi selection",
         "items": [
             {
                 "name": "Article",
@@ -813,7 +813,7 @@
                     "name": {
                         "de": "Portfoliobericht",
                         "it": "Monthly Insight",
-                        "ja": "月次インサイト"
+                        "ja": "月次運用コメント"
                     }
                 }
             },
@@ -825,7 +825,7 @@
                     "name": {
                         "de": "Quartalsbericht",
                         "it": "Quarterly Insight",
-                        "ja": "四半期インサイト"
+                        "ja": "四半期運用コメント"
                     }
                 }
             }

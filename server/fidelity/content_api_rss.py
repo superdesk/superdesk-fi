@@ -8,7 +8,6 @@ from eve.utils import ParsedRequest
 from content_api.search import SearchResource, SearchService
 from fidelity.utils import slugify
 from urllib.parse import urljoin
-from superdesk.text_utils import get_text
 
 blueprint = flask.Blueprint("rss", __name__)
 parser = etree.HTMLParser(recover=True)
@@ -18,30 +17,42 @@ FEATUREMEDIA = "featuremedia"
 WEB_RENDITION = "baseImage"
 CATEGORIES = ("subject_custom",)
 PERMALINK = "Perma_URL"
-BASE_URL = "https://www.fidelityinstitutional.com/"
+BASE_URL = "https://www.fidelityinternational.com/"
 
 
 def get_permalink(item):
-    code = item["_id"][-6:]
     try:
-        title = item["extra"][PERMALINK] or ""
-        slug = slugify(get_text(title, 'html'))
-    except (KeyError, AttributeError):
-        slug = ""
+        content_type = next(
+            g["qcode"][13:].lower().strip() for g in item.get("genre", [])
+            if g.get("qcode", "").startswith("genre_custom:")
+        )
+    except StopIteration:
+        content_type = "article"
+
+    try:
+        title = item["extra"][PERMALINK]
+    except KeyError:
+        title = None
+
+    if not title:
+        title = item.get("headline") or item["name"]
+
     return urljoin(
         BASE_URL,
-        "/{lang}/{code}/".format(
-            lang=item.get("language", "en"), code="-".join(filter(bool, [slug, code])),
+        "/editorial/{content_type}/{title}-{guid_end}-en5/".format(
+            content_type=content_type,
+            title=slugify(title),
+            guid_end=(item.get("guid") or item["_id"])[-6:],
         ),
     )
 
 
 def get_content(item):
     try:
-        return item['extra']['Summary'] or ''
+        return item["extra"]["Summary"] or ""
     except (KeyError, TypeError):
         pass
-    return item.get('description_html') or ''
+    return item.get("description_html") or ""
 
 
 def generate_feed(items):

@@ -6,29 +6,99 @@ def test_get_permalink():
         get_permalink(
             {
                 "_id": "guid:foo-bar-baz-5b4111",
+                "headline": "I can't avoid risk.",
+                "profile": "123",
                 "extra": {PERMALINK: "I can't avoid risk. How do I take it wisely?"},
+                "genre": [
+                    {
+                        "name": "Blog",
+                        "qcode": "genre_custom:Blog",
+                        "translations": {
+                            "name": {
+                                "it": "Blog",
+                                "ja": "ブログ",
+                                "de": "Blog"
+                            }
+                        },
+                        "scheme": "genre_custom"
+                    }
+                ],
             }
         )
-        == "https://www.fidelityinstitutional.com/en/i-cant-avoid-risk-how-do-i-take-it-wisely-5b4111/"
+        == (
+            "https://www.fidelityinternational.com/editorial/blog/"
+            "i-cant-avoid-risk-how-do-i-take-it-wisely-5b4111-en5/"
+        )
     )
 
+
+def test_permalink_several_genres():
     assert (
         get_permalink(
             {
                 "_id": "guid:foo-bar-baz-61c89a",
+                "profile": "123",
+                "name": "some name",
+                "language": "ja",
+                "extra": {PERMALINK: None},
+                "genre": [
+                    {
+                        "name": "Article",
+                        "qcode": "genre_custom:Article",
+                        "translations": {
+                            "name": {
+                                "it": "Articolo",
+                                "ja": "レポート",
+                                "de": "Artikel"
+                            }
+                        },
+                        "scheme": "genre_custom"
+                    },
+                    {
+                        "name": "Blog",
+                        "qcode": "genre_custom:Blog",
+                        "translations": {
+                            "name": {
+                                "it": "Blog",
+                                "ja": "ブログ",
+                                "de": "Blog"
+                            }
+                        },
+                        "scheme": "genre_custom"
+                    }
+                ],
+            }
+        )
+        == "https://www.fidelityinternational.com/editorial/article/some-name-61c89a-en5/"
+    )
+
+
+def test_permalink_empty_genre():
+    assert (
+        get_permalink(
+            {
+                "_id": "guid:foo-bar-baz-61c89a",
+                "profile": "123",
+                "name": "some name",
+                "language": "ja",
+                "extra": {PERMALINK: None},
+                "genre": [],
+            }
+        )
+        == "https://www.fidelityinternational.com/editorial/article/some-name-61c89a-en5/"
+    )
+
+
+def test_permalink_no_genre():
+    assert (
+        get_permalink(
+            {
+                "_id": "guid:foo-bar-baz-61c89a",
+                "profile": "123",
+                "name": "some name",
                 "language": "ja",
                 "extra": {PERMALINK: None},
             }
         )
-        == "https://www.fidelityinstitutional.com/ja/61c89a/"
-    )
-
-    assert (
-        get_permalink(
-            {
-                "_id": "guid:foo-bar-baz-5b4111",
-                "extra": {PERMALINK: "<p>I can't avoid risk. How do I take it wisely?</p>"},
-            }
-        )
-        == "https://www.fidelityinstitutional.com/en/i-cant-avoid-risk-how-do-i-take-it-wisely-5b4111/"
+        == "https://www.fidelityinternational.com/editorial/article/some-name-61c89a-en5/"
     )
