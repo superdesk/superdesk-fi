@@ -48,6 +48,7 @@ INSTALLED_APPS.extend([
     'fidelity.compliance',
     'fidelity.identifier_generator',
     'fidelity.macros',
+    'superdesk.sams',
 ])
 
 RENDITIONS = {
@@ -143,3 +144,5 @@ INTERNAL_ID_APPEND_CUSTOM_FIELDS_IDS = ['disclaimer']
 EMBED_PRE_PROCESS = [qumu_embed_pre_process]
 
 KEYWORDS_ADD_MISSING_ON_PUBLISH = True
+
+MEDIA_STORAGE_PROVIDER = 'superdesk.sams.media_storage.SAMSMediaStorage'
