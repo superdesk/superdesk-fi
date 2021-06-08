@@ -2733,5 +2733,33 @@
         "schema": {
             "domain": {}
         }
+    },
+    {
+        "_id" : "show-hero-image",
+        "field_type" : null,
+        "items" : [
+            {
+                "is_active" : true,
+                "qcode" : "showhero:yes",
+                "name" : "Yes"
+            },
+            {
+                "is_active" : true,
+                "qcode" : "showhero:no",
+                "name" : "No"
+            }
+        ],
+        "type" : "manageable",
+        "schema" : {
+            "name" : {},
+            "qcode" : {},
+            "parent" : {}
+        },
+        "service" : {
+            "all" : 1
+        },
+        "selection_type" : "single selection",
+        "display_name" : "Show Hero",
+        "unique_field" : "qcode"
     }
 ]

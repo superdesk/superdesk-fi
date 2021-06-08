@@ -1,0 +1,337 @@
+[
+    {
+        "_id": "article",
+        "priority": 0,
+        "label": "Article",
+        "is_used": true,
+        "enabled": true,
+        "editor": {
+            "place_custom": {
+                "required": false,
+                "sdWidth": "half",
+                "order": 11
+            },
+            "authors": {
+                "required": false,
+                "sdWidth": "full",
+                "order": 19
+            },
+            "2352356": {
+                "required": false,
+                "section": "content",
+                "order": 5
+            },
+            "regions": {
+                "section": "header",
+                "sdWidth": "half",
+                "required": false,
+                "order": 3
+            },
+            "feature_media": {
+                "required": false,
+                "order": 8
+            },
+            "genre_custom": {
+                "required": false,
+                "sdWidth": "half",
+                "order": 9
+            },
+            "ednote": {
+                "required": false,
+                "sdWidth": "full",
+                "order": 18
+            },
+            "abstract": {
+                "required": false,
+                "formatOptions": [
+                    "bold",
+                    "italic",
+                    "underline",
+                    "link"
+                ],
+                "order": 13
+            },
+            "slugline": {
+                "required": false,
+                "sdWidth": "full",
+                "order": 2
+            },
+            "headline": {
+                "required": false,
+                "formatOptions": [],
+                "order": 10
+            },
+            "anpa_category": {
+                "required": false,
+                "sdWidth": "full",
+                "order": 16
+            },
+            "subject_custom": {
+                "required": false,
+                "sdWidth": "full",
+                "order": 17
+            },
+            "compliantlifetime": {
+                "required": false,
+                "order": 4
+            },
+            "disclaimer": {
+                "required": false,
+                "section": "content",
+                "order": 7
+            },
+            "priority": {
+                "required": false,
+                "sdWidth": "quarter",
+                "order": 12
+            },
+            "internal_id": {
+                "required": false,
+                "section": "content",
+                "order": 6
+            },
+            "body_html": {
+                "editor3": true,
+                "cleanPastedHTML": false,
+                "formatOptions": [
+                    "h2",
+                    "bold",
+                    "italic",
+                    "underline",
+                    "quote",
+                    "link",
+                    "embed",
+                    "media",
+                    "annotation"
+                ],
+                "required": false,
+                "order": 14
+            },
+            "compliance_checked": {
+                "required": false,
+                "section": "header",
+                "order": 1
+            },
+            "show-hero-image": {
+                "order": 15,
+                "section": "header",
+                "required": false
+            },
+            "235262": null,
+            "keywords": null,
+            "language": null,
+            "usageterms": null,
+            "anpa_take_key": null,
+            "urgency": null,
+            "company_codes": null,
+            "sms": null,
+            "byline": null,
+            "dateline": null,
+            "footer": null,
+            "body_footer": null,
+            "sign_off": null,
+            "media_description": null,
+            "attachments": null,
+            "franchise": null,
+            "audience": null,
+            "author_roles": null,
+            "edition_number": null,
+            "instprtlsection": null,
+            "articleorder": null,
+            "audience_custom": null,
+            "region_custom": null,
+            "country_custom": null,
+            "assetclass": null,
+            "annotation_types": null,
+            "alice-test": null,
+            "cv_aug6_v1": null,
+            "Category": null,
+            "category": null,
+            "categories": null,
+            "cd_aug6_v1": null,
+            "cem_aug6_v1": null,
+            "cm_aug6_v1_media": null,
+            "cm_aug6_v1_related": null,
+            "cf_aug6_v1": null,
+            "Summary": null,
+            "cu_aug6_v1": null
+        },
+        "schema": {
+            "internal_id": {
+                "enabled": true,
+                "nullable": true,
+                "type": "text",
+                "required": false
+            },
+            "authors": {
+                "schema": {
+                    "schema": {
+                        "role": {
+                            "type": "string"
+                        },
+                        "parent": {
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "dict"
+                },
+                "nullable": true,
+                "type": "list",
+                "required": false
+            },
+            "2352356": {
+                "enabled": true,
+                "nullable": true,
+                "type": "text",
+                "required": false
+            },
+            "feature_media": {
+                "enabled": true,
+                "nullable": true,
+                "type": "media",
+                "required": false
+            },
+            "body_html": {
+                "required": false,
+                "nullable": true,
+                "type": "string"
+            },
+            "ednote": {
+                "required": false,
+                "nullable": true,
+                "type": "string"
+            },
+            "abstract": {
+                "required": false,
+                "type": "string",
+                "maxlength": 160,
+                "nullable": true
+            },
+            "slugline": {
+                "required": false,
+                "type": "string",
+                "maxlength": 24,
+                "nullable": true
+            },
+            "subject": {
+                "mandatory_in_list": {
+                    "scheme": {
+                        "subject": null,
+                        "genre": null,
+                        "place": null,
+                        "franchise": null,
+                        "compliance_checked": null,
+                        "audience": null,
+                        "author_roles": null,
+                        "edition_number": null,
+                        "instprtlsection": null,
+                        "articleorder": null,
+                        "audience_custom": null,
+                        "region_custom": null,
+                        "country_custom": null,
+                        "assetclass": null,
+                        "annotation_types": null,
+                        "alice-test": null,
+                        "cv_aug6_v1": null,
+                        "regions": null,
+                        "235262": null,
+                        "Category": null,
+                        "category": null,
+                        "categories": null,
+                        "show-hero-image": null
+                    }
+                },
+                "required": false,
+                "type": "list",
+                "schema": {
+                    "schema": {
+                        "parent": {
+                            "nullable": true
+                        },
+                        "name": {},
+                        "qcode": {},
+                        "service": {
+                            "nullable": true
+                        },
+                        "scheme": {
+                            "nullable": true,
+                            "type": "string",
+                            "required": true,
+                            "allowed": [
+                                "subject_custom",
+                                "compliance_checked",
+                                "regions",
+                                "show-hero-image"
+                            ]
+                        }
+                    },
+                    "type": "dict"
+                },
+                "default": [],
+                "nullable": true
+            },
+            "genre": {
+                "required": false,
+                "nullable": true,
+                "type": "list"
+            },
+            "headline": {
+                "required": false,
+                "type": "string",
+                "maxlength": 64,
+                "nullable": true
+            },
+            "anpa_category": {
+                "required": false,
+                "nullable": true,
+                "type": "list"
+            },
+            "place": {
+                "required": false,
+                "nullable": true,
+                "type": "list"
+            },
+            "compliantlifetime": {
+                "enabled": true,
+                "nullable": true,
+                "type": "date",
+                "required": false
+            },
+            "disclaimer": {
+                "enabled": true,
+                "nullable": true,
+                "type": "text",
+                "required": false
+            },
+            "priority": {
+                "required": false,
+                "nullable": true,
+                "type": "integer"
+            },
+            "keywords": null,
+            "language": null,
+            "usageterms": null,
+            "anpa_take_key": null,
+            "urgency": null,
+            "company_codes": null,
+            "sms": null,
+            "byline": null,
+            "dateline": null,
+            "footer": null,
+            "body_footer": null,
+            "sign_off": null,
+            "media_description": null,
+            "attachments": null,
+            "cd_aug6_v1": null,
+            "cem_aug6_v1": null,
+            "cm_aug6_v1_media": null,
+            "cm_aug6_v1_related": null,
+            "cf_aug6_v1": null,
+            "Summary": null,
+            "cu_aug6_v1": null
+        }
+    }
+]
