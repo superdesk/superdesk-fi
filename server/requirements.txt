@@ -1,4 +1,4 @@
-gunicorn==19.7.1
+gunicorn==20.1.0
 honcho==1.0.1
 newrelic>=2.66,<2.67
 python3-saml==1.2.6
