@@ -10,8 +10,9 @@ link to complete your profile:
 
 This link expires after 48 hours.
 
-Please note, this is a testing environment and so content produced here cannot be used in
-production. Existing content may also be removed from time to time.
+For any questions, please do not hesitate to contact Katie Roberts or Rachel Cartmail at the
+Fidelity Editorial team.
+{% endblock %}
 
 For any questions, please do not hesitate to contact the Editorial Team at FIL - Editorial
 Superusers. Alternatively contact your local support team at FIL - London Application Support or
