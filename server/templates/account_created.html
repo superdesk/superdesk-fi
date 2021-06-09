@@ -1,13 +1,14 @@
 {% extends "email_layout.html" %}
 
 {% block content %}
-<p>Hello, {{user.display_name}}</p>
-<p>The Editorial Team has created a Superdesk user account for you on the TESTING instance at Fidelity.</p>
-<p>Superdesk is the new global Editorial System for content creation and distribution at Fidelity.
-Access the Superdesk TESTING instance here:https://fidelity-uat.superdesk.pro</p>
-<p>Please note that the TESTING instance is there to test new functionality, therefore the instance
-may be rebuilt from time to time, and existing content may be lost. Content produced on this
-instance cannot be used in production.</p>
-<p>For any questions, please do not hesitate to contact Katie Roberts or Rachel Cartmail at the
-Fidelity Editorial team.</p>
+<p>Dear {{user.first_name}}</p>
+<p>A Superdesk user account has been created for you. Superdesk is the global system for
+Editorial content creation at Fidelity International.</p>
+<p>You can access the Superdesk application from the application in your start menu, or
+from the following link in Google Chrome (<a href="https://fidelity.superdesk.pro">https://fidelity.superdesk.pro</a>)
+Open it now to start creating, editing and translating content!</p>
+<p>For any questions, please contact Katie Roberts, Managing Editor or Stephen Gardner, Commissioning Editor.</p>
+<p>&nbsp;</p>
+<p>Thank you,</p>
+<p>The Editorial Team</p>
 {% endblock %}

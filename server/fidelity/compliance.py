@@ -18,7 +18,7 @@ from superdesk.celery_app import celery
 from apps.archive.common import insert_into_versions
 
 logger = logging.getLogger(__name__)
-DEFAULT_EOL_TEXT = "This content is no longer updated by Fidelity International"
+DEFAULT_EOL_TEXT = "This content was correct at the time of publication and is no longer being updated."
 
 
 class ComplianceEOLCheck(superdesk.Command):

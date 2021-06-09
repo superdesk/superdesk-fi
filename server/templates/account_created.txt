@@ -1,20 +1,19 @@
 {% extends "email_layout.txt" %}
 
 {% block content %}
-Hello, {{user.display_name}}
+Dear {{user.first_name}}
 
-The Editorial Team has created a Superdesk user account for you in UAT. Please click the following
-link to complete your profile:
+A Superdesk user account has been created for you. Superdesk is the global system for
+Editorial content creation at Fidelity International.
 
-{{url}}
+You can access the Superdesk application from the application in your start menu, or
+from the following link in Google Chrome (https://fidelity.superdesk.pro) Open it now
+to start creating, editing and translating content!
 
-This link expires after 48 hours.
+For any questions, please contact Katie Roberts, Managing Editor or Stephen Gardner, Commissioning Editor.
 
-For any questions, please do not hesitate to contact Katie Roberts or Rachel Cartmail at the
-Fidelity Editorial team.
-{% endblock %}
 
-For any questions, please do not hesitate to contact the Editorial Team at FIL - Editorial
-Superusers. Alternatively contact your local support team at FIL - London Application Support or
-FIL Asia IM System Support.
+Thank you,
+
+The Editorial Team
 {% endblock %}
