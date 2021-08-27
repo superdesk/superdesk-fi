@@ -6,6 +6,7 @@ from flask import request
 from eve.utils import ParsedRequest
 from settings import PUBLIC_TOKEN
 from .content_api_rss import get_authors, get_content_type
+from superdesk.timer import timer
 
 logger = logging.getLogger(__name__)
 blueprint = flask.Blueprint("csv", __name__)
@@ -13,14 +14,6 @@ blueprint = flask.Blueprint("csv", __name__)
 MAX_ITEMS = 200
 SEPARATOR = ';'
 FILENAME = 'bi.csv'
-
-
-def get_content(item):
-    try:
-        return item["extra"]["Summary"] or ""
-    except (KeyError, TypeError):
-        pass
-    return item.get("description_html") or ""
 
 
 def get_csv(items):
@@ -36,25 +29,31 @@ def get_csv(items):
         'Keyword',
     ])]
     packages = get_packages()
-    for item in items:
-        name = item.get("headline") or item.get("name")
-        if not name:
-            continue
-        authors = get_authors(item) or ['']
-        keywords = item.get("keywords") or ['']
-        for author in authors:
-            for keyword in keywords:
-                output.append(SEPARATOR.join([
-                    packages.get(item['_id'], {'name': ''}).get('name') or '',
-                    name,
-                    item['_id'],
-                    item['firstpublished'].strftime("%d/%m/%Y"),
-                    item['versioncreated'].strftime("%d/%m/%Y"),
-                    author,
-                    item['language'].upper(),
-                    get_content_type(item),
-                    keyword,
-                ]))
+    with timer("csv"):
+        for item in items:
+            name = item.get("headline") or item.get("name")
+            if not name:
+                continue
+            package = packages.get(item['_id'], {'name': ''}).get('name') or ''
+            firstpublished = item['firstpublished'].strftime("%d/%m/%Y")
+            versioncreated = item['versioncreated'].strftime("%d/%m/%Y")
+            language = item['language'].upper()
+            content_type = get_content_type(item)
+            authors = get_authors(item) or ['']
+            keywords = item.get("keywords") or ['']
+            for author in authors:
+                for keyword in keywords:
+                    output.append(SEPARATOR.join([
+                        package,
+                        name,
+                        item['_id'],
+                        firstpublished,
+                        versioncreated,
+                        author,
+                        language,
+                        content_type,
+                        keyword,
+                    ]))
     logger.info("len %d %d", len(items), len(output) - 1)
     return '\n'.join(output)
 
