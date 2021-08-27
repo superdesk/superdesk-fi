@@ -1,4 +1,9 @@
+import logging
+
 from superdesk import privilege
+
+
+logging.getLogger(__name__).setLevel(logging.INFO)
 
 
 def init_app(app):

@@ -21,13 +21,7 @@ BASE_URL = "https://www.fidelityinternational.com/"
 
 
 def get_permalink(item):
-    try:
-        content_type = next(
-            g["qcode"][13:].lower().strip() for g in item.get("genre", [])
-            if g.get("qcode", "").startswith("genre_custom:")
-        )
-    except StopIteration:
-        content_type = "article"
+    content_type = get_content_type(item)
 
     try:
         title = item["extra"][PERMALINK]
@@ -55,6 +49,39 @@ def get_content(item):
     return item.get("description_html") or ""
 
 
+def get_content_type(item):
+    try:
+        content_type = next(
+            g["qcode"][13:].lower().strip() for g in item.get("genre", [])
+            if g.get("qcode", "").startswith("genre_custom:")
+        )
+    except StopIteration:
+        content_type = "article"
+    return content_type
+
+
+def get_authors(item):
+    authors = []
+    if item.get("authors"):
+        authors = [
+            author["name"]
+            for author in item["authors"]
+            if author.get("role") and author["role"].lower() == AUTHOR_ROLE.lower()
+        ]
+    return authors
+
+
+def get_category(item):
+    category = []
+    if item.get("subject"):
+        category = [
+            {"term": s.get("name")}
+            for s in item["subject"]
+            if s.get("scheme") in CATEGORIES
+        ]
+    return category
+
+
 def generate_feed(items):
     fg = feed.FeedGenerator()
     fg.load_extension("dc")
@@ -76,23 +103,13 @@ def generate_feed(items):
         if item.get("source"):
             entry.source(title=item["source"])
 
-        if item.get("subject"):
-            category = [
-                {"term": s.get("name")}
-                for s in item["subject"]
-                if s.get("scheme") in CATEGORIES
-            ]
-            if category:
-                entry.category(category)
+        category = get_category(item)
+        if category:
+            entry.category(category)
 
-        if item.get("authors"):
-            authors = [
-                author["name"]
-                for author in item["authors"]
-                if author.get("role") and author["role"].lower() == AUTHOR_ROLE.lower()
-            ]
-            if authors:
-                entry.dc.dc_creator(", ".join(authors))
+        authors = get_authors(item)
+        if authors:
+            entry.dc.dc_creator(", ".join(authors))
 
         if item.get("associations") and item["associations"].get(FEATUREMEDIA):
             media = item["associations"][FEATUREMEDIA]
@@ -116,7 +133,7 @@ def index():
     return flask.Response(content, mimetype="application/rss+xml")
 
 
-class RSSResource(SearchResource):
+class RSSItemsResource(SearchResource):
     datasource = {
         key: val
         for key, val in SearchResource.datasource.items()
@@ -126,4 +143,4 @@ class RSSResource(SearchResource):
 
 def init_app(_app):
     _app.register_blueprint(blueprint, url_prefix="/contentapi")
-    superdesk.register_resource("rss_items", RSSResource, SearchService, _app=_app)
+    superdesk.register_resource("rss_items", RSSItemsResource, SearchService, _app=_app)

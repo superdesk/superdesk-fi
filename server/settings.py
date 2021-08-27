@@ -123,6 +123,7 @@ OVERRIDE_EDNOTE_FOR_CORRECTIONS = False
 
 CONTENTAPI_INSTALLED_APPS += (
     'fidelity.content_api_rss',
+    'fidelity.content_api_csv',
 )
 
 # Fidelity Internal ID
@@ -146,3 +147,6 @@ EMBED_PRE_PROCESS = [qumu_embed_pre_process]
 KEYWORDS_ADD_MISSING_ON_PUBLISH = True
 
 MEDIA_STORAGE_PROVIDER = 'superdesk.sams.media_storage.SAMSMediaStorage'
+
+# TOKEN USED BY CSV API
+PUBLIC_TOKEN = env("PUBLIC_TOKEN", "")
