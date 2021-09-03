@@ -4,6 +4,7 @@ import superdesk
 
 from flask import request
 from eve.utils import ParsedRequest
+from werkzeug.datastructures import ImmutableMultiDict
 from settings import PUBLIC_TOKEN
 from .content_api_rss import get_authors, get_content_type
 
@@ -70,7 +71,7 @@ def index():
         flask.abort(401)
     items_service = superdesk.get_resource_service("rss_items")
     req = ParsedRequest()
-    req.args = {k: request.args.get(k) for k in request.args if k != "token"}
+    req.args = ImmutableMultiDict({k: request.args.get(k) for k in request.args if k != "token"})
     req.max_results = MAX_ITEMS
     items = list(items_service.get(req, {}))
     packages = get_packages()
