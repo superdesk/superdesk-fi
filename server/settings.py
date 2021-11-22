@@ -131,7 +131,7 @@ CONTENTAPI_INSTALLED_APPS += (
 # keys used in template:
 # year_short: last 2 digits of year
 # year_sequence: incremental id, reset every year
-INTERNAL_ID_TPL = "ED{year_short} - {year_sequence:03}"
+INTERNAL_ID_TPL = "{prefix}{year_short} - {year_sequence:03}"
 
 # internal id will be set in following field, if it exists in content profile
 INTERNAL_ID_SET_CUSTOM_FIELD_ID = "internal_id"
@@ -139,6 +139,10 @@ INTERNAL_ID_SET_CUSTOM_FIELD_ID = "internal_id"
 # internal id will be appended to following fields (after a line feed),
 # if they exist in content profile
 INTERNAL_ID_APPEND_CUSTOM_FIELDS_IDS = ['disclaimer']
+
+INTERNAL_ID_DESK_MAP = {
+    "WPFH": "WPFH",
+}
 
 # HTML rendering
 

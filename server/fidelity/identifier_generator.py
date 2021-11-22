@@ -8,11 +8,13 @@
 
 import logging
 import pytz
+import superdesk.signals as signals
 from datetime import datetime
 from superdesk import app, get_resource_service
-from superdesk.signals import item_create
 
 logger = logging.getLogger(__name__)
+
+DEFAULT_PREFIX = "ED"
 
 
 def generate_id(sender, item, **kwargs):
@@ -31,10 +33,15 @@ def generate_id(sender, item, **kwargs):
     tz = pytz.timezone(app.config['DEFAULT_TIMEZONE'])
     now = datetime.now(tz=tz)
     template = app.config['INTERNAL_ID_TPL']
+    prefix = get_prefix(item)
+    if extra.get(set_field_id) and prefix in extra[set_field_id]:
+        return
     sequences_service = get_resource_service('sequences')
-    sequence_key = 'fidelity_internal_id_{year}'.format(year=now.year)
+    sequence_key = 'fidelity_internal_id_{year}'.format(year=now.year) if prefix == DEFAULT_PREFIX else \
+        'fidelity_internal_id_{year}_{desk}'.format(year=now.year, desk=prefix)
     sequence_number = sequences_service.get_next_sequence_number(sequence_key)
     internal_id = template.format(
+        prefix=prefix,
         year_short=str(now.year)[-2:],
         year_sequence=sequence_number,
     )
@@ -44,5 +51,18 @@ def generate_id(sender, item, **kwargs):
             extra[field_id] = extra.setdefault(field_id, '') + '<br>' + internal_id
 
 
+def get_prefix(item):
+    try:
+        desk_id = item["task"]["desk"]
+    except KeyError:
+        pass
+    else:
+        desk = get_resource_service("desks").find_one(req=None, _id=desk_id)
+        if desk and desk.get("name").upper() in app.config["INTERNAL_ID_DESK_MAP"]:
+            return app.config["INTERNAL_ID_DESK_MAP"][desk["name"].upper()]
+    return DEFAULT_PREFIX
+
+
 def init_app(app):
-    item_create.connect(generate_id)
+    signals.item_create.connect(generate_id)
+    signals.item_move.connect(generate_id)
