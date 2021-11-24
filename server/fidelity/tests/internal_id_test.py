@@ -8,12 +8,14 @@
 # AUTHORS and LICENSE files distributed with this source code, or
 # at https://www.sourcefabric.org/superdesk/license
 
-from datetime import datetime
+
 import pytz
+import fidelity.identifier_generator as id_generator
+
+from datetime import datetime
 from superdesk.tests import TestCase
 from superdesk import get_resource_service
-
-TEST_TPL = "ED{year_short} - {year_sequence:04}"
+from settings import INTERNAL_ID_TPL as TEST_TPL
 
 
 class InternalIdTestCase(TestCase):
@@ -25,10 +27,7 @@ class InternalIdTestCase(TestCase):
             "INTERNAL_ID_APPEND_CUSTOM_FIELDS_IDS": ['disclaimer'],
         })
 
-    def test_internal_id_on_new_item(self):
-        """Check that an internal ID corresponding to template is built on item creation"""
-        tz = pytz.timezone(self.app.config['DEFAULT_TIMEZONE'])
-        now = datetime.now(tz=tz)
+    def setup_item(self):
         self.app.data.insert(
             "content_types",
             [
@@ -43,15 +42,26 @@ class InternalIdTestCase(TestCase):
             ],
         )
         archive_service = get_resource_service('archive')
-        item_id = archive_service.post([{
+        data = {
             "type": "text",
             "profile": "test_profile",
             "body_html": "<p>content</p>",
             "extra": {"disclaimer": "some disclaimer"},
-        }])[0]
-        new_item = archive_service.find_one(None, _id=item_id)
+        }
+        item_id = archive_service.post([data])
+        return archive_service.find_one(None, _id=item_id)
+
+    def get_year(self):
+        tz = pytz.timezone(self.app.config['DEFAULT_TIMEZONE'])
+        now = datetime.now(tz=tz)
+        return str(now.year)[-2:]
+
+    def test_internal_id_on_new_item(self):
+        """Check that an internal ID corresponding to template is built on item creation"""
+        new_item = self.setup_item()
         expected_tpl = TEST_TPL.format(
-            year_short=str(now.year)[-2:],
+            prefix="ED",
+            year_short=self.get_year(),
             year_sequence=1,
         )
         self.assertEqual(
@@ -89,3 +99,34 @@ class InternalIdTestCase(TestCase):
         }])[0]
         new_item = archive_service.find_one(None, _id=item_id)
         self.assertNotIn('internal_id', new_item.get('extra', {}))
+
+    def test_internal_id_custom_desk_prefix(self):
+        desk = {"name": "wpfh"}
+        self.app.data.insert("desks", [desk])
+        item = self.setup_item()
+
+        # move to desk
+        item["task"] = {"desk": desk["_id"]}
+        id_generator.generate_id(None, item)
+        self.assertEqual(item["extra"]["internal_id"], TEST_TPL.format(
+            prefix="WPFH",
+            year_short=self.get_year(),
+            year_sequence=1,
+        ))
+
+        # move to different stage etc.
+        id_generator.generate_id(None, item)
+        self.assertEqual(item["extra"]["internal_id"], TEST_TPL.format(
+            prefix="WPFH",
+            year_short=self.get_year(),
+            year_sequence=1,
+        ))
+
+        # move to different desk
+        item["task"] = {}
+        id_generator.generate_id(None, item)
+        self.assertEqual(item["extra"]["internal_id"], TEST_TPL.format(
+            prefix="ED",
+            year_short=self.get_year(),
+            year_sequence=2,
+        ))
