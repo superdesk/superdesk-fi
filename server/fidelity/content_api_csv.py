@@ -1,8 +1,9 @@
+import os
 import flask
 import logging
 import superdesk
 
-from flask import request
+from flask import request, current_app as app
 from eve.utils import ParsedRequest
 from werkzeug.datastructures import ImmutableMultiDict
 from settings import PUBLIC_TOKEN
@@ -11,7 +12,6 @@ from .content_api_rss import get_authors, get_content_type
 logger = logging.getLogger(__name__)
 blueprint = flask.Blueprint("csv", __name__)
 
-MAX_ITEMS = 200
 SEPARATOR = ';'
 FILENAME = 'bi.csv'
 
@@ -72,7 +72,7 @@ def index():
     items_service = superdesk.get_resource_service("rss_items")
     req = ParsedRequest()
     req.args = ImmutableMultiDict({k: request.args.get(k) for k in request.args if k != "token"})
-    req.max_results = MAX_ITEMS
+    req.max_results = app.config["PAGINATION_LIMIT"]
     items = list(items_service.get(req, {}))
     packages = get_packages()
     return flask.Response(get_csv(items, packages), mimetype="text/csv", headers={
@@ -82,3 +82,4 @@ def index():
 
 def init_app(_app):
     _app.register_blueprint(blueprint, url_prefix="/contentapi")
+    _app.config["PAGINATION_LIMIT"] = int(os.environ.get("CONTENTAPI_PAGINATION_LIMIT", 10000))
