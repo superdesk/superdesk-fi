@@ -72,7 +72,7 @@ def index():
     items_service = superdesk.get_resource_service("rss_items")
     req = ParsedRequest()
     req.args = ImmutableMultiDict({k: request.args.get(k) for k in request.args if k != "token"})
-    req.max_results = app.config["PAGINATION_LIMIT"]
+    req.max_results = app.config["BI_PAGINATION_LIMIT"]
     items = list(items_service.get(req, {}))
     packages = get_packages()
     return flask.Response(get_csv(items, packages), mimetype="text/csv", headers={
@@ -82,4 +82,4 @@ def index():
 
 def init_app(_app):
     _app.register_blueprint(blueprint, url_prefix="/contentapi")
-    _app.config["PAGINATION_LIMIT"] = int(os.environ.get("CONTENTAPI_PAGINATION_LIMIT", 10000))
+    _app.config["BI_PAGINATION_LIMIT"] = int(os.environ.get("BI_PAGINATION_LIMIT", 10000))
