@@ -154,3 +154,6 @@ MEDIA_STORAGE_PROVIDER = 'superdesk.sams.media_storage.SAMSMediaStorage'
 
 # TOKEN USED BY CSV API
 PUBLIC_TOKEN = env("PUBLIC_TOKEN", "")
+
+# 2 - reindex extra fields valid_since, valid_until
+SCHEMA_VERSION = 2
