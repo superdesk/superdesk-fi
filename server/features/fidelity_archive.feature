@@ -3,6 +3,12 @@ Feature: Fidelity Specific Archive Behaviour
     @auth
     Scenario: Create new text item and get internal id
         Given empty "archive"
+        Given "desks"
+        """
+        [
+            {"name": "test"}
+        ]
+        """
         Given "content_types"
         """
         [{"_id": "test_profile", "schema": {
@@ -23,7 +29,7 @@ Feature: Fidelity Specific Archive Behaviour
         """
         When we post to "/archive"
         """
-        [{"type": "text", "profile": "test_profile", "body_html": "<p>content</p>"}]
+        {"type": "text", "profile": "test_profile", "body_html": "<p>content</p>", "task": {"desk": "#desks._id#"}}
         """
         Then we get new resource
         """

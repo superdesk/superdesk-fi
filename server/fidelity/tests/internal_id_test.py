@@ -27,7 +27,9 @@ class InternalIdTestCase(TestCase):
             "INTERNAL_ID_APPEND_CUSTOM_FIELDS_IDS": ['disclaimer'],
         })
 
-    def setup_item(self):
+    def setup_item(self, with_desk=True):
+        desk = {"name": "test"}
+        self.app.data.insert("desks", [desk])
         self.app.data.insert(
             "content_types",
             [
@@ -47,6 +49,7 @@ class InternalIdTestCase(TestCase):
             "profile": "test_profile",
             "body_html": "<p>content</p>",
             "extra": {"disclaimer": "some disclaimer"},
+            "task": {"desk": desk["_id"]} if with_desk else {},
         }
         item_id = archive_service.post([data])
         return archive_service.find_one(None, _id=item_id)
@@ -103,7 +106,9 @@ class InternalIdTestCase(TestCase):
     def test_internal_id_custom_desk_prefix(self):
         desk = {"name": "wpfh"}
         self.app.data.insert("desks", [desk])
-        item = self.setup_item()
+        item = self.setup_item(with_desk=False)
+
+        self.assertIsNone(item.get('extra', {}).get('internal_id'))
 
         # move to desk
         item["task"] = {"desk": desk["_id"]}
@@ -126,7 +131,7 @@ class InternalIdTestCase(TestCase):
         item["task"] = {}
         id_generator.generate_id(None, item)
         self.assertEqual(item["extra"]["internal_id"], TEST_TPL.format(
-            prefix="ED",
+            prefix="WPFH",
             year_short=self.get_year(),
-            year_sequence=2,
+            year_sequence=1,
         ))

@@ -18,6 +18,10 @@ DEFAULT_PREFIX = "ED"
 
 
 def generate_id(sender, item, **kwargs):
+    extra = item.setdefault('extra', {})
+    set_field_id = app.config['INTERNAL_ID_SET_CUSTOM_FIELD_ID']
+    if extra.get(set_field_id):  # already set
+        return
     content_types_service = get_resource_service('content_types')
     try:
         profile = content_types_service.find_one(None, _id=item['profile'])
@@ -26,15 +30,15 @@ def generate_id(sender, item, **kwargs):
     if profile is None:
         logger.warning("Can't find profile {profile}".format(profile=item['profile']))
         return
-    set_field_id = app.config['INTERNAL_ID_SET_CUSTOM_FIELD_ID']
     if set_field_id not in profile['schema']:
         return
-    extra = item.setdefault('extra', {})
     tz = pytz.timezone(app.config['DEFAULT_TIMEZONE'])
     now = datetime.now(tz=tz)
     template = app.config['INTERNAL_ID_TPL']
-    prefix = get_prefix(item)
-    if extra.get(set_field_id) and prefix in extra[set_field_id]:
+    try:
+        prefix = get_prefix(item)
+    except KeyError:
+        # no desk, no id
         return
     sequences_service = get_resource_service('sequences')
     sequence_key = 'fidelity_internal_id_{year}'.format(year=now.year) if prefix == DEFAULT_PREFIX else \
@@ -52,14 +56,10 @@ def generate_id(sender, item, **kwargs):
 
 
 def get_prefix(item):
-    try:
-        desk_id = item["task"]["desk"]
-    except KeyError:
-        pass
-    else:
-        desk = get_resource_service("desks").find_one(req=None, _id=desk_id)
-        if desk and desk.get("name").upper() in app.config["INTERNAL_ID_DESK_MAP"]:
-            return app.config["INTERNAL_ID_DESK_MAP"][desk["name"].upper()]
+    desk_id = item["task"]["desk"]
+    desk = get_resource_service("desks").find_one(req=None, _id=desk_id)
+    if desk and desk.get("name").upper() in app.config["INTERNAL_ID_DESK_MAP"]:
+        return app.config["INTERNAL_ID_DESK_MAP"][desk["name"].upper()]
     return DEFAULT_PREFIX
 
 
