@@ -2883,5 +2883,846 @@
         "selection_type" : "single selection",
         "display_name" : "Show Hero",
         "unique_field" : "qcode"
+    },
+    {
+        "_id": "Affiliation",
+        "items": [
+            {
+                "is_active": true,
+                "name": "Fidelity International",
+                "qcode": "afil:fidelityinternational"
+            },
+            {
+                "is_active": true,
+                "name": "Investment Writer",
+                "qcode": "afil:investmentwriter"
+            },
+            {
+                "is_active": true,
+                "name": "Other",
+                "qcode": "afil:other"
+            }
+        ],
+        "type": "manageable",
+        "schema": {
+            "name": {},
+            "qcode": {},
+            "parent": {}
+        },
+        "service": {
+            "all": 1
+        },
+        "selection_type": "multi selection",
+        "display_name": "Affiliation",
+        "disable_entire_category_selection": false,
+        "unique_field": "qcode",
+        "_etag": "189b495e9b20535e164552827726bc969dc7e6df",
+        "description": "WPFH field for affiliation of the author"
+    },
+    {
+        "_id": "Tags",
+        "items": [
+            {
+                "is_active": true,
+                "name": "Podcast",
+                "qcode": "Pdcst"
+            },
+            {
+                "is_active": true,
+                "name": "Video",
+                "qcode": "Vid"
+            },
+            {
+                "is_active": true,
+                "name": "Property",
+                "qcode": "Prpty"
+            },
+            {
+                "is_active": true,
+                "name": "Oil",
+                "qcode": "OIL"
+            },
+            {
+                "is_active": true,
+                "name": "Investment Rates",
+                "qcode": "InvRa"
+            },
+            {
+                "is_active": true,
+                "name": "Gold",
+                "qcode": "Gld"
+            },
+            {
+                "is_active": true,
+                "name": "China",
+                "qcode": "Chna"
+            },
+            {
+                "is_active": true,
+                "name": "Employment",
+                "qcode": "Emplmnt"
+            },
+            {
+                "is_active": true,
+                "name": "Volatility",
+                "qcode": "Vola"
+            },
+            {
+                "is_active": true,
+                "name": "UK",
+                "qcode": "Untki"
+            },
+            {
+                "is_active": true,
+                "name": "North America",
+                "qcode": "NrthAmer"
+            },
+            {
+                "is_active": true,
+                "name": "Japan",
+                "qcode": "Japa"
+            },
+            {
+                "is_active": true,
+                "name": "Global",
+                "qcode": "Glbl"
+            },
+            {
+                "is_active": true,
+                "name": "Europe",
+                "qcode": "Eurp"
+            },
+            {
+                "is_active": true,
+                "name": "Asia & Emerging Markets",
+                "qcode": "AsEMMa"
+            },
+            {
+                "is_active": true,
+                "name": "Markets",
+                "qcode": "Mrkts"
+            },
+            {
+                "is_active": true,
+                "name": "Advice",
+                "qcode": "Advce"
+            },
+            {
+                "is_active": true,
+                "name": "Passive Investing",
+                "qcode": "PassiInve"
+            },
+            {
+                "is_active": true,
+                "name": "Active Investing",
+                "qcode": "ActInve"
+            },
+            {
+                "is_active": true,
+                "name": "Shares",
+                "qcode": "Shrs"
+            },
+            {
+                "is_active": true,
+                "name": "investment Trusts",
+                "qcode": "InveTrus"
+            },
+            {
+                "is_active": true,
+                "name": "Investing for Income",
+                "qcode": "InvfrInco"
+            },
+            {
+                "is_active": true,
+                "name": "Investing for Capital Growth",
+                "qcode": "InvCapGrwth"
+            },
+            {
+                "is_active": true,
+                "name": "Funds",
+                "qcode": "Fnds"
+            },
+            {
+                "is_active": true,
+                "name": "Sustainable & ESG Investments",
+                "qcode": "SusESGInve"
+            },
+            {
+                "is_active": true,
+                "name": "Capital Preservation",
+                "qcode": "CapPrese"
+            },
+            {
+                "is_active": true,
+                "name": "Bonds",
+                "qcode": "Bnds"
+            },
+            {
+                "is_active": true,
+                "name": "Investing Ideas",
+                "qcode": "InvIdeas"
+            },
+            {
+                "is_active": true,
+                "name": "Bereavement",
+                "qcode": "bere"
+            },
+            {
+                "is_active": true,
+                "name": "Budget",
+                "qcode": "Budge"
+            },
+            {
+                "is_active": true,
+                "name": "Budget",
+                "qcode": "budget"
+            },
+            {
+                "is_active": true,
+                "name": "Diversification",
+                "qcode": "Diversi"
+            },
+            {
+                "is_active": true,
+                "name": "Diversification",
+                "qcode": "Div"
+            },
+            {
+                "is_active": true,
+                "name": "Healthcare Provision",
+                "qcode": "health"
+            },
+            {
+                "is_active": true,
+                "name": "Homes",
+                "qcode": "homes"
+            },
+            {
+                "is_active": true,
+                "name": "ISA",
+                "qcode": "ISA"
+            },
+            {
+                "is_active": true,
+                "name": "In retirement",
+                "qcode": "inret"
+            },
+            {
+                "is_active": true,
+                "name": "Inheritance and Investing",
+                "qcode": "inh"
+            },
+            {
+                "is_active": true,
+                "name": "Investing in Principles",
+                "qcode": "InvestPrincip"
+            },
+            {
+                "is_active": true,
+                "name": "Junior ISA",
+                "qcode": "JunISA"
+            },
+            {
+                "is_active": true,
+                "name": "Junior SIPP",
+                "qcode": "JunSipp"
+            },
+            {
+                "is_active": true,
+                "name": "Personal finance",
+                "qcode": "perfin"
+            },
+            {
+                "is_active": true,
+                "name": "Regular Savings",
+                "qcode": "RegSave"
+            },
+            {
+                "is_active": true,
+                "name": "Relationships",
+                "qcode": "Relation"
+            },
+            {
+                "is_active": true,
+                "name": "SIPP",
+                "qcode": "SiPp"
+            },
+            {
+                "is_active": true,
+                "name": "Saving for Retirement",
+                "qcode": "SavingRet"
+            },
+            {
+                "is_active": true,
+                "name": "Security & Fraud",
+                "qcode": "Secfraud"
+            },
+            {
+                "is_active": true,
+                "name": "Self-employment",
+                "qcode": "SelfEmp"
+            },
+            {
+                "is_active": true,
+                "name": "Tax efficiency",
+                "qcode": "TaxEff"
+            },
+            {
+                "is_active": true,
+                "name": "Women & Money",
+                "qcode": "WomMon"
+            }
+        ],
+        "type": "manageable",
+        "schema": {
+            "name": {},
+            "qcode": {},
+            "parent": {}
+        },
+        "service": {
+            "all": 1
+        },
+        "selection_type": "multi selection",
+        "display_name": "Tags",
+        "disable_entire_category_selection": false,
+        "unique_field": "qcode",
+        "_etag": "a2873eba15f630793f70c211f78466aa2d4ff58e",
+        "description": "Used for WPFH"
+    },
+    {
+        "_id": "Categories",
+        "items": [
+            {
+                "is_active": true,
+                "name": "Markets",
+                "qcode": "cat:markets",
+                "parent": "cat:market"
+            },
+            {
+                "is_active": true,
+                "name": "Markets",
+                "qcode": "cat:market",
+                "parent": null
+            },
+            {
+                "is_active": true,
+                "name": "Sustainable and ESG Investments",
+                "qcode": "cat:susesg",
+                "parent": "cat:invidea"
+            },
+            {
+                "is_active": true,
+                "name": "Capital Preservation",
+                "qcode": "cat:cappres",
+                "parent": "cat:invidea"
+            },
+            {
+                "is_active": true,
+                "name": "Bonds",
+                "qcode": "cat:bonds",
+                "parent": "cat:invidea"
+            },
+            {
+                "is_active": true,
+                "name": "Investing Ideas",
+                "qcode": "cat:investideas",
+                "parent": "cat:invidea"
+            },
+            {
+                "is_active": true,
+                "name": "Investing Ideas",
+                "qcode": "cat:invidea",
+                "parent": null
+            },
+            {
+                "is_active": true,
+                "name": "Bereavement",
+                "qcode": "cat:bereavement",
+                "parent": "cat:perfin"
+            },
+            {
+                "is_active": true,
+                "name": "Budget",
+                "qcode": "cat:budget",
+                "parent": "cat:perfin"
+            },
+            {
+                "is_active": true,
+                "name": "Care Provision",
+                "qcode": "cat:careprovision",
+                "parent": "cat:perfin"
+            },
+            {
+                "is_active": true,
+                "name": "Diversification",
+                "qcode": "cat:diversification",
+                "parent": "cat:perfin"
+            },
+            {
+                "is_active": true,
+                "name": "Homes",
+                "qcode": "cat:homes",
+                "parent": "cat:perfin"
+            },
+            {
+                "is_active": true,
+                "name": "ISA",
+                "qcode": "cat:isa",
+                "parent": "cat:perfin"
+            },
+            {
+                "is_active": true,
+                "name": "In Retirement",
+                "qcode": "cat:inretirement",
+                "parent": "cat:perfin"
+            },
+            {
+                "is_active": true,
+                "name": "Inheritance and Legacy",
+                "qcode": "cat:inheritance",
+                "parent": "cat:perfin"
+            },
+            {
+                "is_active": true,
+                "name": "Investing Principles",
+                "qcode": "cat:investingprinciples",
+                "parent": "cat:perfin"
+            },
+            {
+                "is_active": true,
+                "name": "Investing for Children",
+                "qcode": "cat:investingforchildren",
+                "parent": "cat:perfin"
+            },
+            {
+                "is_active": true,
+                "name": "Junior ISA",
+                "qcode": "cat:Juniorisa",
+                "parent": "cat:perfin"
+            },
+            {
+                "is_active": true,
+                "name": "Junior SIPP",
+                "qcode": "cat:juniorsipp",
+                "parent": "cat:perfin"
+            },
+            {
+                "is_active": true,
+                "name": "Personal Finance",
+                "qcode": "cat:perfin",
+                "parent": ""
+            },
+            {
+                "is_active": true,
+                "name": "Regular Savings",
+                "qcode": "cat:regularsavings",
+                "parent": "cat:perfin"
+            },
+            {
+                "is_active": true,
+                "name": "Relationships",
+                "qcode": "cat:relationships",
+                "parent": "cat:perfin"
+            },
+            {
+                "is_active": true,
+                "name": "SIPP",
+                "qcode": "cat:sipp",
+                "parent": "cat:perfin"
+            },
+            {
+                "is_active": true,
+                "name": "Saving for Retirement",
+                "qcode": "cat:savingretirement",
+                "parent": "cat:perfin"
+            },
+            {
+                "is_active": true,
+                "name": "Security and Fraud",
+                "qcode": "cat:securityfraud",
+                "parent": "cat:perfin"
+            },
+            {
+                "is_active": true,
+                "name": "Self-employment",
+                "qcode": "cat:selfemployment",
+                "parent": "cat:perfin"
+            },
+            {
+                "is_active": true,
+                "name": "Tax efficiency",
+                "qcode": "cat:taxefficiency",
+                "parent": "cat:perfin"
+            },
+            {
+                "is_active": true,
+                "name": "Women & Money",
+                "qcode": "cat:womenmoney",
+                "parent": "cat:perfin"
+            }
+        ],
+        "type": "manageable",
+        "schema": {
+            "name": {},
+            "qcode": {},
+            "parent": {}
+        },
+        "service": {
+            "all": 1
+        },
+        "selection_type": "multi selection",
+        "display_name": "WPFH Categories",
+        "disable_entire_category_selection": false,
+        "unique_field": "qcode",
+        "_etag": "fe6f437ae8a4300ac2e5275b087e5d454fcaec45",
+        "description": "WPFH field listing the categories an article can be written about"
+    },
+    {
+        "_id": "mi-sitesections",
+        "service": {
+            "all": 1
+        },
+        "schema": {
+            "qcode": {},
+            "parent": {},
+            "name": {}
+        },
+        "unique_field": "qcode",
+        "type": "manageable",
+        "_etag": "adc540a4e9ce9de3292298717cf562bb72e29ffa",
+        "display_name": "Site Sections",
+        "selection_type": "multi selection",
+        "items": [
+            {
+                "qcode": "section:fundfocus",
+                "is_active": true,
+                "name": "Fund focus"
+            },
+            {
+                "qcode": "section:stockwatch",
+                "is_active": true,
+                "name": "Stock Watch"
+            },
+            {
+                "qcode": "section:sectorwatch",
+                "is_active": true,
+                "name": "Sector Watch"
+            },
+            {
+                "qcode": "section:investorsview",
+                "is_active": true,
+                "name": "Investor’s view"
+            },
+            {
+                "qcode": "section:finplanning",
+                "is_active": true,
+                "name": "Financial planning"
+            },
+            {
+                "qcode": "section:retirement",
+                "is_active": true,
+                "name": "Retirement"
+            },
+            {
+                "qcode": "section:moneytalk",
+                "is_active": true,
+                "name": "MoneyTalk"
+            },
+            {
+                "qcode": "section:womenmoney",
+                "is_active": true,
+                "name": "Women & Money"
+            },
+            {
+                "qcode": "section:selfemployed",
+                "is_active": true,
+                "name": "Self employed"
+            },
+            {
+                "qcode": "section:dailyinsight",
+                "is_active": true,
+                "name": "Daily Insight"
+            },
+            {
+                "qcode": "section:marketweek",
+                "is_active": true,
+                "name": "Market week"
+            },
+            {
+                "qcode": "section:viewpoints",
+                "is_active": true,
+                "name": "Viewpoints"
+            },
+            {
+                "qcode": "section:podcasts",
+                "is_active": true,
+                "name": "Podcasts"
+            },
+            {
+                "qcode": "section:invoutlook",
+                "is_active": true,
+                "name": "Investment Outlook"
+            },
+            {
+                "qcode": "section:oppinunctimes",
+                "is_active": true,
+                "name": "Opportunity in uncertain times"
+            },
+            {
+                "qcode": "section:dailymarketreview",
+                "is_active": true,
+                "name": "Daily market review"
+            }
+        ],
+        "field_type": null,
+        "description": "Market & Insights Site Sections"
+    },
+    {
+        "_id": "showpublishdate",
+        "service": {
+            "all": 1
+        },
+        "schema": {
+            "qcode": {},
+            "parent": {},
+            "name": {}
+        },
+        "unique_field": "qcode",
+        "type": "manageable",
+        "_etag": "e4ed74919a18b7adc5b4783badd238138b2e0ddf",
+        "display_name": "Show Publish Date",
+        "selection_type": "single selection",
+        "items": [
+            {
+                "qcode": "yes",
+                "is_active": true,
+                "name": "Yes"
+            },
+            {
+                "qcode": "no",
+                "is_active": true,
+                "name": "No"
+            }
+        ],
+        "field_type": null,
+        "description": "Market & Insights Show Publish Date"
+    },
+    {
+        "_id": "showauthor",
+        "service": {
+            "all": 1
+        },
+        "schema": {
+            "qcode": {},
+            "parent": {},
+            "name": {}
+        },
+        "unique_field": "qcode",
+        "type": "manageable",
+        "_etag": "7cfffd5c2af6a90691e13362467a0d7c9bc576a0",
+        "display_name": "Show Author",
+        "selection_type": "single selection",
+        "items": [
+            {
+                "qcode": "yes",
+                "is_active": true,
+                "name": "Yes"
+            },
+            {
+                "qcode": "no",
+                "is_active": true,
+                "name": "No"
+            }
+        ],
+        "field_type": null,
+        "description": "Market & Insights Show Author"
+    },
+    {
+        "_id": "mi-purpose",
+        "service": {
+            "all": 1
+        },
+        "schema": {
+            "qcode": {},
+            "parent": {},
+            "name": {}
+        },
+        "unique_field": "qcode",
+        "type": "manageable",
+        "_etag": "af1d53b5bd6e16e1d0d7524cb1ea483f6f589b87",
+        "display_name": "Purpose",
+        "selection_type": "multi selection",
+        "items": [
+            {
+                "qcode": "purpose:inspire",
+                "is_active": true,
+                "name": "Inspire"
+            },
+            {
+                "qcode": "purpose:convince",
+                "is_active": true,
+                "name": "Convince"
+            },
+            {
+                "qcode": "purpose:equip",
+                "is_active": true,
+                "name": "Equip"
+            },
+            {
+                "qcode": "purpose:convert",
+                "is_active": true,
+                "name": "Convert"
+            }
+        ],
+        "field_type": null,
+        "description": "Market & Insights Purpose"
+    },
+    {
+        "_id": "language",
+        "field_type": null,
+        "items": [
+            {
+                "is_active": true,
+                "name": "Japanese",
+                "qcode": "lan:jap"
+            },
+            {
+                "is_active": true,
+                "name": "German",
+                "qcode": "lan:ger"
+            },
+            {
+                "is_active": true,
+                "name": "English",
+                "qcode": "lan:eng"
+            }
+        ],
+        "type": "manageable",
+        "schema": {
+            "name": {},
+            "qcode": {},
+            "parent": {}
+        },
+        "service": {
+            "all": 1
+        },
+        "selection_type": "multi selection",
+        "display_name": "Language",
+        "description": "WPFH Destination language",
+        "disable_entire_category_selection": false,
+        "unique_field": "qcode",
+        "_etag": "a85e181e43c56bf08284a20a10a4d9c41b131953"
+    },
+    {
+        "_id": "format",
+        "field_type": null,
+        "items": [
+            {
+                "is_active": true,
+                "name": "Podcast",
+                "qcode": "for:podcast"
+            },
+            {
+                "is_active": true,
+                "name": "Video",
+                "qcode": "for:video"
+            },
+            {
+                "is_active": true,
+                "name": "Text",
+                "qcode": "for:text"
+            }
+        ],
+        "type": "manageable",
+        "schema": {
+            "name": {},
+            "qcode": {},
+            "parent": {}
+        },
+        "service": {
+            "all": 1
+        },
+        "selection_type": "multi selection",
+        "display_name": "Format",
+        "description": "WPFH Article type",
+        "disable_entire_category_selection": false,
+        "unique_field": "qcode",
+        "_etag": "f7b737f4d8abadd0c9863f18b16c4150d3a5e21b"
+    },
+    {
+        "_id": "Destination",
+        "field_type": null,
+        "items": [
+            {
+                "is_active": true,
+                "name": "Japan Pi App",
+                "qcode": "des:japapp"
+            },
+            {
+                "is_active": true,
+                "name": "Japan PI Website",
+                "qcode": "des:jappi"
+            },
+            {
+                "is_active": true,
+                "name": "Germany PI App",
+                "qcode": "des:gerpiapp"
+            },
+            {
+                "is_active": true,
+                "name": "Germany PI Site",
+                "qcode": "des:gerpi"
+            },
+            {
+                "is_active": true,
+                "name": "UK WI -Offshore",
+                "qcode": "des:ukwioff"
+            },
+            {
+                "is_active": true,
+                "name": "UK WI- Member",
+                "qcode": "des:ukwimem"
+            },
+            {
+                "is_active": true,
+                "name": "UK WI - Client",
+                "qcode": "des:ukwiclient"
+            },
+            {
+                "is_active": true,
+                "name": "UK FundsNetwork",
+                "qcode": "des:ukpifund"
+            },
+            {
+                "is_active": true,
+                "name": "UK PI Digital Advice",
+                "qcode": "des:ukpidig"
+            },
+            {
+                "is_active": true,
+                "name": "UK PI App",
+                "qcode": "des:ukpiapp"
+            },
+            {
+                "is_active": true,
+                "name": "UK PI Website",
+                "qcode": "des:ukpi"
+            }
+        ],
+        "type": "manageable",
+        "schema": {
+            "name": {},
+            "qcode": {},
+            "parent": {}
+        },
+        "service": {
+            "all": 1
+        },
+        "selection_type": "multi selection",
+        "display_name": "Destination",
+        "description": "WPFH Publish destinations",
+        "disable_entire_category_selection": false,
+        "unique_field": "qcode",
+        "_etag": "68d4b1b59fa5a8075aa95a6cd7b59ea3b2ad4a8d"
     }
 ]
