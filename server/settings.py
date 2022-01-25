@@ -157,3 +157,5 @@ PUBLIC_TOKEN = env("PUBLIC_TOKEN", "")
 
 # 2 - reindex extra fields valid_since, valid_until
 SCHEMA_VERSION = 2
+
+PAGINATION_LIMIT = 1000
