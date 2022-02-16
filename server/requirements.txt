@@ -1,10 +1,9 @@
 gunicorn==20.1.0
 honcho==1.0.1
-newrelic>=2.66,<2.67
 python3-saml==1.2.6
 lxml==4.1.1
 feedgen==0.9.0
 urllib3<1.26
 
--e git+git://github.com/superdesk/superdesk-core.git@0dd76b6#egg=Superdesk-Core
+git+https://github.com/superdesk/superdesk-core.git@release/2.4#egg=Superdesk-Core
 sams-server==0.2.4
