@@ -10,6 +10,7 @@
 
 
 import pytz
+import fidelity
 import fidelity.identifier_generator as id_generator
 
 from datetime import datetime
@@ -36,7 +37,7 @@ class InternalIdTestCase(TestCase):
                     "schema": {
                         "headline": {"default": "default_headline"},
                         "internal_id": {"type": "text", "required": False, "enabled": True, "nullable": True},
-                        "disclaimer": {"type": "text", "required": False, "enabled": True, "nullable": True},
+                        fidelity.DISCLAIMER: {"type": "text", "required": False, "enabled": True, "nullable": True},
                     },
                 }
             ],
@@ -46,7 +47,7 @@ class InternalIdTestCase(TestCase):
             "type": "text",
             "profile": "test_profile",
             "body_html": "<p>content</p>",
-            "extra": {"disclaimer": "some disclaimer"},
+            "extra": {fidelity.DISCLAIMER: "some disclaimer"},
         }
         item_id = archive_service.post([data])
         return archive_service.find_one(None, _id=item_id)
