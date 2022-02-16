@@ -3,6 +3,9 @@ import logging
 from superdesk import privilege
 
 
+DISCLAIMER = "disclaimer"
+
+
 logging.getLogger(__name__).setLevel(logging.INFO)
 
 
