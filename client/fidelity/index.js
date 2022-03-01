@@ -23,7 +23,7 @@ setTimeout(() => {
                 load: () => import('superdesk-core/scripts/extensions/annotationsLibrary'),
             },
             {
-                id: 'samsExtension',
+                id: 'sams',
                 load: () => import('superdesk-core/scripts/extensions/sams'),
             },
         ],
