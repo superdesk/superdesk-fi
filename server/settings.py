@@ -104,6 +104,24 @@ SAML_PATH = env('SAML_PATH', os.path.join(ABS_PATH, 'saml'))
 SAML_LABEL = env('SAML_LABEL', 'Sign In')
 
 SCHEMA = {
+    "picture": {
+        "slugline": {"required": False},
+        "headline": {"required": False},
+        "description_text": {"required": True},
+        "byline": {"required": False},
+        "copyrightnotice": {"required": False},
+        "usageterms": {"required": False},
+        "ednote": {"required": False},
+    },
+    "video": {
+        "slugline": {"required": False},
+        "headline": {"required": False},
+        "description_text": {"required": True},
+        "byline": {"required": True},
+        "copyrightnotice": {"required": False},
+        "usageterms": {"required": False},
+        "ednote": {"required": False},
+    },
     'composite': {
         'slugline': {'required': True},
         'language': {'required': True},
@@ -112,10 +130,46 @@ SCHEMA = {
 }
 
 EDITOR = {
+    "picture": {
+        "headline": {"order": 1, "sdWidth": "full"},
+        "description_text": {"order": 2, "sdWidth": "full", "textarea": True},
+        "byline": {"order": 3, "displayOnMediaEditor": True},
+        "copyrightnotice": {"order": 4, "displayOnMediaEditor": True},
+        "slugline": {"displayOnMediaEditor": True},
+        "ednote": {"displayOnMediaEditor": True},
+        "usageterms": {"order": 5, "displayOnMediaEditor": True},
+    },
+    "video": {
+        "headline": {"order": 1, "sdWidth": "full"},
+        "description_text": {"order": 2, "sdWidth": "full", "textarea": True},
+        "byline": {"order": 3, "displayOnMediaEditor": True},
+        "copyrightnotice": {"order": 4, "displayOnMediaEditor": True},
+        "slugline": {"displayOnMediaEditor": True},
+        "ednote": {"displayOnMediaEditor": True},
+        "usageterms": {"order": 5, "displayOnMediaEditor": True},
+    },
     'composite': {
         'slugline': {'order': 1, 'sdWidth': 'half'},
         'language': {'order': 2, 'sdWidth': 'half'},
         'subject_custom': {'order': 3, 'sdWidth': 'half'},
+    },
+}
+
+VALIDATOR_MEDIA_METADATA = {
+    "slugline": {
+        "required": False,
+    },
+    "headline": {
+        "required": False,
+    },
+    "description_text": {
+        "required": True,
+    },
+    "byline": {
+        "required": False,
+    },
+    "copyrightnotice": {
+        "required": False,
     },
 }
 
