@@ -73,11 +73,10 @@ export function subjectMatterExpertReviewCtrl(
     }
 
     function removeCustomAuthoringButtons() {
-        delete authoringWorkspace.authoringTopBarAdditionalButtons['subject-matter-expert-view--finish-review'];
-
-        delete authoringWorkspace.authoringTopBarButtonsToHide['article-edit--topbar--minimize'];
-        delete authoringWorkspace.authoringTopBarButtonsToHide['article-edit--topbar--actions'];
-        delete authoringWorkspace.authoringTopBarButtonsToHide['article-edit--topbar--sendto-publish'];
+        authoringWorkspace.authoringTopBarAdditionalButtons['subject-matter-expert-view--finish-review'] = null;
+        authoringWorkspace.authoringTopBarButtonsToHide['article-edit--topbar--minimize'] = false;
+        authoringWorkspace.authoringTopBarButtonsToHide['article-edit--topbar--actions'] = false;
+        authoringWorkspace.authoringTopBarButtonsToHide['article-edit--topbar--sendto-publish'] = false;
     }
 
     $scope.onInit = function() {
@@ -105,6 +104,7 @@ export function subjectMatterExpertReviewCtrl(
         });
     }
 
+    // not used atm as the authoring is the only view there
     function onDestroy() {
         unhideSideMenu();
         unhideTopMenu();
@@ -114,14 +114,11 @@ export function subjectMatterExpertReviewCtrl(
 
         document.body.classList.remove(cssClassNameForView);
 
-
         $scope.$applyAsync(() => {
             superdeskFlags.flags.workqueue = previousWorkspaceFlagValue;
         });
     }
     
-    $scope.$on('$destroy', onDestroy);
-
     $scope.customDataSource = {
         getItems: (from, pageSize) => {
             const criteria = search.query({desk: `["${subjectMatterExpertReviewDeskId}"]`}).getCriteria(true);
