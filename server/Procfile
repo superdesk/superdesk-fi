@@ -3,5 +3,7 @@ wamp: python3 -u ws.py
 work: celery -A worker worker
 beat: celery -A worker beat --pid=
 capi: gunicorn -c gunicorn_config.py content_api.wsgi
+papi: gunicorn -c gunicorn_config.py prod_api.wsgi
 sams_api: cd ./fidelity/sams && gunicorn -c api/gunicorn_config.py wsgi_api
 sams_fs: cd ./fidelity/sams && gunicorn -c file_server/gunicorn_config.py wsgi_file_server
+
