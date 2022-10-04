@@ -2,7 +2,7 @@
     "name": "superdesk",
     "license": "GPL-3.0",
     "dependencies": {
-        "superdesk-core": "github:superdesk/superdesk-client-core#release/2.5-fidelity"
+        "superdesk-core": "github:superdesk/superdesk-client-core#v2.5.1"
     },
     "scripts": {
         "build": "npx @superdesk/build-tools build-root-repo ./"
