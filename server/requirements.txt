@@ -140,7 +140,6 @@ ldap3==2.5.2
     # via superdesk-core
 lxml==4.6.5
     # via
-    #   -r requirements.in
     #   draftjs-exporter
     #   feedgen
     #   superdesk-core
@@ -199,7 +198,7 @@ pytz==2022.4
     #   flask-babel
     #   superdesk-core
     #   tzlocal
-pyyaml==5.4.1
+pyyaml==4.2b4
     # via superdesk-core
 raven[flask]==6.10.0
     # via superdesk-core
@@ -236,19 +235,18 @@ six==1.16.0
     #   isodate
     #   oauth2client
     #   python-dateutil
-superdesk-core @ git+https://github.com/superdesk/superdesk-core.git@v2.5.0
+superdesk-core @ git+https://github.com/superdesk/superdesk-core.git@v2.5.0-rc0
     # via
     #   -r requirements.in
     #   sams-server
 typing-extensions==4.3.0
     # via superdesk-core
-tzlocal==2.1
+tzlocal==1.5.1
     # via superdesk-core
 unidecode==0.04.21
     # via superdesk-core
 urllib3==1.25.11
     # via
-    #   -r requirements.in
     #   botocore
     #   elastic-apm
     #   elasticsearch
